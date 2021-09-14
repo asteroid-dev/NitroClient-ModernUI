@@ -1,0 +1,30 @@
+<div class="hotel-alert">
+    <div [bringToTop] [draggable] class="catalogue-alert" [center]="true">
+        <div id="alert-header">
+            <div class="modern_alert-header-text">{{ ('catalog.club.buy.confirm') | translate }}</div>
+        </div>
+        <div class="modern_alert_body">
+            <div class="catalogue-buymobi-main">
+                <div class="catalogue-buymobi">
+                    <i class="icon icon-catalogue-hc_big"></i>
+                </div>
+                <div class="catalogue-buymobi-description">
+                    <p class="catalogue-buymobi-name">{{ getSubscriptionHeader() }}</p>
+                    <p class="catalogue-buymobi-piece">{{ getSubscriptionText() }}</p>
+                    <div class="catalogue-buymobi-price">
+                        <p class="cbm-credits" *ngIf="subscription.priceCredits">{{ subscription.priceCredits }} <img class="px-1" [src]="getCurrencyUrl(-1)" image-placeholder /></p>
+                        <p class="cbm-other_credits" *ngIf="subscription.priceActivityPoints">+ {{ subscription.priceActivityPoints }} <img class="pl-1" [src]="getCurrencyUrl(subscription.priceActivityPointsType)" image-placeholder /></p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group w-100">
+                <div class="choices-button" (click)="hide()">
+                    <div class="h-k-yazi">{{ ('catalog.purchase_confirmation.cancel') | translate }}</div>
+                </div>
+                <div class="choices-button" (click)="purchase()">
+                    <div class="h-k-yazi">{{ ('catalog.club.buy.subscribe') | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="groupcreate-headerinfo"><img class="grupcreate-img" src="/assets/images/guilds/group_UI_colors.png">
+    <div class="grup-bilgi-metinler">
+        <p class="grupcreate-baslik">{{ ('group.create.stepcaption.3') | translate }}</p>
+        <p class="grupcreate-aciklama">{{ ('group.create.stepdesc.3') | translate }}</p>
+    </div>
+</div>
+
+<!--
+<div class="mb-3">{{ ('group.create.stepcaption.3') | translate }}</div>
+<div class="d-flex justify-content-between mb-3">
+    <div class="mr-3">
+        <div class="mb-1">{{ ('group.edit.color.guild.color') | translate }}</div>
+        <div class="btn-group" style="height: 67px;width: 110px;">
+            <button class="btn btn-primary btn-lg"
+                [style]="{backgroundColor: '#' + groupColorsA.get(groupSettings.colorA)}"></button>
+            <button class="btn btn-primary btn-lg"
+                [style]="{backgroundColor: '#' + groupColorsB.get(groupSettings.colorB)}"></button>
+        </div>
+    </div>
+    <div class="mr-3">
+        <div class="mb-1">{{ ('group.edit.color.primary.color') | translate }}</div>
+        <div class="grid-container">
+            <div class="grid-items grid-9 pb-1">
+                <button *ngFor="let color of groupColorsA | keyvalue" class="item-detail btn btn-primary btn-sm"
+                    [style]="{backgroundColor: '#' + color.value}" (click)="groupSettings.colorA = color.key;"></button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="mb-1">{{ ('group.edit.color.secondary.color') | translate }}</div>
+        <div class="grid-container">
+            <div class="grid-items grid-6 pb-1">
+                <button *ngFor="let color of groupColorsB | keyvalue" class="item-detail btn btn-primary btn-sm" [style]="{backgroundColor: '#' + color.value}" (click)="groupSettings.colorB  = color.key;"></button>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="groupcreate-bodybox">
+    <div class="groupinfo-left">
+        <p class="grouptext-1">{{ ('group.edit.color.guild.color') | translate }}</p>
+        <div class="group-color-view-box">
+            <button class="secilenrenk" [style]="{backgroundColor: '#' + groupColorsA.get(groupSettings.colorA)}"></button>
+            <button class="secilenrenk" [style]="{backgroundColor: '#' + groupColorsB.get(groupSettings.colorB)}"></button>
+        </div>
+    </div>
+    <div class="groupinfo-right">
+        <div class="groupcolor_position-head-text">
+            <p class="grouptext-6">{{ ('group.edit.color.primary.color') | translate }}</p>
+            <p class="grouptext-7">{{ ('group.edit.color.secondary.color') | translate }}</p>
+        </div>
+        <div class="group-color1-design">
+            <div class="group-color-select">
+                <div *ngFor="let color of groupColorsA | keyvalue" class="colorselect-box" [style]="{backgroundColor: '#' + color.value}" (click)="groupSettings.colorA = color.key;"></div>
+            </div>
+        </div>
+        <div class="group-color2-design">
+            <div class="group-color-select2">
+                <div *ngFor="let color of groupColorsB | keyvalue" class="colorselect-box" [style]="{backgroundColor: '#' + color.value}" (click)="groupSettings.colorB  = color.key;"></div>
+            </div>
+        </div>
+    </div>
+</div>

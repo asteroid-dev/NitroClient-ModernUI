@@ -1,0 +1,29 @@
+<div *ngIf="visible" [draggable] [center]="false" dragHandle=".card-header" class="card reports-tool-card" style="display: none;">
+    <div class="card-header">
+        <span>
+			<i class="icon modtool-reports-icon" style="margin-right: 5px;"></i>
+			Reports
+			</span>
+        <button type="button" class="close" (click)="hideTool()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="card-body">
+        <div class="btn-group w-100">
+            <button (click)="setTab(0)" class="btn btn-sm btn-secondary">Open Issues</button>
+            <button (click)="setTab(1)" class="btn btn-sm btn-secondary">My Issues</button>
+            <button (click)="setTab(2)" class="btn btn-sm btn-secondary">Picked Issues</button>
+        </div>
+        <table *ngIf="tab === 0" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Type</th>
+                    <th>Player</th>
+                    <th>Open</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>

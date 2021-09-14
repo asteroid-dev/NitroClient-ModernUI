@@ -1,0 +1,32 @@
+<div class="groupcreate-headerinfo"><img class="grupcreate-img" src="/assets/images/guilds/group_UI_ready.png">
+    <div class="grup-bilgi-metinler">
+        <p class="grupcreate-baslik">{{ ('group.create.stepcaption.4') | translate }}</p>
+        <p class="grupcreate-aciklama">{{ ('group.create.stepdesc.4') | translate }}</p>
+    </div>
+</div>
+
+
+<div class="groupcreate-bodybox">
+    <div class="groupinfo-left">
+        <p class="grouptext-1">{{ ('group.create.confirm.guildbadge') | translate }}</p>
+        <div class="group-badge-box">
+            <nitro-badge [badge]="groupSettings.currentBadgeCode" [isGroup]="true"></nitro-badge>
+        </div>
+        <p class="grouptext-1">{{ ('group.create.confirm.guildcolors') | translate }}</p>
+        <div class="group-color-view-box">
+            <button class="secilenrenk"
+                [style]="{backgroundColor: '#' + groupColorsA.get(groupSettings.colorA)}"></button>
+            <button class="secilenrenk"
+                [style]="{backgroundColor: '#' + groupColorsB.get(groupSettings.colorB)}"></button>
+        </div>
+    </div>
+</div>
+<div class="groupinfo-right">
+    <p class="group-create-name">{{ groupSettings.name }}</p>
+    <p class="group-create-desc">{{ groupSettings.description }}</p>
+    <p class="group-create-desc" [innerHtml]="('group.create.confirm.info') | translate"></p>
+    <div class="group-fiyat">
+        <img src="/assets/images/guilds/gcreate_icon_credit.png" style="margin: 7px 7px;float: left;">
+        <p class="group-fiyat-text">{{ ('group.create.confirm.buyinfo') | translate:'amount':groupCost }}</p>
+    </div>
+</div>

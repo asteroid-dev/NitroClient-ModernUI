@@ -1,0 +1,89 @@
+<!--<div class="d-flex flex-column w-100 h-100">
+    <div *ngIf="!activeOffer" class="d-flex flex-column justify-content-center align-items-center w-100 h-100 mb-2">
+        <img *ngIf="getImage(1)" [src]="getImage(1)" image-placeholder />
+    </div>
+    <div *ngIf="activeOffer && activeOffer.products[0]" class="position-relative d-flex flex-column justify-content-center align-items-center w-100 mb-2">
+        <div class="position-absolute bg-secondary rounded text-center m-2 p-2 t-0 l-0" style="z-index:1;">{{ offerName(activeOffer) }}</div>
+        <div *ngIf="activeOffer.products[0].uniqueLimitedItem" class="unique-counter-complete position-absolute" style="z-index:1;">
+            <div>
+                <div [innerHtml]="activeOffer.products[0].uniqueLimitedItemsLeft | uniqueNumber"></div>
+                {{ ('unique.items.left') | translate }}
+            </div>
+            <div>
+                <div [innerHtml]="(activeOffer.products[0].uniqueLimitedSeriesSize - activeOffer.products[0].uniqueLimitedItemsLeft) | uniqueNumber"></div>
+                {{ ('unique.items.number.sold') | translate }}
+            </div>
+        </div>
+        <div *ngIf="roomPreviewerVisible" class="room-preview" nitro-room-preview-component [roomPreviewer]="roomPreviewer" [width]="366" [height]="180"></div>
+        <div *ngIf="!roomPreviewerVisible" class="d-flex justify-content-center align-items-center h-100 w-100">
+            <img [src]="offerImage(activeOffer)" image-placeholder />
+        </div>
+    </div>
+    <perfect-scrollbar class="grid-container w-100" style="min-height:209px;max-height:209px;height:209px;">
+        <div class="grid-items grid-6">
+            <ng-container *ngFor="let offer of offers">
+                <div *ngIf="offer.products[0]" class="d-flex flex-column item-detail justify-content-center align-items-center" (click)="selectOffer(offer)">
+                    <button type="button" class="position-relative btn btn-secondary align-items-end detail-info" [ngClass]="{ 'active': (activeOffer === offer), 'unique': offer.products[0].uniqueLimitedItem, 'sold-out': (offer.products[0].uniqueLimitedItem && !offer.products[0].uniqueLimitedItemsLeft) }">
+                        <div class="position-absolute detail-info has-image" [ngStyle]="{ 'background-image': 'url(' + offerImage(offer) + ')' }"></div>
+                        <div class="position-absolute bg-danger px-1 py-0 rounded shadow count" *ngIf="(offerCount(offer) > 1)">{{ offerCount(offer) }}</div>
+                        <div *ngIf="offer.products[0].uniqueLimitedItem" class="position-absolute unique-counter" [innerHtml]="offer.products[0].uniqueLimitedSeriesSize | uniqueNumber"></div>
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+    </perfect-scrollbar>
+    <div *ngIf="activeOffer" class="d-flex align-items-end flex-grow-1 w-100 mt-1" nitro-catalog-purchase-component [activePage]="activePage" [activeOffer]="activeOffer" [quantityEnabled]="activeOffer.bundlePurchaseAllowed"></div>
+</div>
+-->
+
+
+<div class="mobiler-magaza-box">
+    <div class="magaza-mobiler-onizleme">
+        <ng-container *ngFor="let offer of offers">
+
+
+            <div class="onizlemeac" *ngIf="offer.products[0]" id="magaza-mobilya-onizleme-box" (click)="selectOffer(offer)" [ngClass]="{ 'mgzmobiactive': (activeOffer === offer), 'unique': offer.products[0].uniqueLimitedItem, 'sold-out': (offer.products[0].uniqueLimitedItem && !offer.products[0].uniqueLimitedItemsLeft) }">
+                <div class="xurun" *ngIf="(offerCount(offer) > 1)"><p class="xurun-adet">x{{ offerCount(offer) }}</p></div>
+                <div *ngIf="offer.products[0].uniqueLimitedItem" class="position-absolute unique-counter" [innerHtml]="offer.products[0].uniqueLimitedSeriesSize | uniqueNumber"></div>
+                <div class="mobi-ufak-icon" [ngStyle]="{ 'background-image': 'url(' + offerImage(offer) + ')' }"></div>
+                <div class="mobi-fiyat-box">
+                    <div *ngIf="offer.priceCredits" class="mobi-fiyat">
+                        <div class="mobi-fiyat-sayi">{{ offer.priceCredits }}</div>
+                        <img class="magaza-kredi-ico" src="/assets/images/magaza-kredi.png">
+                    </div>
+                    <div *ngIf="offer.priceActivityPoints" class="mobi-fiyat">
+                        <div class="mobi-fiyat-sayi">+ {{ offer.priceActivityPoints }}</div>
+                        <i class="icon icon-currency-{{ offer.priceActivityPointsType }} magaza-kredi-ico"></i>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="!activeOffer" class="kategoriresim">
+        <img *ngIf="getImage(1)" [src]="getImage(1)" image-placeholder />
+    </div>
+    <div *ngIf="activeOffer" class="magaza-mobi-satin-box">
+        <div class="mctlg-close2"><div class="closeshadow2"></div><div class="closetab1"></div><div class="closetab2"></div></div>
+        <div>
+            <div class="mobi-bilgiler-header">
+                <div class="mobi-bilgi-detaylar">?</div>
+                <div class="mobi-bilgi-ad">{{ offerName(activeOffer) }}</div>
+            </div>
+            <div *ngIf="activeOffer.products[0].uniqueLimitedItem" class="unique-counter-complete position-absolute" style="z-index:1;">
+                <div>
+                    <div [innerHtml]="activeOffer.products[0].uniqueLimitedItemsLeft | uniqueNumber"></div>
+                    {{ ('unique.items.left') | translate }}
+                </div>
+                <div>
+                    <div [innerHtml]="(activeOffer.products[0].uniqueLimitedSeriesSize - activeOffer.products[0].uniqueLimitedItemsLeft) | uniqueNumber"></div>
+                    {{ ('unique.items.number.sold') | translate }}
+                </div>
+            </div>
+            <div *ngIf="roomPreviewerVisible" class="mgz-mobi-gorunumu" nitro-room-preview-component [roomPreviewer]="roomPreviewer" [width]="233" [height]="160" style="position: relative;z-index: 1;"></div>
+            <div *ngIf="!roomPreviewerVisible" class="d-flex justify-content-center align-items-center h-100 w-100">
+                <img [src]="offerImage(activeOffer)" image-placeholder />
+            </div>
+        </div>
+        <div *ngIf="activeOffer" class="mt-1 egermobilse" nitro-catalog-purchase-component [activePage]="activePage" [activeOffer]="activeOffer" [quantityEnabled]="activeOffer.bundlePurchaseAllowed"></div>
+    </div>
+</div>

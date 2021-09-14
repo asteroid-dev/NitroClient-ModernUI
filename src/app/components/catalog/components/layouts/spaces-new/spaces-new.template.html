@@ -1,0 +1,68 @@
+<!--<div class="d-flex flex-column w-100 h-100 nitro-catalog-layout-spaces-component">
+    <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 mb-2">
+        <img *ngIf="!activeOffer && getImage(1)" [src]="getImage(1)" image-placeholder />
+        <div *ngIf="activeOffer" class="d-flex position-relative w-100 h-100">
+            <div class="room-preview" nitro-room-preview-component [roomPreviewer]="roomPreviewer" [width]="243"
+                [height]="240"></div>
+            <div class="d-flex flex-grow-1 ml-2" nitro-catalog-purchase-component [vertical]="true"
+                [activePage]="activePage" [activeOffer]="activeOffer"></div>
+        </div>
+        <div class="d-flex justify-content-center align-items-cente btn-group mt-2">
+            <button type="button" class="btn btn-primary btn-sm" [ngClass]="{ 'active': (activeGroupIndex === 0) }"
+                (click)="switchCategory('walls')">{{ ('catalog.spaces.tab.walls') | translate }}</button>
+            <button type="button" class="btn btn-primary btn-sm" [ngClass]="{ 'active': (activeGroupIndex === 1) }"
+                (click)="switchCategory('floor')">{{ ('catalog.spaces.tab.floors') | translate }}</button>
+            <button type="button" class="btn btn-primary btn-sm" [ngClass]="{ 'active': (activeGroupIndex === 2) }"
+                (click)="switchCategory('landscape')">{{ ('catalog.spaces.tab.views') | translate }}</button>
+        </div>
+    </div>
+    <perfect-scrollbar class="grid-container w-100" style="min-height:209px;max-height:209px;height:209px;">
+        <div class="grid-items grid-6">
+            <div class="d-flex flex-column item-detail justify-content-center align-items-center" *ngFor="let offer of groups[activeGroupIndex]" (click)="selectOffer(offer)">
+                <button type="button" class="position-relative btn btn-secondary align-items-end detail-info has-image"
+                    [ngClass]="{ 'active': (activeOffer === offer) }"
+                    [ngStyle]="{ 'background-image': 'url(' + offerImage(offer) + ')' }">
+                    <div class="position-absolute bg-danger px-1 py-0 rounded shadow count"
+                        *ngIf="(offerCount(offer) > 1)">{{ offerCount(offer) }}</div>
+                </button>
+            </div>
+        </div>
+    </perfect-scrollbar>
+</div>-->
+
+<div class="mobiler-magaza-box">
+    <div class="magaza-mobiler-onizleme">
+        <div *ngFor="let offer of groups[activeGroupIndex]" (click)="selectOffer(offer)">
+            <div id="magaza-mobilya-onizleme-box" [ngClass]="{ 'spacesmobiactive': (activeOffer === offer) }">
+                <div class="mobi-ufak-icon" [ngStyle]="{ 'background-image': 'url(' + offerImage(offer) + ')' }"></div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!activeOffer" class="kategoriresim">
+        <img *ngIf="getImage(1)" [src]="getImage(1)" image-placeholder />
+    </div>
+    <div class="magaza-mobi-satin-box">
+        <div *ngIf="activeOffer">
+            <div class="mobi-bilgiler-header">
+                <div class="mobi-bilgi-detaylar">?</div>
+                <div class="mobi-bilgi-ad">{{ offerName(activeOffer) }}</div>
+            </div>
+            <div *ngIf="roomPreviewerVisible" class="mgz-mobi-gorunumu" nitro-room-preview-component
+                [roomPreviewer]="roomPreviewer" [width]="233" [height]="160" style="position: relative;z-index: 1;">
+            </div>
+            <div *ngIf="!roomPreviewerVisible" class="d-flex justify-content-center align-items-center h-100 w-100">
+                <img [src]="offerImage(activeOffer)" image-placeholder />
+            </div>
+        </div>
+        <div class="spacesmenu">
+            <button type="button" class="spacesbutton" [ngClass]="{ 'spacesactive': (activeGroupIndex === 0) }"
+                (click)="switchCategory('walls')">{{ ('catalog.spaces.tab.walls') | translate }}</button>
+            <button type="button" class="spacesbutton" [ngClass]="{ 'spacesactive': (activeGroupIndex === 1) }"
+                (click)="switchCategory('floor')">{{ ('catalog.spaces.tab.floors') | translate }}</button>
+            <button type="button" class="spacesbutton" [ngClass]="{ 'spacesactive': (activeGroupIndex === 2) }"
+                (click)="switchCategory('landscape')">{{ ('catalog.spaces.tab.views') | translate }}</button>
+        </div>
+        <div nitro-catalog-purchase-component [vertical]="true" [activePage]="activePage" [activeOffer]="activeOffer">
+        </div>
+    </div>
+</div>

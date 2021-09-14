@@ -1,0 +1,158 @@
+<!--<div class="row mt-3">
+    <div class="d-flex flex-column col-6">
+        <div class="badge badge-secondary w-100 p-1 mb-1">{{ ('inventory.trading.you') | translate }}</div>
+        <div class="d-flex mb-1">
+            <div class="grid-container position-relative">
+                <div class="grid-items grid-3">
+                    <div class="d-flex flex-column item-detail justify-content-center align-items-center" *ngFor="let num of indexs; let i = index;" (click)="removeItem(i)">
+                        <button *ngIf="ownUserItems[i]" type="button" class="position-relative btn btn-secondary align-items-end detail-info has-image" [ngStyle]="{ 'background-image': 'url(' + getIconUrl(ownUserItems[i]) + ')' }">
+                            <div class="position-absolute btn btn-sm btn-primary px-1 py-0 rounded count">{{ ownUserItems[i].getUnlockedCount() }}</div>
+                            <div *ngIf="ownUserItems[i].stuffData.uniqueNumber" class="badge badge-primary w-100">{{ ownUserItems[i].stuffData.uniqueNumber }}</div>
+                        </button>
+                        <button *ngIf="!ownUserItems[i]" type="button" class="position-relative btn btn-secondary align-items-end detail-info has-image"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <i class="icon w-100" [ngClass]="{ 'trade-unlocked-icon': !ownUserAccepts, 'trade-locked-icon': ownUserAccepts }"></i>
+            <div class="d-flex justify-content-center align-items-center badge badge-secondary w-100 p-1 m-1">{{ ownUserNumItems }} items</div>
+            <div class="d-flex justify-content-center align-items-center badge badge-secondary w-100 p-1 m-1">{{ ownUserNumCredits }} credits</div>
+        </div>
+    </div>
+    <div class="d-flex flex-column col-6">
+        <div class="badge badge-secondary w-100 p-1 mb-1">{{ otherUserName }}</div>
+        <div class="d-flex mb-1">
+            <div class="grid-container position-relative">
+                <div class="grid-items grid-3">
+                    <div class="d-flex flex-column item-detail justify-content-center align-items-center" *ngFor="let num of indexs; let i = index;">
+                        <button *ngIf="otherUserItems[i]" type="button" class="position-relative btn btn-secondary align-items-end detail-info has-image" [ngStyle]="{ 'background-image': 'url(' + getIconUrl(otherUserItems[i]) + ')' }">
+                            <div class="position-absolute btn btn-sm btn-primary px-1 py-0 rounded count">{{ otherUserItems[i].getUnlockedCount() }}</div>
+                            <div *ngIf="otherUserItems[i].stuffData.uniqueNumber" class="badge badge-primary w-100">{{ otherUserItems[i].stuffData.uniqueNumber }}</div>
+                        </button>
+                        <button *ngIf="!otherUserItems[i]" type="button" class="position-relative btn btn-secondary align-items-end detail-info has-image"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex">
+            <i class="icon w-100" [ngClass]="{ 'trade-unlocked-icon': !otherUserAccepts, 'trade-locked-icon': otherUserAccepts }"></i>
+            <div class="d-flex justify-content-center align-items-center badge badge-secondary w-100 p-1 m-1">{{ otherUserNumItems }} items</div>
+            <div class="d-flex justify-content-center align-items-center badge badge-secondary w-100 p-1 m-1">{{ otherUserNumCredits }} credits</div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="d-flex col-12 justify-content-between">
+        <ng-container [ngSwitch]="state">
+            <button *ngSwitchCase=0 type="button" class="btn btn-secondary" [disabled]="(!ownUserNumItems && !otherUserNumItems)" (click)="progressTrade()">{{ 'inventory.trading.accept' | translate }}</button>
+            <button *ngSwitchCase=1 type="button" class="btn btn-secondary" [disabled]="(!ownUserNumItems && !otherUserNumItems)" (click)="progressTrade()">{{ (ownUserAccepts ? 'inventory.trading.modify' : 'inventory.trading.accept') | translate }}</button>
+            <button *ngSwitchCase=2 type="button" class="btn btn-secondary" disabled>{{ 'inventory.trading.countdown' | translate:'counter':timerTick }}</button>
+            <button *ngSwitchCase=3 type="button" class="btn btn-secondary" (click)="progressTrade()">{{ 'inventory.trading.confirm' | translate }}</button>
+            <button *ngSwitchCase=4 type="button" class="btn btn-secondary" disabled>{{ 'inventory.trading.info.waiting' | translate }}</button>
+            <button *ngSwitchCase=5 type="button" class="btn btn-secondary" disabled>{{ 'inventory.trading.accept' | translate }}</button>
+        </ng-container>
+        <button type="button" class="btn btn-danger" (click)="cancelTrade()">{{ 'generic.cancel' | translate }}</button>
+    </div>
+</div>
+-->
+
+<div class="takas-yap-box">
+    <div class="suan-takas-yapiliyor">
+        <div class="takas-yapiliyor-box-cizgi"><div class="takas-yapiliyor-yazi">{{ ('navigator.searchcode.title.eventcategory__5') | translate }}</div></div>
+    </div>
+    <div class="takas-bilgilendirme">		
+        <div class="t-b-padding">
+            <div class="t-b-yazi">{{ ('inventory.trading.info.add') | translate }}</div>
+            <div class="t-b-aciklama"><b>{{ ('navigator.delete.homeroom.title') | translate }}</b> {{ ('inventory.trading.info.already_open') | translate }}</div>
+        </div>		
+    </div>
+
+    <div class="sen-tarafindan-takas">
+        <div class="yaptigin-takas-yazi"><b>{{ ('inventory.trading.you') | translate }}</b> {{ ('inventory.trading.isoffering') | translate }}</div>
+        <div class="takas-edilenler">
+            <div *ngFor="let num of indexs; let i = index;" (click)="removeItem(i)">
+                <div class="takas-edilen-mobi-box" *ngIf="ownUserItems[i]" >
+                    <div class="takas-adet">x{{ ownUserItems[i].getUnlockedCount() }}</div>
+                    <div [ngStyle]="{ 'background-image': 'url(' + getIconUrl(ownUserItems[i]) + ')' }" class="mobitrade-gorunum"></div>
+                    <div *ngIf="ownUserItems[i].stuffData.uniqueNumber" class="takasltdinfo"><div class="tradeltdnumber">{{ ownUserItems[i].stuffData.uniqueNumber }}</div></div>
+                </div>
+
+                <button *ngIf="!ownUserItems[i]" type="button" class="takas-edilen-mobi-box"></button>
+            </div>
+        </div>
+        <div class="takas-mobi-bilgi-box">
+            
+            <div class="takas-secilen-mobi-onizleme">
+                <div [ngClass]="{ 'durum1': !ownUserAccepts, 'durum2': ownUserAccepts }"></div>
+            </div>
+        </div>
+        <div class="yapilan-takas-bilgileri">
+            <div class="kac-urun-koyuldu"><b>{{ ownUserNumItems }}</b> {{ 'inventory.trading.info.itemcount' }}</div>
+            <div class="kac-kredi-urun-koyuldu"><b>{{ ownUserNumCredits }}</b> {{ 'inventory.trading.info.creditvalue' }}</div>
+
+            <div [ngClass]="{ 'onaylandi-none': !ownUserAccepts, 'onaylandi': ownUserAccepts }">✓</div>
+        </div>
+    </div>
+
+    <div class="baskasi-tarafindan-takas">
+        <div class="yapilan-takas-yazi"><b>{{ otherUserName }}</b> {{ ('inventory.trading.isoffering') | translate }}</div>
+        <div class="takas-edilenler">
+            <div *ngFor="let num of indexs; let i = index;">
+                <div class="takas-edilen-mobi-box" *ngIf="otherUserItems[i]">
+                    <div class="takas-adet">x{{ otherUserItems[i].getUnlockedCount() }}</div>
+                    <div [ngStyle]="{ 'background-image': 'url(' + getIconUrl(otherUserItems[i]) + ')' }" class="mobitrade-gorunum"></div>
+                    <div *ngIf="otherUserItems[i].stuffData.uniqueNumber" class="takasltdinfo"><div class="tradeltdnumber">{{ otherUserItems[i].stuffData.uniqueNumber }}</div></div>
+                </div>
+
+
+                <button *ngIf="!otherUserItems[i]" type="button" class="takas-edilen-mobi-box"></button>
+            </div>
+        </div>
+        <div class="takas-mobi-bilgi-box">
+            <div class="takas-secilen-mobi-onizleme">
+                <div [ngClass]="{ 'durum1': !otherUserAccepts, 'durum2': otherUserAccepts }"></div>
+            </div>
+        </div>
+        <div class="karsidan-yapilan-takas-bilgileri">
+            <div class="kac-urun-koyuldu"><b>{{ otherUserNumItems }}</b> {{ 'inventory.trading.info.itemcount' }}</div>
+            <div class="kac-kredi-urun-koyuldu"><b>{{ otherUserNumCredits }}</b> {{ 'inventory.trading.info.creditvalue' }}</div>
+            
+            <div class="onaylandi" [ngClass]="{ 'onaylandi-none': !otherUserAccepts, 'onaylandi': otherUserAccepts }">✓</div>
+        </div>
+    </div>
+    <ng-container [ngSwitch]="state">
+        <div class="takas-islem-butonlar">
+
+            <button id="envbutton" *ngSwitchCase=0 type="button" class="takasi-kabul-et-buton" [disabled]="(!ownUserNumItems && !otherUserNumItems)" (click)="progressTrade()">
+                <div class="takas-buton-yazi">{{ 'inventory.trading.accept' | translate }}</div>
+            </button>
+
+            <button id="envbutton" *ngSwitchCase=1 type="button" class="takasi-degistir-buton" [disabled]="(!ownUserNumItems && !otherUserNumItems)" (click)="progressTrade()">
+                <div class="takas-buton-yazi">{{ (ownUserAccepts ? 'inventory.trading.modify' : 'inventory.trading.accept') | translate }}</div>
+            </button>
+
+            <button id="envbutton" *ngSwitchCase=2 type="button" class="takasi-degistir-buton" disabled>
+                <div class="takas-buton-yazi">{{ 'inventory.trading.countdown' | translate:'counter':timerTick }}</div>
+            </button>
+
+            <button id="envbutton" *ngSwitchCase=3 class="takasi-onayla-buton" (click)="progressTrade()">
+                <div class="takas-buton-yazi">{{ 'inventory.trading.confirm' | translate }}</div>
+            </button>
+
+            <button id="envbutton" *ngSwitchCase=4 class="takasi-onayla-buton" disabled>
+                <div class="takas-buton-yazi">{{ 'inventory.trading.info.waiting' | translate }}</div>
+            </button>
+
+            <button id="envbutton" *ngSwitchCase=5 class="takasi-onayla-buton" style="width: 100%;" disabled>
+                <div class="takas-buton-yazi">{{ 'inventory.trading.accept' | translate }}</div>
+            </button>
+
+            <button id="envbutton" type="button" class="takas-iptal-buton" (click)="cancelTrade()">
+                <div class="takas-buton-yazi">{{ 'generic.cancel' | translate }}</div>
+            </button>
+
+        </div>
+    </ng-container>
+
+</div>

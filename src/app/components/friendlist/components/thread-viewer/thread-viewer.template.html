@@ -1,0 +1,89 @@
+<!--<div class="nitro-friendlist-thread-viewer-component">
+    <div class="d-flex flex-row thread-viewer-user mb-1 justify-content-between">
+        <div class="d-flex flex-row">
+            <div class="avatar-img" nitro-avatar-image [headOnly]="1" [figure]="thread.participant.figure" [direction]="2"></div>
+            <div class="thread-viewer-user-info">
+                <b class="d-flex flex-row">{{ participant.name }}<div class="ml-2 p-1 rounded-circle align-self-center" [ngClass]="[ participant.online ? 'bg-success' : 'bg-danger' ]"></div></b>
+                <span class="d-block text-muted small text-truncate">{{ participant.motto }}</span>
+            </div>
+        </div>
+        <div class="input-group-prepend align-self-center" ngbDropdown>
+            <div class="btn-group">
+                <div class="btn btn-sm btn-dgreen align-self-center" *ngIf="(participant.online)" (click)="followParticipant()"><i class="fas fa-arrow-right"></i></div>
+                <button type="button" class="btn btn-primary btn-sm" ngbDropdownToggle>{{ relations[thread.participant.relationshipStatus] }}</button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <button class="dropdown-item small" *ngFor="let relation of relations; let i = index;" (click)="changeRelation(i)" ngbDropdownItem>{{ relation }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <perfect-scrollbar #threadScroller class="position-relative w-100 my-1" style="min-height:299px;max-height:299px;height:299px;">
+        <div class="thread-viewer-list">
+            <div *ngFor="let chat of chats" class="thread-viewer-list-item mb-1" [ngClass]="[ (chat.senderId === participant.id) ? 'thread-viewer-list-left' : 'thread-viewer-list-right' ]">
+                <div class="thread-viewer-list-item-message p-2">{{ chat.message }}</div>
+            </div>
+        </div>
+    </perfect-scrollbar>
+    <div class="thread-viewer-input">
+        <input class="thread-viewer-input form-control" type="text" maxLength="420" (keydown.enter)="onKeyDownEvent($event)" />
+    </div>
+</div>-->
+
+<div class="messenger-chat-box">
+    <div class="chat-userinfo">
+        <div class="modern-avatarimg" nitro-avatar-image [headOnly]="1" [figure]="thread.participant.figure" [direction]="2"></div>
+        <div class="userinfo-doc">
+            <p class="userinfo-name">{{ participant.name }}</p>
+            <p class="userinfo-motto">{{ participant.motto }}</p>
+        </div> 
+        <div ngbDropdown>
+            <div class="chat-user_relationship" ngbDropdownToggle>{{ relations[thread.participant.relationshipStatus] }}</div>
+            <div class="dropdown-menu" ngbDropdownMenu style="width: 124px;">
+                <button style="font-size: 13px;" class="dropdown-item small" *ngFor="let relation of relations; let i = index;" (click)="changeRelation(i)" ngbDropdownItem><div class="relationicon"></div> {{ relation }}</button>
+            </div>
+
+            <div class="chat-user_follow" *ngIf="(participant.online)" (click)="followParticipant()">
+                <i class="fas fa-caret-right i-fa-opacity" aria-hidden="true"></i>
+                <i class="fas fa-caret-right" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <p class="chat-whochat">Do not share your personal information, conversations are monitored by staff for security purposes.</p>
+    <div class="messenger-chat-main">
+        <div class="chat-main">
+            <div class="message-list" #content>
+                <div class="bot-message messagebox-maxcontent">
+                    <div class="message-sent-main">
+                        <div class="message-useravatar">
+                            <img src="assets/images/messenger/BOT.gif">
+                        </div>
+                        <div class="message-info">
+                            <p class="messagesent-username" style="color: #1e7295;">{{ ('quests.VIP_Parties_2.click_bouncer.name') | translate }}:</p>
+                            <p class="messagesent-article">Sharing passwords or personal information online is dangerous. Please do not rely on people who ask for Credit Card information or ask for family members information, and report it to the staff. For your security, we can monitor these conversations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pm">
+                    <div class="pm-hr">
+                        <div class="pm-text">{{ participant.name }} + {{ ('toolbar.icon.label.memenu') | translate }}</div>
+                    </div>
+                </div>
+                <div #messages *ngFor="let chat of chats" class="mchat-left messagebox-maxcontent" [ngClass]="[ (chat.senderId === participant.id) ? 'mchat-left' : 'mchat-right' ]">
+                    <div class="message-sent-main">
+                        <div class="message-useravatar">
+                            <div class="chat-msgbox-avatarimage" nitro-avatar-image [headOnly]="1" [figure]="thread.participant.figure" [direction]="3"></div>
+                        </div>
+                        <div class="message-info">
+                            <p class="messagesent-username sendmessage-your">{{ participant.name }}:</p>
+                            <p class="messagesent-username sendmessage-me">{{ ('toolbar.icon.label.memenu') | translate }}</p>
+                            <p class="messagesent-article">{{ chat.message }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-write_message">
+            <input class="chat-write" placeholder="write message..." type="text" maxLength="420" (keydown.enter)="onKeyDownEvent($event)">
+        </div>
+    </div>
+</div>

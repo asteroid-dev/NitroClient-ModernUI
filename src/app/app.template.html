@@ -1,0 +1,22 @@
+<div id="nitro">
+    <div id="habbo-loading" *ngIf="!isReady">
+        <div class="modern-loader">
+            <div class="loader-main">
+                <div class="animation-habbologo">
+                    <div class="modernlogo"></div>
+                </div>
+                <div class="loading-box">
+                    <p *ngIf="message && message.length" class="loading-text">{{ message }}</p>
+                    <div class="loading-progress" style="width: 74%;" *ngIf="!isError"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobil-loader" *ngIf="!isReady">
+		<div class="mobil-loader-main">
+            <p *ngIf="message && message.length" class="m-loader-text">{{ message }}</p>
+        </div>
+	</div>
+    <nitro-main-component *ngIf="isReady && !isError"></nitro-main-component>
+</div>

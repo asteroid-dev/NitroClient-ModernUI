@@ -1,0 +1,17 @@
+<div #activeView *ngIf="visible" class="nitro-widget-highscore"
+  [ngStyle]="{ 'top': (topValue + 'px'), 'left': (leftValue + 'px') }">
+  <div *ngIf="!toggled">
+    <div class="drag-handler hscore-hood">{{ title }}</div>
+    <div class="hscore-head">
+      <div class="hs-users-main">{{ ('high.score.display.users.header') | translate }}</div>
+      <div class="hs-score-main">{{ ('high.score.display.score.header') | translate }}</div>
+    </div>
+    <perfect-scrollbar style="min-width: 305px;height: 220px;line-height: 18px;">
+      <div class="score-list" *ngFor="let entry of entries; let i = index">
+        <div class="score-username" *ngFor="let user of entry.users">{{ i + 1 }}- {{ user }}</div>
+        <div class="score-point">{{ entry.score }}</div>
+      </div>
+    </perfect-scrollbar>
+    <div class="hscore-bottomtext">{{ ('high.score.display.congratulations.footer') | translate }}</div>
+  </div>
+</div>

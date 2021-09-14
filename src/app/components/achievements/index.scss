@@ -1,0 +1,125 @@
+.nitro-achievements {
+    width: $achievements-width;
+    position: absolute;
+
+    .grid-container {
+
+        .grid-items {
+
+            .item-detail {
+                height: 50px;
+                max-height: 50px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .detail-info {
+                    
+                    .count {
+                        top: 0.16rem;
+                        right: 3px;
+                        font-size: 10px;
+                    }
+
+                    .achievement-progress {
+                        position: absolute;
+                        bottom: 8.5px;
+                        text-align: center;
+                        font-size: 12px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        &.achievement-category-container {
+
+            .grid-items {
+                margin-top: -7px;
+
+                .item-detail {
+                    height: 80px;
+                    max-height: 80px;
+                    width: calc(1 / 3 * 100% - (1 - 1 / 3) * 7px);
+                    margin: 7px 7px 0 0;
+                }
+            }
+
+        }
+    }
+
+    //     &.achievement-category-container {
+
+    //         .grid-items {
+    //             margin-top: -7px;
+        
+    //             .item-detail {
+    //                 height: 80px;
+    //                 max-height: 80px;
+    //                 width: calc(1 / 3 * 100% - (1 - 1 / 3) * 7px);
+    //                 margin: 7px 7px 0 0;
+    //             }
+    //         }
+    //     }
+    // }
+
+    .achievement-category-badge-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 52px);
+        grid-row-gap: 5px;
+        grid-column-gap: 5px;
+    }
+    .bobbaitalia {z-index: 1;}
+    .badge_preview {
+        width:100px;
+        height:100px;
+
+        img {
+            transform: scale(2);
+        }
+    }
+    
+    .greyscale {
+        filter: grayscale(1);
+    }
+
+    .achievement-progress-bar {
+
+        .achievement-progress-bar-content {
+            position: absolute;
+            top:0;
+            bottom:0;
+            margin:auto;
+            left:0;
+            right:0;
+        }
+
+        .achievement-progress-bar-inner {
+            transition: width 0.7s;
+            max-width: 100%;
+        }
+    }
+
+    .achievement-unseen {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 10px;
+    }
+}
+
+.basari-secilmedi {
+    width: 410px;
+    height: 130px;
+    background: #dddea4;
+    position: absolute;
+    top: 70px;
+    color: black;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 44px 60px;
+    font-size: 14px;
+    text-align: center;
+}

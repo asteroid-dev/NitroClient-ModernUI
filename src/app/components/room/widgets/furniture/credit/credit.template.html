@@ -1,0 +1,23 @@
+
+
+<div *ngIf="visible" [bringToTop] [draggable] class="habbo-exchange nitro-furniture-credit">
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ ('catalog.redeem.dialog.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="exchange-body">
+        <div class="exchange-icon"></div>
+        <div class="exchange-title">{{ ('catalog.redeem.dialog.button.exchange') | translate }}</div>
+        <div class="exchange-description">{{ ('widgets.furniture.credit.redeem.value') | translate:'value':value }}</div>
+        <div class="btn-group w-100">
+            <div class="btn-group w-100">
+                <div class="exchange-close" (click)="hide()">
+                    <div class="h-k-yazi">{{ ('alert.close.button') | translate }}</div>
+                </div>
+                <div class="exchange-okay" (click)="sendRedeem()">
+                    <div class="h-k-yazi">{{ ('direct.club.buy.success.ok.button') | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

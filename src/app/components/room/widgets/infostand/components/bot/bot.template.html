@@ -1,0 +1,55 @@
+<!--<div class="infostand d-flex flex-column btn btn-primary rounded p-0 nohover">
+    <div class="d-flex align-items-center justify-content-between pt-3 px-3 w-100">
+        {{ userData.name }}
+        <button type="button" class="close" (click)="hide()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="d-flex flex-column p-3 w-100">
+        <div class="d-flex flex-nowrap">
+            <div class="body-image bot">
+                <div nitro-avatar-image [figure]="userData.figure" [direction]="4"></div>
+            </div>
+            <div class="flex-grow-1">
+                <div class="badge-container">
+                    <div *ngFor="let badge of userData.badges" class="badge-item">
+                        <nitro-badge *ngIf="(badge !== '')" [badge]="badge"></nitro-badge>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-2">
+            <div *ngIf="(userData.motto !== '')" class="motto-container">
+                <span class="motto">{{ userData.motto }}</span>
+            </div>
+        </div>
+        <div class="d-flex flex-column mt-2">
+            <p *ngIf="(userData.carryItem > 0)" class="badge badge-secondary mb-0">{{ ('infostand.text.handitem') | translate }}</p>
+        </div>
+    </div>
+</div>
+-->
+
+<div id="oldhabbo_motto" class="mnone">
+    <div class="motto-header">
+        <div class="motto-username">{{ userData.name }}</div>
+        <i class="fas fa-times" (click)="hide()"></i>
+    </div>
+    <div class="motto-hr"></div>
+    <div class="motto-avatar-view">
+        <div class="bot">
+            <div nitro-avatar-image [figure]="userData.figure" [direction]="4" style="left: -12px;top: -10px;position: relative;"></div>
+        </div>
+    </div>
+    <div class="motto-badges-section-bot" style="padding: 45px 34px;">
+        <div class="motto-badge-box" *ngFor="let badge of userData.badges">
+            <nitro-badge *ngIf="(badge !== '')" [badge]="badge"></nitro-badge>
+        </div>
+    </div>
+    <div class="motto-hr"></div>
+    <div *ngIf="(userData.motto !== '')" class="mottotxtbox" style="position: relative;float: left;">
+        <span class="usermotto">{{ userData.motto }}</span>
+    </div>
+    <div class="motto-hr"></div>
+    <div class="motto-success-score">
+        <p *ngIf="(userData.carryItem > 0)" class="user-score">{{ carryText }}</p>
+    </div>
+</div>

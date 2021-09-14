@@ -1,0 +1,196 @@
+
+
+.unique {
+    background: url("^assets/images/unique/grid-bg.png") center top 7px no-repeat, #cdd3d9 !important;
+    
+    &:before {
+        position: absolute;
+        content: ' ';
+        width: 36px;
+        height: 36px;
+        background: url("^assets/images/unique/grid-bg-glass.png") center no-repeat;
+        z-index: 2;
+        margin-left: 7px;
+        margin-top: 7px;
+    }
+    
+
+    &.sold-out:before {
+        background: url("^assets/images/unique/grid-bg-sold-out.png") center no-repeat, url("^assets/images/unique/grid-bg-glass.png") center no-repeat;
+    }
+}
+
+@media only screen and (max-width: 850px), (max-height: 450px) {
+
+    .unique {
+        background: url("^assets/images/unique/grid-bg.png") center top 5px no-repeat, #617d95 !important;
+        
+        &:before {
+            position: absolute;
+            content: ' ';
+            width: 36px;
+            height: 36px;
+            background: url("^assets/images/unique/grid-bg-glass.png") center no-repeat;
+            z-index: 2;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+        
+    
+        &.sold-out:before {
+            background: url("^assets/images/unique/grid-bg-sold-out.png") center no-repeat, url("^assets/images/unique/grid-bg-glass.png") center no-repeat;
+        }
+    }
+    .unique-counter {
+        margin: 32px 0px 0px 6px !important;
+    }
+    .unique-counter-complete {
+        top: 68px !important;
+        left: 40px !important;
+        width: 170px !important;
+        height: 29px !important;
+    }
+
+}
+
+.unique-counter {
+    width: 36px;
+    height: 9px;
+    text-align: center;
+    font-size: 7px;
+    background: url("^assets/images/unique/grid-count-bg.png") center no-repeat;
+    margin: 34px 7px 0px 7px;
+}
+
+#mobilya-onizleme-box {
+    .unique-counter {
+        width: 36px;
+        height: 9px;
+        text-align: center;
+        font-size: 7px;
+        background: url("^assets/images/unique/grid-count-bg.png") center no-repeat;
+        margin: -31px 7px 0px 7px;
+        position: absolute;
+    }
+
+    .mobi-ufak-icon {
+        position: absolute;
+    }
+}
+
+.unique-counter-complete {
+    top: 40px;
+    left: 5px;
+    width: 170px;
+    height: 29px;
+    background: url("^assets/images/unique/catalog-info-amount-bg.png");
+    position: absolute !important;
+    z-index: 10 !important;
+    
+    div {
+        position: relative;
+        padding-left: 45px;
+        padding-right: 20px;
+        font-size: 9px;
+        color: #000;
+        top: 3px;
+
+        div {
+            position: absolute;
+            right: 0px;
+            top: -1px;
+        }
+    }
+}
+
+.unique-counter-compact {
+    position: absolute;
+    right: 16px;
+    width: 34px;
+    height: 37px;
+    font-size: 7px;
+    text-align: center;
+    background: url("^assets/images/unique/inventory-info-amount-bg.png");
+
+    div:first-child {
+        margin-top: 18px;
+    }
+}
+
+.unique-sold-out-blocker {
+    width: 364px;
+    height: 30px;
+    background: url("^assets/images/unique/catalog-info-sold-out.png");
+
+    div {
+        float: right;
+        width: 140px;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-right: 17px;
+        font-size: 14px;
+        color: #000;
+    }
+}
+
+.unique-number {
+    display: inline-block;
+    outline: 0;
+    height: 5px;
+    margin-right: 1px;
+
+    &:last-child {
+        margin-right: 0px;
+    }
+
+    &.n-0 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -1px 0px no-repeat;
+    }
+
+    &.n-1 {
+        width: 2px;
+        background: url('^assets/images/unique/numbers.png') -6px 0px no-repeat;
+    }
+
+    &.n-2 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -9px 0px no-repeat;
+    }
+
+    &.n-3 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -14px 0px no-repeat;
+    }
+
+    &.n-4 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -19px 0px no-repeat;
+    }
+
+    &.n-5 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -24px 0px no-repeat;
+    }
+
+    &.n-6 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -29px 0px no-repeat;
+    }
+
+    &.n-7 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -34px 0px no-repeat;
+    }
+
+    &.n-8 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -39px 0px no-repeat;
+    }
+
+    &.n-9 {
+        width: 4px;
+        background: url('^assets/images/unique/numbers.png') -44px 0px no-repeat;
+    }
+}

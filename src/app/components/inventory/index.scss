@@ -1,0 +1,902 @@
+.nitro-inventory {
+    position: absolute;
+    width: $inventory-width;
+    max-width: $inventory-width;
+
+    .grid-container {
+        .grid-items {
+            .item-detail {
+                height: 50px;
+                max-height: 50px;
+
+                .count {
+                    top: 0.16rem;
+                    right: 3px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .notification-count {
+        font-size: 10px;
+    }
+}
+
+.onaylandi-none {
+    display: none;
+}
+
+#envbutton {
+    border: solid 0px #fff0;
+    color: #fff;
+    padding: 0px;
+    outline: 0 !important;
+    width: auto;
+}
+
+.durum1 {
+    background-image: url(/assets/images/inventory/durum1.png);
+    width: 29px;
+    height: 43px;
+    z-index: 1111;
+    position: absolute;
+    float: left;
+}
+
+.durum2 {
+    background-image: url(/assets/images/inventory/durum2.png);
+    width: 36px;
+    height: 43px;
+    z-index: 1111;
+    position: absolute;
+    float: left;
+}
+
+.takas-adet {
+    height: 13px;
+    background: #4caf50;
+    font-size: 9px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 3px;
+    width: 87%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    padding: 1px 3px;
+    z-index: 11;
+    text-align: center;
+}
+
+.takasltdinfo {
+    background-image: url("^assets/images/unique/grid-bg.png") !important;
+    background-position: center top 0px !important;
+    background-repeat: no-repeat !important;
+    width: 36px;
+    height: 45px;
+    font-size: 7px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    bottom: 0;
+    margin: -5px 5px;
+    position: absolute;
+    padding-top: 26px;
+}
+
+.mobitrade-gorunum {
+    width: 45px;
+    height: 46px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+}
+
+.tradeltdnumber {
+    background-image: url("^assets/images/unique/grid-count-bg.png") !important;
+    background-position: center top 1px !important;
+    background-repeat: no-repeat !important;
+    width: 36px;
+    height: 9px;
+    font-size: 7px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    z-index: 111111;
+    color: black;
+}
+
+// Mobile Inventory
+.minv {
+    display: none;
+}
+.minv-main_box {
+    display: none;
+}
+@media only screen and (max-width: 850px), (max-height: 450px) {
+    #envanterhtml {
+        display: none;
+    }
+    #envanter-mobilya-box {
+        display: none;
+    }
+    #envanter-mobi-icerik-box {
+        display: none;
+    }
+    #envanter-rozetler-icerik-box {
+        display: none;
+    }
+    .minv-main_box {
+        display: block;
+        width: 69.5%;
+        height: 100%;
+        float: left;
+    }
+    .minv-furniture-component {
+        width: 100%;
+        height: 100%;
+    }
+    .minv-title {
+        position: absolute;
+        font-size: 17px;
+        font-weight: bold;
+        font-family: "Ubuntu";
+        text-align: center;
+        width: 100%;
+    }
+    .m-roomview {
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .minv {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            140deg,
+            #264157 0%,
+            #255276f9 50%,
+            #225680f7 75%
+        );
+        position: absolute;
+        z-index: 100000 !important;
+        display: block !important;
+        .minv-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .minv-left {
+            width: 10vw;
+            height: 80vh;
+            background: #ffffff69;
+            box-shadow: 2px 0px 20px 0px #0000003d;
+            padding: 5px;
+            position: relative;
+        }
+        .minv-main {
+            width: 90vw;
+            height: 80vh;
+            padding: 7px 7px 0px 7px;
+        }
+        .mright-p {
+            position: absolute !important;
+            top: 0;
+            right: 0;
+        }
+        .minv-right {
+            width: 27vw;
+            height: 80vh;
+            padding: 41px 5px 5px 5px;
+            position: relative;
+            background: #ffffff69;
+            box-shadow: 2px 0px 20px 0px #0000003d;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -7px;
+                left: 35px;
+                right: 0;
+                margin: auto;
+                height: 10px;
+                width: 10px;
+                transform: rotate(45deg);
+                border-color: #ff000000 #ffffff72 #ffffff72 #ffa50000;
+                border-style: solid;
+                border-width: 7px;
+            }
+        }
+        .minv-close {
+            width: 34px;
+            height: 30px;
+            box-sizing: content-box;
+            border-radius: 5px;
+            background: #f72718;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            &:after {
+                background: #d73d30;
+            }
+            .closeshadow {
+                width: 75%;
+                height: 3px;
+                background: #ff6e6e;
+                position: absolute;
+                top: 2px;
+                border-radius: 20px;
+            }
+        }
+        .minv-menu {
+            margin-top: 5px;
+        }
+        .minv-menu-box {
+            width: 100%;
+            height: 40px;
+            background: #ffffff7a;
+            border-top: solid 1px #0000005c;
+            border-bottom: solid 1px #0000005c;
+            margin-bottom: -1px;
+            cursor: pointer;
+            box-shadow: 0px 0px 1px 1px #ffffff2e;
+            overflow: hidden;
+            position: relative;
+            margin-right: 1px;
+            color: #000000a8;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: "Ubuntu";
+            padding: 7px;
+            background-repeat: no-repeat;
+            background-position: center;
+            &:nth-child(1) {
+                background-image: url("^assets/images/inventory/icon_2.png");
+            }
+            &:nth-child(2) {
+                background-image: url("^assets/images/inventory/icon_8.png");
+            }
+            &:nth-child(3) {
+                background-image: url("^assets/images/inventory/icon_224.png");
+            }
+            &:nth-child(4) {
+                background-image: url("^assets/images/inventory/icon_65.png");
+            }
+        }
+        .minv-active {
+            box-shadow: #ffffffa3 0px 3px 0px 0px inset !important;
+            background-color: rgba(245, 245, 245, 0.86) !important;
+        }
+        .minv-items-search {
+            height: 35px;
+            width: 100%;
+            position: relative;
+            .minv-searchbox {
+                width: 75%;
+                height: 30px;
+                font-size: 14px;
+                color: #757575;
+                background: #ffffffeb;
+                border: solid 0px #00000075;
+                border-radius: 3px;
+                padding: 10px;
+                outline: 0;
+                font-family: "Arial";
+                filter: drop-shadow(0px 0px 0px #00000017);
+                z-index: 1;
+                box-shadow: #ffffff5e 0px 5px 0px 0px inset;
+                position: absolute;
+                left: 0;
+            }
+            .minv-selectbox {
+                width: 24%;
+                height: 30px;
+                font-size: 13px;
+                color: #ffffffeb;
+                font-weight: bold;
+                border-radius: 3px;
+                padding: 5px;
+                outline: 0;
+                font-family: "Arial";
+                filter: drop-shadow(0px 0px 0px #00000017);
+                z-index: 1;
+                box-shadow: #ffffff12 0px 5px 0px 0px inset;
+                position: absolute;
+                right: 0;
+                background: #ffffff45;
+                border: solid 0px #000;
+            }
+        }
+        .minv-items-main::-webkit-scrollbar {
+            width: 4px;
+        }
+        .minv-items-main::-webkit-scrollbar-track {
+            background: #ffffff24;
+            border-radius: 5px;
+        }
+        .minv-items-main::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background: #ffffff80;
+        }
+        .minv-items-main {
+            width: 100%;
+            height: 88%;
+            list-style: none;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            #minv-items-box {
+                width: 45px;
+                height: 45px;
+                background: #ffffff45;
+                float: left;
+                margin-right: 4px;
+                margin-bottom: 4px;
+                border-radius: 4px;
+                position: relative;
+                overflow: hidden;
+            }
+            .minv-items-icon {
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .minv-items-piece {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                font-size: 10px;
+                background: #00000075;
+                height: 15px;
+                font-weight: bold;
+                color: white;
+                padding: 0px 4px;
+                border-radius: 5px 0px 0px 0px;
+            }
+            .minv-items-box-active {
+                background-color: #ffffffc2 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+            .minv_new {
+                background-color: #28a745b0 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+        }
+
+        .minv-pets-main::-webkit-scrollbar {
+            width: 4px;
+        }
+        .minv-pets-main::-webkit-scrollbar-track {
+            background: #ffffff24;
+            border-radius: 5px;
+        }
+        .minv-pets-main::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background: #ffffff80;
+        }
+        .minv-pets-main {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            #minv-items-box {
+                width: 45px;
+                height: 45px;
+                background: #ffffff45;
+                float: left;
+                margin-right: 4px;
+                margin-bottom: 4px;
+                border-radius: 4px;
+                position: relative;
+                overflow: hidden;
+            }
+            .minv-items-icon {
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .minv-items-piece {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                font-size: 10px;
+                background: #00000075;
+                height: 15px;
+                font-weight: bold;
+                color: white;
+                padding: 0px 4px;
+                border-radius: 5px 0px 0px 0px;
+            }
+            .minv-items-box-active {
+                background-color: #ffffffc2 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+            .minv_new {
+                background-color: #28a745b0 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+        }
+
+        .minv-bots-main::-webkit-scrollbar {
+            width: 4px;
+        }
+        .minv-bots-main::-webkit-scrollbar-track {
+            background: #ffffff24;
+            border-radius: 5px;
+        }
+        .minv-bots-main::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background: #ffffff80;
+        }
+        .minv-bots-main {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            #minv-items-box {
+                width: 45px;
+                height: 45px;
+                background: #ffffff45;
+                float: left;
+                margin-right: 4px;
+                margin-bottom: 4px;
+                border-radius: 4px;
+                position: relative;
+                overflow: hidden;
+            }
+            .minv-items-icon {
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .minv-items-piece {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                font-size: 10px;
+                background: #00000075;
+                height: 15px;
+                font-weight: bold;
+                color: white;
+                padding: 0px 4px;
+                border-radius: 5px 0px 0px 0px;
+            }
+            .minv-items-box-active {
+                background-color: #ffffffc2 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+            .minv_new {
+                background-color: #28a745b0 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+        }
+
+        .minv-badges-main::-webkit-scrollbar {
+            width: 4px;
+        }
+        .minv-badges-main::-webkit-scrollbar-track {
+            background: #ffffff24;
+            border-radius: 5px;
+        }
+        .minv-badges-main::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background: #ffffff80;
+        }
+        .minv-badges-main {
+            width: 100%;
+            height: 76%;
+            list-style: none;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            #minv-items-box {
+                width: 45px;
+                height: 45px;
+                background: #ffffff45;
+                float: left;
+                margin-right: 4px;
+                margin-bottom: 4px;
+                border-radius: 4px;
+                position: relative;
+                overflow: hidden;
+            }
+            .minv-items-icon {
+                width: 100%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .minv-items-piece {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                font-size: 10px;
+                background: #00000075;
+                height: 15px;
+                font-weight: bold;
+                color: white;
+                padding: 0px 4px;
+                border-radius: 5px 0px 0px 0px;
+            }
+            .minv-items-box-active {
+                background-color: #ffffffc2 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+            .minv_new {
+                background-color: #28a745b0 !important;
+                box-shadow: rgb(0 0 0 / 4%) 3px 3px 0px 0px !important;
+            }
+        }
+
+        .minv-badges-info {
+            background: #ffffff24;
+            width: 100%;
+            height: 20%;
+            margin-top: 2%;
+            overflow: hidden;
+            border-radius: 5px;
+            padding: 1.2%;
+        }
+
+        .minv-badges-selected {
+            width: 45px;
+            height: 100%;
+            float: left;
+            background: #ffffff38;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .minv-badges-selected_info {
+            width: 60%;
+            height: 100%;
+            float: left;
+            font-family: "Ubuntu";
+        }
+
+        .minv-badges-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .minv-badges-description {
+            font-size: 14px;
+            font-weight: 500;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .minv-badges-button-main {
+            float: right;
+            width: auto;
+            height: 100%;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #minv-badges-button {
+            background: #ffffff38;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: "Ubuntu";
+            color: #133f62;
+        }
+
+        .newmobi-alert {
+            float: right;
+            font-family: system-ui;
+            font-weight: bold;
+            color: #ffffff;
+            padding: 1px 2.5px 1px 2.5px;
+            font-size: 9px;
+            background: #ca1818;
+            border-radius: 3px;
+            margin-left: 5px;
+            text-transform: uppercase;
+        }
+        .inv-items-view {
+            position: absolute;
+        }
+        .minv-items-name {
+            width: auto;
+            height: auto;
+            margin-top: 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            line-height: 17px;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: "Ubuntu";
+            margin: 5px 0px;
+            color: #ffffffe8;
+            padding: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-shadow: inset 20px 0px 20px 0px #00000017;
+        }
+        .minv-roomplace {
+            width: 100%;
+            height: 35px;
+            outline: 0 !important;
+            border: solid 0;
+            font-family: "Ubuntu";
+            font-weight: bold;
+            font-size: 15px;
+            padding: 3px 3px 3px;
+            text-align: center;
+            border-radius: 5px;
+            background: #009c2ef0;
+            border-top: solid 4px #0abd1ef0;
+            border-bottom: solid 4px #06872cf0;
+            color: white;
+        }
+        #minv-boxnull {
+            width: 88vw;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0px 100px;
+            text-align: center;
+        }
+        .minv-null-title {
+            font-size: 30px;
+            font-family: "Ubuntu";
+            font-weight: bold;
+            line-height: 35px;
+            padding-bottom: 10px;
+        }
+        .minv-null-desc {
+            font-size: 15px;
+            font-family: "Ubuntu";
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+        .minv-badges-being_used {
+            width: 100%;
+            background: #00000012;
+            height: auto;
+            float: left;
+            border-radius: 5px;
+            padding: 8px 8px 4px 8px;
+        }
+        .minv-items-box {
+            float: left;
+        }
+        .minv-badges-box-active {
+            background-color: #ffffffc2 !important;
+        }
+        .minv-badges-box {
+            width: 45px;
+            height: 45px;
+            background: #ffffff45;
+            float: left;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        .minv-badges-box:nth-child(4) {
+            margin-right: 0px;
+        }
+        .minv-badges-being_used-text {
+            width: 100%;
+            background: #00000021;
+            height: auto;
+            float: left;
+            border-radius: 5px;
+            padding: 4px 8px;
+            font-family: "Ubuntu";
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 815px), (max-height: 375px) {
+    .minv-left {
+        height: 79vh !important;
+        &:after {
+            content: "";
+            left: 130px !important;
+        }
+    }
+    .minv-right {
+        height: 79vh !important;
+    }
+    .minv-main {
+        height: 79vh !important;
+    }
+    .minv-items-main {
+        height: 89%;
+    }
+}
+
+@media only screen and (max-width: 736px), (max-height: 415px) {
+    .minv-left {
+        height: 80vh !important;
+        &:after {
+            content: "";
+            left: 130px !important;
+        }
+    }
+    .minv-right {
+        height: 80vh !important;
+    }
+    .minv-main {
+        height: 80vh !important;
+    }
+}
+
+@media only screen and (max-width: 667px), (max-height: 375px) {
+    .minv-left {
+        height: 78vh !important;
+        &:after {
+            content: "";
+            left: 135px !important;
+        }
+    }
+    .minv-right {
+        height: 78vh !important;
+    }
+    .minv-main {
+        height: 78vh !important;
+    }
+    .minv-items-main {
+        height: 87%;
+    }
+}
+
+.offer-marketplace {
+    width: 310px;
+    height: auto;
+    background-color: #dfdfdf;
+    position: absolute;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px #000000;
+    .offer-marketplace {
+        width: 310px;
+        height: auto;
+        background-color: #dfdfdf;
+        position: absolute;
+        box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+        filter: drop-shadow(0px 0px 10px #00000057);
+        -webkit-user-select: none;
+        user-select: none;
+        border-radius: 5px;
+        overflow: hidden;
+        border: solid 2px #000000;
+    }
+    .om-main {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+    .om-furni-information {
+        width: 100%;
+        height: 70px;
+        box-sizing: border-box;
+        display: flex;
+    }
+    .product-preview {
+        width: 70px;
+        height: 70px;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+        filter: drop-shadow(3px 3px 4px #00000012);
+        overflow: hidden;
+    }
+    .omfn {
+        font-weight: bold;
+        font-size: 14px;
+        color: #000000c7;
+        width: 208px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .om-furni-name-desc {
+        padding-left: 10px;
+    }
+    .omfd {
+        font-weight: bold;
+        font-size: 13px;
+        color: #000000c7;
+        width: 100%;
+        line-height: 16px;
+        max-height: 48px;
+        overflow: hidden;
+    }
+    .om-furni-description {
+        font-weight: bold;
+        font-size: 13px;
+        color: #000000c7;
+        width: 100%;
+        line-height: 16px;
+        margin: 10px 0px 5px 0px;
+    }
+    .om-price-main {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .om-price {
+        width: 30% !important;
+        height: 35px !important;
+        font-size: 14px !important;
+        color: #757575 !important;
+        background: #ffffffeb !important;
+        border: solid 0px #00000075 !important;
+        border-radius: 3px !important;
+        padding: 10px !important;
+        box-shadow: inset 0px 5px 0px 0px #f5f5f5 !important;
+        outline: 0 !important;
+        font-family: "Arial" !important;
+        filter: drop-shadow(3px 3px 2px #00000017) !important;
+    }
+    .om-price-text {
+        font-weight: bold;
+        font-size: 14px;
+        color: #000000c7;
+        padding-right: 10px;
+    }
+    .om-commissions-desc {
+        font-weight: bold;
+        font-size: 13px;
+        color: #000000c7;
+        width: 100%;
+        line-height: 16px;
+        margin: 10px 0px 5px 0px;
+    }
+    .om-sales-info {
+        background: #ffffff91;
+        color: #313131;
+        font-weight: bold;
+        font-size: 13px;
+        width: 100%;
+        height: auto;
+        line-height: 16px;
+        padding: 5px 5px 3px 5px;
+        border-radius: 5px;
+        filter: drop-shadow(3px 3px 4px #00000012);
+        transition: 0.5s;
+        margin-bottom: 10px;
+    }
+    .om-success {
+        background: #4caf50 !important;
+        color: white !important;
+    }
+}

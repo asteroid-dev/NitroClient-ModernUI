@@ -1,0 +1,56 @@
+<div *ngIf="visible" class="mobilenav">
+    <div class="mnav-container">
+        <div class="mnav-left">
+            <div class="mnav-header" (click)="openRoomCreator()">
+                <p class="mnav-hood">{{ ('navigator.createroom.create') | translate }}</p>
+            </div>
+            <div nitro-navigator-search-component></div>
+            <div class="mnav-menu">
+                <div *ngFor="let context of topLevelContexts" class="mnav-menu_box" [ngClass]="{ 'mnav-menu_active': (topLevelContext === context) }" (click)="setCurrentContext(context)">
+                    <div class="mnav-opentab"></div>{{ ('navigator.toplevelview.' + context.code) | translate }}
+                </div>
+            </div>
+        </div>
+        <div class="mnav-right">
+            <div class="mnav-roomlist">
+                <div *ngFor="let result of lastSearchResults" [result]="result" nitro-navigator-search-result-component></div>
+            </div>
+        </div>
+        <div class="mnav-right-close">
+            <div class="mnav-close" (click)="hide()"><div class="closeshadow"></div><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="visible" [bringToTop] [draggable] dragHandle=".modernnav-header" class="modernnav">
+    <div class="modernnav-header">
+        <div class="modernnav-hood">{{ (isLoading ? 'navigator.title.is.busy' : 'navigator.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="modernnav-menu">
+        <div class="modernnav-menuflex">
+            <div *ngFor="let context of topLevelContexts" class="modern-menu-box" [ngClass]="{ 'modernmenu-active': (topLevelContext === context) }" (click)="setCurrentContext(context)">
+                <div class="modern-menuhr"></div>{{ ('navigator.toplevelview.' + context.code) | translate }}
+            </div>
+
+        </div>
+    </div>
+    <div class="modernnav-body">
+        <div nitro-navigator-search-component></div>
+        <div class="modernnav-roomlist">
+            <div *ngFor="let result of lastSearchResults" [result]="result" nitro-navigator-search-result-component></div>
+        </div>
+    </div>
+    <div class="room-option-nav">
+        <div class="navigator-buttonbox" (click)="openRoomCreator()">
+            <div class="nav-createroom-button">
+                <div class="createroom-ico"></div>
+                <p class="navmenu-text">{{ ('navigator.createroom.create') | translate }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<nitro-navigator-room-info-component *ngIf="roomInfoShowing"></nitro-navigator-room-info-component>
+<nitro-navigator-roomsettings-component></nitro-navigator-roomsettings-component>

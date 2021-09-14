@@ -1,0 +1,28 @@
+<div class="catalog-marketplace-own-items">
+    <div class="mo-toptext">{{ topText }}</div>
+    <div class="redeem-item">
+        <div class="mo-itemscount">{{ statusText }} </div>
+        <button *ngIf="redeemButtonActive" type="button" class="get-credits" (click)="redeemCredits()">{{ 'catalog.marketplace.offer.redeem' | translate }}</button>
+    </div>
+    <div *ngIf="hasOwnOffersOnMarketplace" class="own-items-scroll">
+        <div class="owl-items-main" *ngFor="let offer of ownOffers">
+            <div class="d-flex flex-row mb-1">
+                <div class="position-relative align-self-center align-items-end mr-2 flex-shrink-0 owl-item-furni-view" [ngClass]="{'unique': offer.isUniqueLimitedItem}">
+                    <div class="position-absolute w-100 h-100" style="background-repeat: no-repeat;background-position: center;" [ngStyle]="{ 'background-image': 'url(' + imageUrlOffer(offer) + ')' }"></div>
+                    <div *ngIf="offer.isUniqueLimitedItem" class="position-absolute unique-counter" style="bottom:0px;" [innerHtml]="offer.stuffData.uniqueSeries | uniqueNumber"></div>
+                </div>
+                <div class="align-self-center">
+                    <div class="owl-item-name">{{ getMarketplaceOfferTitle(offer) }}</div>
+                    <div class="owl-item-price">{{ getMarketplacePrice(offer) }}</div>
+                </div>
+            </div>
+            <div class="owl-item-info-main"><p class="item-desc-mp">{{ getMarketplaceOfferDescription(offer) }}</p></div>
+            <div class="owl-items-bottom">
+                <div *ngIf="offerIsOnGoing(offer)" class="item-time">{{ offerTime(offer) }}</div>
+                <div *ngIf="offerIsExpired(offer)" class="item-sold">{{ offerExpiredText(offer) }}</div>
+                <button *ngIf="canTakeBack(offer)" (click)="takeBack(offer)" class="take-back">{{ 'catalog.marketplace.offer.pick' | translate }}</button>
+            </div>
+            <div *ngIf="offerIsSold(offer)" class="take-back">{{ offerSoldText(offer) }}</div>                
+        </div>
+    </div>
+</div>

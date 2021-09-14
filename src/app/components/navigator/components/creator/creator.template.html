@@ -1,0 +1,89 @@
+<div class="mobile-rcreate">
+    <div class="mobile-create_main1">
+        <div class="roomcreate-icon"></div>
+        <p class="roomcreate-select">{{ ('navigator.createroom.chooselayoutcaption') | translate }}</p>
+    </div>
+    <div class="mobile-create_main2">
+        <div class="rc-maxcontent">
+            <div *ngFor="let layout of layouts" (click)="setRoomLayout(layout.name)" class="roomcreate_scroll">
+                <button class="roomcreate_layout"
+                    [ngClass]="{ 'roomcreate_layout_active': (roomLayoutControl.value === layout.name) }"
+                    [ngStyle]="{ 'background-image': 'url(' + getRoomLayoutImageUrl(layout.name) + ')' }">
+                    <div class="roomcreate_karo_info">{{ layout.tileSize }} {{ ('navigator.createroom.tilesize') |
+                        translate }}</div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-create_main3">
+        <form [formGroup]="form">
+            <input class="mobile_rc_roomname" formControlName="roomName" placeholder="{{ ('navigator.createroom.roomnameinfo') | translate }}">
+            <select class="mobile_rc_category" formControlName="roomCategory">
+                <option *ngFor="let category of categories" [value]="category.id">{{ (category.name) | translate}}</option>
+            </select>
+        </form>
+    </div>
+    <div class="mobile-create_main4">
+        <button class="roomcreate_yes-button" [disabled]="form.pristine || form.invalid" (click)="submit()">{{ ('navigator.createroom.create') | translate }}</button>
+        <button class="roomcreate_no-button" (click)="hide()">{{ ('generic.cancel') | translate }}</button>
+    </div>
+</div>
+
+<div class="rcreate-flex">
+    <div id="odaOlustur">
+        <div id="odaOlusturhareket" class="odaOlustur-head">
+            <div class="odaOlustur-header-baslik">{{ ('navigator.createroom.title') | translate }}</div>
+            <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+        <div class="odaOlustur-box">
+            <div class="odaOlustur-bilgiler">
+                <form [formGroup]="form">
+                    <div class="odaOlustur-ad-box">
+                        <p class="odaOlustur-bilgi-baslik">{{ ('navigator.createroom.roomnameinfo') | translate }}</p>
+                        <input class="odaOlustur-ad" formControlName="roomName">
+                    </div>
+                    <div class="odaOlustur-aciklama-box">
+                        <p class="odaOlustur-bilgi-baslik">{{ ('navigator.createroom.roomdescinfo') | translate }}</p>
+                        <textarea class="odaOlustur-aciklama" formControlName="roomDesc"></textarea>
+                    </div>
+                    <div class="odaOlustur-ayiriciBox"></div>
+                    <p class="odaOlustur-bilgi-baslik">{{ ('navigator.category') | translate }}</p>
+                    <select id="odaOlustur-kategori-sec" formControlName="roomCategory">
+                        <option *ngFor="let category of categories" [value]="category.id">{{ (category.name) | translate
+                            }}</option>
+                    </select>
+                    <p class="odaOlustur-bilgi-baslik">{{ ('navigator.maxvisitors') | translate }}</p>
+                    <select id="odaOlustur-kategori-sec" formControlName="roomVisitors">
+                        <option *ngFor="let amount of maxVisitors" [value]="amount">{{ amount }}</option>
+                    </select>
+                    <p class="odaOlustur-bilgi-baslik">{{ ('navigator.tradesettings') | translate }}</p>
+                    <select id="odaOlustur-kategori-sec" formControlName="roomTrade">
+                        <option *ngFor="let type of tradeSettings | keyvalue" [value]="type.key">{{ (type.value) |
+                            translate }}</option>
+                    </select>
+                    <button id="odaOlustur-tamamla-buton" [disabled]="form.pristine || form.invalid" (click)="submit()">
+                        <div class="oda-tamamla-yazi">{{ ('navigator.createroom.create') | translate }}</div>
+                    </button>
+                    <button id="odaOlustur-iptal-buton" (click)="hide()">
+                        <div class="oda-iptal-yazi">{{ ('generic.cancel') | translate }}</div>
+                    </button>
+                </form>
+            </div>
+            <div class="odaOlustur-gorunum-sec">
+                <p class="odaOlustur-bilgi-baslik">{{ ('navigator.createroom.chooselayoutcaption') | translate }}</p>
+                <div class="oda-gorunum-liste">
+                    <div *ngFor="let layout of layouts" (click)="setRoomLayout(layout.name)">
+                        <button class="oda-gorunum-box"
+                            [ngClass]="{ 'oda-gorunum-box-active': (roomLayoutControl.value === layout.name) }"
+                            [ngStyle]="{ 'background-image': 'url(' + getRoomLayoutImageUrl(layout.name) + ')' }">
+                            <div class="createroom-selected"></div>
+                            <div class="oda-karo-bilgi">{{ layout.tileSize }} {{ ('navigator.createroom.tilesize') |
+                                translate }}</div>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

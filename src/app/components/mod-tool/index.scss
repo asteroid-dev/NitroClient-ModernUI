@@ -1,0 +1,588 @@
+@import './components';
+
+@media only screen and (max-width: 1050px), (max-height: 550px) {
+    .md-ayirici {
+        display: none;
+    }
+    .modtools-open {
+        display: none;
+    }
+    #modtoolsdrag {
+        display: none !important;
+    }
+    #modtools {
+        left: 10px !important;
+        top: 10px !important; 
+        height: 130px !important;
+        width: 40px !important;
+        transform: none !important;
+    }
+    .mt-menutxt {
+        display: none;
+    }
+    .mt-menu {
+        width: 30px !important;
+    }
+}
+
+.md-roomtool {
+    width: 320px;
+    height: auto;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    position: absolute;
+    background: #e5e5e5d4;
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: Arial;
+    box-sizing: content-box;
+    left: 100px !important;
+    top: 100px !important;
+    z-index: 10000;
+    filter: drop-shadow(2px 4px 6px #00000069);
+    color: #000000;
+    padding: 5px;
+}
+
+.md-header {
+    width: 100%;
+    height: 33px;
+    cursor: pointer;
+    background: #1e7295;
+    border-radius: 4px;
+    border-top: solid 3px #2b8bb3;
+    border-bottom: solid 3px #1a6280;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: #e9f1f5;
+    font-weight: bold;
+    padding: 4px;
+    position: relative;
+}
+
+.md-roomtool-main {
+    padding: 0px 0px 5px 0px;
+    width: auto;
+    height: auto;
+}
+
+.md-main {
+    background: #bcbcbc70;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.mdt-roominfo-i {
+    width: 110px;
+}
+
+.mdt-infomain {
+    display: flex;
+    font-size: 13px;
+    color: #000;
+    font-weight: bold;
+}
+
+.mdt-roomi-main {
+    padding: 5px;
+    position: relative;
+}
+
+.mdt-roominfo-d {
+    width: 60%;
+    font-weight: 500;
+}
+
+.mdt_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    background: #e0e0e0;
+    height: 25px;
+    border-radius: 5px;
+    margin: 3px;
+    float: right;
+    outline: 0 !important;
+}
+
+.mdt-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px;
+    width: 90px;
+}
+
+.mdt_button:hover {
+    filter: drop-shadow(0px 0px 3px #0000000e);
+    background: #e7e7e7;
+}
+
+.mdt-username {
+    width: 85px !important;
+    height: 19px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: break-spaces;
+}
+
+.mdt-room_message {
+    width: 100% !important;
+    height: 70px !important;
+    font-size: 14px !important;
+    color: #757575 !important;
+    background: #ffffffeb !important;
+    border: solid 0px #00000075 !important;
+    border-radius: 3px !important;
+    padding: 3px 5px;
+    box-shadow: inset 0px 5px 0px 0px #f5f5f5 !important;
+    outline: 0 !important;
+    font-family: "Arial" !important;
+    float: left;
+    filter: drop-shadow(3px 3px 2px #00000017) !important;
+    resize: none;
+    margin-top: 7px;
+}
+
+.md-send_button {
+    margin-top: 5px;
+    width: 100%;
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+}
+
+.md-send_button:hover {
+    background: #03912d;
+    border-top: solid 4px #0cb21e;
+    border-bottom: solid 4px #067426;
+}
+
+.md-select {
+    color: #000000d4;
+    padding: 3px 0px 3px;
+    font-size: 13px;
+    font-weight: bold;
+    float: left;
+    border: solid 0px #fff0;
+    width: 100%;
+    cursor: pointer;
+    outline: 0 !important;
+    background: #ffffff57;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.md-close {
+    position: absolute;
+    width: 19px !important;
+    height: 19px !important;
+    box-sizing: content-box;
+    border-radius: 3px;
+    background: #ffffff1c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    right: 0px;
+    margin: 4px 5px;
+    &:hover {
+        background: #ffffff33;
+    }
+    .md-closetab1 {
+        width: 12px;
+        height: 1.5px;
+        background: white;
+        float: left;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+    .md-closetab2 {
+        width: 12px;
+        height: 1.5px;
+        background: white;
+        float: left;
+        position: absolute;
+        transform: rotate(135deg);
+    }
+}
+
+.md-userchatlogs {
+    width: 450px;
+    height: 400px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    position: absolute;
+    background: #e5e5e5d4;
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: Arial;
+    box-sizing: content-box;
+    left: 100px !important;
+    top: 100px !important;
+    z-index: 10000;
+    filter: drop-shadow(2px 4px 6px #00000069);
+    color: #000000;
+    padding: 5px;
+}
+
+.md-userchatlogs-box {
+    width: 100%;
+    height: 361px;
+    position: relative;
+    margin-top: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style: none;
+}
+
+.md-userchatlogs-box::-webkit-scrollbar {
+    width: 4px;
+  }
+  .md-userchatlogs-box::-webkit-scrollbar-track {
+    background-color: #96a8bb;
+    box-shadow: inset 1px -1px 0px 0px #00000030;
+    border-radius: 100px;
+  }
+  .md-userchatlogs-box::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #c4c4c4;
+    border-top: solid 4px #fff;
+    border-bottom: solid 4px #989898;
+    box-shadow: 0px 1px 0px 0px #0000004d;
+  }
+  
+  .userchatlogs-main {
+      width: 100%;
+      height: 100%;
+  }
+  
+  .userchatlogs-info-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    float: left;
+}
+  
+  .userchatlogs-roominfo {
+      width: 100%;
+      background: #0000000d;
+      border-radius: 4px;
+      height: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #000000cf;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      justify-content: space-between;
+  }
+  
+  .chatlogs-bune {
+    background: #bcbcbc70;
+    width: 99%;
+    height: auto;
+    border-radius: 4px;
+    padding: 5px;
+    float: left;
+}
+  
+  .userchatlogs-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      background: #e0e0e0;
+      height: 21px;
+      border-radius: 5px;
+      margin-left: 5px;
+      float: right;
+      outline: 0 !important;
+      font-size: 12px;
+      font-weight: bold;
+      padding-top: 2px;
+  }
+  
+  .userchatlogs-button:hover {
+      filter: drop-shadow(0px 0px 3px #0000000e);
+      background: #e7e7e7;
+  }
+
+  .userchatlogs-chatbox {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    margin-top: 3px;
+    float: left;
+}
+
+.userchatlogs-chatleft {
+    display: flex;
+    float: left;
+    width: auto;
+    margin-right: 5px;
+}
+
+.userchatlogstime {
+    font-weight: bold;
+    color: #ffffff;
+    background: #1a6584;
+    border-radius: 5px;
+    font-size: 11px;
+    padding: 1px 5px;
+    height: 18px;
+    margin: 1px 0px;
+    margin-right: 5px;
+}
+
+.userchatlogs-chatusername {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.userchatlogs-chatright {
+    width: 334px;
+    float: right;
+}
+
+
+//
+
+.md-usertool {
+    width: 410px;
+    height: auto;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    position: absolute;
+    background: #e5e5e5d4;
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: Arial;
+    box-sizing: content-box;
+    left: 100px !important;
+    top: 100px !important;
+    z-index: 10000;
+    filter: drop-shadow(2px 4px 6px #00000069);
+    color: #000000;
+    padding: 5px;
+}
+
+.md-usertool-box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 5px;
+    float: left;
+}
+
+.usertool-main {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.usertool-left {
+    width: 60%;
+    height: auto;
+    background: #bcbcbc70;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    padding: 5px 5px 2px 5px;
+}
+
+.usertool-info {
+    display: flex;
+    width: 100%;
+    background: #ffffff36;
+    padding: 3px 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.usertool-itemname {
+    font-size: 13px;
+    color: #000;
+    font-weight: bold;
+    width: 110px;
+    max-width: 110px;
+    min-width: 110px;
+}
+
+.usertool-info:nth-child(even) {
+    background: #ffffff00;
+    padding: 0px 5px;
+}
+
+.usertool-itemvalue {
+    width: 100%;
+}
+
+.usertool-right {
+    float: right;
+    width: 40%;
+    height: auto;
+}
+
+.usertool-button {
+    margin-bottom: 5px;
+    width: 97%;
+    height: 30px;
+    float: right;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffffed;
+    background: #1e7295;
+    border-top: solid 3px #2a89b0;
+    border-bottom: solid 3px #1a6382;
+}
+
+.usertool-button:hover {
+    opacity: 0.9;
+}
+
+//
+
+.md-modaction {
+    width: 400px;
+    height: auto;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    position: absolute;
+    background: #e5e5e5d4;
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: Arial;
+    box-sizing: content-box;
+    left: 100px !important;
+    top: 100px !important;
+    z-index: 10000;
+    filter: drop-shadow(2px 4px 6px #00000069);
+    color: #000000;
+    padding: 5px;
+}
+
+.md-modaction-box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 5px;
+    float: left;
+}
+
+.modaction-select-main {
+    background: #bcbcbc70;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    position: relative;
+    float: left;
+    padding: 5px;
+}
+
+.modaction-textarea-main {
+    background: #bcbcbc70;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    position: relative;
+    float: left;
+    padding: 5px;
+}
+
+.modaction-textarea {
+    width: 100%;
+    height: 70px;
+    font-size: 13px;
+    color: #757575;
+    background: #ffffffeb;
+    border: solid 0px #00000075;
+    border-radius: 3px;
+    padding: 3px 5px;
+    box-shadow: inset 0px 5px 0px 0px #f5f5f5;
+    outline: 0;
+    font-family: "Arial";
+    float: left;
+    filter: drop-shadow(3px 3px 2px #00000017);
+    resize: none;
+    margin-top: 5px;
+}
+
+.md-goroom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    background: #e0e0e0;
+    height: 19px;
+    border-radius: 5px;
+    margin-left: 5px;
+    float: right;
+    outline: 0 !important;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 2px;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.md-goroom:hover {
+    filter: drop-shadow(0px 0px 3px #0000000e);
+    background: #e7e7e7;
+}
+
+.md-roomvisits-name {
+    width: 50%;
+    display: flex;
+    float: left;
+}
+
+.md-roomvisits {
+    width: 350px;
+    height: 300px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    position: absolute;
+    background: #e5e5e5d4;
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: Arial;
+    box-sizing: content-box;
+    left: 100px !important;
+    top: 100px !important;
+    z-index: 10000;
+    filter: drop-shadow(2px 4px 6px #00000069);
+    color: #000000;
+    padding: 5px;
+}
+
+.roomvisits-main {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    margin-bottom: 3px;
+    float: left;
+}

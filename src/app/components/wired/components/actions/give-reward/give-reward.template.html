@@ -1,0 +1,49 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	<div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="limitEnabled">
+        <label class="form-check-label">{{ ('wiredfurni.params.prizelimit') | translate:'amount':((rewardsLimit > 0) ? rewardsLimit : '') }}</label>
+    </div>
+    <div *ngIf="limitEnabled" class="d-flex align-items-center justify-content-center my-2 custom-slider mb-2">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decreaseLimit()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="limit" [options]="limitSliderOptions" [(value)]="rewardsLimit"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increaseLimit()"><i class="fas fa-arrow-right"></i></button>
+	</div>
+
+	<div class="form-group">
+		<label>How often can a user be rewarded</label>
+		<select class="form-control form-control-sm" [(ngModel)]="rewardTime" [class.mb-2]="!hasIntervalValue">
+			<option [value]="SETTING_ONCE" [selected]="rewardTime == SETTING_ONCE">Once</option>
+			<option [value]="SETTING_N_MINS" [selected]="rewardTime == SETTING_N_MINS">1/n minutes</option>
+			<option [value]="SETTING_N_HOURS" [selected]="rewardTime == SETTING_N_HOURS">1/n hours</option>
+			<option [value]="SETTING_N_DAYS" [selected]="rewardTime == SETTING_N_DAYS">1/n days</option>
+		</select>
+	</div>
+	<div class="form-group mb-2" *ngIf="hasIntervalValue">
+        <label>Interval value</label>
+        <input type="text" class="form-control form-control-sm" [(ngModel)]="limitationInterval">
+	</div>
+
+	<div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="uniqueRewards">
+        <label class="form-check-label">Unique Rewards</label>
+	</div>
+	<p class="w-100 text-center mb-2">If checked each reward will be given once to each user. This will disable the probabilities option.</p>
+
+	<div class="form-row mb-2">
+		<perfect-scrollbar style="min-height:200px;max-height:200px;">
+			<table>
+				<tr>
+					<td><small>Badge</small></td>
+					<td><small>Item code</small></td>
+					<td *ngIf="uniqueRewards == false"><small>Probability</small></td>
+				</tr>
+				<tr *ngFor="let row of rewardRows; index as i;">
+					<td><input type="checkbox" [(ngModel)]="rewardRows[i].badge"></td>
+					<td><input class="form-control form-control-sm" type="text" [(ngModel)]="rewardRows[i].itemCode"></td>
+					<td *ngIf="uniqueRewards == false"><input class="form-control form-control-sm" type="text" [(ngModel)]="rewardRows[i].probability"></td>
+				</tr>
+			</table>
+		</perfect-scrollbar>
+	</div>
+	<button type="button" class="btn btn-primary btn-sm mb-2" (click)="increaseRewardsCount()"><i class="fas fa-plus"></i></button>
+</nitro-wired-action-base-component>

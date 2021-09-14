@@ -1,0 +1,4 @@
+<div class="ntfcmodern" [class.removing]="removing" (click)="clickNotification()">
+    <div *ngIf="getDefaultImage()" class="ntfc-ico" [ngStyle]="{ 'background-image': 'url(' + getDefaultImage() + ')' }"></div>
+    <p class="ntfc-text" [innerHTML]="getDefaultMessage()"></p>
+</div>

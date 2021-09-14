@@ -1,0 +1,28 @@
+<div [bringToTop] [draggable] class="card nitro-wired-component">
+    <div class="drag-handler d-flex justify-content-between align-items-center px-3 pt-3">
+        <h6 class="m-0">{{ ('wiredfurni.title') | translate }}</h6>
+        <button type="button" class="close" (click)="hide()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="d-flex px-3 pt-3">
+        <div class="mr-2">
+            <div class="d-flex justify-content-center align-items-center badge badge-secondary badge-sm">
+                <i class="icon icon-wired-{{ wiredType }}"></i>
+            </div>
+        </div>
+        <div class="d-flex flex-grow-1 flex-column">
+            <div class="badge badge-secondary badge-sm text-wrap mb-2">{{ furniName }}</div>
+            <div class="badge badge-secondary badge-sm text-wrap">{{ furniDescription }}</div>
+        </div>
+    </div>
+    <div class="d-flex flex-column p-3">
+        <ng-content></ng-content>
+        <div *ngIf="requiresFurni" class="mt-2">
+            <div class="badge badge-secondary badge-sm text-wrap text-center w-100 mb-2">{{ ('wiredfurni.pickfurnis.caption') | translate:['count','limit']:[ furniSelectionCount,maximumFurniSelectionCount ] }}</div>
+            <div class="badge badge-secondary badge-sm text-wrap text-center w-100">{{ ('wiredfurni.pickfurnis.desc') | translate }}</div>
+        </div>
+        <div class="btn-group w-100 mt-2">
+            <button type="button" class="btn btn-success" (click)="save()">{{ ('wiredfurni.ready') | translate }}</button>
+            <button type="button" class="btn btn-secondary" (click)="hide()">{{ ('cancel') | translate }}</button>
+        </div>
+    </div>
+</div>

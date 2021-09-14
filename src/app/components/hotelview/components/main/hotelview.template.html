@@ -1,0 +1,66 @@
+<div class="hotel-bosluk">
+    <div class="view_bg" [ngStyle]="{backgroundImage: 'url('+background+')'}"></div>
+    <div class="habbo-drape">
+        <img [src]="drape" image-placeholder>
+    </div>
+    <div class="hotelview_habbo-avatar" nitro-avatar-image [figure]="figure" [direction]="2"></div>
+    <img class="bosluk-sol" [src]="left" image-placeholder />
+    <img class="bosluk-sag" [src]="right" image-placeholder />
+
+
+    <div class="modern-carousel">
+        <div class="leftclick"></div>
+        <div class="carousel-main">
+            <div class="carousel-tab">
+                <div class="carousel-spromo_hidden">
+                    <div class="carousel-promoimg" [ngStyle]="{backgroundImage: 'url('+carousel1+')'}"></div>
+                </div>
+                <div class="carousel-text">
+                    <div class="carousel-name">{{ ('hotel.view.header.1') | translate }}</div>
+                    <div class="carousel-description">{{ ('hotel.view.description.1') | translate }}</div>
+                    <a href="{{ ('hotel.view.link.1') | translate }}" target="_blank"><div class="carousel-button">{{ ('hotel.view.button.1') | translate }}</div></a>
+                </div>
+            </div>
+            <div class="carousel-tab">
+                <div class="carousel-spromo_hidden">
+                    <div class="carousel-promoimg" [ngStyle]="{backgroundImage: 'url('+carousel2+')'}"></div>
+                </div>
+                <div class="carousel-text">
+                    <div class="carousel-name">{{ ('hotel.view.header.2') | translate }}</div>
+                    <div class="carousel-description">{{ ('hotel.view.description.2') | translate }}</div>
+                    <a href="{{ ('hotel.view.link.2') | translate }}" target="_blank"><div class="carousel-button">{{ ('hotel.view.button.2') | translate }}</div></a>
+                </div>
+            </div>
+            <div class="carousel-tab">
+                <div class="carousel-spromo_hidden">
+                    <div class="carousel-promoimg" [ngStyle]="{backgroundImage: 'url('+carousel3+')'}"></div>
+                </div>
+                <div class="carousel-text">
+                    <div class="carousel-name">{{ ('hotel.view.header.3') | translate }}</div>
+                    <div class="carousel-description">{{ ('hotel.view.description.3') | translate }}</div>
+                    <a href="{{ ('hotel.view.link.3') | translate }}" target="_blank"><div class="carousel-button">{{ ('hotel.view.button.3') | translate }}</div></a>
+                </div>
+            </div>
+            <div class="carousel-tab">
+                <div class="carousel-spromo_hidden">
+                    <div class="carousel-promoimg" [ngStyle]="{backgroundImage: 'url('+carousel4+')'}"></div>
+                </div>
+                <div class="carousel-text">
+                    <div class="carousel-name">{{ ('hotel.view.header.4') | translate }}</div>
+                    <div class="carousel-description">{{ ('hotel.view.description.4') | translate }}</div>
+                    <a href="{{ ('hotel.view.link.4') | translate }}" target="_blank"><div class="carousel-button">{{ ('hotel.view.button.4') | translate }}</div></a>
+                </div>
+            </div>
+        </div>
+        <div class="rightclick"></div>
+    </div>
+
+
+    <!-- mobile view -->
+    <div class="mobile-view">
+        <div class="mview-main">
+            <div class="mview-wassup">{{ ('pet.vocals.15.GENERIC_NEUTRAL.0') | translate }}</div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,26 @@
+<div class="habbo-gift-opening" *ngIf="visible" [bringToTop] [draggable]>
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ getGiftTitle() | translate:'name':senderName}}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="gift-opening-main">
+        <ng-container [ngSwitch]="currentView">
+            <ng-container *ngSwitchCase="'open_present'">
+                <div *ngIf="!isAnonymousGift" class="giftsend-avatar" [headOnly]="true" nitro-avatar-image [figure]="figure" [direction]="2"></div>
+                <div *ngIf="isAnonymousGift" class="sender-avatar"><div class="ingognito"></div></div>
+                <p class="gift-yazi">{{ text }}</p>
+                <div class="w-100 d-flex align-items-center mt-2 btn-group" style="float: left;">
+                    <button type="button" class="opengift" (click)="handleButton('accept')">{{ 'widget.furni.present.open_gift' | translate }}</button>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'present_opened'">
+                <div nitro-furniture-image class="giftopening-mobi" [type]="type" [spriteId]="spriteId" [extras]="extras"></div>
+                <p class="giftopening-text">{{ text }}</p>
+                <div class="w-100 d-flex align-items-center mt-2 btn-group" style="float: left;">
+                    <button *ngIf="!isWallItem" type="button" class="placeinmyroom" (click)="handleButton('furni_place_in_room')">{{ 'widget.furni.present.place_in_room' | translate}}</button>
+                    <button type="button" class="putitinmyinv" (click)="handleButton('furni_place_in_inventory')">{{ 'widget.furni.present.put_in_inventory' | translate}}</button>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

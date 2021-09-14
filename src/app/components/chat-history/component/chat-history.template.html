@@ -1,0 +1,33 @@
+
+
+<div *ngIf="visible" [bringToTop] [draggable] class="sohbetgecmis nitro-chat-history-component" [topCenter]="false" [center]="false" [noMemory]="true">
+    <div class="historyscroller position-relative" #historyScroller>
+        <div class="d-flex flex-column">
+            <ng-container *ngFor="let item of historyItems;trackBy:trackById">
+                <div class="row" style="margin-bottom: -1px;">
+                    <div class="d-flex col-2 align-items-center" style="margin-right: 5px;">
+                        <div class="badge badge-sm" style="font-style: italic;color: #ffffff70;">{{ item.date | date:'hh:mm:ss' }}</div>
+                    </div>
+                    <div class="d-flex col-9 align-items-center pl-0">
+                        <div *ngIf="(item.senderId !== -1)" class="bubble-container" (click)="selectUser(item.senderId)">
+                            <div *ngIf="(item.chatStyle === 0)" class="user-container-bg" [ngStyle]="{'background-color': item.senderColorString}"></div>
+                            <div class="chat-bubble bubble-{{ item.chatStyle }} type-{{ item.chatType }}">
+                                <div class="user-container">
+                                    <div *ngIf="item.senderImageUrl" class="user-image" [ngStyle]="{ 'background-image': 'url(' + item.senderImageUrl + ')' }"></div>
+                                </div>
+                                <div class="chat-content">
+                                    <b class="username-container" [innerHTML]="item.senderName"></b> <span class="message" [innerHTML]="item.content | roomChatFormatter"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="(item.senderId === -1)" class="badge badge-sm" style="color: red;font-family: system-ui;">
+                            <img src="/assets/images/smallroomico.png" style="margin: 3px;">
+                            <p class="odayagirdi">{{ item.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="sohbetgecmis-kapat" (click)="hide()"></div>
+</div>

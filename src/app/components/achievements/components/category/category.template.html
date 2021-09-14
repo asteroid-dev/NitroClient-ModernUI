@@ -1,0 +1,39 @@
+<div class="tumBasarilar-bilgi-box">
+    <div class="basari-header-box">
+        <div class="genel-basari-bilgi-box">
+            <div class="genel-basari-ad">{{ ('quests.' + category.name + '.name') | translate }}</div>
+            <div class="genel-basari-puan"></div>
+        </div>
+
+        <div class="basari-secilmedi">Please select the success you want to check</div>
+
+        <div class="genek-basari-aciklama-box" *ngIf="selectedAchievement">
+            <div class="secilen-basari-img">
+                <img class="basarilarinfo_ico" [ngClass]="[selectedAchievement.firstLevelAchieved ? '' : 'greyscaleach']"
+                    [src]="getBadgeImageUrl(selectedAchievement)" image-placeholder />
+            </div>
+            <div class="secilen-basari-ad">{{ getBadgeText(selectedAchievement) }}</div>
+            <div class="secilen-basari-aciklama">{{ getBadgeText(selectedAchievement,true) }}</div>
+            <div *ngIf="!selectedAchievement.finalLevel" class="secilen-basari-aciklama">{{'achievements.details.reward'
+                | translate}} <b>{{selectedAchievement.levelRewardPoints}}</b></div>
+            <div class="secilen-basari-detaylar-box" *ngIf="!selectedAchievement.finalLevel">
+                <div class="secilen-basari-seviye-bilgi">
+                    <div class="basari-seviye-info-text">{{ getBadgeText(selectedAchievement) }}</div>
+                </div>
+                <div class="secilen-basari-siradaki-seviye-bilgi">
+                    <div class="basariilerleme-main" [ngStyle]="{width: getProgress(selectedAchievement)}"></div>
+                    <div class="secilen-basari-seviye-aciklama">{{ getProgress(selectedAchievement,true) }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="secilen-basari-rozetler-bilgi">
+        <div class="secilen-basari-rozet-box" *ngFor="let achievement of category.achievements"
+            (click)="selectAchievement(achievement)"
+            [ngClass]="[ ((selectedAchievement === achievement) ? 'basarikategoriactive' : 'secilen-basari-rozet-box' ), ((achievement && achievement.firstLevelAchieved) ? '' : 'greyscaleach') ]">
+
+            <div class="secilen-basari-rozet-img"
+                [ngStyle]="{ 'background-image': 'url(' + getBadgeImageUrl(achievement) + ')' }"></div>
+        </div>
+    </div>
+</div>

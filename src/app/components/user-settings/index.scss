@@ -1,0 +1,241 @@
+.nitro-user-settings-component {
+    width: 300px;
+
+    .custom-range {
+        margin-top: 3px;
+    }
+}
+
+.flashsettings {
+    width: 312px;
+    height: auto;
+    border-radius: 5px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    -webkit-user-select: none;
+    z-index: 9999;
+    border: solid 2px #000;
+    position: absolute;
+    top: 100px !important;
+    background-color: #dfdfdf;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    overflow: hidden;
+    color: black;
+    font-family: Arial;
+
+    .wiredrange[type=range] {
+        -webkit-appearance: none;
+        width: 141px;
+        background: url('^assets/images/usersettings/wiredrange-bg.png');
+        outline: none;
+        height: 17px;
+        float: left;
+    }
+  
+    .wiredrange[type=range]::-webkit-slider-thumb {
+        height: 14px;
+        width: 11px;
+        background: url('^assets/images/usersettings/wiredamk.png');
+        cursor: pointer;
+        -webkit-appearance: none;
+        box-shadow: inset 0px 0px 0px 0px #bab4a100;
+        border: 0px solid #000000;
+        filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0)2);
+    }
+  
+    .wiredrange_box {
+        height: 20px;
+        margin: -3px 8px;
+    }
+
+}
+
+.usersettings-hr {
+    width: 100%;
+    height: 1px;
+    background: #1e7295;
+    float: left;
+    margin-top: -12px;
+}
+
+.usettings-baslik {
+    text-align: left;
+    position: relative;
+    width: auto;
+    padding: 0px 4px 2px 0px;
+    background: #dfdfdf;
+    float: left;
+    font-weight: bold;
+}
+
+.usettings-head {
+    height: 25px;
+    position: relative;
+}
+
+.usettings-hood {
+    text-align: left;
+    position: absolute;
+    width: auto;
+    padding: 4px 4px 0px 0px;
+    background: #dfdfdf;
+    font-weight: bold;
+}
+
+.usettings-body {
+    float: left;
+}
+
+.bgus {
+    float: left;
+    width: auto;
+    background: #c8c8c870;
+    padding-top: 5px;
+    border-radius: 5px;
+    padding-left: 5px;
+    height: auto;
+    margin-bottom: 4px;
+}
+
+.sesayar {
+    width: 29px;
+    height: 20px;
+}
+
+
+.ses-1-0 {
+    background: url('^assets/images/usersettings/1-1.png');
+}
+
+.ses-1-1 {
+    background: url('^assets/images/usersettings/1-1.png');
+    opacity: 0.3;
+}
+
+.ses-2-0 {
+    background: url('^assets/images/usersettings/2-2.png');
+    width: 29px;
+    height: 20px;
+    position: absolute;
+}
+
+.ses-2-2 {
+    background: url('^assets/images/usersettings/2-0.png');
+    z-index: 111111;
+    width: 29px;
+    height: 20px;
+    position: absolute;
+}
+
+
+.rakamlar {
+    background: url('^assets/images/usersettings/rakamlar.png'); 
+    width: 141px;
+    height: 9px;
+}
+
+
+.fortext-us {
+    float: left;
+    padding-right: 20px;
+}
+
+.us-rangebox {
+    float: left;
+    margin-bottom: 3px;
+    position: relative;
+    width: 100%;
+}
+
+.us-buttontest {
+    width: 29px;
+    height: 20px;
+}
+
+.hayamk {
+    right: 0px;
+    position: absolute;
+}
+
+.uskapat {
+    width: auto;
+    height: 28px;
+    padding: 1px 13px;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    background: #009c2e;
+    margin-top: 7px;
+    border: solid 0px #fff0;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+}
+
+.rs-sctxt {
+    font-family: Arial;
+    float: left;
+    padding-left: 5px;
+    margin-top: -2px !important;
+    padding-top: 1px;
+}
+
+.rs-select_container2 {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 13px;
+    margin-bottom: 3px;
+    float: left;
+    width: 100%;
+}
+
+.rs-select_container2 input {
+  position: relative;
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  float: left;
+}
+
+.middlefix {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #000000cc;
+    z-index: 111111111111;
+}
+
+#usersettingshead {
+    height: 40px;
+    cursor: pointer;
+    background: #1e7295;
+    margin: 0;
+    box-shadow: inset 0px 3px 0px 0px #ffffff14;
+}
+
+.uspadding {
+    padding: 0px 10px;
+    float: left;
+}
+
+.us-header-baslik {
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    padding: 9px;
+    width: 100%;
+    color: #ffffffe6;
+    font-size: 14px;
+}

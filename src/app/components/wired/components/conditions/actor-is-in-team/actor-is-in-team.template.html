@@ -1,0 +1,19 @@
+<nitro-wired-base-component>
+	{{ ('wiredfurni.params.team') | translate }}
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="1" [(ngModel)]="team">
+        <label class="form-check-label">{{ ('wiredfurni.params.team.1') | translate }}</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="2" [(ngModel)]="team">
+        <label class="form-check-label">{{ ('wiredfurni.params.team.2') | translate }}</label>
+	</div>
+	<div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="3" [(ngModel)]="team">
+        <label class="form-check-label">{{ ('wiredfurni.params.team.3') | translate }}</label>
+	</div>
+	<div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="4" [(ngModel)]="team">
+        <label class="form-check-label">{{ ('wiredfurni.params.team.4') | translate }}</label>
+    </div>
+</nitro-wired-base-component>

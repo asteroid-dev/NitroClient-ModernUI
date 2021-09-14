@@ -1,0 +1,15 @@
+<nitro-wired-base-component>
+	<p class="w-100 text-center mb-1">{{ ('wiredfurni.params.usercountmin') | translate:'value':minUsers }}</p>
+    <div class="d-flex align-items-center justify-content-center my-2 custom-slider">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decreaseMin()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="minUsers" [options]="sliderOptions" [(value)]="minUsers"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increaseMin()"><i class="fas fa-arrow-right"></i></button>
+	</div>
+
+	<p class="w-100 text-center mb-1">{{ ('wiredfurni.params.usercountmax') | translate:'value':maxUsers }}</p>
+    <div class="d-flex align-items-center justify-content-center my-2 custom-slider">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decreaseMax()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="maxUsers" [options]="sliderOptions" [(value)]="maxUsers"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increaseMax()"><i class="fas fa-arrow-right"></i></button>
+    </div>
+</nitro-wired-base-component>

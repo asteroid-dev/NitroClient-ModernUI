@@ -1,0 +1,111 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "nitro": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "preserveSymlinks": true,
+            "outputPath": "dist",
+            "resourcesOutputPath": "assets",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "vendorChunk": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "ignore": [
+                  "**/*.scss"
+                ],
+                "output": "/assets/"
+              },
+              "src/renderer-config.json",
+              "src/ui-config.json"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "webWorkerTsConfig": "tsconfig.worker.json",
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "devel": {
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "statsJson": false,
+              "progress": false
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "nitro:build:devel",
+            "host": "localhost",
+            "port": 8080,
+            "disableHostCheck": true,
+            "hmr": false,
+            "allowedHosts": [
+              ""
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "nitro:build:devel"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "nitro",
+  "cli": {
+    "analytics": false
+  }
+}

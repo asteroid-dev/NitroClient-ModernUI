@@ -1,0 +1,11 @@
+<div class="avatarEditor-primary-color-box ae-color-scrollbar"
+    [ngClass]="{ 'corelotest-g6': (maxPaletteCount >= 2), 'avatarEditor-secondary-color-box': (maxPaletteCount <= 1) }">
+    <div class="avatarEditor-secondary-color-box ae-color-scrollbar">
+        <div class="clothes-color-selected" *ngFor="let palette of paletteSet" (click)="selectPalette(palette)">
+            <div class="secondary-clothes-color" [ngClass]="{ 'coloractive': palette.isSelected }"
+                [ngStyle]="{ 'background-color': palette.color }">
+                <div class="color-shadow"></div>
+            </div>
+        </div>
+    </div>
+</div>

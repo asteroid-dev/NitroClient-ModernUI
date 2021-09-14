@@ -1,0 +1,8 @@
+<div class="ntfcmodern" [class.removing]="removing">
+    <div *ngIf="getDefaultImage()" class="ntfc-ico" [ngStyle]="{ 'background-image': 'url(' + getDefaultImage() + ')' }"></div>
+    <p class="ntfc-text" [innerHTML]="getDefaultMessage()"></p>
+    <div class="d-flex btn-group w-100 mt-2" style="justify-content: space-between;">
+        <button type="button" class="event-close" (click)="hide()">{{ ('alert.close.button') | translate }}</button>
+        <button type="button" class="event-go" (click)="clickNotification()">{{ getDefaultLinkTitle() }}</button>
+    </div>
+</div>

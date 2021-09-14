@@ -1,0 +1,15 @@
+<nitro-wired-base-component>
+	<div class="form-group">
+		<label>{{ ('wiredfurni.params.handitem') | translate }}</label>
+		<select class="form-control form-control-sm" [(ngModel)]="handitemId">
+			<option value="0" [selected]="handitemId == '0'">{{ ('wiredfurni.tooltip.handitem') | translate }}</option>
+			<option value="2" [selected]="handitemId == '2'">{{ ('handitem2') | translate }}</option>
+			<option value="5" [selected]="handitemId == '5'">{{ ('handitem5') | translate }}</option>
+			<option value="7" [selected]="handitemId == '7'">{{ ('handitem7') | translate }}</option>
+			<option value="8" [selected]="handitemId == '8'">{{ ('handitem8') | translate }}</option>
+			<option value="9" [selected]="handitemId == '9'">{{ ('handitem9') | translate }}</option>
+			<option value="10" [selected]="handitemId == '10'">{{ ('handitem10') | translate }}</option>
+			<option value="27" [selected]="handitemId == '27'">{{ ('handitem27') | translate }}</option>
+		</select>
+    </div>
+</nitro-wired-base-component>

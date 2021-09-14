@@ -1,0 +1,46 @@
+$navigator-width: 515px;
+$navigator-height: 600px;
+$navigator-roomsettings-width: 400px;
+$inventory-width: 515px;
+$friendlist-width: 645px;
+$achievements-width: 645px;
+$user-profile-width: 620px;
+
+$chatinput-zindex: 80;
+$toolbar-zindex: 70;
+$rightside-zindex: 69;
+$toolbar-memenu-zindex: 60;
+$roomtools-zindex: 50;
+$context-menu-zindex: 40;
+$infostand-zindex: 30;
+$chat-zindex: 20;
+$highscore-zindex: 19;
+
+.nitro-main-component {
+
+    .nitro-right-side {
+        position: absolute;
+        top: 120px;
+        right: 10px;
+        z-index: $rightside-zindex;
+    }
+    
+}
+
+@import './achievements';
+@import './avatar-editor';
+@import './catalog';
+@import './friendlist';
+@import './hotelview';
+@import './inventory';
+@import './navigator';
+@import './notification';
+@import './purse';
+@import './room';
+@import './toolbar';
+@import './user-profile';
+@import './wired';
+@import './mod-tool';
+@import './chat-history';
+@import './groups';
+@import './user-settings';

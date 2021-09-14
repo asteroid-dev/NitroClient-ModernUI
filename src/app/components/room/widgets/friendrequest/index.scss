@@ -1,0 +1,122 @@
+.nitro-widget-friendrequest {
+    
+    .context-menu {
+        position: absolute;
+        width: 100%;
+        max-width: 220px;
+        z-index: $context-menu-zindex;
+    }
+
+    .card {
+
+        .card-pointer {
+            position: absolute;
+            top: 100%;
+            width: 0;
+            border-top: 8px solid $card-bg;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+        }
+    }
+}
+
+
+ .dialog-close {
+    width: auto;
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    background: #d72623;
+    border-top: solid 4px #f21d1a;
+    border-bottom: solid 4px #c01816;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-bottom: 7px;
+    min-width: 75px;
+  }
+   .dialog-close:hover {
+    opacity: 0.9;
+  }
+   .dialog-close:active {
+    opacity: 1;
+  }
+   .dialog-save {
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    background: #009c2e;
+    border-top: solid 3px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    min-width: 75px;
+    width: auto;
+    margin-bottom: 7px;
+  }
+   .dialog-save:hover {
+    opacity: 0.9;
+  }
+   .dialog-save:active {
+    opacity: 1;
+  }
+
+  .modern-dialog {
+    border: 2px solid #1c323f !important;
+    box-shadow: rgb(255 255 255 / 74%) 0px 0px 0px 2px !important;
+    background: #3d5f6ef7 !important;
+    min-width: 150px !important;
+    border-radius: 5px !important;
+    position: absolute !important;
+    width: 220px !important;
+    height: 100px !important;
+    padding: 8px !important;
+}
+
+
+.modern-dialog:after {
+    content: "";
+    position: absolute;
+    bottom: -11px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+    border-color: #ff000000 #ffffffbd #ffffffbd #ffa50000;
+    border-style: solid;
+    border-width: 7px;
+}
+
+.dialog-desc {
+    font-weight: bold;
+    line-height: 17px;
+    max-height: 42px;
+    min-height: 42px; 
+}

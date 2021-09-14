@@ -1,0 +1,12 @@
+<div class="friendslist-box" *ngFor="let friend of friends">
+    <div class="friendsl_box-username">{{ friend.name }}</div>
+    <div class="friendsl_box-message" (click)="selectThread(friend)">
+        <i class="fas fa-reply-all" aria-hidden="true"></i>
+    </div>
+    <div class="friendsl_box-profile" (click)="openFriendProfile(friend)">
+        <i class="fas fa-user-tag" aria-hidden="true"></i>
+    </div>
+    <div class="friendsl_box-userdelete" (click)="removeFriend(friend)">
+        <i class="fas fa-user-times" aria-hidden="true"></i>
+    </div>
+</div>

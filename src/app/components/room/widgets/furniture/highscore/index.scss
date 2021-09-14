@@ -1,0 +1,103 @@
+.nitro-widget-highscore {
+    z-index: $highscore-zindex;
+    position: absolute;
+    background-image: url('^assets/images/hscore/modern-hscore.png');
+    width: 340px;
+    height: 363px;
+    font-family: Arial;
+    padding: 33px 20px;
+}
+
+.hscore-hood {
+    width: auto;
+    height: 20px;
+    box-sizing: border-box;
+    margin: 4px 4px;
+    font-size: 13px;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    padding: 1px;
+    color: #0c2c2d;
+}
+
+.hscore-head {
+    width: 292px;
+    height: 24px;
+    box-sizing: border-box;
+    margin: 13px 4px 2px 4px;
+    border-bottom: solid 1px #203c41;
+}
+
+.hs-users-main {
+    width: auto;
+    height: 20px;
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 2px;
+    float: left;
+}
+
+.hs-score-main {
+    width: auto;
+    height: 20px;
+    font-size: 11px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 2px;
+    text-align: right;
+    float: right;
+}
+
+.score-list {
+    width: 290px;
+    height: auto;
+    float: left;
+    font-size: 12px;
+    margin: 0px 5px;
+    position: relative;
+}
+
+.score-list:nth-child(1) {
+    .score-username {
+        color: gold;
+    }
+}
+
+.score-list:nth-child(2) {
+    .score-username {
+        color: #c9ae5dcc;
+    }
+}
+
+.score-list:nth-child(3) {
+    .score-username {
+        color: silver;
+    }
+}
+
+.score-username {
+    float: left;
+    width: 80%;
+}
+
+.score-point {
+    float: right;
+    position: absolute;
+    right: 0px;
+}
+
+.hscore-bottomtext {
+    position: absolute;
+    bottom: 13px;
+    font-size: 11px;
+    width: auto;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    padding: 1px;
+    text-decoration: underline;
+    color: #0c2c2d;
+    left: 50px;
+}

@@ -1,0 +1,86 @@
+
+<div id="envanter-kazanilanRozetler-box badges-template">
+    <div id="envanter-mobi-icerik-box" *ngIf="!hasBadgeItems">
+        <div class="entbos-image"></div>
+        <p class="entbos-baslik">{{ ('inventory.empty.title') | translate }}</p>
+        <p class="entbos-desc">{{ ('inventory.empty.desc') | translate }}</p>
+    </div>
+    <ng-container *ngIf="hasBadgeItems">
+        <div id="envanter-rozetler-icerik-box">
+            <div class="envanter-icerisindeki-rozetler">
+                <div class="erzt-sol">
+                    <div class="erzt-s-b">
+                        <div *ngFor="let badge of badges" class="envanter-onizleme-tikla" id="rozet-onizleme-box" (click)="selectBadge(badge)" [ngClass]="{ 'entactivemobi': (selectedBadge === badge) }">
+                            <div class="rozet-resmi" badge-image [badge]="badge" [asBackground]="true"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="erzt-sag">
+                    <div class="takilan-yazi">{{ 'inventory.badges.activebadges' | translate }}</div>
+                    <div class="takilan-rozetler-box">
+                        <div *ngFor="let badge of activeBadges" class="takilan-rozet-onizleme" (click)="selectBadge(badge)" [ngClass]="{ 'entactivemobi': (selectedBadge === badge) }">
+                            <div class="takilan-rozet-onizleme-badge" badge-image [badge]="badge" [asBackground]="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rozet-bilgi-box">
+                <div class="secilen-rozet-box">
+                    <nitro-badge [badge]="selectedBadge" [isGroup]="false"></nitro-badge>
+                </div>
+                <div class="secilen-rozet-bilgileri">
+                    <div class="secilen-rozet-adi">{{ selectedBadgeName }}</div>
+                    <div class="secilen-rozet-genel-aciklama">{{ ('inventory.badges.defaultdescription') | translate }}</div>
+                </div>
+                <div class="rozeti-tak-box">
+                    <button type="button" [disabled]="badgeButtonDisabled" id="rozeti-tak-buton" (click)="wearBadge()">
+						<div id="rozet-buton-yazi">{{ (isWearingBadge(selectedBadge) ? 'inventory.badges.clearbadge' : 'inventory.badges.wearbadge') | translate }}</div>
+					</button>
+                </div>
+
+            </div>
+            <div class="basari-puani-bilgi-box">
+                <div id="basari-puanim-text">{{ 'achievements_score_description' | translate:'score':achievementsScore }}</div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
+<div class="minv-main_box">
+    <div id="minv-boxnull" *ngIf="!hasBadgeItems">
+        <p class="minv-null-title">{{ ('inventory.empty.title') | translate }}</p>
+        <p class="minv-null-desc">{{ ('inventory.empty.desc') | translate }}</p>
+    </div>
+    <ng-container *ngIf="hasBadgeItems">
+        <div class="minv-badges-main">
+            <div id="minv-items-box" *ngFor="let badge of badges" (click)="selectBadge(badge)" [ngClass]="{ 'minv-items-box-active': (selectedBadge === badge) }">
+                <div class="minv-items-icon" badge-image [badge]="badge" [asBackground]="true"></div>
+            </div>
+        </div>
+
+        <div class="minv-badges-info">
+            <div class="minv-badges-selected">
+                <nitro-badge [badge]="selectedBadge" [isGroup]="false"></nitro-badge>
+            </div>
+            <div class="minv-badges-selected_info">
+                <div class="minv-badges-name">{{ selectedBadgeName }}</div>
+                <div class="minv-badges-description">{{ ('inventory.badges.defaultdescription') | translate }}</div>
+            </div>
+            <div class="minv-badges-button-main">
+                <button type="button" [disabled]="badgeButtonDisabled" id="minv-badges-button" (click)="wearBadge()">
+                    <div id="minv-badges-button-text">{{ (isWearingBadge(selectedBadge) ? 'inventory.badges.clearbadge' : 'inventory.badges.wearbadge') | translate }}</div>
+                </button>
+            </div>
+        </div>
+        <div class="minv-right mright-p">
+            <div class="minv-badges-being_used-text">{{ 'inventory.badges.activebadges' | translate }}</div>
+            <div class="minv-badges-being_used">
+                <div *ngFor="let badge of activeBadges" class="minv-badges-box" (click)="selectBadge(badge)" [ngClass]="{ 'minv-badges-box-active': (selectedBadge === badge) }">
+                    <div class="takilan-rozet-onizleme-badge" badge-image [badge]="badge" [asBackground]="true"></div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

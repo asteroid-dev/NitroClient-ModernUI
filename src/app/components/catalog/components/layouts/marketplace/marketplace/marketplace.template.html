@@ -1,0 +1,20 @@
+<div class="catalog-marketplace-own-items">
+    <div class="mp-offers-menu">
+        <button type="button" [ngClass]="{'mp-active': view === 'activity'}" (click)="selectView('activity')" class="offers-menu-box">{{ 'catalog.marketplace.search_by_activity' | translate }}</button>
+        <button type="button" [ngClass]="{'mp-active': view === 'value'}" (click)="selectView('value')" class="offers-menu-box">{{ 'catalog.marketplace.search_by_value' | translate }}</button>
+        <button type="button" [ngClass]="{'mp-active': view === 'advanced'}" (click)="selectView('advanced')" class="offers-menu-box">{{ 'catalog.marketplace.search_advanced' | translate }}</button>
+    </div>
+
+    <div *ngIf="view === 'activity'" class="mb-1" nitro-marketplace-sub-activity  (sortChanged)="onSortChanged($event)" [sortTypes]="SORT_TYPES_ACTIVITY"></div>
+    <div *ngIf="view === 'value'" class="mb-1" nitro-marketplace-sub-activity   (sortChanged)="onSortChanged($event)"  [sortTypes]="SORT_TYPES_VALUE"></div>
+    <div *ngIf="view === 'advanced'" class="mb-1" nitro-marketplace-sub-advanced (onSearch)="onSearch($event)" [sortTypes]="SORT_TYPES_ADVANCED"></div>
+
+    <div *ngIf="hasOffers">
+        <div class="redeem-item">
+            <div class="mp-itemscount">{{ foundText }}</div>
+        </div>
+        <div class="own-items-scroll" [ngClass]="{'mp-scroll-big': (view === 'activity' || view === 'value'), 'view-small': view === 'advanced'}">
+            <div nitro-marketplace-offer *ngFor="let offer of marketOffers" [offer]="offer"></div>
+        </div>
+    </div>
+</div>

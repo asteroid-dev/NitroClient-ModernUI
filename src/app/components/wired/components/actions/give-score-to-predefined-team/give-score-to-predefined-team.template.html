@@ -1,0 +1,23 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	<p class="w-100 text-center mb-1">{{ ('wiredfurni.params.setpoints') | translate:'points':points }}</p>
+    <div class="d-flex align-items-center justify-content-center my-2 custom-slider">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decreasePoints()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="points" [options]="pointsSliderOptions" [(value)]="points"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increasePoints()"><i class="fas fa-arrow-right"></i></button>
+	</div>
+	<p class="w-100 text-center mb-1">{{ ('wiredfurni.params.settimesingame') | translate:'times':times }}</p>
+    <div class="d-flex align-items-center justify-content-center my-2 custom-slider">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decreaseTimes()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="times" [options]="timesSliderOptions" [(value)]="times"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increaseTimes()"><i class="fas fa-arrow-right"></i></button>
+    </div>
+	<div class="form-group">
+		<label>{{ ('wiredfurni.params.team') | translate }}</label>
+		<select class="form-control form-control-sm" [(ngModel)]="team">
+			<option value="1" [selected]="team == '1'">{{ ('wiredfurni.params.team.1') | translate }}</option>
+			<option value="2" [selected]="team == '2'">{{ ('wiredfurni.params.team.2') | translate }}</option>
+			<option value="3" [selected]="team == '3'">{{ ('wiredfurni.params.team.3') | translate }}</option>
+			<option value="4" [selected]="team == '4'">{{ ('wiredfurni.params.team.4') | translate }}</option>
+		</select>
+    </div>
+</nitro-wired-action-base-component>

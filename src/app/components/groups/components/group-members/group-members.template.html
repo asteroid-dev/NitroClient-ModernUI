@@ -1,0 +1,50 @@
+
+
+<div class="nitro-group-members-component groupmembers" *ngIf="visible" [bringToTop] [draggable] dragHandle=".drag-handler">
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ ('group.members.title') | translate:'groupName':groupName }}</div>
+        <div class="modern-close" (click)="clear()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="groupmembers-main">
+        <div class="groupmembers-left">
+            <div class="groupmembers-badge-main">
+                <nitro-badge [badge]="groupBadgeCode" [isGroup]="true"></nitro-badge>
+            </div>
+        </div>
+        <div class="groupmembers-right">
+            <div class="gmtop-main">
+                <input type="text" class="groupmembers-search" [placeholder]="('group.members.searchinfo') | translate" [(ngModel)]="query" (keyup.enter)="searchMembers()">
+                <select class="groupmembers-select" [(ngModel)]="level" (ngModelChange)="searchMembers()">
+                    <option value="0">{{ ('group.members.search.all') | translate }}</option>
+                    <option value="1">{{ ('group.members.search.admins') | translate }}</option>
+                    <option *ngIf="admin" value="2">{{ ('group.members.search.pending') | translate }}</option>
+                </select>
+            </div>
+            <div class="groupmembers-list-main">
+                <div class="groupmembers-list">
+                    <div *ngFor="let member of result">
+                        <div class="gmlist-box">
+                            <div class="gm-user" (click)="openProfile(member.id)">
+                                <div class="gmlist-member_rank" *ngIf="member.rank < 3" [ngClass]="getRankIcon(member.rank)"></div>
+                                <div class="gmlist-username">{{ member.name }}</div>
+                            </div>
+                            <div class="gm-user-delete" *ngIf="admin && member.rank > 0" (click)="removeOrDeclineMember(member.id, member.rank)"></div>
+                            <div class="gm-activuser"></div>
+                            <button class="groupmembers-giveowner" *ngIf="member.rank === 0">{{ ('group.members.owner') | translate }}</button>
+                            <button class="groupmembers-owner_manage" *ngIf="admin && member.id !== myId && member.rank !== 0">
+                                <span class="member_rank_text" *ngIf="member.rank === 1" (click)="takeAdmin(member.id)">{{ ('group.members.removerights') | translate }}</span>
+                                <span class="member_rank_text" *ngIf="member.rank === 2" (click)="giveAdmin(member.id)">{{ ('group.members.giverights') | translate }}</span>
+                                <span class="member_rank_text" *ngIf="member.rank === 3" (click)="acceptMembership(member.id)">{{ ('group.members.accept') | translate }}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="groupmembers-page">
+                <button class="gm-page-left" (click)="previousPage()" [disabled]="pageIndex === 0"></button>
+                <div class="gm-page-info">{{ ('group.members.pageinfo') | translate:['amount', 'page', 'totalPages']:[totalMembersCount, pageIndex + 1, totalPages] }}</div>
+                <button class="gm-page-right" (click)="nextPage()" [disabled]="pageIndex + 1 === totalPages"></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="groupinfo" *ngIf="visible" [bringToTop] [draggable] dragHandle="#modernui-drag">
+    <div id="modernui-drag">
+        <div class="modernui-hood">{{ ('group.window.title') | translate }}</div>
+        <div class="modern-close" (click)="clear()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="groupinfo-main">
+        <div class="room_groupinfo-left">
+            <div class="groupinfo-badge">
+                <nitro-badge [badge]="groupBadgeCode" [isGroup]="true" class="gbadge"></nitro-badge>
+            </div>
+                <button *ngIf="groupMembershipType === 1" class="groupleave-button" [disabled]="isOwner" (click)="leave()">{{ ('group.leave') | translate }}</button>
+                <button *ngIf="groupType === 0 && groupMembershipType === 0" class="groupjoin-button" (click)="join()">{{ ('group.join') | translate }}</button>
+                <div *ngIf="groupType === 1">
+                    <button *ngIf="groupMembershipType === 0" class="groupjoin-button" (click)="join()">{{ ('group.requestmembership') | translate }}</button>
+                    <button *ngIf="groupMembershipType === 2" class="groupwait-button" disabled>{{ ('group.membershippending') | translate }}</button>
+                </div>
+            <div class="groupmembers-count" (click)="getMembers(false)">{{ ('group.members.members') | translate:'count':groupMembersCount }}</div>
+            <div *ngIf="isOwner" class="group-manage" (click)="manage()">{{ ('group.manage') | translate }}</div>
+        </div>
+        <div class="room_groupinfo-right">
+            <div class="groupname-main">
+                <p class="group_name">{{ groupName }}</p>
+                <p class="group_created_date">{{ ('group.created') | translate:['date', 'owner']:[groupCreationDate, groupOwnerName] }}</p>
+            </div>
+            <div class="groupmembers-requests" *ngIf="groupMembershipRequestsCount > 0" (click)="getMembers(true)">{{ ('group.members.pendingmembers') | translate:'count':groupMembershipRequestsCount }}</div>
+            <div class="group_description">{{ groupDescription }}</div>
+            <div class="groupinfo_bottom">
+                <p class="grouphomeroom">{{ ('group.homeroominfo.title') | translate }}</p>
+                <div class="groupinfo-ex">
+                    <div class="ex_group_name">{{ groupName }}</div>
+                    <div class="go-to-ghome" (click)="goToHomeRoom()"></div>
+                    <div class="group_icon" [ngClass]="{'room-plus': groupType === 0, 'room-key': groupType === 1, 'room-ban': groupType === 2}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

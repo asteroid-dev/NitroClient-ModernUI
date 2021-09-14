@@ -1,0 +1,1171 @@
+.nitro-toolbar-component {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: $toolbar-zindex;
+    pointer-events: all;
+    .list-group {
+        align-items: center;
+        .list-group-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: unset;
+            min-width: 50px;
+            width: 50px;
+            margin: 0 5px;
+            &:active {
+                -webkit-transform: translate(0, 1px);
+                transform: translate(0, 1px);
+            }
+            &.avatar-image {
+                width: 65px;
+                height: 60px;
+                img {
+                    position: relative;
+                    top: 12px;
+                    right: 5px;
+                }
+            }
+            .icon,
+            .avatar-image {
+                position: relative;
+                filter: drop-shadow(0px 2px 0px black);
+            }
+            .count {
+                top: 0rem;
+                right: 5px;
+                font-size: 10px;
+            }
+        }
+    }
+    .nitro-toolbar-me-menu {
+        bottom: 87px;
+        left: 300px;
+        position: absolute;
+        font-size: 12px;
+        z-index: $toolbar-memenu-zindex;
+        .list-group {
+            .list-group-item {
+                min-width: 70px;
+                transition: all .3s;
+                font-size: 10px;
+                text-align: center;
+                i {
+                    filter: grayscale(1);
+                }
+                &:hover {
+                    color: $cyan;
+                    text-decoration: underline;
+                    i {
+                        filter: grayscale(0);
+                    }
+                }
+                .count {
+                    top: 0px;
+                    right: 5px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+.toolbar-icon-animation {
+    position: absolute;
+    object-fit: cover;
+    height: auto;
+    width: auto;
+    max-width: 120px;
+    max-height: 150px;
+    z-index: 500;
+    filter: drop-shadow(2px 1px 0 rgba($white, 1)) drop-shadow(-2px 1px 0 rgba($white, 1)) drop-shadow(0 -2px 0 rgba($white, 1));
+}
+
+.mobicountbox {
+    height: auto;
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    z-index: 1;
+    border: solid 1px #000;
+    text-align: center;
+    float: right;
+    font-family: Arial;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 2px 2.5px 0px 2px;
+    font-size: 9px;
+    background: #ca1818;
+    border-radius: 3px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.icon-hover {
+    position: relative;
+}
+
+.mobicountbox2 {
+    position: absolute;
+    width: auto;
+    min-width: 19px;
+    height: 20px;
+    background: #ac1d19;
+    top: 1px;
+    right: 5px;
+    z-index: 1;
+    padding-left: 4px;
+    padding-right: 3px;
+    box-shadow: inset 0px 0px 0px 1px #ed2823;
+    border: solid 1px #000;
+    border-bottom: solid 2px #000;
+    border-radius: 5px;
+}
+
+.mobicountbox3 {
+    position: absolute;
+    width: auto;
+    min-width: 19px;
+    height: 20px;
+    background: #ac1d19;
+    top: 1px;
+    right: 5px;
+    z-index: 1;
+    padding-left: 4px;
+    padding-right: 3px;
+    box-shadow: inset 0px 0px 0px 1px #ed2823;
+    border: solid 1px #000;
+    border-bottom: solid 2px #000;
+    border-radius: 5px;
+}
+
+p.count-txt {
+    color: #fff;
+    font-size: 12px;
+    font-family: Arial;
+}
+
+.me-menu-modernui {
+    bottom: 75px;
+    padding: 5px;
+    left: 248px;
+    width: 84px;
+    height: auto;
+    position: absolute;
+    border-radius: 5px;
+    pointer-events: auto;
+    filter: drop-shadow(0px 0px 6px #00000057);
+    box-shadow: 1px 1px 0px 1px #0000003d;
+    background-color: #1c1c20fa;
+}
+
+.memenuicon {
+    background: #ffffff08;
+    width: 70px;
+    height: 50px;
+    bottom: 0;
+    position: relative;
+    margin: 3px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.memenubottom {
+    position: absolute;
+    left: 33px;
+    bottom: -13px;
+    border-style: solid;
+    border-top-width: 10px;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-top-color: #1c1c20fa;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    filter: drop-shadow(0px 2px 0px);
+    color: #00000047;
+}
+
+
+/* Mobile Version CSS */
+
+.mobile-bottombar {
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+    margin: 0 auto;
+    height: 85px;
+    box-shadow: inset 0px -57px 36px -21px #0000009c;
+    display: none;
+    z-index: 10000;
+}
+
+.m-bubble-select-box {
+    display: none;
+}
+
+@media only screen and (max-width: 1050px),
+(max-height: 550px) {
+    .ust-sohbet-box {
+        bottom: 22px !important;
+    }
+    .chatheadbox {
+        display: none;
+    }
+    .chatstyles-icon {
+        display: none !important;
+    }
+    #alt_bar {
+        display: none;
+    }
+    .bubble-listesi {
+        margin: 5px 5px;
+        height: 150px;
+        width: 199px;
+        overflow: auto;
+        list-style: none;
+    }
+    .bubble-kullan {
+        margin-top: -226px;
+        margin-left: -82px;
+        position: absolute;
+        width: 210px;
+        height: 200px;
+        background: #dfdfdf;
+        border-radius: 6px;
+        border: solid 1px #000;
+        box-shadow: 0px 4px 0px 0px #00000030;
+    }
+    .groupinfo-ackapat {
+        width: 35px !important;
+        height: 60px !important;
+        z-index: 11;
+        margin-top: -3px !important;
+        position: absolute;
+        right: -9px;
+        border: solid 0px #fff0;
+        cursor: pointer;
+        background-color: #0e0e0fd9;
+        filter: drop-shadow(0px 0px 15px #0000008f);
+        transition: 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-radius: 50px 0px 0px 50px;
+    }
+    #grup-bilgiGCorelo {
+        height: auto;
+        border-top: solid 0px;
+        border-bottom: solid 0px;
+        border-left: solid 0px;
+        overflow: hidden;
+        margin-right: 35px;
+        float: left;
+        width: 225px;
+        box-shadow: none !important;
+        border-radius: 5px;
+        border: solid 0px #fff0;
+        position: relative;
+        background: #0e0e0fd9;
+        filter: drop-shadow(0px 0px 15px #0000008f);
+        animation: fadeInRight 0.5s;
+    }
+    .mobile-bottombar {
+        display: block !important;
+        .m-leftbar {
+            float: left;
+            width: auto;
+            height: 85px;
+            position: absolute;
+            bottom: 0;
+            z-index: 10001 !important;
+        }
+        .m-rightbar {
+            float: right;
+            width: auto;
+            height: 85px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 10001 !important;
+        }
+        .m-bar-avatar {
+            width: auto;
+            height: auto;
+            margin-left: 10px;
+            float: left;
+            overflow: hidden;
+            bottom: 0px;
+        }
+        .mbar-avatar-head {
+            transform: scale(1.2);
+            image-rendering: pixelated;
+            margin-left: -13px;
+            filter: drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.7)) drop-shadow(-1px -1px 0px rgba(255, 255, 255, 0.7)) drop-shadow(-1px 1px 0px rgba(255, 255, 255, 0.7)) drop-shadow(1px -1px 0px rgba(255, 255, 255, 0.7));
+            margin-top: -2px;
+        }
+        .m-bar-navigator {
+            width: 39px;
+            height: 90px;
+            float: left;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .m-bar-friends {
+            width: 70px;
+            height: 90px;
+            float: left;
+            bottom: 0px;
+            margin-right: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .m-bar-inventory {
+            width: 40px;
+            height: 90px;
+            float: left;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .m-bar-catalogue {
+            width: 75px;
+            height: 90px;
+            float: left;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .mobicountbox {
+            position: absolute;
+            width: auto;
+            height: 17px;
+            background: #ac1d19;
+            top: 15px;
+            right: -5px;
+            padding-left: 3px;
+            padding-right: 4px;
+            box-shadow: inset 0px 0px 0px 1px #ed2823;
+            border: solid 1px #000;
+            border-bottom: solid 2px #000;
+            border-radius: 5px;
+        }
+        .m-bar-hview {
+            width: 39px;
+            height: 90px;
+            float: left;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25px;
+        }
+        .m-bar-gohome {
+            width: 39px;
+            height: 90px;
+            float: left;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25px;
+        }
+    }
+    #bottom_chat-input-box {
+        bottom: 20px !important;
+        height: 45px;
+        z-index: 10000 !important;
+        opacity: 1 !important;
+    }
+    .anan {
+        z-index: 9999999;
+    }
+    .bottom-bar-chat {
+        width: 250px;
+        height: 40px;
+        margin: auto;
+        bottom: 0;
+        z-index: 5;
+        background: #ffffffde;
+        border-radius: 3px;
+        box-shadow: 0px -5px 0px 0px #ffffff94;
+        filter: drop-shadow(0px 0px 15px #0000008f);
+    }
+    .sendlike {
+        display: none;
+    }
+    #sohbet {
+        outline: 0 !important;
+        color: #000000 !important;
+        border: solid 0px #00000000 !important;
+        width: 215px !important;
+        height: 45px !important;
+        background: #fff0 !important;
+        font-size: 17px !important;
+        padding: 10px !important;
+        font-family: "Ubuntu" !important;
+        margin: -5px 0px 0px 0px !important;
+        box-shadow: none !important;
+        filter: none !important;
+        border-radius: 0 !important;
+    }
+    .m-bubble-select-box {
+        width: 27px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 6;
+        fill: #0000001a;
+        display: block;
+        left: 223px;
+        position: absolute;
+    }
+    .bubble-kullan.active {
+        left: 215px;
+        top: 9px;
+    }
+    .m-roominfo {
+        float: left !important;
+        position: absolute !important;
+        bottom: 95px !important;
+        left: 0px !important;
+        z-index: 2 !important;
+    }
+    .m-toolmain {
+        position: relative;
+        float: left;
+        height: auto;
+    }
+    .m-roominfo-options {
+        width: auto;
+        height: 50px;
+        background: #2e2e2ca8;
+        overflow: hidden;
+        margin-left: -4px;
+        animation: fadeInLeft 0.5s;
+        bottom: 0;
+        position: absolute;
+        border-radius: 0px 10px 10px 0px;
+    }
+    .m-roomi-slide {
+        width: 35px;
+        height: 50px;
+        background: #3a3832;
+        box-sizing: border-box;
+        border-radius: 0px 50px 50px 0px;
+        cursor: pointer;
+        background-position: center center;
+        background-repeat: no-repeat;
+        float: left;
+        z-index: 1;
+        position: absolute;
+        margin-left: -5px;
+    }
+    .nitro-room-chatinput-styleselector-component {
+        display: flex;
+        position: relative;
+        right: 5px;
+        pointer-events: all;
+        height: 100%;
+    }
+    .oda-bilgi-box {
+        padding: 4px;
+        float: right;
+        transition: 0.2s;
+        position: absolute;
+        bottom: 80px;
+        left: -14px;
+    }
+    .oda-bilgi-ac {
+        background-color: #0e0e0fd9;
+        margin: 21px 10px;
+        border-radius: 0px 50px 50px 0px;
+        cursor: pointer;
+        height: 60px;
+        width: 35px;
+        font-weight: bolder;
+        font-family: monospace;
+        font-size: 15px;
+        padding: 4px;
+        float: right;
+        transition: 0.2s;
+        position: absolute;
+        bottom: 0px;
+        border: solid 0px #fff0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        filter: drop-shadow(0px 0px 15px #0000008f);
+        box-shadow: none;
+    }
+    .toolkapat {
+        background-image: url('^assets/images/toolkapat.png');
+        width: 6px;
+        height: 10px;
+        margin-top: -3px;
+        margin-left: -5px;
+    }
+    .oda-bilgileri-detay {
+        width: auto;
+        height: 83px;
+        background: #0e0e0fd9;
+        left: 57px;
+        position: relative;
+        margin-bottom: 6.5px;
+        border-radius: 5px;
+        border: solid 0px #fff0;
+        overflow: hidden;
+        box-sizing: content-box;
+        filter: drop-shadow(0px 0px 15px #0000008f);
+        animation: fadeInLeft 0.5s;
+    }
+    .small_oda-bilgi-button {
+        background: #ffffff0d;
+        width: 29px;
+        height: 29px;
+        border: solid 0px #fff0;
+        cursor: pointer;
+        border-radius: 5px;
+        float: left;
+        margin-right: 7px;
+        outline: 0 !important;
+    }
+    .toolac {
+        margin-left: -5px;
+    }
+}
+
+#bottom_chat-input-box {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 6px;
+}
+
+@media only screen and (max-width: 695px) {
+    .ust-sohbet-box {
+        bottom: 85px !important;
+    }
+}
+
+.mobile-memenu {
+    display: none;
+}
+@media only screen and (max-width: 850px), (max-height: 450px) {
+    .me-menu-modernui {
+        display: none;
+    }
+
+    .ayarlar {
+        display: none;
+    }
+    .mobile-memenu {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient( 140deg, #264157 0%, #255276f9 50%, #225680f7 75%);
+        position: absolute;
+        z-index: 100000;
+        display: block !important;
+        .m_memenu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 81vh;
+            position: relative;
+            .m_memenu-main {
+                width: 150px;
+                height: 150px;
+                background: #ffffff1f;
+                margin: 10px 10px 0px 10px;
+                border-radius: 5px;
+                padding: 10px;
+                position: relative;
+                overflow: hidden;
+                .m_memenu-icon {
+                    width: 100%;
+                    height: 100%;
+                    transform: scale(3);
+                }
+                .gorunum {
+                    background: url('^assets/images/gdegistir.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    filter: drop-shadow(2px 4px 6px) #0000004a;
+                }
+                .mbasarilar {
+                    background: url('^assets/images/basarilar.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    filter: drop-shadow(2px 4px 6px);
+                    color: #0000004a;
+                }
+                .odalarim {
+                    background: url('^assets/images/odalarim.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    filter: drop-shadow(2px 4px 6px);
+                    color: #0000004a;
+                }
+                .m_menu_icon_count {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    width: 20px;
+                    height: 20px;
+                    background: #dc3545;
+                    border-radius: 100%;
+                    filter: drop-shadow(-1px 3px 6px);
+                    color: #00000080;
+                }
+            }
+        }
+    }
+}
+
+
+// friends list
+
+.friendslist-toolbar {
+    width: auto;
+    height: 64px;
+    float: right;
+    top: 5px;
+    bottom: 0;
+    position: relative;
+    z-index: 100;
+}
+
+.tbfl-left-button {
+    width: 30px;
+    height: 30px;
+    margin: 4px 3px;
+    position: relative;
+    cursor: pointer;
+    background: #262629;
+    float: left;
+    border-radius: 5px;
+    filter: drop-shadow(0px 2px 6px #00000030);
+    background-image: url('^assets/images/Seta6.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tbfl-right-button {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin: 4px 3px;
+    position: relative;
+    cursor: pointer;
+    background: #262629;
+    border-radius: 5px;
+    filter: drop-shadow(2px 2px 6px #00000030);
+    background-image: url('^assets/images/Seta5.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tbfl-main {
+    float: left;
+    width: auto;
+    height: 169px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: -11px;
+    bottom: 28px;
+    position: relative;
+    max-width: 576px;
+}
+
+.tbfl-main-mcontent {
+    width: -webkit-max-content;
+    width: max-content;
+    height: 76px;
+    position: relative;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.tbfl-userbox-add {
+    width: 140px;
+    height: 36px;
+    float: left;
+    border-width: 1px 1px 2px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    margin: 0px 2px;
+    background-color: #1e7295;
+    border-top: solid 4px #ffffff0f;
+    border-bottom: solid 4px #00000021;
+    bottom: -40px;
+    filter: drop-shadow(2px 2px 6px #00000050);
+}
+
+.tbfl-userbox {
+    width: 140px;
+    height: 36px;
+    float: left;
+    border-width: 1px 1px 2px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    margin: 0px 2px;
+    background: #009c2e;
+    bottom: -40px;
+    border-top: solid 4px #0abd1ea1;
+    border-bottom: solid 4px #06872c;
+    filter: drop-shadow(2px 2px 6px #00000050);
+}
+
+.tbfl-username {
+    font-weight: 500;
+    font-size: 14px;
+    float: left;
+    font-family: system-ui;
+    margin-left: 36px;
+    padding: 3px 0px;
+    width: 104px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tbfl-avatar {
+    position: absolute;
+    top: -23px;
+    left: -10px;
+    float: left;
+}
+
+.tbfl-avatar-add {
+    background-image: url('^assets/images/toolbar/icons/friend_head.png');
+    width: 31px;
+    height: 34px;
+    position: absolute;
+    top: -7px;
+    left: 2px;
+    float: left;
+}
+
+.tbfl-userbox-add:hover {
+    background-color: #2982a7;
+}
+
+.tbfl-userbox-add:active {
+    background-color: #176180;
+}
+
+.tbfl-userbox:hover {
+    background: #09b43b;
+    border-top: solid 4px #34cf46;
+    border-bottom: solid 4px #00000038;
+}
+
+.tbfl-userbox:active {
+    background: #008427;
+    border-top: solid 4px #0abd1e6e;
+    border-bottom: solid 4px #066321;
+}
+
+.right-ayirici {
+    margin: 6px 10px 6px 8px;
+}
+
+.tbfl-chatico {
+    background-image: url('^assets/images/toolbar/icons/sendmessage.png');
+    width: 20px;
+    height: 21px;
+    margin: 0px 5px;
+}
+
+.tbfl-user-options {
+    position: relative;
+    top: 5px;
+    width: 140px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tbfl-goroomico {
+    background-image: url('^assets/images/toolbar/icons/joinroom.png');
+    width: 21px;
+    height: 21px;
+    margin: 0px 5px;
+}
+
+.tbfl-profileico {
+    background-image: url('^assets/images/toolbar/icons/profile.png');
+    width: 21px;
+    height: 21px;
+    margin: 0px 5px;
+}
+
+.tbfl-chatico:hover {
+    filter: drop-shadow(2px 2px 0 #00000054);
+}
+.tbfl-goroomico:hover {
+    filter: drop-shadow(2px 2px 0 #00000054);
+}
+.tbfl-profileico:hover {
+    filter: drop-shadow(2px 2px 0 #00000054);
+}
+
+@media only screen and (max-width: 1425px) {
+    .tbfl-main {
+      width: 718px;
+    }
+}
+ @media only screen and (max-width: 1275px) {
+    .tbfl-main {
+      width: 574px;
+    }
+}
+@media only screen and (max-width: 1135) {
+    .tbfl-main {
+      width: 430px;
+    }
+}
+
+
+.home_room-desc {
+    width: auto;
+    font-size: 13px;
+    left: 0px;
+    position: absolute;
+    bottom: 52px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: white;
+    z-index: 11111;
+    display: none;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #25262bfa 5%, #1b1b1efa 5% 40%, #1b1b1efa 40% 60%, #1b1b1efa 95% 80%, #171719fa 95%);
+    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 28%) 0px -10px 20px 0px;
+    border: solid 1px #000000;
+    .nd_left {
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        border-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+        border-top-color: #1b1b1efa;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        filter: drop-shadow(0px 1px 0px);
+        color: #000000;
+    }
+}
+.habbo-room:hover {
+    z-index: 999999;
+    float: left;
+    .home_room-desc {
+        display: block;
+
+    }
+
+}
+
+.hotel_view-desc {
+    width: auto;
+    font-size: 13px;
+    left: 0px;
+    position: absolute;
+    bottom: 52px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: white;
+    z-index: 11111;
+    display: none;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #25262bfa 5%, #1b1b1efa 5% 40%, #1b1b1efa 40% 60%, #1b1b1efa 95% 80%, #171719fa 95%);
+    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 28%) 0px -10px 20px 0px;
+    border: solid 1px #000000;
+    .nd_left {
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        border-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+        border-top-color: #1b1b1efa;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        filter: drop-shadow(0px 1px 0px);
+        color: #000000;
+    }
+}
+.habbo-view:hover {
+    z-index: 999999;
+    float: left;
+    .hotel_view-desc {
+        display: block;
+
+    }
+
+}
+
+.catalog-desc {
+    width: auto;
+    font-size: 13px;
+    left: 0px;
+    position: absolute;
+    bottom: 52px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: white;
+    z-index: 11111;
+    display: none;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #25262bfa 5%, #1b1b1efa 5% 40%, #1b1b1efa 40% 60%, #1b1b1efa 95% 80%, #171719fa 95%);
+    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 28%) 0px -10px 20px 0px;
+    border: solid 1px #000000;
+    .nd_left {
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        border-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+        border-top-color: #1b1b1efa;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        filter: drop-shadow(0px 1px 0px);
+        color: #000000;
+    }
+}
+.magaza:hover {
+    z-index: 999999;
+    float: left;
+    .catalog-desc {
+        display: block;
+
+    }
+
+}
+
+.inventory-desc {
+    width: auto;
+    font-size: 13px;
+    left: 0px;
+    position: absolute;
+    bottom: 52px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: white;
+    z-index: 11111;
+    display: none;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #25262bfa 5%, #1b1b1efa 5% 40%, #1b1b1efa 40% 60%, #1b1b1efa 95% 80%, #171719fa 95%);
+    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 28%) 0px -10px 20px 0px;
+    border: solid 1px #000000;
+    .nd_left {
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        border-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+        border-top-color: #1b1b1efa;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        filter: drop-shadow(0px 1px 0px);
+        color: #000000;
+    }
+}
+.envanter:hover {
+    z-index: 999999;
+    float: left;
+    .inventory-desc {
+        display: block;
+
+    }
+
+}
+
+.me_menu-desc {
+    width: auto;
+    font-size: 13px;
+    left: 0px;
+    position: absolute;
+    bottom: 52px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: white;
+    z-index: 11111;
+    display: none;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #25262bfa 5%, #1b1b1efa 5% 40%, #1b1b1efa 40% 60%, #1b1b1efa 95% 80%, #171719fa 95%);
+    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 28%) 0px -10px 20px 0px;
+    border: solid 1px #000000;
+    .nd_left {
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        border-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+        border-top-color: #1b1b1efa;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        filter: drop-shadow(0px 1px 0px);
+        color: #000000;
+    }
+}
+.avatar-habbo:hover {
+    z-index: 999999;
+    float: left;
+    .me_menu-desc {
+        display: block;
+    }
+
+}
+
+.friendlist-desc {
+    width: auto;
+    font-size: 13px;
+    left: 0px;
+    position: absolute;
+    bottom: 52px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: white;
+    z-index: 11111;
+    display: none;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #25262bfa 5%, #1b1b1efa 5% 40%, #1b1b1efa 40% 60%, #1b1b1efa 95% 80%, #171719fa 95%);
+    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 28%) 0px -10px 20px 0px;
+    border: solid 1px #000000;
+    .nd_left {
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        border-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+        border-top-color: #1b1b1efa;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        filter: drop-shadow(0px 1px 0px);
+        color: #000000;
+    }
+}
+.sohbet:hover {
+    z-index: 999999;
+    float: left;
+    .friendlist-desc {
+        display: block;
+
+    }
+
+}
+
+.navigator-desc {
+    width: auto;
+    font-size: 13px;
+    left: 0px;
+    position: absolute;
+    bottom: 52px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-family: "Ubuntu";
+    font-weight: 500;
+    color: white;
+    z-index: 11111;
+    display: none;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #25262bfa 5%, #1b1b1efa 5% 40%, #1b1b1efa 40% 60%, #1b1b1efa 95% 80%, #171719fa 95%);
+    margin: 0 auto;
+    box-shadow: rgb(0 0 0 / 28%) 0px -10px 20px 0px;
+    border: solid 1px #000000;
+    .nd_left {
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        border-style: solid;
+        border-top-width: 8px;
+        border-right-width: 8px;
+        border-left-width: 8px;
+        border-top-color: #1b1b1efa;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        filter: drop-shadow(0px 1px 0px);
+        color: #000000;
+    }
+}
+.oda-gezgini:hover {
+    z-index: 999999;
+    float: left;
+    .navigator-desc {
+        display: block;
+
+    }
+
+}

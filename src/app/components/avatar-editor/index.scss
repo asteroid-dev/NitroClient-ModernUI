@@ -1,0 +1,91 @@
+.nitro-avatar-editor {
+    position: absolute;
+    width: 600px;
+    max-width: 600px;
+
+    .grid-container {
+
+        &.palette-grid {
+
+            .grid-items {
+
+                .item-detail {
+                    height: 25px !important;
+                    max-height: 25px !important;
+
+                    .detail-info {
+
+                        &:hover,
+                        &.active {
+                            border-color: rgba($white, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .grid-items {
+    
+            .item-detail {
+                height: 50px;
+                max-height: 50px;
+            }
+        }
+    }
+
+    .avatar-spotlight {
+        top: -51px;
+        width: 130px;
+        height: 305px;
+        background: transparent url('^assets/images/avatareditor/spotlight.png') no-repeat center;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .avatar-shadow {
+        width: 80px;
+        height: 45.5px;
+        margin-top: 192px;
+        border-radius: 100%;
+        background-color: rgba(0, 0, 0, 0.20);
+    }
+
+    .avatar-container {
+        margin-top: 50px;
+        pointer-events: none;
+
+        .avatar-image {
+            position: absolute;
+        }
+    }
+
+    .arrow-container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 23px;
+
+        .icon {
+            cursor: pointer;
+        }
+
+        .arrow-left-icon {
+            margin-right: 10px;
+        }
+    }
+}
+
+.search-result-item {
+    cursor: pointer;
+}
+
+.nitro-avatar-wardrobe-component {
+    .nitro-avatar-image {
+        width: 50px;
+        overflow: hidden;
+
+        img {
+            margin-top: -20px;
+        }
+    }
+}

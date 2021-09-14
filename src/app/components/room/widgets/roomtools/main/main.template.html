@@ -1,0 +1,61 @@
+<!--<div class="nitro-room-tools">
+    <div class="row m-0 p-0">
+        <div class="d-flex align-items-end">
+            <button type="button" class="btn btn-sm btn-secondary" (click)="toggleRoomOptions()"><i class="fas" [ngClass]="[(roomOptionsVisible ? 'fa-chevron-left' : 'fa-chevron-right')]"></i></button>
+        </div>
+        <div class="overflow-hidden">
+            <div *ngIf="roomOptionsVisible" class="card ml-2" [@inOutAnimation]>
+                <div class="d-flex flex-column p-3">
+                    <p class="h5 text-truncate">{{ roomName }}</p>
+                    <p class="h6 room-owner m-0">{{ ownerName }}</p>
+                    <div *ngIf="tags.length" class="d-block mt-2">
+                        <div *ngFor="let tag of tags" class="badge badge-secondary badge-sm mr-2">#{{ tag }}</div>
+                    </div>
+                    <div class="d-flex mt-2 btn-group">
+                        <button type="button" class="btn btn-sm btn-secondary w-100" (click)="toggleRoomTools()"><i class="fas fa-cog"></i></button>
+                        <button type="button" class="btn btn-sm btn-secondary w-100" (click)="toggleZoom()"><i class="fas" [ngClass]="[ zoomed ? 'fa-search-minus' : 'fa-search-plus']"></i></button>
+                        <button *ngIf="canRate" type="button" class="btn btn-sm btn-secondary w-100" (click)="likeRoom()"><i class="fas fa-heart"></i></button>
+                        <button type="button" class="btn btn-sm btn-secondary w-100" (click)="toggleChatHistory()"><i class="fas fa-comment-alt"></i></button>
+                        <div class="btn-group ml-2">
+                            <button type="button" class="btn btn-sm btn-secondary w-100" (click)="goInDirection(-1)" [disabled]="!hasDirection(-1)"><i class="fas fa-arrow-left"></i></button>
+                            <button type="button" class="btn btn-sm btn-secondary w-100" (click)="goInDirection(1)" [disabled]="!hasDirection(1)"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="oda-bilgi-box">
+    <div class="oda-bilgi-ac " (click)="toggleRoomOptions()">
+        <div [ngClass]="[(roomOptionsVisible ? 'toolkapat' : 'toolac')]"></div>
+    </div>
+    <div *ngIf="roomOptionsVisible" class="oda-bilgileri-detay">
+        <div class="oda-bilgi-roomName">{{ roomName }}</div>
+        <div class="oda-bilgi-roomOwner-text">{{ ('navigator.tooltip.roominfo.owner') | translate }}:</div>
+        <div class="oda-bilgi-roomOwner-name">{{ ownerName }}</div>
+        <br>
+        <div class="oda-bilgi-button-box">
+            <div *ngIf="canRate" id="oda-begen-buton" class="small_oda-bilgi-button" (click)="likeRoom()">
+                <div class="oda-bilgi-button" style="background-image: url(/assets/images/oda-begen.png);"></div>
+            </div>
+            <div id="oda-ayarlar-buton" class="small_oda-bilgi-button" (click)="toggleRoomTools()">
+                <div class="oda-bilgi-button" style="background-image: url(/assets/images/ayarlar.png);"></div>
+            </div>
+            <div id="oda-fullScreen-buton" class="small_oda-bilgi-button" (click)="toggleZoom()">
+                <div class="oda-bilgi-button" style="background-image: url(/assets/images/oda-fullScreen.png);"></div>
+            </div>
+            <div id="oda-sohbet-buton" class="small_oda-bilgi-button" (click)="toggleChatHistory()">
+                <div class="oda-bilgi-button" style="background-image: url(/assets/images/oda-sohbet.png);"></div>
+            </div>
+            <button id="oda-sohbet-buton" class="small_oda-bilgi-button" (click)="goInDirection(-1)" [disabled]="!hasDirection(-1)">
+                <div class="oda-bilgi-button" style="background-image: url(/assets/images/Seta6.png);width:16px;height:28px;"></div>
+            </button>
+            <button id="oda-sohbet-buton" class="small_oda-bilgi-button" (click)="goInDirection(1)" [disabled]="!hasDirection(1)">
+                <div class="oda-bilgi-button" style="background-image: url(/assets/images/Seta5.png);width:17px;height:28px;"></div>
+            </button>
+
+        </div>
+    </div>
+</div>

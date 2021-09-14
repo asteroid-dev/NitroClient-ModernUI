@@ -1,0 +1,25 @@
+<div class="groupcreate-headerinfo"><img class="grupcreate-img" src="/assets/images/guilds/group_UI_identity.png">
+    <div class="grup-bilgi-metinler">
+        <p class="grupcreate-baslik">{{ ('group.create.stepcaption.1') | translate }}</p>
+        <p class="grupcreate-aciklama">{{ ('group.create.stepdesc.1') | translate }}</p>
+    </div>
+</div>
+<div class="groupcreate-bodybox">
+    <div class="groupinfo-left"></div>
+    <div class="groupinfo-right">
+        <small *ngIf="showNameError || showRoomError" class="form-text text-muted invalid-feedback mb-3">{{ ('group.edit.error.no.name.or.room.selected') | translate }}</small>
+        <p class="groupcreate-bodytext">{{ ('group.edit.name') | translate }}</p>
+        <input class="groupname" [ngClass]="{'is-invalid': showNameError}" [(ngModel)]="groupSettings.name">
+        <p class="groupcreate-bodytext">{{ ('group.edit.desc') | translate }}</p>
+        <textarea class="groupdesc" [ngClass]="{'is-invalid': showDescriptionError}" [(ngModel)]="groupSettings.description"></textarea>
+        <p class="groupcreate-bodytext" style="padding-top: 3px;">{{ ('group.edit.base') | translate }}</p>
+        <div class="modernselect-main">
+            <select class="group-roomselect" [ngClass]="{'is-invalid': showRoomError}" [(ngModel)]="groupSettings.roomId">
+                <option selected disabled value="0">{{ ('group.edit.base.select.room') | translate }}</option>
+                <option *ngFor="let room of availableRooms | keyvalue" [value]="room.key">{{ room.value }}</option>
+            </select>
+        </div>
+        <p class="groupcreate-bodytext-description">{{ ('group.edit.base.warning') | translate }}</p>
+        <p class="groupcreate-bodytext-underline">{{ ('group.createroom') | translate }}</p>
+    </div>
+</div>

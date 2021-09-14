@@ -1,0 +1,25 @@
+.nitro-room-tools {
+    position: absolute;
+    left: 10px;
+    bottom: 87px;
+    z-index: $roomtools-zindex;
+}
+
+.nitro-room-tools-room-info-component {
+    position: absolute;
+    max-width: 400px;
+}
+
+.toolac {
+    background-image: url(/assets/images/toolac.png);
+    width: 6px;
+    height: 10px;
+    margin-top: -3px;
+}
+
+.toolkapat {
+    background-image: url(/assets/images/toolkapat.png);
+    width: 6px;
+    height: 10px;
+    margin-top: -3px;
+}

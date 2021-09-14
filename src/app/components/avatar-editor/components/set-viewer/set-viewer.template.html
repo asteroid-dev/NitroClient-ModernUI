@@ -1,0 +1,7 @@
+<div class="gorunumler-box">
+    <div class="clothes-box detail-info has-image" *ngFor="let part of partSet" (click)="selectPart(part)" [ngClass]="{ 'ae-active': part.isSelected }">
+        <div class="aeditor_clothes" [ngStyle]="(part.imageUrl && { 'background-image': 'url(' + part.imageUrl + ')' })">
+            <div *ngIf="part.isClear" class="gorunum-sifirla"></div>
+        </div>
+    </div>
+</div>

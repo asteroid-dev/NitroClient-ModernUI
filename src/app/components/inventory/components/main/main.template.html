@@ -1,0 +1,45 @@
+<div *ngIf="visible" [bringToTop] class="minv">
+    <div class="minv-container">
+        <div class="minv-left">
+            <div class="mnav-menu">
+                <button (click)="showFurniture()" type="button" class="minv-menu-box" [ngClass]="{ 'minv-active': furnitureVisible || tradingVisible }"><div class="newmobi-alert" *ngIf="furniUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+                <button (click)="showPets()" type="button" class="minv-menu-box" [ngClass]="{ 'minv-active': petsVisible }"><div class="newmobi-alert" *ngIf="petUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+                <button (click)="showBadges()" type="button" class="minv-menu-box" [ngClass]="{'minv-active' : badgesVisible}"><div class="newmobi-alert" *ngIf="badgeUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+                <button (click)="showBots()" type="button" class="minv-menu-box" [ngClass]="{ 'minv-active': botsVisible }"><div class="newmobi-alert" *ngIf="botUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+            </div>
+        </div>
+        <div class="minv-main">
+            <div *ngIf="botsVisible" nitro-inventory-bots-component [roomPreviewer]="roomPreviewer" class="minv-furniture-component"></div>
+            <div *ngIf="petsVisible" nitro-inventory-pets-component [roomPreviewer]="roomPreviewer" class="minv-furniture-component"></div>
+            <div *ngIf="furnitureVisible" nitro-inventory-furniture-component [roomPreviewer]="roomPreviewer" class="minv-furniture-component"></div>
+            <div *ngIf="badgesVisible" nitro-inventory-badges-component class="minv-furniture-component"></div>
+        </div>
+        <div class="minv-close-main">
+            <div class="minv-close" (click)="hide()"><div class="closeshadow"></div><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="visible" [bringToTop] [draggable] id="envanterhtml">
+    <div id="envanterhtmlhareket" class="drag-handler">
+        <div class="envanter-padding">
+            <div class="envanter-header-baslik">{{ ('inventory.title') | translate }}</div>
+            <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+    <div id="envanter-menu">
+        <div class="h5-menu-center">
+            <button (click)="showFurniture()" type="button" class="modern-menu-box" [ngClass]="{ 'modernmenu-active': furnitureVisible || tradingVisible }"><div class="modern-menuhr"></div>{{ 'inventory.furni' | translate }}<div class="yenimobisayi" *ngIf="furniUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+            <button (click)="showPets()" type="button" class="modern-menu-box" [ngClass]="{ 'modernmenu-active': petsVisible }"><div class="modern-menuhr"></div>{{ 'inventory.furni.tab.pets' | translate }}<div class="yenimobisayi" *ngIf="petUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+            <button (click)="showBadges()" type="button" class="modern-menu-box" [ngClass]="{'modernmenu-active' : badgesVisible}"><div class="modern-menuhr"></div>{{ 'inventory.badges' | translate }}<div class="yenimobisayi" *ngIf="badgeUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+            <button (click)="showBots()" type="button" class="modern-menu-box" [ngClass]="{ 'modernmenu-active': botsVisible }"><div class="modern-menuhr"></div>{{ 'inventory.bots' | translate }}<div class="yenimobisayi" *ngIf="botUnseenCount">{{ 'inventory.furni.tab.new' | translate }}</div></button>
+        </div>
+    </div>
+    <div *ngIf="botsVisible" nitro-inventory-bots-component [roomPreviewer]="roomPreviewer"></div>
+    <div *ngIf="petsVisible" nitro-inventory-pets-component [roomPreviewer]="roomPreviewer"></div>
+    <div *ngIf="furnitureVisible" nitro-inventory-furniture-component [roomPreviewer]="roomPreviewer"></div>
+    <div *ngIf="badgesVisible" nitro-inventory-badges-component></div>
+    <div *ngIf="tradingVisible" nitro-inventory-trading-component></div>
+</div>
+
+<div [showMainWindow]="marketPlaceOfferVisible && offerForMarketplace && offerStatsIsCorrect" [item]="offerForMarketplace" nitro-inventory-offer-marketplace-component></div>

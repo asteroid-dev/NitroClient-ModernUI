@@ -1,0 +1,18 @@
+<div #activeView class="nitro-room-avatarinfo-component context-menu corelo align-items-center">
+    <div class="avatarinfo-username" (click)="openProfilePage()" *ngIf="visible">
+        <p class="m-0">{{ userName }}</p>
+    </div>
+    <div class="ainfo-radius d-flex flex-column w-100" *ngIf="visible">
+        <ng-container *ngFor="let entry of menu">
+            <ul *ngIf="(mode === entry.mode)" class="list-group list-group-flush" [ngClass]="{ 'columns-3': (entry.mode === 4) }">
+                <ng-container *ngFor="let item of entry.items">
+                    <li *ngIf="item.visible" (click)="processAction(item.name)" class="list-group-item" [innerHTML]="(((item.name === '11') || (item.name === '12') || (item.name === '13') || (item.name === '14') || (item.name === '15')) ? (item.localization | keepHtml) : (item.localization | translate))"></li>
+                </ng-container>
+            </ul>
+        </ng-container>
+        <ul *ngIf="(mode === 4)" class="list-group list-group-flush">
+            <li class="list-group-item" (click)="processAction('back')">{{ 'generic.back' | translate }}</li>
+        </ul>
+    </div>
+    <div class="avatarinfo-visible" [ngClass]="visible ? 'fa-chevron-down' : 'fa-chevron-up m-2'" (click)="toggleVisibility()"></div>
+</div>

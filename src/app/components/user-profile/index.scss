@@ -1,0 +1,202 @@
+.nitro-user-profile-component {
+    position: absolute;
+    width: $user-profile-width;
+    .profile-avatar-container {
+        overflow: hidden;
+        div img {
+            margin-left: -15px;
+            margin-top: -15px;
+        }
+    }
+    .profile-user-right {
+        border-radius: 0 $border-radius $border-radius $border-radius;
+        .profile-user-motto {
+            min-height: 60px;
+        }
+    }
+    .profile-info-bg {
+        min-height: 58px;
+        border-radius: 0 $border-radius $border-radius $border-radius;
+        .user-profile-badge {
+            height: 50px;
+            width: 50px;
+            &:not(:last-child) {
+                margin-right: 5px;
+            }
+            img {
+                align-self: center;
+            }
+        }
+        .profile-relationship {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            .profile-relationship-information {
+                &:hover {
+                    filter: brightness(1.3);
+                    cursor: pointer;
+                }
+                .relationship-avatar {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    width: 50px;
+                    margin-top: -40px;
+                    margin-right: 10px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    .card-body {
+        font-size: 15px;
+        .profile-upper-container {
+            overflow: auto;
+            .profile-info-container {
+                float: left;
+                width: calc(100% - 90px);
+                .profile-info-motto {
+                    font-size: 13px;
+                    min-height: 40px;
+                }
+                .its-me {
+                    float: left;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 18px;
+                    margin-left: 10px;
+                    .icon {
+                        float: left;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .badges-container {
+            text-align: center;
+            background: rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            padding: 10px 0px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            min-height: 59px;
+            nitro-badge {
+                margin: 5px;
+            }
+        }
+        .profile-relationship {
+            position: relative;
+            margin-top: 10px;
+            height: 50px;
+            cursor: pointer;
+            &:hover {
+                .profile-relationship-name {
+                    font-weight: bold;
+                }
+            }
+            .icon-container {
+                float: left;
+                width: 26px;
+            }
+            .profile-relationship-information {
+                position: relative;
+                float: left;
+                width: calc(100% - 36px);
+                margin-left: 10px;
+                .relationship-avatar {
+                    position: absolute;
+                    right: 0px;
+                    top: -10px;
+                    height: 60px;
+                    width: 50px;
+                    overflow: hidden;
+                    img {
+                        margin-top: -30px;
+                        margin-left: -20px;
+                    }
+                }
+                .profile-relationship-name {
+                    background: rgba(0, 0, 0, .1);
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    font-size: 14px;
+                }
+                .profile-relationship-extra {
+                    font-size: 13px;
+                    font-weight: bold;
+                    min-height: 19px;
+                }
+            }
+        }
+        .grid-items {
+            text-align: center;
+        }
+        .group-detail {
+            overflow: auto;
+            min-height: 130px;
+            margin-bottom: 10px;
+            .left-side {
+                float: left;
+                width: calc(100% - 90px);
+                .group-title {
+                    font-size: 16px;
+                    line-height: 20px;
+                    .icon {
+                        float: left;
+                        margin-right: 5px;
+                    }
+                }
+                .group-created-at {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+                .group-description {
+                    text-align: justify;
+                }
+            }
+            .right-side {
+                float: left;
+                width: 80px;
+                margin-left: 10px;
+                .group-badge {
+                    height: 80px;
+                    width: 80px;
+                    background: rgba(0, 0, 0, .1);
+                    border-radius: 5px;
+                    img {
+                        width: 70px;
+                        margin: 5px;
+                    }
+                }
+                .group-members {
+                    text-align: right;
+                    .icon {
+                        float: right;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.profil-rozet-box-main {
+    width: 44px;
+    height: 44px;
+    background: #0000000f;
+    float: left;
+    margin-left: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.p-r5-padding-test {
+    position: absolute;
+    margin-left: -3px;
+}

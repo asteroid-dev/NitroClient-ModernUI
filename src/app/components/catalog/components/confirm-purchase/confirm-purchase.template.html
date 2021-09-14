@@ -1,0 +1,54 @@
+<div class="hotel-alert">
+    <div [bringToTop] [draggable] class="catalogue-alert" [center]="true">
+        <div id="alert-header">
+            <div class="modern_alert-header-text">{{ (giftOffer != null ? 'catalog.purchase_confirmation.gift.title' : 'catalog.purchase_confirmation.title') | translate }}</div>
+        </div>
+        <div class="modern_alert_body">
+            <div class="catalogue-buymobi-main">
+                <div #imageElement class="catalogue-buymobi" [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')'}"></div>
+
+                <div class="catalogue-buymobi-description">
+                    <p class="catalogue-buymobi-name">{{ getOfferTitle() }}</p>
+                    <p class="catalogue-buymobi-piece">x{{ quantity }} piece</p>
+                    <div class="catalogue-buymobi-price">
+                        <p *ngIf="costCredits" class="cbm-credits">{{ costCredits }} <i class="catalogue_buy-currency-1"></i></p>
+                        <p *ngIf="costCredits && costPoints" class="cbm-plus">+</p>
+                        <p *ngIf="costPoints" class="cbm-other_credits">{{ costPoints }} <i class="catalogue_buy-currency-{{ pointsType }}"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-buymobi-main">
+                <div class="mobile-buymobi-name">
+                    {{ getOfferTitle() }}
+                    <div class="mobi-piece">x{{ quantity }}</div>
+                </div>
+                <div #imageElement class="mobile-mobi-preview" [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')'}"></div>
+                <div class="mobilebuy-w40">
+                    <div class="mobile-buymobi-button-main">
+                        <div class="mobile-buymobi-price">
+                            <p *ngIf="costCredits" class="mobile-mobi-credits">{{ costCredits }} <i class="catalogue_buy-currency-1"></i></p>
+                            <p *ngIf="costCredits && costPoints" class="mobile-plus">+</p>
+                            <p *ngIf="costPoints" class="mobile-mobi-other-credits">{{ costPoints }} <i class="catalogue_buy-currency-{{ pointsType }}"></i></p>
+                        </div>
+                        <div class="mobile-buymobi-button">
+                            <div class="mobile-buymobi-cancel" (click)="hide()">
+                                <div class="h-k-yazi">{{ ('catalog.purchase_confirmation.cancel') | translate }}</div>
+                            </div>
+                            <div class="mobile-buymobi-confirmation" (click)="purchase()">
+                                <div class="h-k-yazi">{{ (giftOffer != null ? 'catalog.purchase_confirmation.gift' : 'catalog.purchase_confirmation.buy') | translate }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group w-100 mobile-none">
+                <div class="choices-button" (click)="hide()">
+                    <div class="h-k-yazi">{{ ('catalog.purchase_confirmation.cancel') | translate }}</div>
+                </div>
+                <div class="choices-button" (click)="purchase()">
+                    <div class="h-k-yazi">{{ (giftOffer != null ? 'catalog.purchase_confirmation.gift' : 'catalog.purchase_confirmation.buy') | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,397 @@
+.nitro-hotelview-component {
+    display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba($black, 1);
+	
+	.avatar-image {
+		bottom: 12px;
+		left: 63px;
+		position: absolute;
+		z-index: 1;
+	}
+
+	.background {
+		height:100%;
+		width:100%;
+		background-position: left;
+		background-repeat: repeat-y;
+	}
+
+	.drape {
+		left:0px;
+		top:0;
+		animation-iteration-count: 1;
+		animation-name: slideDown;
+		animation-duration: 1s;
+		z-index: 3;
+	}
+
+	.sun {
+		top:0;
+		left:0;
+		right:0;
+		margin: auto;
+	}
+
+	.left {
+		bottom:0;
+		left:0;
+		animation-iteration-count: 1;
+		animation-name: slideUp;
+		animation-duration: 1s;
+	}
+
+	.right {
+		right:0;
+		bottom:0;
+		animation-iteration-count: 1;
+		animation-name: slideUp;
+		animation-duration: 1s;
+	}
+
+	.rightRepeat {
+		right:0;
+		top:0;
+		animation-iteration-count: 1;
+		animation-name: slideRight;
+		animation-duration: 1s;
+	}
+}
+
+@keyframes slideDown {
+    from {
+        top: -100%;
+    }
+    to {
+        top:0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        bottom: -100%;
+    }
+    to {
+        bottom:0;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        right: -100%;
+    }
+    to {
+        right:0;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+.hotel-bosluk {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    margin: auto;
+    background-position: center center;
+    font-family: Arial;
+}
+
+.hotel-view-haber-box {
+    position: absolute;
+    margin: 90px 0px 0px 306px;
+    width: 550px;
+    height: auto;
+    z-index: 1;
+}
+
+.view-haber {
+    width: auto;
+    height: 150px;
+    float: left;
+    margin-bottom: 111px;
+}
+
+.hv-haber-gorsel {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-right: 33px;
+}
+
+.hv-haber-baslik {
+    float: left;
+    font-size: 17px;
+    text-shadow: 1px 1px 0px #0000002b;
+    width: 300px;
+    margin-top: -3px;
+    font-weight: bold;
+}
+
+.hv-haber-aciklama {
+    float: left;
+    font-size: 12px;
+    width: 235px;
+    line-height: 14px;
+    padding-top: 0px;
+}
+
+.habbo-drape {
+    position: absolute;
+    left: 100px;
+    width: 145px;
+    height: 200px;
+    float: left;
+    z-index: 1;
+}
+
+.bosluk-sol {
+    position: absolute;
+    left: 0;
+    bottom: 0px !important;
+}
+
+.bosluk-sag {
+    image-rendering: pixelated;
+    right: 0;
+    bottom: 0px;
+    position: absolute;
+}
+
+.view-buton {
+    background: url(/assets/images/reception/view-buton.png);
+    width: 178px;
+    height: 26px;
+    float: left;
+    top: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.vb-text {
+    font-size: 11px;
+    text-shadow: 1px 1px 0px #ffffff;
+    color: #000000cf;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.hw-haber-ex2 {
+    position: absolute;
+    margin: 90px 0px 0px 810px;
+    width: 330px;
+    height: auto;
+    z-index: 1;
+}
+
+.view-buton:active {
+    background: url(/assets/images/reception/vbuton-active.png);
+}
+
+.view-buton:hover {
+    filter: drop-shadow(2px -2px 6px #ffffff4a);
+}
+
+.hotelview_habbo-avatar {
+    float: left;
+    position: absolute;
+    bottom: 34px;
+    left: 122px;
+    z-index: 1;
+}
+
+.view_bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1050px), (max-height: 550px) {
+    .modern-carousel {
+        display: none !important;
+    }
+    .hotel-view-haber-box {
+        display: none;
+    }
+    .hw-haber-ex2 {
+        display: none;
+    }
+    .hotel-bosluk {
+        height: 100%;
+    }
+    .bosluk-sol {
+        bottom: 0px;
+    }
+
+}
+
+.modern-carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-main {
+    width: 700px;
+    height: 270px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 0px 50px;
+    scroll-behavior: smooth;
+}
+
+.carousel-tab {
+    width: 100%;
+    min-width: 700px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel-promoimg {
+    width: 270px;
+    height: 270px;
+    transform: scale(1.8);
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+.carousel-name {
+    float: left;
+    width: 99%;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: system-ui;
+    height: 31px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    color: #ffffff;
+}
+
+.carousel-text {
+    float: left;
+    width: 430px;
+    height: 270px;
+    padding-left: 30px;
+    padding-top: 10px;
+    z-index: 2;
+}
+
+.carousel-description {
+    float: left;
+    width: 93%;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: system-ui;
+    height: auto;
+    max-height: 165px;
+    overflow: hidden;
+    line-height: 18px;
+    color: #ffffffeb;
+}
+
+.carousel-button {
+    width: auto;
+    height: 45px;
+    min-width: 190px;
+    background: #009c2e;
+    margin-top: 10px;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: 0 !important;
+    float: left;
+    box-shadow: 0px 3px 0px 0px #ffffff0f;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 17px;
+    color: #fff;
+}
+
+.leftclick {
+    width: 33px;
+    height: 50px;
+    background: url('^assets/images/hotelview/arrow_grey_left.png');
+    cursor: pointer;
+    opacity: 0.6;
+    filter: drop-shadow(0px 2px 2px);
+    color: #00000052;
+}
+
+.leftclick:active {
+    opacity: 0.7;
+}
+
+.rightclick {
+    width: 33px;
+    height: 50px;
+    background: url('^assets/images/hotelview/arrow_grey_right.png');
+    cursor: pointer;
+    opacity: 0.6;
+    filter: drop-shadow(0px 2px 2px);
+    color: #00000052;
+}
+
+.rightclick:active {
+    opacity: 0.7;
+}
+
+.carousel-spromo_hidden {
+    width: 270px;
+    height: 270px;
+    float: left;
+    overflow: hidden;
+}
+
+.mobile-view {
+    display: none;
+}
+@media only screen and (max-width: 850px), (max-height: 450px) {
+    .mobile-view {
+        display: block;
+    }
+    .habbo-drape {
+        display: none;
+    }
+    .bosluk-sol {
+        width: 395px;
+        animation-duration: 1s;
+        animation-name: fadeInLeft;
+    }
+    .bosluk-sag {
+        display: none;
+    }
+    .hotelview_habbo-avatar {
+        display: none;
+    }
+    .mobile-view {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mview-main {
+        width: auto;
+        height: auto;
+    }
+    .mview-wassup {
+        font-family: "Ubuntu";
+        font-weight: bold;
+        font-size: 40px;
+        text-shadow: 0px 0px 50px #0000007a;
+    }
+}

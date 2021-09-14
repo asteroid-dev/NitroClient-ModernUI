@@ -1,0 +1,19 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="modern-messenger">
+    <div class="drag-handler messenger-head">
+        <p class="messenger-hood">{{ ('messenger.title') | translate }}</p>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="messenger-body">
+        <div class="active-messenger-list">
+            <div class="friends-menu" (click)="displayFriends()" [ngClass]="{ 'friends-menu-active': friendsVisible }">{{ ('friendlist.friends') | translate }}<span *ngIf="(totalFriendRequests > 0)" class="new_message-alert">{{ totalFriendRequests }}</span></div>
+            <p class="friends-chat-text">{{ ('toolbar.icon.label.messenger') | translate }}</p>
+            <div class="friends-active-chat-list">
+                <div nitro-friendlist-thread-list-component [currentThread]="currentThread" [threadSelector]="selectThread"></div>
+            </div>
+        </div>
+        <div class="messenger-friends-list" *ngIf="friendsVisible" nitro-friendlist-friends-viewer-component [threadSelector]="selectThread"></div>      
+        <div *ngIf="currentThread" nitro-friendlist-thread-viewer-component [thread]="currentThread"></div>
+
+
+    </div>
+</div>

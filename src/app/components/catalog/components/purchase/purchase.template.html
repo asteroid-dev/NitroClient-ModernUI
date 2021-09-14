@@ -1,0 +1,36 @@
+<div *ngIf="!activeOffer.products[0].uniqueLimitedItem || activeOffer.products[0].uniqueLimitedItemsLeft > 0" class="mobisatinal" [ngClass]="{ '': vertical, '': quantityEnabled }">
+    
+    <div class="mobile-purchase-description">You are viewing this furniture, you can buy it or gift it to your friend!
+        Please check your inventory after purchasing.</div>
+    <div class="shop-buygift" (click)="purchase(true)">
+        <div class="buygift-text">{{ ('catalog.purchase_confirmation.gift') | translate }}</div>
+        <div class="buygift-go"></div>
+    </div>
+    <div class="shop-mobibuy-main">
+        <div class="multiple-buymobi" *ngIf="quantityEnabled">
+            <div class="multiple-text">{{ ('catalog.bundlewidget.quantity') | translate }}:</div>
+            <input type="number" class="multiple-input" [(ngModel)]="quantity" min="1" [max]="maxQuantity">
+        </div>
+
+        <div class="mobi-creditsinfo" [ngClass]="[ ((vertical || quantityEnabled) ? '': '') ]">
+            <div [ngClass]="{ '': vertical }">
+                <div *ngIf="costCredits" class="mobicredits">
+                    <div class="ccico">
+                        <i class="icon icon-currencybig-cc"></i>
+                    </div>
+                    <p class="cctext">{{ costCredits }}</p>
+                </div>
+                <div *ngIf="costPoints" class="mobipoints">
+                    <div class="ccico">
+                        <i class="icon icon-currencybig-{{ pointsType }}"></i>
+                    </div>
+                    <p class="cctext">{{ costPoints }}</p>
+                </div>
+            </div>
+        </div>
+        <button class="shop-mobibuy" (click)="purchase()">
+            <div class="mobibuy-text">{{ ('buy') | translate }}</div>
+        </button>
+
+    </div>
+</div>

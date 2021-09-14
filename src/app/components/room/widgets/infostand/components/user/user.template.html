@@ -1,0 +1,85 @@
+<!--<div class="infostand d-flex flex-column btn btn-primary rounded p-0 nohover">
+    <div class="d-flex align-items-center justify-content-between pt-3 px-3 w-100">
+        <div class="badge badge-secondary badge-sm" (click)="visitProfile()"><i class="fas fa-user"></i></div> {{ userData.name }}
+        <button type="button" class="close" (click)="hide()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="d-flex flex-column p-3 w-100">
+        <div class="d-flex flex-nowrap">
+            <div class="body-image">
+                <div nitro-avatar-image [figure]="userData.figure" [direction]="4"></div>
+            </div>
+            <div class="flex-grow-1">
+                <div class="badge-container">
+                    <div *ngFor="let badge of userData.badges" class="motto-badge-box">
+                        <nitro-badge *ngIf="(badge !== '')" [badge]="badge"></nitro-badge>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-2">
+            <div *ngIf="isOwnProfile" class="motto-container">
+                <i class="icon pencil-icon"></i>
+                <textarea class="motto-input" [(ngModel)]="userData.motto" placeholder="{{ ('infostand.motto.change') | translate }}" maxlength="38" wrap="soft" rows="1" (keyup)="resizeTextArea($event)" (keydown.enter)="saveMotto($event)"></textarea>
+            </div>
+            <div *ngIf="!isOwnProfile" class="motto-container">
+                <span class="motto">{{ userData.motto }}</span>
+            </div>
+        </div>
+        <div class="d-flex flex-column mt-2">
+            <p class="badge badge-secondary mb-0">{{ ('extendedprofile.achievementscore') | translate }} {{ userData.activityPoints }}</p>
+            <p *ngIf="(userData.carryItem > 0)" class="badge badge-secondary mt-2 mb-0">{{ ('infostand.text.handitem') | translate }}</p>
+        </div>
+    </div>
+</div>-->
+
+
+<div id="oldhabbo_motto" class="mnone">
+    <div class="motto-header">
+        <div class="motto-username" (click)="visitProfile()">{{ userData.name }}</div>
+        <i class="fas fa-times" (click)="hide()"></i>
+    </div>
+    <div class="motto-hr"></div>
+    <div class="motto-avatar-view">
+        <div nitro-avatar-image [figure]="userData.figure" [direction]="4"
+            style="left: -12px;top: -10px;position: relative;"></div>
+    </div>
+    <div class="motto-badges-section">
+        <div class="infostandBadgegrids">
+            <div class="motto-group-badge-box"></div>
+            <div *ngFor="let badge of userData.badges" class="motto-badge-box">
+                <nitro-badge *ngIf="(badge !== '')" [badge]="badge"></nitro-badge>
+            </div>
+        </div>
+    </div>
+    <div class="motto-hr"></div>
+    <div *ngIf="isOwnProfile" style="float:left;height:30px;">
+        <i class="icon pencil-icon"></i>
+        <textarea class="mottotxtbox" [(ngModel)]="userData.motto"
+            placeholder="{{ ('infostand.motto.change') | translate }}" maxlength="38" wrap="soft" rows="1"
+            (keyup)="resizeTextArea($event)" (keydown.enter)="saveMotto($event)"></textarea>
+    </div>
+    <div *ngIf="!isOwnProfile" class="mottotxtbox" style="position: relative;float: left;">
+        <span class="usermotto">{{ userData.motto }}</span>
+    </div>
+    <div class="motto-hr"></div>
+    <div class="motto-success-score">
+        <p class="succes-score_name">{{ ('extendedprofile.achievementscore') | translate }} {{
+            userData.activityPoints }}</p>
+        <p class="user-score" *ngIf="(userData.carryItem > 0)">{{ ('infostand.text.handitem') | translate }}</p>
+    </div>
+    <div class="motto-hr"></div>
+    <!--<div class="motto_expressions-box" style="display: none;">
+        <div class="motto_heart-user">
+            <img class="expressions-ico" src="./assets/images/motto/kalp.png">
+            <p class="motto_expressions-username">{{ ('extendedprofile.add.friends') | translate }}</p>
+        </div>
+        <div class="motto_smile-user">
+            <img class="expressions-ico" src="./assets/images/motto/gulucuk.png">
+            <p class="motto_expressions-username">{{ ('extendedprofile.add.friends') | translate }}</p>
+        </div>
+        <div class="motto_angry_face_user">
+            <img class="expressions-ico" src="./assets/images/motto/kurukafa.png">
+            <p class="motto_expressions-username">{{ ('extendedprofile.add.friends') | translate }}</p>
+        </div>
+    </div>-->
+</div>

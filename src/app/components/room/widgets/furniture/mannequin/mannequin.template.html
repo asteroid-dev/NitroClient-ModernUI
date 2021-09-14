@@ -1,0 +1,48 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="nitro-furniture-mannequin card">
+    <div class="drag-handler d-flex align-items-center justify-content-between pt-3 px-3 w-100">
+        <h6 class="m-0">{{ 'mannequin.widget.title' | translate }}</h6>
+        <div class="close" (click)="hide()"><i class="fas fa-times"></i></div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="mannequin-background">
+                <div class="mannequin-figure" nitro-avatar-image [direction]="2" [figure]="figure">&nbsp;</div>
+                <div *ngIf="hasHabboClub" class="hc-icon">&nbsp;</div>
+            </div>
+        </div>
+        <ng-container [ngSwitch]="view">
+            <div *ngSwitchCase="'wrong-gender'" class="col-8">
+                {{ 'mannequin.widget.wronggender' | translate }}
+                <button type="button" (click)="handleButton('close')" class="btn btn-primary">{{ 'generic.ok' | translate}}</button><br />
+            </div>
+
+            <div *ngSwitchCase="'no-club'" class="col-8">
+                {{ 'mannequin.widget.clubnotification' | translate}}
+                <button type="button" (click)="handleButton('close')" class="btn btn-primary">{{ 'generic.ok' | translate}}</button><br />
+
+            </div>
+            <div *ngSwitchCase="'peer-main'" class="col-8">
+                <i>{{ outfitName}}</i><br /><br />
+                {{ 'mannequin.widget.weartext' | translate }}
+                <button type="button" (click)="handleButton('wear')" class="btn btn-primary">{{ 'mannequin.widget.wear' | translate}}</button><br />
+            </div>
+            <div *ngSwitchCase="'main'" class="col-8">
+                <input type="text" [(ngModel)]="outfitName" (keyup.enter)="saveName()"><br />
+                <button type="button" (click)="handleButton('re_style')" class="btn btn-primary" style="width: 177px; margin-top: 10px;">{{ 'mannequin.widget.style' | translate}}</button>
+                <button type="button" (click)="handleButton('wear')" class="btn btn-primary" style="width: 177px; margin-top: 10px;">{{ 'mannequin.widget.wear' | translate}}</button><br />
+            </div>
+            <div *ngSwitchCase="'save'" class="col-8">
+                {{ 'mannequin.widget.savetext' | translate }}<br />
+                <button type="button" (click)="handleButton('save_outfit')" class="btn btn-primary" style="margin-top: 10px;">{{ 'mannequin.widget.save' | translate}}</button>
+                <button type="button" (click)="handleButton('main')" class="btn btn-primary" style="margin-top: 10px;">{{ 'mannequin.widget.back' | translate}}</button><br />
+            </div>
+            <div *ngSwitchDefault class="list-group-item">
+                {{ view }}
+            </div>
+        </ng-container>
+    </div>
+
+
+
+</div>

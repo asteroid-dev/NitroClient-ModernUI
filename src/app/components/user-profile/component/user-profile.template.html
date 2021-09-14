@@ -1,0 +1,193 @@
+<div *ngIf="visible" [bringToTop] [draggable] id="profil-detay-html" class="nitro-user-profile-component">
+    <div id="profil-detay-htmlhareket" class="drag-handler">
+        <div class="profil-detay-bilgiler-aciklama" *ngIf="isMe">
+            <div class="profil-detay-bilgiler-aciklama-i">
+                <img src="./assets/images/iconhabbosmall.png" style="margin: 4.5px;">
+                <div class="p-d-b-a-i-yazi">{{ ('extendedprofile.me') | translate }}</div>
+            </div>
+        </div>
+        <div class="profil-header-baslik">{{ ('extendedprofile.caption') | translate }}</div>
+        <div class="modern-close" (click)="hide()">
+            <div class="closetab1"></div>
+            <div class="closetab2"></div>
+        </div>
+    </div>
+    <div class="habbo-profil">
+        <div id="profil-detay-box">
+            <div class="profil-detay-b-sol">
+                <div class="profil-detay-avatar-box">
+                    <div class="profil-avatar-box">
+                        <div class="profil-karakter" nitro-avatar-image [figure]="userProfile.figure" [direction]="2">
+
+                        </div>
+                        <img class="profil-karakter-karo" src="/assets/images/platteh.png?0">
+                    </div>
+                    <div class="p-a-b-username" [ngClass]="[(!isMe && !isFriend) ? 'rounded-left' : 'rounded']">
+                        <div class="kullanici-profil-cevrimici"
+                            [ngClass]="userProfile.isOnline ? 'kullanici-profil-cevrimici' : 'kullanici-profil-cevrimdisi'">
+                        </div>
+                        {{ userProfile.username }}
+                    </div>
+                    <div class="uprofile-motto">{{ userProfile.motto }}</div>
+                    <div class="p-d-b-fixed">
+                        <div class="profil-detaylar-box">
+                            <div class="p-d-b-padding"
+                                [innerHTML]="('extendedprofile.created') | translate:'created':userProfile.registration">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-d-b-fixed">
+                        <div class="profil-detaylar-box">
+                            <div class="p-d-b-padding"
+                                [innerHTML]="('extendedprofile.last.login') | translate:'lastlogin':(lastLogin)"></div>
+                        </div>
+                    </div>
+                    <div class="p-d-b-fixed">
+                        <div class="profil-detaylar-box">
+                            <div class="p-d-b-padding"><b>{{ ('extendedprofile.achievementscore') | translate }}</b> {{userProfile.achievementPoints}}</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="profil-rozetler5" style="position: absolute;width: 100%;top: 131px;">
+                <div class="p-r5-padding-test">
+                    <div class="profil-rozet-box-main"></div>
+                    <div class="profil-rozet-box-main"></div>
+                    <div class="profil-rozet-box-main"></div>
+                    <div class="profil-rozet-box-main"></div>
+                    <div class="profil-rozet-box-main"></div>
+                </div>
+                <div class="p-r5-padding" style="position: absolute;">
+                    <div class="profil-rozet-box" *ngFor="let badge of userBadges">
+                        <nitro-badge [badge]="badge"></nitro-badge>
+                    </div>
+                </div>
+            </div>
+            <div class="profil-detay-b-sag">
+                <div class="l-iliski-padding">
+                    <div class="tumiliskiler">{{ ('extendedprofile.relstatus') | translate }}</div>
+                </div>
+                <div class="profil-detay-iliskiler-box">
+                    <div class="p-d-i-fixed" (click)="openRelationshipProfile(currentRandomHeartRelationship)">
+                        <img class="iliskiKalp-icon" src="/assets/images/kalp.png">
+                        <div class="profil-iliskiler-box" style="margin-top: 0;">
+                            <div *ngIf="currentRandomHeartRelationship" class="relationship-avatar" nitro-avatar-image
+                                [headOnly]="true" [figure]="currentRandomHeartRelationship.randomFriendFigure"
+                                [direction]="4" style="display:none;"></div>
+                            <div class="p-d-b-padding">
+                                {{ currentRandomHeartRelationship ? currentRandomHeartRelationship.randomFriendName :
+                                (('extendedprofile.no.friends.in.this.category') | translate) }}
+                            </div>
+                            <div class="profile-relationship-extra">
+                                {{ (currentRandomHeartRelationship && currentRandomHeartRelationship.friendCount > 1) ?
+                                (('extendedprofile.relstatus.others.heart') |
+                                translate:'count':(currentRandomHeartRelationship.friendCount - 1)) : '' }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-d-i-fixed" (click)="openRelationshipProfile(currentRandomSmileRelationship)">
+                        <img class="iliskiGulucuk-icon" src="/assets/images/gulucuk.png">
+                        <div class="profil-iliskiler-box">
+    
+                            <div *ngIf="currentRandomSmileRelationship" class="relationship-avatar" nitro-avatar-image
+                                [headOnly]="true" [figure]="currentRandomSmileRelationship.randomFriendFigure"
+                                [direction]="4" style="display:none;"></div>
+    
+                            <div class="p-d-b-padding">
+                                {{ currentRandomSmileRelationship ? currentRandomSmileRelationship.randomFriendName :
+                                (('extendedprofile.no.friends.in.this.category') | translate) }}
+                            </div>
+                            <div class="profile-relationship-extra">
+                                {{ currentRandomSmileRelationship && currentRandomSmileRelationship.friendCount > 1 ?
+                                (('extendedprofile.relstatus.others.smile') |
+                                translate:'count':(currentRandomSmileRelationship.friendCount - 1)) : '' }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-d-i-fixed" (click)="openRelationshipProfile(currentRandomBobbaRelationship)">
+                        <img class="iliskiKuruKafa-icon" src="/assets/images/kurukafa.png">
+                        <div class="profil-iliskiler-box">
+                            <div *ngIf="currentRandomBobbaRelationship" class="relationship-avatar" nitro-avatar-image
+                                [headOnly]="true" [figure]="currentRandomBobbaRelationship.randomFriendFigure"
+                                [direction]="4" style="display:none;"></div>
+                            <div class="p-d-b-padding">
+                                {{ currentRandomBobbaRelationship ? currentRandomBobbaRelationship.randomFriendName :
+                                (('extendedprofile.no.friends.in.this.category') | translate) }}
+                            </div>
+                            <div class="profile-relationship-extra">
+                                {{ currentRandomBobbaRelationship && currentRandomBobbaRelationship.friendCount > 1 ?
+                                (('extendedprofile.relstatus.others.bobba') |
+                                translate:'count':(currentRandomBobbaRelationship.friendCount - 1)) : '' }}
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div id="arkadas-istek-yolla" *ngIf="!isMe && !isFriend">
+                    <img src="/assets/images/istek-yolla.png" style="float: left;margin: 5px;position: absolute;">
+                    <div class="istek-yolla-yazi">{{ ('extendedprofile.addasafriend') | translate }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="profil-cizgi"></div>
+    </div>
+
+    <div id="profil-grup-box">
+        <div class="l-gruplar-padding">
+            <div class="tumgruplar">{{ 'avatar.profile.groups' | translate }} <b style="color: #F44336;">({{
+                    userProfile.groups.length }})</b></div>
+        </div>
+        <div class="uinfo-groupmain">
+            <div class="uprofile-group-list">
+                <div class="group-listbg">
+                    <div class="group_box-bg" *ngFor="let group of userProfile.groups"
+                        [ngClass]="{'grupactive': selectedGroup && selectedGroup.id === group.id}"
+                        (click)="selectGroup(group.id)">
+                        <div class="uprofile-group-badge">
+                            <nitro-badge [badge]="group.badge" [isGroup]="true"></nitro-badge>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="group-no-information"></div>
+            <div class="uprofile-group-information" *ngIf="selectedGroup">
+                <div class="uprofile-selection-groupbadge">
+                    <div class="selection-groupbadge">
+                        <nitro-badge [badge]="selectedGroup.badge" [isGroup]="true"></nitro-badge>
+                    </div>
+                    <div *ngIf="selectedGroup.membershipType !== 1">
+                        <button *ngIf="selectedGroup.type === 0" class="selection-entergroup">{{ ('group.join') |
+                            translate }}</button>
+                        <div *ngIf="selectedGroup.type === 1">
+                            <button *ngIf="selectedGroup.membershipType === 0" class="selection-entergroup">{{
+                                ('group.requestmembership') | translate }}</button>
+                            <button *ngIf="selectedGroup.membershipType === 2" class="selection-entergroup">{{
+                                ('group.membershippending') | translate }}</button>
+                        </div>
+                    </div>
+                    <button *ngIf="selectedGroup.membershipType === 1" class="group-exit">{{ ('group.leave') |
+                        translate }}</button>
+
+
+                </div>
+                <div class="selection-group-members">{{ 'group.edit.settings.decoration.members.label' | translate}}: {{
+                    selectedGroup.membersCount }}</div>
+                <div class="group-info-box_right">
+                    <p class="ginfo_group-name">{{ selectedGroup.title }}</p>
+                    <p class="ginfo_group-creation-date">{{ ('group.created') | translate:['date',
+                        'owner']:[this._userProfileService.selectedGroup.createdAt,
+                        this._userProfileService.selectedGroup.ownerName] }}
+                    </p>
+                    <p class="ginfo_group-description">{{ selectedGroup.description }}</p>
+                    <p class="ginfo_group-room" (click)="goToGroupRoom()">{{ 'group.linktobase' | translate}}</p>
+                    <p class="ginfo_buy-group-mobi">{{ 'group.buyfurni' | translate}}</p>
+                    <p class="ginfo_popular-groups">{{ 'group.showgroups' | translate}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

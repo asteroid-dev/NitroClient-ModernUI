@@ -1,0 +1,27 @@
+<!--<div class="nitro-group-image-selector-component mb-3">
+    <perfect-scrollbar style="min-height:414px;max-height:414px;height:414px;">
+        <div class="grid-container">
+            <div class="grid-items grid-8">
+                <button *ngIf="!part.isBase" class="item-detail btn btn-primary btn-sm p-0" [ngClass]="{'active': part.key === 0}" (click)="selectPart(0)"><i class="fas fa-times"></i></button>
+                <button *ngFor="let item of items | keyvalue" class="item-detail btn btn-primary btn-sm p-0" [ngClass]="{'active': part.key === item.key}" (click)="selectPart(item.key)">
+                    <nitro-badge [badge]="getBadgeCode(item.key)" [isGroup]="true"></nitro-badge>
+                </button>
+            </div> 
+        </div> 
+    </perfect-scrollbar> 
+</div>
+-->
+
+<div class="groupbadge_position-head-text">
+    <p class="grouptext-5">{{ ('group.edit.badge.pick.symbol') | translate }}</p>
+</div>
+<div class="group-image-secimi">
+    <div class="groupwhitebg">
+        <div class="group-image-list">
+            <button *ngIf="!part.isBase" class="groupimage" [ngClass]="{'gactive': part.key === 0}" (click)="selectPart(0)"><img src="/assets/images/avatareditor/cross.png"></button>
+            <button *ngFor="let item of items | keyvalue" class="groupimage" [ngClass]="{'gactive': part.key === item.key}" (click)="selectPart(item.key)">
+                <nitro-badge [badge]="getBadgeCode(item.key)" [isGroup]="true"></nitro-badge>
+            </button>
+        </div>
+    </div>
+</div>

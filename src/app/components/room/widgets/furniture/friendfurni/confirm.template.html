@@ -1,0 +1,13 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="furniture-lock">
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ 'friend.furniture.confirm.lock.caption' | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="furniture-lock-main">
+        <div class="furniture-lock-description">{{ 'friend.furniture.confirm.lock.subtitle' | translate }}</div>
+        <div class="d-flex justify-content-between align-items-center p-3">
+            <button type="button" class="lock-close" (click)="handleButton('cancel')">{{ 'friend.furniture.confirm.lock.button.cancel' | translate }}</button>
+            <button type="button" class="lock-save" (click)="handleButton('confirm')">{{ 'friend.furniture.confirm.lock.button.confirm' | translate }}</button>
+        </div>
+    </div>
+</div>

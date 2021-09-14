@@ -1,0 +1,26 @@
+
+
+<div [draggable] [center]="false" dragHandle=".md-header" class="md-usertool">
+    <div class="md-header">{{user.username}}
+        <div class="md-close" (click)="close()">
+            <div class="md-closetab1"></div>
+            <div class="md-closetab2"></div>
+        </div>
+    </div>
+    <div class="md-usertool-box">
+        <div class="usertool-main">
+            <div class="usertool-left">
+                <div class="usertool-info" *ngFor="let item of userProperties">
+                    <div class="usertool-itemname">{{ getTranslatedForKey(item.nameKey, item.nameKeyFallback)}}</div>
+                    <div class="usertool-itemvalue">{{ item.value }}</div>
+                </div>
+            </div>
+            <div class="usertool-right">
+                <button type="button" (click)="handleClick('roomchat')" class="usertool-button">{{ getTranslatedForKey('roomchat', 'Room Chat') }}</button>
+                <button type="button" (click)="handleClick('send_message')" class="usertool-button">{{ getTranslatedForKey('send_message', 'Send Message') }}</button>
+                <button type="button" (click)="handleClick('room_visits')" class="usertool-button">{{ getTranslatedForKey('room_visits', 'Room Visits') }}</button>
+                <button type="button" (click)="handleClick('mod_action')" class="usertool-button">{{ getTranslatedForKey('mod_action', 'Mod Action') }}</button>
+            </div>
+        </div>
+    </div>
+</div>

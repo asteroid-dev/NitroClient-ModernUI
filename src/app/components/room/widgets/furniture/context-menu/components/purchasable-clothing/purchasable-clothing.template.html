@@ -1,0 +1,25 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="nitro-furniture-purchasable-clothing">
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ 'useproduct.widget.title.bind_clothing' | translate }}</div>
+        <div class="modern-close" (click)="hide()">
+            <div class="closetab1"></div>
+            <div class="closetab2"></div>
+        </div>
+    </div>
+    <div class="purchasable-clothing-main">
+        <div class="purchasable-clothing-box">
+            <div class="purchasable-clothing-left">
+                <div class="purchasable-new-figure" nitro-avatar-image [figure]="newFigureString" [direction]="2"></div>
+            </div>
+            <div class="purchasable-clothing-right">
+                <div class="purchasable-clothing-description0">{{ ('useproduct.widget.bind_clothing') | translate }}</div>
+                <div class="purchasable-clothing-description1">{{ ('useproduct.widget.text.bind_clothing') | translate }}</div>
+                <div class="purchasable-clothing-description2">{{ ('useproduct.widget.info.bind_clothing') | translate }}</div>
+            </div>
+        </div>
+        <div class="purchasable-clothing-button-main">
+            <button type="button" class="purchasable-clothing-close" (click)="handleButton('cancel')">{{ 'useproduct.widget.cancel' | translate }}</button>
+            <button type="button" class="purchasable-clothing-use" (click)="handleButton('use')">{{ 'useproduct.widget.bind_clothing' | translate }}</button>
+        </div>
+    </div>
+</div>

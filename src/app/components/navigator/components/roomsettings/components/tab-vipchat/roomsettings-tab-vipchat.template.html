@@ -1,0 +1,89 @@
+<!--<div class="font-weight-bold">{{ ('navigator.roomsettings.vip.caption') | translate }}</div>
+<div class="mb-3">{{ ('navigator.roomsettings.vip.info') | translate }}</div>
+<div class="font-weight-bold">{{ ('navigator.roomsettings.vip_settings') | translate }}</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" [(ngModel)]="roomSettings.hideWalls" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.hide_walls') | translate }}</label>
+</div>
+<select class="form-control form-control-sm mb-3" [(ngModel)]="roomSettings.wallThickness" (ngModelChange)="save()">
+    <option value="0">{{ ('navigator.roomsettings.wall_thickness.normal') | translate }}</option>
+    <option value="1">{{ ('navigator.roomsettings.wall_thickness.thick') | translate }}</option>
+    <option value="-1">{{ ('navigator.roomsettings.wall_thickness.thin') | translate }}</option>
+    <option value="-2">{{ ('navigator.roomsettings.wall_thickness.thinnest') | translate }}</option>
+</select>
+<select class="form-control form-control-sm mb-3" [(ngModel)]="roomSettings.floorThickness" (ngModelChange)="save()">
+    <option value="0">{{ ('navigator.roomsettings.floor_thickness.normal') | translate }}</option>
+    <option value="1">{{ ('navigator.roomsettings.floor_thickness.thick') | translate }}</option>
+    <option value="-1">{{ ('navigator.roomsettings.floor_thickness.thin') | translate }}</option>
+    <option value="-2">{{ ('navigator.roomsettings.floor_thickness.thinnest') | translate }}</option>
+</select>
+<div class="font-weight-bold">{{ ('navigator.roomsettings.chat_settings') | translate }}</div>
+<div class="mb-2">{{ ('navigator.roomsettings.chat_settings.info') | translate }}</div>
+<select class="form-control form-control-sm mb-2" [(ngModel)]="roomSettings.chatBubbleMode" (ngModelChange)="save()">
+    <option value="0">{{ ('navigator.roomsettings.chat.mode.free.flow') | translate }}</option>
+    <option value="1">{{ ('navigator.roomsettings.chat.mode.line.by.line') | translate }}</option>
+</select>
+<select class="form-control form-control-sm mb-2" [(ngModel)]="roomSettings.chatBubbleWeight" (ngModelChange)="save()">
+    <option value="0">{{ ('navigator.roomsettings.chat.bubbles.width.normal') | translate }}</option>
+    <option value="1">{{ ('navigator.roomsettings.chat.bubbles.width.thin') | translate }}</option>
+    <option value="2">{{ ('navigator.roomsettings.chat.bubbles.width.wide') | translate }}</option>
+</select>
+<select class="form-control form-control-sm mb-2" [(ngModel)]="roomSettings.chatBubbleSpeed" (ngModelChange)="save()">
+    <option value="0">{{ ('navigator.roomsettings.chat.speed.fast') | translate }}</option>
+    <option value="1">{{ ('navigator.roomsettings.chat.speed.normal') | translate }}</option>
+    <option value="2">{{ ('navigator.roomsettings.chat.speed.slow') | translate }}</option>
+</select>
+<select class="form-control form-control-sm mb-2" [(ngModel)]="roomSettings.chatFloodProtection" (ngModelChange)="save()">
+    <option value="0">{{ ('navigator.roomsettings.chat.flood.loose') | translate }}</option>
+    <option value="1">{{ ('navigator.roomsettings.chat.flood.normal') | translate }}</option>
+    <option value="2">{{ ('navigator.roomsettings.chat.flood.strict') | translate }}</option>
+</select>
+<div class="form-group mb-0">
+    <label>{{ ('navigator.roomsettings.chat_settings.hearing.distance') | translate }}</label>
+    <input type="number" min="0" class="form-control form-control-sm" [(ngModel)]="roomSettings.chatDistance" (blur)="save()">
+</div>
+-->
+
+<div id="vip-ayar-box">
+    <div class="oda-ayar-baslik-text">{{ ('navigator.roomsettings.vip.caption') | translate }}</div>
+    <div class="oda-ayar-aciklama-text">{{ ('navigator.roomsettings.vip.info') | translate }}</div>
+    <div class="bosluk2 oda-ayar-baslik-text">{{ ('navigator.roomsettings.vip_settings') | translate }}</div>
+    <div class="oda-ayar-checkbox bosluk01"> <input id="check-css" type="checkbox" [(ngModel)]="roomSettings.hideWalls" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.hide_walls') | translate }}</div>
+    </div>
+    <select id="kategori-sec" class="bosluk0-05" [(ngModel)]="roomSettings.wallThickness" (ngModelChange)="save()">
+        <option value="0">{{ ('navigator.roomsettings.wall_thickness.normal') | translate }}</option>
+        <option value="1">{{ ('navigator.roomsettings.wall_thickness.thick') | translate }}</option>
+        <option value="-1">{{ ('navigator.roomsettings.wall_thickness.thin') | translate }}</option>
+        <option value="-2">{{ ('navigator.roomsettings.wall_thickness.thinnest') | translate }}</option>
+    </select>
+    <select id="kategori-sec" class="bosluk01" [(ngModel)]="roomSettings.floorThickness" (ngModelChange)="save()">
+        <option value="0">{{ ('navigator.roomsettings.floor_thickness.normal') | translate }}</option>
+        <option value="1">{{ ('navigator.roomsettings.floor_thickness.thick') | translate }}</option>
+        <option value="-1">{{ ('navigator.roomsettings.floor_thickness.thin') | translate }}</option>
+        <option value="-2">{{ ('navigator.roomsettings.floor_thickness.thinnest') | translate }}</option>
+    </select>
+    <div class="oda-ayar-baslik-text">{{ ('navigator.roomsettings.chat_settings') | translate }}</div>
+    <div class="oda-ayar-aciklama-text">{{ ('navigator.roomsettings.chat_settings.info') | translate }}</div>
+    <select id="kategori-sec" class="bosluk0-05" [(ngModel)]="roomSettings.chatBubbleMode" (ngModelChange)="save()">
+        <option value="0">{{ ('navigator.roomsettings.chat.mode.free.flow') | translate }}</option>
+        <option value="1">{{ ('navigator.roomsettings.chat.mode.line.by.line') | translate }}</option>
+    </select>
+    <select id="kategori-sec" class="bosluk01" [(ngModel)]="roomSettings.chatBubbleWeight" (ngModelChange)="save()">
+        <option value="0">{{ ('navigator.roomsettings.chat.bubbles.width.normal') | translate }}</option>
+        <option value="1">{{ ('navigator.roomsettings.chat.bubbles.width.thin') | translate }}</option>
+        <option value="2">{{ ('navigator.roomsettings.chat.bubbles.width.wide') | translate }}</option>
+    </select>
+    <select id="kategori-sec" class="bosluk01" [(ngModel)]="roomSettings.chatBubbleSpeed" (ngModelChange)="save()">
+        <option value="0">{{ ('navigator.roomsettings.chat.speed.fast') | translate }}</option>
+        <option value="1">{{ ('navigator.roomsettings.chat.speed.normal') | translate }}</option>
+        <option value="2">{{ ('navigator.roomsettings.chat.speed.slow') | translate }}</option>
+    </select>
+    <select id="kategori-sec" class="bosluk01" [(ngModel)]="roomSettings.chatFloodProtection" (ngModelChange)="save()">
+        <option value="0">{{ ('navigator.roomsettings.chat.flood.loose') | translate }}</option>
+        <option value="1">{{ ('navigator.roomsettings.chat.flood.normal') | translate }}</option>
+        <option value="2">{{ ('navigator.roomsettings.chat.flood.strict') | translate }}</option>
+    </select>
+    <input class="max-sohbet-mesafe" placeholder="00" type="number" min="0" [(ngModel)]="roomSettings.chatDistance" (blur)="save()">
+    <div class="oda-ayar-baslik-text oabt-padding-cb-2">{{ ('navigator.roomsettings.chat_settings.hearing.distance') | translate }}</div>
+</div>

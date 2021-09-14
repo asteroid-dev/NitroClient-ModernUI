@@ -1,0 +1,23 @@
+<!--<div *ngIf="visible" [bringToTop] [draggable] class="nitro-achievements card">
+    <div class="drag-handler d-flex justify-content-between align-items-center px-3 pt-3">
+        <h6 class="m-0">{{ 'inventory.achievements' | translate }}</h6>
+        <button type="button" class="close" (click)="hide()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="row p-3">
+        <div class="col-6 d-flex flex-column" nitro-achievements-category-list-component></div>
+        <div *ngIf="selectedCategory" class="col-6 d-flex flex-column" nitro-achievements-category-component [category]="selectedCategory"></div>
+    </div>
+</div>
+-->
+<div *ngIf="visible" [bringToTop] [draggable] id="basaripuan">
+    <div id="basaripuanhareket" class="drag-handler">
+        <div class="basaripuan-padding">
+            <div class="basaripuan-header-baslik">{{ 'inventory.achievements' | translate }}</div>
+            <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+    <div class="basaripuan-box">
+        <div nitro-achievements-category-list-component></div>
+        <div *ngIf="selectedCategory" nitro-achievements-category-component [category]="selectedCategory"></div>
+    </div>
+</div>

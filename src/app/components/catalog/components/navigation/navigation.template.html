@@ -1,0 +1,26 @@
+<div class="nitro-catalog-navigation-component magaza-menu">
+    <div class="menu-arama-box">
+        <div class="menu-arama-baslik-box">
+            <div class="menu-arama-baslik-yazi">{{ ('navigator.searchcode.title.categories') | translate }}</div>
+        </div>
+        <div class="menu-arama-kutusu-m">
+            <input class="menu-arama" type="text" placeholder="{{ 'catalog.search' | translate }}" [formControl]="searchControl"/>
+            <div id="menu-aramayi-tamamla"><img class="arama-buton-icon" src="/assets/images/arama.png?"></div>
+        </div>
+    </div>
+    <div class="magaza-menu-listesi">
+        <nitro-catalog-navigation-set-component [catalogPage]="searchResults || catalogPage"></nitro-catalog-navigation-set-component>
+    </div>
+</div>
+
+<div class="nitro-catalog-navigation-component-mobile">
+    <div class="submenutitle"><p class="cataloguemenu">{{ ('furnituremenu') | translate }}</p></div>
+    <div class="navigation-search-mobile">
+        <div class="margin-5">
+            <input class="mobile-catalogue-search" type="text" placeholder="{{ 'catalog.search' | translate }}" [formControl]="searchControl"/>
+        </div>
+    </div>
+    <div class="navigation-mobile">
+        <nitro-catalog-navigation-set-component [catalogPage]="searchResults || catalogPage"></nitro-catalog-navigation-set-component>
+    </div>
+</div>

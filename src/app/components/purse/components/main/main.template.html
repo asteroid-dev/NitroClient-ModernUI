@@ -1,0 +1,17 @@
+<div class="cc-box">
+    <div class="kredi-bilgilerim">
+
+        <ng-container *ngFor="let currency of currencies | keyvalue">
+            <div class="miktar-box" *ngIf="isVisible(currency.key)">
+                <div id="cc-credit" class="miktar" >{{ currency.value | shortNumber }}</div>
+                <div class="pursebox-ccico" nitro-currency-icon [type]="currency.key"></div>
+            </div>
+        </ng-container>
+
+        <div class="cc-bilgi">
+            <div id="cc-callCredit" class="miktar">{{ hcDay }}</div>
+            <img src="assets/images/hc.png" style="margin-top: -1px;">
+        </div>
+
+    </div>
+</div>

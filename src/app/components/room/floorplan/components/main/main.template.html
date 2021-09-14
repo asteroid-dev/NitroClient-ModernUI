@@ -1,0 +1,138 @@
+<div *ngIf="visible" [bringToTop] [draggable]
+    class="nitro-floorplan-editor-component modern-floorplan">
+    <div class="floorplan-header drag-handler">
+        <p class="floorplan-headtxt">{{ ('floor.plan.editor.title') | translate
+            }}</p>
+        <div class="modern-close" (click)="close()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="floorplan-main">
+        <div class="fpmain">
+            <div class="fpleft-header">
+                <p class="draw-height-text">{{ ('floor.plan.editor.draw.mode') |
+                    translate }}</p>
+                <div class="fproom-settings-button tile-set" style="margin-left:
+                    0px;" [ngClass]="{'fproomb-active': currentAction === 'set'}"
+                    (click)="changeAction('set')"></div>
+                <div class="fproom-settings-button tile-unset"
+                    [ngClass]="{'fproomb-active': currentAction === 'unset'}"
+                    (click)="changeAction('unset')"></div>
+                <div class="fp_hr"></div>
+                <div class="fproom-settings-button tile-up"
+                    [ngClass]="{'fproomb-active': currentAction === 'up'}"
+                    (click)="changeAction('up')"></div>
+                <div class="fproom-settings-button tile-down"
+                    [ngClass]="{'fproomb-active': currentAction === 'down'}"
+                    (click)="changeAction('down')"></div>
+                <div class="fp_hr"></div>
+                <div class="fproom-settings-button tile-door"
+                    [ngClass]="{'fproomb-active': currentAction === 'door'}"
+                    (click)="changeAction('door')"></div>
+                <div class="floorplan-color-select-main">
+                    <div class="fpe-colormain" *ngFor="let item of colorMap |
+                        keyvalue" (click)="selectHeight(item.key)"
+                        [ngClass]="{'fpe-colormain-active': currentHeight ===
+                        item.key}" [ngStyle]="{'backgroundColor':
+                        getColor(item.value)}"><div class="color-selected"></div></div>
+                </div>
+            </div>
+            <div class="flooright2-hr"></div>
+            <div class="fpright-header">
+                <div class="direction-option">
+                    <p class="draw-height-text">{{
+                        ('floor.plan.editor.enter.direction') | translate }}</p>
+                    <div class="direction-main">
+                        <div class="direction-left"
+                            (click)="incrementDoorDirection()"></div>
+                        <div class="enterdirection-head" avatar-image
+                            [headOnly]="true" [scale]="4" [asBackground]="true"
+                            [figure]="currentAvatarFigure"
+                            [direction]="doorDirection">
+                        </div>
+                        <div class="direction-right"
+                            (click)="decrementDoorDirection()"></div>
+                    </div>
+                    <div class="floorbottom-hr"></div>
+                    <div class="direction-main">
+                        <button class="wall-left"
+                            (click)="decrementWallheight()"></button>
+                        <button class="wall-height">{{ wallHeight }}</button>
+                        <button class="wall-right"
+                            (click)="incrementWallheight()"></button>
+                    </div>
+                </div>
+                <div class="flooright-hr"></div>
+                <div class="lookandfeel">
+                    <p class="draw-height-text">{{
+                        ('floor.plan.editor.room.options') | translate }}</p>
+                    <div class="lfbutton-main">
+                        <select class="wall-select" [(ngModel)]="thicknessWall">
+                            <option [value]="0">{{
+                                ('navigator.roomsettings.wall_thickness.thinnest')
+                                | translate }}</option>
+                            <option [value]="1">{{
+                                ('navigator.roomsettings.wall_thickness.thin') |
+                                translate }}</option>
+                            <option [value]="2">{{
+                                ('navigator.roomsettings.wall_thickness.normal')
+                                | translate }}</option>
+                            <option [value]="3">{{
+                                ('navigator.roomsettings.wall_thickness.thick')
+                                | translate }}</option>
+                        </select>
+                        <select class="floor-select"
+                            [(ngModel)]="thicknessFloor">
+                            <option [value]="0">{{
+                                ('navigator.roomsettings.floor_thickness.thinnest')
+                                | translate }}</option>
+                            <option [value]="1">{{
+                                ('navigator.roomsettings.floor_thickness.thin')
+                                | translate }}</option>
+                            <option [value]="2">{{
+                                ('navigator.roomsettings.floor_thickness.normal')
+                                | translate }}</option>
+                            <option [value]="3">{{
+                                ('navigator.roomsettings.floor_thickness.thick')
+                                | translate }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="floorplan-room-main">
+                <div class="floorplan-flooredit" [ngClass]="{'': showPreviewer,
+                    '': !showPreviewer}">
+                    <div class="fpe-infomain">
+                        <p class="draw-height">{{
+                            ('floor.plan.editor.tile.height') | translate }}</p>
+                        <div class="fp-areabox">Area: {{ coloredTilesCount }}/{{
+                            maxTilesCount }}</div>
+                    </div>
+                    <div #floorplanElement class="editor-area fp-room_map"></div>
+                </div>
+                <div *ngIf="showPreviewer" class="floorplan-preview-main">
+                    <div #floorplanPreviewer class="editor-area
+                        fp-room_map-preview">
+                        <div class="room-preview fpbg" nitro-room-preview-component
+                            [roomPreviewer]="roomPreviewer" [width]="1000"
+                            [height]="1000" [modelScale]="false"
+                            [model]="currentModel" [wallHeight]="wallHeight"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="floorplan-button_main">
+        <div class="fp-reset" (click)="revertChanges()"
+            [disabled]="!ableToRevertChanges">{{ ('floor.plan.editor.reload') |
+            translate }}</div>
+        <div class="fp-right-button">
+            <div class="fp-preview" (click)="togglePreviewer()">{{
+                togglePreviewButton }}</div>
+            <div class="fp-import" (click)="openImportExport()">{{
+                ('floor.plan.editor.import.export') | translate }}</div>
+            <div class="fp-save" (click)="save()">{{ ('floor.plan.editor.save')
+                | translate }}</div>
+        </div>
+    </div>
+</div>
+<nitro-floorplan-import-export-component *ngIf="showImportExport"
+    [map]="heightMap"></nitro-floorplan-import-export-component>

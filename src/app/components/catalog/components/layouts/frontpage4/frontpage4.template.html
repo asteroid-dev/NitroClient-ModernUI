@@ -1,0 +1,162 @@
+
+<div class="magaza-anasayfa-bilgi">
+    <div class="mab-sol">
+
+        <div id="magaza-ufak-haberler">
+            <div *ngIf="activePage.frontPageItems[0]" class="ilkhaber" [ngStyle]="{'background-image':'url(' + getImagesUrl() + activePage.frontPageItems[0].itemPromoImage + ')'}">
+                <div class="ctlg-new">
+                    <p class="ctlg-new-text">NEW!</p>
+                </div>
+                 <div class="haber-aciklama">{{activePage.frontPageItems[0].itemName}}</div>
+            </div>
+            <div *ngIf="activePage.frontPageItems[1]" class="magaza-haber" [ngStyle]="{'background-image':'url(' + getImagesUrl() + activePage.frontPageItems[1].itemPromoImage + ')'}">
+                <div class="haber-aciklama">{{activePage.frontPageItems[1].itemName}}</div>
+            </div>
+            <div *ngIf="activePage.frontPageItems[2]" class="magaza-haber" [ngStyle]="{'background-image':'url(' + getImagesUrl() + activePage.frontPageItems[2].itemPromoImage + ')'}">
+                <div class="haber-aciklama">{{activePage.frontPageItems[2].itemName}}</div>
+            </div>
+            <div *ngIf="activePage.frontPageItems[3]" class="magaza-haber" [ngStyle]="{'background-image':'url(' + getImagesUrl() + activePage.frontPageItems[3].itemPromoImage + ')'}">
+                <div class="haber-aciklama">{{activePage.frontPageItems[3].itemName}}</div>
+            </div>
+            <redeem-voucher-component [localization]="activePage.localization"></redeem-voucher-component>
+        </div>   
+    </div>
+    <!--<div class="mab-sag">
+        <div class="trend-urunler-yazi-box">
+            <div class="populer-mobiler-yazi">MOST POPULAR ITEMS! CHECK THESE</div>    
+        </div>
+        <div class="trend-urunler-bilgi">
+
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+            <div class="trend-mobi">
+                <div class="mobi-fiyatlari">
+                    <div class="onizleme-mobiAdi">mobi_name</div>
+                    <div class="mobi-credi-elmas-miktar">
+                        <div id="kredi-bilgi"><img class="frontpage-ccico" src="/assets/images/kredi.png">
+                            <div class="kac-kredi">2000</div>
+                        </div>
+                        <div id="elmas-bilgi"><img src="/assets/images/elmas.png" class="frontpage-ccico">
+                            <div class="kac-elmas">445</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobi-onizleme">
+                    <div class="mobi-gorunum" style="background-image: url(/assets/images/nomobi.png);"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>-->
+</div>

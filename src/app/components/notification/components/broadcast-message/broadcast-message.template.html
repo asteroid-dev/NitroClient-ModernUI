@@ -1,0 +1,11 @@
+<div class="hotel-alert" noMemory="true" center="true">
+    <div class="halert-box">
+        <div class="halert-header">{{ title }}</div>
+        <div class="halert_mesaj">
+            <div class="ha_message_scroll" [innerHTML]="message"></div>
+        </div>
+        <div class="halert_kapat" (click)="close()">
+            <div class="h-k-yazi">{{ ('generic.close') | translate }}</div>
+        </div>
+    </div>
+</div>

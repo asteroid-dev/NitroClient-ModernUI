@@ -1,0 +1,83 @@
+<!--<div class="w-100 h-100 nitro-catalog-layout-trophies-component">
+    <div class="d-flex flex-column">
+        <p class="small" *ngFor="let text of textPages;" [innerHtml]="text"></p>
+        <div class="w-100 bg-secondary rounded nitro-catalog-layout-trophies-selector row mx-0 py-2 mb-2">
+            <div class="col-sm d-flex flex-row justify-content-end">
+                <button type="button" (click)="handleButton('previous')"
+                    class="btn btn-sm btn-secondary align-self-end">Previous</button>
+            </div>
+            <div class="col-sm d-flex flex-row justify-content-center">
+                <img class="align-self-center" [src]="imageUrl" image-placeholder />
+            </div>
+            <div class="col-sm d-flex flex-row">
+                <button type="button" (click)="handleButton('next')"
+                    class="btn btn-sm btn-secondary align-self-end">Next</button>
+            </div>
+        </div>
+        <div class="d-flex flex-row nitro-catalog-layout-trophies-types mb-2">
+            <button type="button" [ngClass]="'btn btn-sm color-gold p-0 w-100 rounded mr-2 ' + getActiveClass('g')" (click)="handleTrophyColor('g')"  [disabled]="!trophyHasColor('g')"></button>
+            <button type="button" [ngClass]="'btn btn-sm color-silver p-0 w-100 rounded mr-2 ' + getActiveClass('s')" (click)="handleTrophyColor('s')" [disabled]="!trophyHasColor('s')"></button>
+            <button type="button" [ngClass]="'btn btn-sm color-bronze p-0 w-100 rounded mr-2 ' + getActiveClass('b')" (click)="handleTrophyColor('b')"  [disabled]="!trophyHasColor('b')"></button>
+        </div>
+        <textarea autofocus name="trophie" class="w-100 bg-secondary rounded mb-2" maxlength="300" [(ngModel)]="enteredText">{{ enteredText }}</textarea>
+        <div class="d-flex flex-row justify-content-between px-2 py-1 bg-emperor rounded mt-auto">
+            <div class="align-self-center">
+                <b *ngIf="currentTrophyOffer.priceCredits">{{ currentTrophyOffer.priceCredits }} <img class="pl-1" [src]="getCurrencyUrl(-1)" image-placeholder /></b>
+                <b *ngIf="currentTrophyOffer.priceActivityPoints"> + {{ currentTrophyOffer.priceActivityPoints }} <img class="pl-1" [src]="getCurrencyUrl(currentTrophyOffer.priceActivityPointsType)" image-placeholder /></b>
+            </div>
+            <div class="d-flex flex-row">
+                <button type="button" class="btn btn-success btn-sm" (click)="buyCurrentItem()">{{'buy' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->
+<div class="mobiler-magaza-box">
+    <div class="trophies-renk-sec nitro-catalog-layout-trophies-types">
+        <button id="magaza-mobilya-onizleme-box" [ngClass]="' ' + getActiveClass('g')" (click)="handleTrophyColor('g')"  [disabled]="!trophyHasColor('g')">
+            <div class="mobi-ufak-icon troph-gold"></div>
+        </button>
+        <button id="magaza-mobilya-onizleme-box" [ngClass]="' ' + getActiveClass('s')" (click)="handleTrophyColor('s')" [disabled]="!trophyHasColor('s')">
+            <div class="mobi-ufak-icon troph-silver"></div>
+        </button>
+        <button id="magaza-mobilya-onizleme-box" [ngClass]="' ' + getActiveClass('b')" (click)="handleTrophyColor('b')"  [disabled]="!trophyHasColor('b')">
+            <div class="mobi-ufak-icon troph-bronz"></div>
+        </button>
+
+    </div>
+    <div class="magaza-trophies-satin-box">
+        <div class="mgz-trophies-gorunumu" style="position: relative; z-index: 1;">
+            <img class="align-self-center" [src]="imageUrl" image-placeholder />
+        </div>
+        <div class="trophies-buttonbox">
+            <button type="button" class="trophies-geri" (click)="handleButton('previous')"></button>
+            <p class="pre-next">Previous/Next</p>
+            <button type="button" class="trophies-ileri" (click)="handleButton('next')"></button>
+        </div>
+        <textarea class="trophies-yazi" autofocus name="trophie" maxlength="300" [(ngModel)]="enteredText">{{ enteredText }}</textarea>
+    </div>
+    <div class="trophiesbuy">
+        <div class="shop-mobibuy-main">
+            <div class="mobi-creditsinfo">
+                    <div *ngIf="currentTrophyOffer.priceCredits" class="mobicredits">
+                        <div class="ccico">
+                            <img [src]="getCurrencyUrl(-1)" image-placeholder>
+                        </div>
+                        <p class="cctext">{{ currentTrophyOffer.priceCredits }} </p>
+                    </div>
+                    <div *ngIf="currentTrophyOffer.priceActivityPoints" class="mobipoints">
+                        <div class="ccico">
+                            <img [src]="getCurrencyUrl(currentTrophyOffer.priceActivityPointsType)" image-placeholder>
+                        </div>
+                        <p class="cctext">{{ currentTrophyOffer.priceActivityPoints }}</p>
+                    </div>
+            </div>
+            <button class="shop-mobibuy" (click)="buyCurrentItem()">
+                <div class="mobibuy-text">{{ ('buy') | translate }}</div>
+            </button>
+    
+        </div>
+    </div>
+
+</div>

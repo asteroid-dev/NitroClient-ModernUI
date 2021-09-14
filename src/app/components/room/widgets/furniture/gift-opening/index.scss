@@ -1,0 +1,189 @@
+
+.nitro-furniture-gift-opening {
+    position: absolute;
+    width: 350px;
+    max-width: 350px;
+
+    .anonymous-face {
+        background-image: url('^assets/images/yenimagaza/incognito.png');
+        height: 48px;
+        width: 48px;
+        background-repeat: no-repeat;
+    }
+
+    .gift-picture-container {
+        min-width: 120px;
+        min-height: 150px;
+        max-width: 120px;
+        max-height: 150px;
+    }
+}
+
+
+.habbo-gift-opening {
+    width: 357px;
+    height: 223px;
+    background-color: #dfdfdf;
+    position: absolute;
+    left: 200px !important;
+    top: 150px !important;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px #000000;
+}
+
+.gift-opening-main {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.giftsend-avatar {
+    width: 70px;
+    height: 119px;
+    float: left;
+    background: url('^assets/images/mannequin/giftopen.png');
+    border-radius: 5px;
+    overflow: hidden;
+    .avatar-image {
+        left: -10px;
+        top: 6px;
+    }
+}
+
+.gift-yazi {
+    float: left;
+    width: 250px;
+    height: 119px;
+    background: #ffffff91;
+    border: solid 0px #fff0;
+    resize: none;
+    border-radius: 5px;
+    outline: 0 !important;
+    font-size: 13px;
+    color: #000000b8;
+    padding: 4px 8px;
+    font-weight: bold;
+    transition: 0.5s;
+    position: relative;
+    left: 16px;
+}
+
+.gift-yazi:after {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #ffffff91;
+    float: left;
+    margin-top: 10px;
+    transition: 0.5s;
+    content: "";
+    left: -10px;
+    position: absolute;
+    top: 0;
+}
+
+.opengift {
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    border: solid 0px #fff0;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.giftopening-mobi {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(3px 3px 4px);
+    color: #00000012;
+    border-radius: 5px;
+    float: left;
+}
+
+.giftopening-text {
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000c7;
+    width: 205px;
+    padding-left: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: left;
+    height: 120px;
+}
+
+.placeinmyroom {
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    border: solid 0px #fff0;
+    background-color: #1e7295;
+    border-top: solid 4px #3e92b5;
+    border-bottom: solid 4px #185d79;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    margin-right: 5px;
+}
+
+.putitinmyinv {
+    height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    border: solid 0px #fff0;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    margin-left: 5px;
+}
+
+.placeinmyroom:hover {filter: brightness(0.9);}
+.putitinmyinv:hover {filter: brightness(0.9);}

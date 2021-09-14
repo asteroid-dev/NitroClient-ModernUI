@@ -1,0 +1,18 @@
+<div class="mnav-category">
+    {{ resultCode | translate }}  
+    <div class="modernnav-opentab" (click)="toggleCollapsed()" [ngClass]="{ 'modernnav-opentab': isCollapsed, 'modernnav-closetab': !isCollapsed }"></div>
+</div>
+
+
+<div class="modernnav-category">
+    {{ resultCode | translate }}
+    <div class="modernnav-opentab" (click)="toggleCollapsed()" [ngClass]="{ 'modernnav-opentab': isCollapsed, 'modernnav-closetab': !isCollapsed }"></div>
+    <div *ngIf="(displayMode !== 2)" class="room-navico4" (click)="toggleListMode()"></div>
+    <div *ngIf="(displayMode !== 2)" class="room-navico3" (click)="toggleListMode()"></div>
+</div>
+
+<div *ngIf="isCollapsed && (result.rooms.length > 0)">
+    <div [ngClass]="{ 'grid-1': (displayMode === 0) }">
+        <div nitro-navigator-search-result-item-component *ngFor="let room of result.rooms" [room]="room" [displayMode]="displayMode" class="testaa"></div>
+    </div>
+</div>

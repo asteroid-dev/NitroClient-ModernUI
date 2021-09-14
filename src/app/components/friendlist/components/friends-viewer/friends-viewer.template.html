@@ -1,0 +1,42 @@
+<!--<div class="btn-group w-100 mb-1">
+    <button type="button" class="btn btn-secondary" [ngClass]="{ 'active': (friendsShowing && onlineOnly) }" (click)="showOnlineFriends()">{{ ('friendlist.online') | translate }}</button>
+    <button type="button" class="btn btn-secondary" [ngClass]="{ 'active': (friendsShowing && !onlineOnly) }" (click)="showFriends()">{{ ('friendlist.friends.all') | translate }}</button>
+    <button type="button" class="btn btn-secondary" [ngClass]="{ 'active': requestsShowing }" (click)="showRequests()">{{ ('friendbar.requests.title') | translate }}<span *ngIf="(totalFriendRequests > 0)" class="badge badge-danger ml-1" style="font-size:12px;">{{ totalFriendRequests }}</span></button>
+    <button type="button" class="btn btn-success">{{ ('generic.search') | translate }}</button>
+</div>
+<div class="d-flex w-100">
+    <perfect-scrollbar class="position-relative w-100" style="min-height:350px;max-height:350px;height:350px;">
+        <div *ngIf="friendsShowing" nitro-friendlist-friends-list-component class="w-100" [threadSelector]="threadSelector" [onlineOnly]="onlineOnly"></div>
+        <div *ngIf="requestsShowing" nitro-friendlist-requests-list-component class="w-100"></div>
+    </perfect-scrollbar>
+</div>-->
+
+<div class="topmenu-hr"></div>
+<div class="friends-viewer-menu">
+    <div class="listmenubox standartmenu" [ngClass]="{ 'standartmenu-active': (friendsShowing && onlineOnly) }" (click)="showOnlineFriends()">
+        <p class="friends-menuname">{{ ('friendlist.online') | translate }}</p>
+    </div>
+    <div class="listmenubox standartmenu" [ngClass]="{ 'standartmenu-active': (friendsShowing && !onlineOnly) }" (click)="showFriends()">
+        <p class="friends-menuname">{{ ('friendlist.friends.all') | translate }}</p>
+    </div>
+    <div class="listmenubox standartmenu" [ngClass]="{ 'standartmenu-active': requestsShowing }" (click)="showRequests()">
+        <p class="friends-menuname">{{ ('friendbar.requests.title') | translate }}</p>
+        <div *ngIf="(totalFriendRequests > 0)" class="new_message-alert">{{ totalFriendRequests }}</div>
+    </div>
+    <div class="listmenubox search-standartmenu" [ngClass]="{ 'search-standartmenu-active': searchShowing }" (click)="showSearch()">
+        <p class="friends-menuname">{{ ('generic.search') | translate }}</p>
+    </div>
+</div>
+<p class="friends-main-infotext">{{ ('friends.box.info.desc') | translate }}
+    <svg viewBox="0 0 320 512" class="doubledown">
+        <g class="fa-group">
+            <path fill="currentColor" d="M143 256L7.05 120.37a23.78 23.78 0 0 1 0-33.8L29.64 64a23.94 23.94 0 0 1 33.89 0l96.37 96.13L256.27 64a23.94 23.94 0 0 1 33.89 0L313 86.47a23.78 23.78 0 0 1 0 33.8L177 255.88a23.94 23.94 0 0 1-34 .1z" class="ddown-fa-secondary"></path>
+            <path fill="currentColor" d="M143 447.89L7.05 312.34a23.77 23.77 0 0 1 0-33.79L29.74 256a23.94 23.94 0 0 1 33.89 0L160 352.11l96.47-96a23.94 23.94 0 0 1 33.89 0L313 278.65a23.77 23.77 0 0 1 0 33.79L177 448a24 24 0 0 1-34-.11z" class="ddown-fa-primary"></path>
+        </g>
+    </svg>
+</p>
+<div class="friends-list-main">
+    <div class="friends-scrollbox friendlist-friends-list" *ngIf="friendsShowing" nitro-friendlist-friends-list-component [threadSelector]="threadSelector" [onlineOnly]="onlineOnly"></div>
+    <div class="friends-scrollbox friendlist-requests-list" *ngIf="requestsShowing" nitro-friendlist-requests-list-component></div>
+    <div class="friends-scrollbox friendlist-requests-list" *ngIf="searchShowing" nitro-friendlist-search-component></div>
+</div>

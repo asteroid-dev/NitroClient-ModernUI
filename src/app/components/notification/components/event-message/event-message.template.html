@@ -1,0 +1,12 @@
+<div [bringToTop] [draggable] class="nitro-alert d-flex flex-column bg-primary border shadow rounded" noMemory="true" center="true">
+    <div class="drag-handler d-flex justify-content-center align-items-center px-3 pt-3">
+        <h6 class="m-0">{{ title }}</h6>
+    </div>
+    <div class="d-flex flex-column p-3">
+        <div class="d-flex flex-column" [innerHTML]="message"></div>
+        <div class="d-flex align-items-center justify-content-center mt-3">
+            <button *ngIf="hasLink" type="button" class="btn btn-link mr-1" (click)="openLink()">{{ ('mod.alert.link') | translate }}</button>
+            <button type="button" class="btn btn-secondary" (click)="close()">{{ ('generic.close') | translate }}</button>
+        </div>
+    </div>
+</div>

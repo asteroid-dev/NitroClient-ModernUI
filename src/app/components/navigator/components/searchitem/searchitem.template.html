@@ -1,0 +1,75 @@
+<div (click)="visit()" [ngClass]="{ 'sadsad': (displayMode === 0) }">
+    <div [ngClass]="{ '': (displayMode >= 1) }">
+        
+        <div *ngIf="(displayMode >= 1)" class="modernnav-bigbox_main">
+            <div class="bigroombox-activeuser" [ngClass]="entryBg2" >
+                <img class="roomUser" src="/assets/images/roomUser.png">
+                <p class="roomUser-number">{{ room.userCount }}</p>
+            </div>
+            <div class="modernnav-roomscreen" [ngStyle]="thumbnail && { 'background-image': 'url(' + thumbnail + ')' }"></div>
+            <div class="modernnav-bigmain-info">
+                <div class="roomname-info">
+                    <p class="modern-roomname">{{ room.roomName }}</p>
+                </div>
+                <p class="modern-roomdesc">{{ room.description }}</p>
+                <div class="roomowner-info">
+                    <div class="modern-roomownerico"></div>
+                    <p class="modern-roomownername">{{ room.ownerName }}</p>
+                </div>
+                <div class="modernnav-groupbadge" *ngIf="isGroup"></div>
+                <div class="big-roompass" style="background-image: url(./assets/images/oda-kilit.png);" *ngIf="isDoorbell"></div>
+                <div class="big-roompass" style="background-image: url(./assets/images/sifre.png);" *ngIf="isPassword"></div>
+            </div>
+        </div>
+        <div *ngIf="(displayMode >= 1)" class="mnav-roombox-dm1">
+            <div class="smallroombox-aktifUser" [ngClass]="entryBg">
+                <img class="roomUser" src="/assets/images/roomUser.png">
+                <p class="roomUser-number">{{ room.userCount }}</p>
+            </div>
+            <p class="modern-roomname">{{ room.roomName }}</p>
+            <div class="mnav-groupbadge" *ngIf="isGroup"></div>
+            <div class="mnav_big-roompass" style="background-image: url(./assets/images/oda-kilit.png);" *ngIf="isDoorbell"></div>
+            <div class="mnav_big-roompass" style="background-image: url(./assets/images/sifre.png);" *ngIf="isPassword"></div>
+        </div>
+
+        <div class="modernnav-smallbox_main" *ngIf="(displayMode === 0)">
+            <div class="modernnav-smallmain-info">
+                <div class="roomname-info">                 
+                    <p class="modern-roomname">{{ room.roomName }}</p>
+                </div>
+            </div>
+            <div class="modernnav-smallnav_user">
+                <ng-container *ngIf="(displayMode === 0)">
+                    <div class="modern-roompassico" style="background-image: url(./assets/images/oda-kilit.png);" *ngIf="isDoorbell"></div>
+                    <div class="modern-roompassico" style="background-image: url(./assets/images/sifre.png);" *ngIf="isPassword"></div>
+                </ng-container>   
+                <div class="modern-groupico" style="background-image: url(./assets/images/nav/oda-grup.png);margin-left: -22px;" *ngIf="isGroup"></div>
+                <div class="smallroombox-aktifUser" [ngClass]="entryBg">
+                    <img class="roomUser" src="/assets/images/roomUser.png">
+                    <p class="roomUser-number">{{ room.userCount }}</p>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="(displayMode === 0)" class="mnav-roombox-dm2">            
+            <div class="smallroombox-aktifUser" [ngClass]="entryBg">
+                <img class="roomUser" src="/assets/images/roomUser.png">
+                <p class="roomUser-number">{{ room.userCount }}</p>
+            </div>
+            <p class="modern-roomname">{{ room.roomName }}</p>
+            <div class="mnav-groupbadge" *ngIf="isGroup"></div>
+            <ng-container *ngIf="(displayMode === 0)">
+                <div class="mnav_big-roompass" style="background-image: url(./assets/images/oda-kilit.png);" *ngIf="isDoorbell"></div>
+                <div class="mnav_big-roompass" style="background-image: url(./assets/images/sifre.png);" *ngIf="isPassword"></div>
+            </ng-container>   
+        </div>
+
+        <ng-template #roomInfoTooltip>
+            <div class="container">
+                <span class="d-block">{{ room.roomName }}</span>
+                <span class="d-block small text-muted">"{{ room.description }}"</span>
+                <span class="d-block" *ngIf="room.ownerName != null"><i class="fas fa-user mr-1"></i>{{ room.ownerName }}</span>
+            </div>
+        </ng-template>
+
+    </div>
+</div>

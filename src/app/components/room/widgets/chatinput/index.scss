@@ -1,0 +1,189 @@
+.sendlike {
+  font-size: 23px;
+  position: absolute;
+  right: 6px;
+  z-index: 1;
+  fill: #1e7295;
+  cursor: pointer;
+}
+
+.sendlike:hover {
+  fill: #1a6c8f;
+}
+
+.sendlike:active {
+  fill: #1e7295;
+}
+
+.nitro-room-chatinput-component {
+  position: fixed;
+  display: flex;
+  bottom: 19px;
+  left: 375px;
+  pointer-events: none;
+  z-index: $chatinput-zindex;
+
+  .chatinput-container {
+      position: relative;
+      height: 45px;
+      border-radius: 10px;
+      border: 1px solid rgb(0, 0, 0);
+      background: #EDEDED;
+      pointer-events: all;
+      padding-right:30px;
+      width:100%;
+
+      .input-sizer {
+          display: inline-grid;
+          vertical-align: top;
+          align-items: center;
+          position: relative;
+          height: 100%;
+          padding:0 10px;
+          
+          &::after,
+          input,
+          textarea {
+            width: auto;
+            min-width: 1em;
+            grid-area: 1 / 2;
+            font: inherit;
+            margin: 0;
+            resize: none;
+            background: none;
+            appearance: none;
+            border: none;
+          }
+          
+          
+          &::after {
+            content: attr(data-value) ' ';
+            visibility: hidden;
+            white-space: pre-wrap;
+          }
+        }
+
+      .chat-input {
+          height: 100%;
+          font-size: 18px;
+          outline: 0;
+          border: 0;
+          position: relative;
+          background: transparent;
+      }
+
+      &:after {
+          content: "";
+          position: absolute;
+          top:0;
+          bottom:0;
+          margin: auto;
+          left:-8.5px;
+          height: 15px;
+          width: 15px;
+          background: #EDEDED;
+          transform: rotate(45deg);
+          border-left: 1px solid #000;
+          border-bottom: 1px solid #000;
+      }
+
+      &:before {
+          content: "";
+          position: absolute;
+          width: 98%;
+          height: 5px;
+          border-radius: 5px;
+          top: 3px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          background: rgb(255, 255, 255);
+          z-index: 1;
+      }
+  }
+}
+
+@import './styleselector';
+
+
+.chatheadbox {
+  position: absolute;
+  margin-top: -1px;
+}
+
+.chb-filter {
+  position: relative;
+  width: 75px;
+  height: 32px;
+  background-color: #1e7295;
+  border-top: solid 4px #ffffff0f;
+  border-bottom: solid 4px #00000021;
+  border-radius: 4px 0px 0px 4px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  float: left;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: content-box;
+  margin-top: 1px;
+}
+
+.chb-rightico {
+  background-image: url('^assets/images/newnavigator/rightico-chat.png');
+  width: 10px;
+  height: 21px;
+  position: absolute;
+  margin: 11px 0px 11px 75px;
+  z-index: 1;
+}
+
+.populer-emoji {
+  width: 194px;
+  height: 40px;
+  background: #e9e7e9de;
+  position: absolute;
+  right: -210px;
+  filter: drop-shadow(2px 4px 6px #00000069);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0px 2px;
+  opacity: 0;
+}
+
+.populer-emoji:after {content: "";position: absolute;left: -15px;bottom: 14px;border-style: solid;border-top-width: 9px;border-right-width: 9px;border-left-width: 9px;border-top-color: #e9e7e9de;border-right-color: transparent;border-bottom-color: transparent;border-left-color: transparent;color: #000;box-sizing: content-box;-webkit-backdrop-filter: blur(4px);transform: rotate(90deg);backdrop-filter: blur(4px);}
+
+.pemoji-box {
+  width: 34px;
+  height: 34px;
+  background: #00000021;
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.pemoji-text {
+  position: absolute;
+  font-size: 14px;
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  top: -23px;
+}
+
+.pemoji-box:hover {
+  background: #0000002b;
+}
+
+.popactive {
+  opacity: 1 !important;
+}
+
+@media only screen and (max-width: 850px), (max-height: 450px) {
+  .populer-emoji {
+    display: none !important;
+  }
+}

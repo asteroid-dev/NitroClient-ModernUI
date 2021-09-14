@@ -1,0 +1,52 @@
+
+
+<div *ngIf="showMainWindow" [bringToTop] [draggable] class="offer-marketplace" [center]="true">
+    <div class="drag-handler modernnav-header">
+        <div class="modernnav-hood">{{ ( 'inventory.marketplace.make_offer.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="om-main">
+        <div class="om-furni-information">
+            <div class="om-furni-view">
+                <div *ngIf="item && item.stuffData.uniqueNumber" class="unique-counter-compact" style="margin: 3px;left: 10px;z-index: 1;overflow: hidden;height: 19px;border-radius: 3px;border-bottom: solid 1px #000;">
+                    <div [innerHTML]="item.stuffData.uniqueNumber | uniqueNumber"></div>
+                    <div [innerHTML]="item.stuffData.uniqueSeries | uniqueNumber"></div>
+                </div>
+                <div #imageElement class="product-preview" [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')'}"></div>
+            </div>
+            <div class="om-furni-name-desc">
+                <div class="omfn">{{ getFurniTitle() }}</div>
+                <div class="omfd">{{ getFurniDescription() }}</div>
+            </div>
+        </div>
+        <div class="om-furni-description">{{ 'inventory.marketplace.make_offer.expiration_info' | translate }}</div>
+        <div class="om-price-main">
+            <div class="om-price-text">{{ 'inventory.marketplace.make_offer.price_request' | translate }}</div>
+            <input class="om-price" type="number" (input)="updateInterface($event)" [(ngModel)]="askingPrice" />
+        </div>
+        <div class="om-commissions-desc">{{ getAveragePrice() }}</div>
+        <div class="om-sales-info" [ngClass]="canPostItem ? 'om-success' : 'om-nonsuccess'">{{ creditsPrice() }}</div>
+        <div class="d-flex justify-content-between w-100">
+            <button type="button" class="giftsend-close" (click)="hide()">{{ 'inventory.marketplace.no_credits.cancel' | translate }}</button>
+            <button type="button" class="giftsend-buy" [disabled]="!canPostItem" (click)="postOffer()">{{ 'inventory.marketplace.make_offer.post' | translate }}</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showConfirmDialog" [bringToTop] class="hotel-alert" [center]="true">
+    <div class="halert-box">
+        <div class="halert-header" style="position: relative;">
+            {{ ( 'inventory.marketplace.confirm_offer.title') | translate }}
+            <div class="md-close" (click)="closeConfirmDialog()">
+                <div class="md-closetab1" style="left:4px;top:9px;"></div>
+                <div class="md-closetab2" style="left:4px;top:9px;"></div>
+            </div>
+        </div>
+        <div class="halert_mesaj">
+            <div class="ha_message_scroll" style="overflow: hidden !important;">{{ confirmationText() }}</div>
+        </div>
+        <div class="halert_kapat" (click)="doPostOffer()">
+            <div class="h-k-yazi">{{ 'inventory.marketplace.make_offer.post' | translate }}</div>
+        </div>
+    </div>
+</div>

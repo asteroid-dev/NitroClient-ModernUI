@@ -1,0 +1,111 @@
+<!-- Mobile Version HTML -->
+<div class="mobile-bottombar">
+    <div class="m-leftbar">
+
+        <div class="m-bar-gohome" *ngIf="!isInRoom" (click)="clickIcon('home_room')">
+            <img src="assets/images/mobile/go-home.png">
+        </div>
+        <div class="m-bar-hview" *ngIf="isInRoom" (click)="clickIcon('hotel_view')">
+            <img src="assets/images/mobile/view.png">
+        </div>
+
+        <div class="m-bar-avatar" (click)="clickIcon('me_menu')">
+            <div nitro-avatar-image [figure]="figure" [headOnly]="true" [direction]="2" class="mbar-avatar-head"></div>
+        </div>
+        <div class="m-bar-navigator" (click)="clickIcon('navigator')">
+            <img src="assets/images/mobile/navigator.png">
+        </div>
+    </div>
+    <div class="m-rightbar">
+        <div class="m-bar-catalogue" (click)="clickIcon('catalog')">
+            <img src="assets/images/mobile/catalogue.png">
+        </div>
+        <div class="m-bar-inventory" (click)="clickIcon('inventory')">
+            <img src="assets/images/mobile/inventory.png">
+            <div class="mobicountbox" *ngIf="unseenInventoryCount">
+                {{ 'inventory.furni.tab.new' | translate }}
+            </div>
+        </div>
+        <div class="m-bar-friends" (click)="clickIcon('friendlist')">
+            <img src="assets/images/mobile/friends.png">
+            <div class="mobicountbox" *ngIf="unseenFriendListCount">
+                {{ 'inventory.furni.tab.new' | translate }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="alt_bar" #navigationList>
+    <div class="sol-icon">
+        <div class="icon-hover habbo-room" *ngIf="!isInRoom" (click)="clickIcon('home_room')">
+            <div class="home_room-desc">{{ 'toolbar.icon.label.exitroom.home' | translate }}<div class="nd_left"></div></div>
+        </div>
+        <div class="icon-hover habbo-view" *ngIf="isInRoom" (click)="clickIcon('hotel_view')">
+            <div class="hotel_view-desc">{{ 'toolbar.icon.label.exitroom.hotelview' | translate }}<div class="nd_left"></div></div>
+        </div>
+        <div class="bottom-bar-ayirici"></div>
+        <div class="icon-hover oda-gezgini" (click)="clickIcon('navigator')">
+            <div class="navigator-desc">{{ 'landing.view.pirateroyaldock.button' | translate }}<div class="nd_left"></div></div>
+        </div>
+        <div class="icon-hover magaza" (click)="clickIcon('catalog')">
+            <div class="catalog-desc">{{ 'landing.view.next.ltd.opencatalogue' | translate }}<div class="nd_left"></div></div>
+        </div>
+        <div class="icon-hover envanter" (click)="clickIcon('inventory')">
+            <div class="inventory-desc">{{ 'camera.open.inventory' | translate }}<div class="nd_left"></div></div>
+            <div class="mobicountbox" *ngIf="unseenInventoryCount">
+                {{ 'inventory.furni.tab.new' | translate }} ({{ unseenInventoryCount }})
+            </div>
+        </div>
+        <div class="bottom-bar-ayirici"></div>
+        <div class="icon-hover kullanici-avatar" (click)="clickIcon('me_menu')">
+            <div class="me_menu-desc">{{ 'toolbar.icon.label.memenu' | translate }}<div class="nd_left"></div></div>
+            <div class="mobicountbox" *ngIf="unseenAchievementsCount">
+                {{ 'inventory.furni.tab.new' | translate }} ({{ unseenAchievementsCount }})
+            </div>
+            <div class="avatar-habbo" nitro-avatar-image [figure]="figure" [headOnly]="true" [direction]="2"></div>
+        </div>
+    </div>
+    <div class="sag-icon">
+        <div class="friendslist-toolbar">
+            <div class="tbfl-left-button"></div>
+            <div class="tbfl-main">
+                <div class="tbfl-main-mcontent">
+                    <div class="tbfl-userbox" *ngFor="let friend of friends" id="friends_{{friend.id}}" (click)="toggleFriendOptions(friend.id)">
+                        <img class="tbfl-avatar" src="https://www.habbo.com/habbo-imaging/avatarimage?figure={{ friend.figure }}&amp;action=std&amp;gesture=std&amp;direction=2&amp;head_direction=2&amp;size=n&amp;headonly=1&amp;img_format=png">
+                        <p class="tbfl-username">{{ friend.name }}</p>
+                        <div class="tbfl-user-options" id="friendOptions_{{friend.id}}">
+                            <div class="tbfl-chatico" (click)="openFriendChat(friend.id)"></div>
+                            <div class="tbfl-goroomico" (click)="followFriend(friend.id)"></div>
+                            <div class="tbfl-profileico" (click)="openFriendsProfilePage(friend.id)"></div>
+                        </div>
+                    </div>
+                    <div class="tbfl-userbox-add">
+                        <div class="tbfl-avatar-add"></div>
+                        <p class="tbfl-username">{{ 'extendedprofile.addasafriend' | translate }}</p>
+                    </div>
+                    <div class="tbfl-userbox-add">
+                        <div class="tbfl-avatar-add"></div>
+                        <p class="tbfl-username">{{ 'extendedprofile.addasafriend' | translate }}</p>
+                    </div>
+                    <div class="tbfl-userbox-add">
+                        <div class="tbfl-avatar-add"></div>
+                        <p class="tbfl-username">{{ 'extendedprofile.addasafriend' | translate }}</p>
+                    </div>
+                    <div class="tbfl-userbox-add">
+                        <div class="tbfl-avatar-add"></div>
+                        <p class="tbfl-username">{{ 'extendedprofile.addasafriend' | translate }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tbfl-right-button"></div>
+        </div>
+        <div class="icon-hover sohbet" (click)="clickIcon('friendlist')">
+            <div class="friendlist-desc">{{ 'toolbar.icon.label.friendlist' | translate }}<div class="nd_left"></div></div>
+            <div class="mobicountbox" *ngIf="unseenFriendListCount">
+                {{ 'inventory.furni.tab.new' | translate }} ({{ unseenFriendListCount }})
+            </div>
+        </div>
+        <div class="bottom-bar-ayirici right-ayirici"></div>
+    </div>
+</div>
+<nitro-toolbar-me-menu-component></nitro-toolbar-me-menu-component>

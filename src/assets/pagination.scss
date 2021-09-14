@@ -1,0 +1,27 @@
+.custom-pagination {
+    margin: 5px 0 !important;
+    border-radius: 0 !important;
+    
+    .page-item {
+
+        .page-link {
+            padding: 0 .5em;
+            border: 0 !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+            color: rgba($white, .80);
+        }
+
+        &:not(.active) {
+            cursor: pointer;
+        }
+
+        &.active {
+
+            .page-link {
+                font-weight: 700;
+                color: rgba(white, 1);
+            }
+        }
+    }
+}

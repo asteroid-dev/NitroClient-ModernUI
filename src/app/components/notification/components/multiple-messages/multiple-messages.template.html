@@ -1,0 +1,19 @@
+<div class="hotel-alert" noMemory="true" center="true">
+    <div class="habbo_hotel_modern_alert">
+        <div id="alert-header">
+            <div class="modern_alert-header-text">{{ title }}</div>
+        </div>
+        <div class="modern_alert_body">
+            <ng-container *ngFor="let message of messages">
+                <div class="modern_alert-aciklama">
+                    <div class="modern-commands_list" [innerHTML]="message" style="text-align: left;"></div>
+                </div>
+            </ng-container>
+            <div class="btn-group w-100">
+                <div class="halert_kapat" (click)="close()" style="width:100%;margin: 0px 15px 15px 15px;">
+                    <div class="h-k-yazi">{{ ('generic.close') | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

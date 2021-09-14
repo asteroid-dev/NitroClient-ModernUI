@@ -1,0 +1,19 @@
+<div id="kapizili" [bringToTop] [draggable] dragHandle="#kapizilihareket">
+    <div id="kapizilihareket">
+        <div class="kapizili-header-baslik">{{ ('navigator.doorbell.title') | translate }}</div>
+        <div class="modern-close" (click)="close()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="kapizili-box">
+        <img class="doorbell-img" src="/assets/images/nav/ui_navigator_icon_friends.png">
+        <div class="doorbell-roomname" *ngIf="room">{{ room.roomName }}</div>
+        <div class="doorbell-description2" *ngIf="!isWaiting && !noAnswer">{{ ('navigator.doorbell.info') | translate }}</div>
+        <div class="doorbell-description2" *ngIf="isWaiting && !noAnswer">{{ ('navigator.doorbell.waiting') | translate }}</div>
+        <div class="doorbell-description2" *ngIf="noAnswer">{{ ('navigator.doorbell.no.answer') | translate }}</div>
+            <div class="doorbell-button-main">
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="doorbell-closebutton" (click)="close()">{{ ('generic.cancel') | translate }}</button>
+                    <button *ngIf="!isWaiting && !noAnswer" type="button" class="doorbell-okay" (click)="ring()">{{ ('navigator.doorbell.button.ring') | translate }}</button>
+                </div>
+            </div>
+    </div>
+</div>

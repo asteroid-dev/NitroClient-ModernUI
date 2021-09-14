@@ -1,0 +1,16 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="nitro-furniture-friends-engraving"
+    [ngStyle]="{backgroundImage:'url(' + image + ')'}">
+    <div class="drag-handler d-flex flex-column small h-100">
+        <div class="friend-close position-absolute" (click)="hide()"></div>
+        <div class="row justify-content-center">
+            <div class="col-2 d-flex justify-content-center">
+                <div nitro-avatar-image [figure]="firstFigure" [direction]="2"></div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+                <div nitro-avatar-image [figure]="secondFigure" [direction]="4"></div>
+            </div>
+        </div>
+        <p class="friendsfurniture-text">{{ 'lovelock.engraving.caption' | translate }}</p>
+        <p class="friendsfurniture-text">{{ firstName}} | {{ secondName }} | {{ engravedDate }}</p>
+    </div>
+</div>

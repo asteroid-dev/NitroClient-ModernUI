@@ -1,0 +1,771 @@
+.nitro-floorplan-editor-component {
+    position: absolute;
+    width: 1000px;
+
+    &.minimized {
+        width: unset;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    .close {
+        margin-left: 10px;
+    }
+
+    .floorplan-height-option {
+        &.selected {
+            box-shadow: 0px 2px #fff;
+        }
+    }
+
+    .editor-area {
+        position: relative;
+        width: 100%;
+        height: 275px;
+        border-radius: 5px;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #96a8bb;
+            box-shadow: inset 1px -1px 0px 0px #00000030;
+            border-radius: 100px;
+        }
+           
+        &::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background: #c4c4c4;
+            border-top: solid 4px #fff;
+            border-bottom: solid 4px #989898;
+            box-shadow: 0px 1px 0px 0px #0000004d;
+        }
+        
+        &::-webkit-scrollbar-thumb:horizontal  {
+            border-radius: 100px;
+            background: #c4c4c4;
+            border-left: solid 4px #fff;
+            border-right: solid 4px #989898;
+            border-top: solid 0px #fff;
+            border-bottom: solid 0px #989898;
+            box-shadow: 0px 1px 0px 0px #0000004d;
+        }
+    }
+
+    .floorplan-door-button {
+        background-repeat: no-repeat;
+        background-position-x: center;
+    }
+}
+
+.nitro-floorplan-editor-import-export-component {
+    position: absolute;
+    width: 300px;
+}
+
+.modern-floorplan {
+    width: auto;
+    height: auto !important;
+    background-color: #dfdfdf !important;
+    position: absolute !important;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    border-radius: 5px !important;
+    overflow: hidden !important;
+    border: solid 2px #000000 !important;
+    font-family: Arial !important;
+    box-sizing: content-box;
+    left: 100px !important;
+    top: 100px !important;
+    z-index: 1;
+}
+
+.floorplan-header {
+    height: 40px !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    background: #b76700;
+    box-shadow: inset 0px 3px 0px 0px #d77800;
+}
+
+.floorplan-headtxt {
+    font-weight: bold !important;
+    text-align: center !important;
+    position: absolute !important;
+    padding: 10px 0px !important;
+    width: 100% !important;
+    color: #ffffffe6 !important;
+    font-size: 14px !important;
+    text-shadow: 1px 1px #0000002b;
+}
+
+.floorplan-main {
+    margin: 10px;
+    width: 710px;
+    height: 405px;
+    border-radius: 5px;
+}
+
+.floorplan-button_main {
+    margin: 10px;
+    width: auto;
+    height: 35px;
+}
+
+.fp-reset {
+    width: auto;
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    background: #d72623;
+    border-top: solid 4px #f21d1a;
+    border-bottom: solid 4px #c01816;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.fp-save {
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    overflow: hidden;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    min-width: 100px;
+    width: auto;
+}
+
+.fp-import {
+    width: auto;
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+    overflow: hidden;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #d1d1d1;
+    border-top: solid 4px #f5f5f5;
+    border-bottom: solid 4px #adadad;
+    color: #000000bd;
+}
+
+.fp-preview {
+    width: auto;
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0px;
+    overflow: hidden;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #d1d1d1;
+    border-top: solid 4px #f5f5f5;
+    border-bottom: solid 4px #adadad;
+    color: #000000bd;
+}
+
+.fp-right-button {
+    float: right;
+}
+
+.fp-reset:hover {
+    background: #d02623;
+    border-top: solid 4px #e81f1c;
+    border-bottom: solid 4px #b51917;
+}
+
+.fp-reset:active {
+    background: #c12623;
+    border-top: solid 4px #da211e;
+    border-bottom: solid 4px #a91b19;
+}
+
+.fp-preview:hover {
+    background-color: #c8c8c8;
+    border-top: solid 4px #e7e7e7;
+    border-bottom: solid 4px #a7a6a6;
+}
+
+.fp-preview:active {
+    background-color: #c1c1c1;
+    border-top: solid 4px #dcdbdb;
+    border-bottom: solid 4px #a09e9e;
+}
+
+.fp-import:hover {
+    background-color: #c8c8c8;
+    border-top: solid 4px #e7e7e7;
+    border-bottom: solid 4px #a7a6a6;
+}
+
+.fp-import:active {
+    background-color: #c1c1c1;
+    border-top: solid 4px #dcdbdb;
+    border-bottom: solid 4px #a09e9e;
+}
+
+.fp-save:hover {
+    background: #03912d;
+    border-top: solid 4px #0cb21e;
+    border-bottom: solid 4px #067426;
+}
+
+.fp-save:active {
+    background-color: #038a2b;
+    border-top: solid 4px #0da71e;
+    border-bottom: solid 4px #066923;
+}
+
+.fpmain {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.draw-height-text {
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000c7;
+    padding-bottom: 5px;
+}
+
+.fproom-settings-button {
+    width: 60px;
+    height: 45px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border: solid 0px #fff0;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1d1d1;
+    border-top: solid 4px #f5f5f5;
+    border-bottom: solid 4px #adadad;
+    color: #000000bd;
+    margin-left: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fproom-settings-button:hover {
+    background-color: #c8c8c8;
+    border-top: solid 4px #e7e7e7;
+    border-bottom: solid 4px #a7a6a6;
+}
+
+.color-selected {
+    display: none;
+}
+
+.fproomb-active {
+    background-color: #b9b9b9 !important;
+    border-top: solid 4px #b9b9b9 !important;
+    border-bottom: solid 4px #b9b9b9 !important;
+}
+
+.fp_hr {
+    width: 1px;
+    height: 45px;
+    background: #00000021;
+    float: left;
+    box-shadow: 1px 0px 0px 0px #ffffff87;
+    margin: 0px 12px 0px 16px;
+}
+
+.fpleft-header {
+    width: 380px;
+    height: 100px;
+    position: relative;
+    float: left;
+}
+
+.fproom-settings-button.tile-set {
+    background-image: url('^assets/images/floorplan/floorplan_icon_add_tile.png');
+}
+
+.fproom-settings-button.tile-unset {
+    background-image: url('^assets/images/floorplan/floorplan_icon_remove_tile.png');
+}
+
+.fproom-settings-button.tile-up {
+    background-image: url('^assets/images/floorplan/floorplan_icon_tile_up.png');
+}
+
+.fproom-settings-button.tile-down {
+    background-image: url('^assets/images/floorplan/floorplan_icon_tile_down.png');
+}
+
+.fproom-settings-button.tile-door {
+    background-image: url('^assets/images/floorplan/floorplan_icon_insert_door.png');
+}
+
+.floorplan-flooredit {
+    float: left;
+    width: 100%;
+    height: 305px;
+    min-width: 380px;
+    overflow: hidden;
+}
+
+.fpe-infomain {
+    float: left;
+    width: 100%;
+    height: 25px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.fp-areabox {
+    float: right;
+    width: auto;
+    height: 20px;
+    font-size: 11px;
+    background: #d72623;
+    color: white;
+    padding: 2px 7px 1px 7px;
+    font-weight: 600;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.draw-height {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000c7;
+}
+
+.floorplan-color-select-main {
+    width: max-content;
+    height: 20px;
+    float: left;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.fp-room_map {
+    float: left;
+    width: 100%;
+    height: 275px;
+    border-radius: 5px;
+}
+
+.fpe-colormain {
+    width: 14px;
+    height: 19px;
+    float: left;
+    border-top: solid 2px #ffffff69;
+    border-bottom: solid 2px #00000040;
+    cursor: pointer;
+}
+
+.fpe-colormain:nth-child(1) {
+    border-radius: 3px 0px 0px 3px;
+}
+
+.fpe-colormain:nth-child(27) {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.fpe-colormain-active {
+    .color-selected {
+        display: block !important;
+        background-image: url('^assets/images/floorplaneditor/selected_height_icon.png');
+        width: 14px;
+        height: 16px;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+    }
+}
+
+.fp-room_map-preview {
+    float: left;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: #cecece;
+
+    .fpbg {
+        transform: scale(0.5);
+    }
+}
+
+.floorplan-preview-main {
+    float: left;
+    margin-left: 10px;
+    width: 300px;
+    height: 305px;
+    min-width: 320px;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.floorplan-room-main {
+    width: 708px;
+    height: 305px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.fpright-header {
+    width: 305px;
+    height: 100px;
+    position: relative;
+    float: left;
+}
+
+.direction-option {
+    width: 140px;
+    height: 100%;
+    float: left;
+}
+
+.lookandfeel {
+    width: 165px;
+    height: 100%;
+    float: left;
+}
+
+.enterdirection-head {
+    width: 45px;
+    height: 50px;
+    border-radius: 5px;
+    float: left;
+    background-position-y: -29px !important;
+    background-position-x: -23px;
+    margin-top: -10px;
+}
+
+.direction-left {
+    width: 31px;
+    height: 31px;
+    float: left;
+    background-color: #d1d1d1;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: #00000063;
+    font-size: 25px;
+    cursor: pointer;
+    padding-right: 2px;
+    background-image: url('^assets/images/floorplan/direction-left.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.direction-right {
+    width: 31px;
+    height: 31px;
+    float: left;
+    background-color: #d1d1d1;
+    margin-right: 5px;
+    border-radius: 5px;
+    color: #00000063;
+    font-size: 25px;
+    cursor: pointer;
+    padding-right: 2px;
+    background-image: url('^assets/images/floorplan/direction-right.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+}
+
+
+.direction-right:hover {
+    background-color: #bbbbbbc2;
+    color: #00000070;
+}
+
+.direction-left:hover {
+    background-color: #bbbbbbc2;
+    color: #00000070;
+}
+
+.direction-left:active {
+    background-color: #00000026;
+    color: #00000063;
+}
+
+.direction-right:active {
+    background-color: #00000026;
+    color: #00000063;
+}
+
+.lfbutton-main {
+    height: auto;
+    width: auto;
+    float: left;
+}
+
+.flooright2-hr {
+    float: left;
+    width: 2px;
+    background: #c2c2c2;
+    border-right: solid 1px #f0f0f0;
+    position: relative;
+    left: 0;
+    height: 99px;
+    margin: 0px 10px;
+}
+
+.wall-select {
+    width: 100%;
+    height: 33px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #d1d1d1;
+    border-top: solid 4px #f5f5f5;
+    border-bottom: solid 4px #adadad;
+    color: #000000bd;
+    margin-bottom: 5px;
+    padding: 4px;
+    outline: 0 !important;
+}
+
+.floor-select {
+    width: 100%;
+    height: 33px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #d1d1d1;
+    border-top: solid 4px #f5f5f5;
+    border-bottom: solid 4px #adadad;
+    color: #000000bd;
+    padding: 4px;
+    outline: 0 !important;
+}
+
+.direction-main {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.wall-left {
+    width: 31px;
+    height: 31px;
+    background-image: url('^assets/images/floorplan/off.png');
+    border: solid 0px #fff0;
+    outline: 0 !important;
+    float: left;
+    margin-left: 6px;
+}
+
+.wall-right {
+    width: 31px;
+    height: 31px;
+    background-image: url('^assets/images/floorplan/on.png');
+    border: solid 0px #fff0;
+    outline: 0 !important;
+    float: left;
+}
+
+.wall-height {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    float: left;
+    margin: 1px 7px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000c7;
+    background-color: #cecece;
+    border: solid 0px #fff0;
+    z-index: 1;
+    position: relative;
+    padding: 0;
+    text-align: center;
+}
+
+.floorbottom-hr {
+    float: left;
+    width: 118px;
+    background: #c2c2c2;
+    height: 2px;
+    border-bottom: solid 1px #f0f0f0;
+    margin-bottom: 5px;
+    margin-top: -3px;
+}
+
+.flooright-hr {
+    float: left;
+    width: 2px;
+    height: 100%;
+    background: #c2c2c2;
+    position: absolute;
+    left: 129px;
+    border-right: solid 1px #f0f0f0;
+}
+.modern-import {
+    float: left;
+    font-size: 14px;
+    color: #000000e3;
+    width: 428px !important;
+    text-align: center;
+    padding: 5px;
+    height: 300px;
+    list-style: none;
+    overflow: auto;
+    text-align: left;
+    background: rgba(255, 255, 255, 0);
+    border: 0px solid;
+    outline: 0 !important;
+    resize: auto;
+}
+
+.modern-import::-webkit-scrollbar {
+    width: 4px;
+}
+.modern-import::-webkit-scrollbar-track {
+    background-color: #96a8bb;
+    box-shadow: inset 1px -1px 0px 0px #00000030;
+    border-radius: 100px;
+}
+
+.modern-import::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #c4c4c4;
+    border-top: solid 4px #fff;
+    border-bottom: solid 4px #989898;
+    box-shadow: 0px 1px 0px 0px #0000004d;
+}
+
+.import-close {
+    width: 265px;
+    height: 30px;
+    float: left;
+    margin: 2px 15px 15px 5px;
+    filter: drop-shadow(2px 4px 6px #0000002b);
+    box-shadow: inset 0px -3px 0px 0px #0000000d;
+    position: relative;
+    color: #000000db;
+    font-size: 14px;
+    border: solid 0px #fff0;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: content-box;
+    outline: 0 !important;
+}
+
+.import-save {
+    width: 265px;
+    height: 30px;
+    float: left;
+    margin: 2px 5px 15px 15px;
+    filter: drop-shadow(2px 4px 6px #0000002b);
+    box-shadow: inset 0px -3px 0px 0px #0000000d;
+    position: relative;
+    color: #000000db;
+    font-size: 14px;
+    border: solid 0px #fff0;
+    background: #d72623;
+    border-top: solid 4px #f21d1a;
+    border-bottom: solid 4px #c01816;
+    border-radius: 4px;
+    cursor: pointer;
+    box-sizing: content-box;
+    outline: 0 !important;
+}

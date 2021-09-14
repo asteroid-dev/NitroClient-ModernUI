@@ -1,0 +1,17 @@
+<div class="hotel-alert">
+    <div class="habbo_hotel_modern_alert" [bringToTop] [draggable] [center]="true" style="width: 380px;">
+        <div id="alert-header">
+            <div class="modern_alert-header-text">{{ ('catalog.alert.notenough.title') | translate }}</div>
+        </div>
+        <div class="modern_alert_body">
+            <div class="modern_alert-aciklama" style="width: 348px;">
+                <div class="modern_alert-aciklama-text">{{ ('catalog.alert.notenough.credits.description') | translate }}</div>
+            </div>
+            <div class="btn-group w-100">
+                <div class="choices-button" (click)="hide()">
+                    <div class="h-k-yazi">{{ ('catalog.purchase_confirmation.cancel') | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

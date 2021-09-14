@@ -1,0 +1,67 @@
+<div class="md-roomtool" *ngIf="room" [draggable] [center]="false" dragHandle=".md-header" >
+    <div class="md-header">Room Tool
+        <div class="md-close" (click)="close()">
+            <div class="md-closetab1"></div>
+            <div class="md-closetab2"></div>
+        </div>
+    </div>
+    <div class="md-roomtool-main">
+        <div class="md-main">
+            <div class="mdt-roomi-main">
+                <div class="mdt-infomain">
+                    <div class="mdt-roominfo-i">Name:</div>
+                    <div class="mdt-roominfo-d">{{room.name}}</div>
+                </div>
+                <div class="mdt-infomain">
+                    <div class="mdt-roominfo-i">Description:</div>
+                    <div class="mdt-roominfo-d">{{room.description}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="md-main">
+            <div class="mdt-roomi-main">
+                <div class="mdt-infomain">
+                    <div class="mdt-roominfo-i">Owner:</div>
+                    <div class="mdt-roominfo-d mdt-username">{{room.ownerName}}</div>
+                </div>
+                <div class="mdt-infomain">
+                    <div class="mdt-roominfo-i">Players in room:</div>
+                    <div class="mdt-roominfo-d">{{room.playerAmount }}</div>
+                </div>
+                <div class="mdt-infomain">
+                    <div class="mdt-roominfo-i">Owner in room:</div>
+                    <div class="mdt-roominfo-d">{{room.owner ? 'yes' : 'no'}}</div>
+                </div>
+            </div>
+            <div class="mdt-button">
+                <button (click)="enterRoom()" class="mdt_button" type="button">Enter</button>
+                <button (click)="openChatlog()" class="mdt_button" type="button">Chatlogs</button>
+            </div>
+        </div>
+        <div class="md-main" style="float: left;padding: 5px;">
+            <label class="rs-select_container2" for="change-title">
+                <input type="checkbox" [(ngModel)]="changeTitle" id="change-title">
+                <p class="rs-sctxt">Change title to inappropriate</p>
+                <span class="checkmarkrs2"></span>
+            </label>
+            <label class="rs-select_container2" for="kick-users">
+                <input type="checkbox" [(ngModel)]="kickUsers" id="kick-users">
+                <p class="rs-sctxt">Kick users (stops event)</p>
+                <span class="checkmarkrs2"></span>
+            </label>
+            <label class="rs-select_container2" for="lock-room">
+                <input type="checkbox" [(ngModel)]="lockDoor" id="lock-room">
+                <p class="rs-sctxt">Lock room</p>
+                <span class="checkmarkrs2"></span>
+            </label>
+            <select [(ngModel)]="optionId" (change)="selectMessage(optionId)" class="md-select">
+                <option [value]="-1">Select from messsage templates</option>
+                <option *ngFor="let item of options; let i = index" [value]="i">{{ item }}</option>
+            </select>
+            <textarea [(ngModel)]="message" class="mdt-room_message"></textarea>
+        </div>
+        <button [disabled]="!isInCurrentRoom()" (click)="send()" class="md-send_button">
+            Send caution
+        </button>
+    </div>
+</div>

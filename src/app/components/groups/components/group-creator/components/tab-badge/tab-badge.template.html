@@ -1,0 +1,85 @@
+<div class="groupcreate-headerinfo"><img class="grupcreate-img" src="/assets/images/guilds/group_UI_badge.png">
+    <div class="grup-bilgi-metinler">
+        <p class="grupcreate-baslik">{{ ('group.create.stepcaption.2') | translate }}</p>
+        <p class="grupcreate-aciklama">{{ ('group.create.stepdesc.2') | translate }}</p>
+    </div>
+</div>
+<div class="groupcreate-bodybox">
+    <div class="groupinfo-left">
+        <p class="grouptext-1">{{ ('group.edit.badge.badge') | translate }}</p>
+        <div class="group-badge-box">
+            <nitro-badge [badge]="groupSettings.currentBadgeCode" [isGroup]="true"></nitro-badge>
+        </div>
+    </div>
+    <div class="groupinfo-right">
+        <div *ngIf="!selectorVisible">
+            <div class="dxx" *ngFor="let part of groupSettings.badgeParts | keyvalue">
+                <div class="groupbadge_position-head-text">
+                    <p class="grouptext-2">{{ ('group.edit.badge.symbol') | translate }}</p>
+                    <p class="grouptext-3">{{ ('group.edit.badge.position') | translate }}</p>
+                    <p class="grouptext-4">{{ ('group.edit.badge.colors') | translate }}</p>
+                </div>
+                <div class="group-badge-design">
+                    <button class="group-badge-select" (click)="openPartSelector(part.value)">
+                        <nitro-badge *ngIf="part.value.code" [badge]="part.value.code" [isGroup]="true"></nitro-badge>
+                        <i *ngIf="!part.value.code" class="ekle"></i>
+                    </button>
+                    <div class="group-position-select">
+                        <button class="positionselect" [ngStyle]="{display: part.value.isBase ? 'none' : 'block'}" *ngFor="let position of positions"
+                            [ngClass]="part.value.position === position ? 'positionselect-act' : 'positionselect'"
+                            (click)="part.value.position = position;"></button>
+                    </div>
+                    <div class="group-badge-color-select">
+                        <div class="colorselect-box" *ngFor="let color of badgePartColors | keyvalue"
+                            [style]="{backgroundColor: '#' + color.value}"
+                            [ngClass]="part.value.color === color.key ? 'colorselect-box_active' : 'colorselect-box'"
+                            (click)="part.value.color = color.key;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="selectorVisible" nitro-group-image-selector-component
+            [items]="(badgePartBeingSelected && badgePartBeingSelected.isBase) ? badgeBases : badgeSymbols"
+            [part]="badgePartBeingSelected" (onSelect)="onPartSelected($event)"></div>
+
+    </div>
+</div>
+<!--
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-primary" style="width: 120px;height: 67px;">
+            <nitro-badge [badge]="groupSettings.currentBadgeCode" [isGroup]="true"></nitro-badge>
+        </button>
+    </div>
+    <div class="col-9">
+        <div *ngIf="!selectorVisible">
+            <div *ngFor="let part of groupSettings.badgeParts | keyvalue"
+                class="d-flex flex-row justify-content-between mb-3">
+                <button class="btn btn-primary" style="width: 120px;height: 67px;"
+                    (click)="openPartSelector(part.value)">
+                    <nitro-badge *ngIf="part.value.code" [badge]="part.value.code" [isGroup]="true"></nitro-badge>
+                    <i *ngIf="!part.value.code" class="fas fa-plus" style="width: 39px"></i>
+                </button>
+                <div class="grid-container ml-3" [ngStyle]="{opacity: part.value.isBase ? 0 : 1}">
+                    <div class="grid-items grid-3 pb-1">
+                        <button *ngFor="let position of positions" class="item-detail btn btn-sm"
+                            [ngClass]="part.value.position === position ? 'btn-light' : 'btn-primary'"
+                            (click)="part.value.position = position;"></button>
+                    </div>
+                </div>
+                <div class="grid-container ml-3">
+                    <div class="grid-items grid-8 pb-1">
+                        <button *ngFor="let color of badgePartColors | keyvalue"
+                            class="item-detail btn btn-primary btn-sm" [style]="{backgroundColor: '#' + color.value}"
+                            (click)="part.value.color = color.key;"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="selectorVisible" nitro-group-image-selector-component
+            [items]="(badgePartBeingSelected && badgePartBeingSelected.isBase) ? badgeBases : badgeSymbols"
+            [part]="badgePartBeingSelected" (onSelect)="onPartSelected($event)"></div>
+    </div>
+</div>
+-->

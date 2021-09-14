@@ -1,0 +1,9 @@
+<nitro-wired-base-component>
+    <ng-content></ng-content>
+    <p class="w-100 text-center mb-1">{{ delayLocale }}</p>
+    <div class="d-flex align-items-center justify-content-center my-2 custom-slider">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decreaseDelay()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="delay" [options]="delaySliderOptions" [(value)]="delay" (valueChange)="onSliderChange()"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increaseDelay()"><i class="fas fa-arrow-right"></i></button>
+    </div>
+</nitro-wired-base-component>

@@ -1,0 +1,94 @@
+<!--<div class="mb-3">{{ ('navigator.roomsettings.moderation.header') | translate }}</div>
+<div class="font-weight-bold">{{ ('navigator.roomsettings.moderation.mute.header') | translate }}</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="moderation_mute" value="0" [(ngModel)]="roomSettings.muteState" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.moderation.none') | translate }}</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="moderation_mute" value="1" [(ngModel)]="roomSettings.muteState" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.moderation.rights') | translate }}</label>
+</div>
+<div class="font-weight-bold mt-2">{{ ('navigator.roomsettings.moderation.kick.header') | translate }}</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="moderation_kick" value="0" [(ngModel)]="roomSettings.kickState" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.moderation.all') | translate }}</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="moderation_kick" value="1" [(ngModel)]="roomSettings.kickState" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.moderation.rights') | translate }}</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="moderation_kick" value="2" [(ngModel)]="roomSettings.kickState" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.moderation.none') | translate }}</label>
+</div>
+<div class="font-weight-bold mt-2">{{ ('navigator.roomsettings.moderation.ban.header') | translate }}</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="moderation_ban" value="0" [(ngModel)]="roomSettings.banState" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.moderation.none') | translate }}</label>
+</div>
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="moderation_ban" value="1" [(ngModel)]="roomSettings.banState" (ngModelChange)="save()">
+    <label class="form-check-label">{{ ('navigator.roomsettings.moderation.rights') | translate }}</label>
+</div>
+<div class="font-weight-bold mt-3 mb-1">{{ ('navigator.roomsettings.moderation.banned.users') | translate }} ({{ roomSettings.bannedUsers.size }})</div>
+<div class="row">
+    <div class="col-6">
+        <perfect-scrollbar class="grid-container position-relativ mb-1" style="min-height: 150px;max-height: 150px;">
+            <div *ngFor="let item of roomSettings.bannedUsers | keyvalue" class="btn-group mb-1 w-100">
+                <button class="btn btn-primary btn-sm w-100" (click)="openProfile(item.key)">{{ item.value }}</button>
+                <button class="btn btn-primary btn-sm" (click)="roomSettings.selectUserToUnban(item.key)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </perfect-scrollbar>
+    </div>
+    <div class="col-6">
+        <button class="btn btn-primary btn-sm w-100" [ngClass]="{'disabled' : roomSettings.selectedUserToUnban === 0}" (click)="unban()">{{ ('navigator.roomsettings.moderation.unban') | translate }} {{ roomSettings.selectedUsernameToUnban }}</button>
+    </div>
+</div>-->
+
+
+<div id="yonet-ayar-box">
+    <div class="oda-ayar-aciklama-text">{{ ('navigator.roomsettings.moderation.header') | translate }}</div>
+    
+    <div class="oda-ayar-baslik-text bosluk2">{{ ('navigator.roomsettings.moderation.mute.header') | translate }}</div>
+    <div class="oda-ayar-checkbox "> <input id="check-css" type="radio" name="moderation_mute" value="0" [(ngModel)]="roomSettings.muteState" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.moderation.none') | translate }}</div>
+    </div>
+    <div class="oda-ayar-checkbox "> <input id="check-css" type="radio" name="moderation_mute" value="1" [(ngModel)]="roomSettings.muteState" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.moderation.rights') | translate }}</div>
+    </div>
+
+    <div class="oda-ayar-baslik-text bosluk2">{{ ('navigator.roomsettings.moderation.kick.header') | translate }}</div>
+    <div class="oda-ayar-checkbox "> <input id="check-css" type="radio" name="moderation_kick" value="0" [(ngModel)]="roomSettings.kickState" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.moderation.all') | translate }}</div>
+    </div>
+    <div class="oda-ayar-checkbox "> <input id="check-css" type="radio" name="moderation_kick" value="1" [(ngModel)]="roomSettings.kickState" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.moderation.rights') | translate }}</div>
+    </div>
+    <div class="oda-ayar-checkbox "> <input id="check-css" type="radio" name="moderation_kick" value="2" [(ngModel)]="roomSettings.kickState" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.moderation.none') | translate }}</div>
+    </div>
+
+    <div class="oda-ayar-baslik-text bosluk2">{{ ('navigator.roomsettings.moderation.ban.header') | translate }}</div>
+    <div class="oda-ayar-checkbox "> <input id="check-css" type="radio" name="moderation_ban" value="0" [(ngModel)]="roomSettings.banState" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.moderation.none') | translate }}</div>
+    </div>
+    <div class="oda-ayar-checkbox "> <input id="check-css" type="radio" name="moderation_ban" value="1" [(ngModel)]="roomSettings.banState" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.moderation.rights') | translate }}</div>
+    </div>
+
+    <div class="roombanned">
+        <div class="odadan-yasaklanan-kullanicilar-box">
+            <div class="odadan-yasaklananlar-liste">
+                <div *ngFor="let item of roomSettings.bannedUsers | keyvalue" >
+                    <div (click)="roomSettings.selectUserToUnban(item.key)">
+                        <div class="odadan-yasaklanan-kullanici-box" (click)="openProfile(item.key)">{{ item.value }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yasakli-kullanici-baslik">{{ ('navigator.roomsettings.moderation.banned.users') | translate }} <b>({{ roomSettings.bannedUsers.size }})</b></div>
+        <button class="yasak-kaldir-buton-box" [ngClass]="{'disabled' : roomSettings.selectedUserToUnban === 0}" (click)="unban()">
+            <p class="yasak-kaldir-text">{{ ('navigator.roomsettings.moderation.unban') | translate }} {{ roomSettings.selectedUsernameToUnban }}</p>
+        </button>
+    </div>
+</div> 

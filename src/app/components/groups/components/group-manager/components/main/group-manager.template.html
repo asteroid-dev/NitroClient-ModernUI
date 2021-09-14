@@ -1,0 +1,44 @@
+<div *ngIf="visible" [draggable] [bringToTop] class="groupcreate" dragHandle=".test">
+    <div id="modernui-drag" class="test">
+        <div class="modernui-hood">{{ ('group.window.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="groupcreate-headbox">
+        <div class="groupeditbutton-box">
+            <button class="groupedit-button" [ngClass]="{'groupeditbutton-boxactive': currentTab === 1}" (click)="setTab(1)">
+                <p class="gebuttontxt">{{ ('group.edit.tab.1') | translate }}</p>
+            </button>
+            <button class="groupedit-button" [ngClass]="{'groupeditbutton-boxactive': currentTab === 2}" (click)="setTab(2)">
+                <p class="gebuttontxt">{{ ('group.edit.tab.2') | translate }}</p>
+            </button>
+            <button class="groupedit-button" [ngClass]="{'groupeditbutton-boxactive': currentTab === 3}" (click)="setTab(3)">
+                <p class="gebuttontxt">{{ ('group.edit.tab.3') | translate }}</p>
+            </button>
+            <button class="groupedit-button" [ngClass]="{'groupeditbutton-boxactive': currentTab === 4}" (click)="setTab(4)">
+                <p class="gebuttontxt">{{ ('group.edit.tab.5') | translate }}</p>
+            </button>
+        </div>
+    </div>
+
+    <nitro-group-manager-tab-info-component *ngIf="currentTab === 1"
+    [(groupSettings)]="groupSettings"
+    [showNameError]="showNameError"
+    [showDescriptionError]="showDescriptionError"></nitro-group-manager-tab-info-component>
+    
+    <nitro-group-creator-tab-badge-component *ngIf="currentTab === 2"
+    [(groupSettings)]="groupSettings"
+    [setDefaultValues]="false"></nitro-group-creator-tab-badge-component>
+
+    <nitro-group-creator-tab-colors-component *ngIf="currentTab === 3"
+    [(groupSettings)]="groupSettings"
+    [setDefaultValues]="false"></nitro-group-creator-tab-colors-component>
+
+    <nitro-group-manager-tab-preferences-component *ngIf="currentTab === 4"
+    [(groupSettings)]="groupSettings"></nitro-group-manager-tab-preferences-component>
+
+
+    <div class="groupcreate-buttonbox">
+        <button class="groupcreate-iptal" (click)="hide()">{{ ('generic.cancel') | translate }}</button>
+        <button class="groupcreate-gobutton" (click)="save()">{{ ('save') | translate }}</button>
+    </div>
+</div>

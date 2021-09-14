@@ -1,0 +1,15 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	{{ ('wiredfurni.params.conditions') | translate }}
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="state">
+        <label class="form-check-label">{{ ('wiredfurni.params.condition.state') | translate }}</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="direction">
+        <label class="form-check-label">{{ ('wiredfurni.params.condition.direction') | translate }}</label>
+	</div>
+	<div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="position">
+        <label class="form-check-label">{{ ('wiredfurni.params.condition.position') | translate }}</label>
+	</div>
+</nitro-wired-action-base-component>

@@ -1,0 +1,8 @@
+<nitro-wired-base-component>
+	<p class="w-100 text-center mb-1">{{ timeLocale }}</p>
+    <div class="d-flex align-items-center justify-content-center my-2 custom-slider">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decrease()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="time" [options]="sliderOptions" [(value)]="time" (valueChange)="onSliderChange()"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increase()"><i class="fas fa-arrow-right"></i></button>
+    </div>
+</nitro-wired-base-component>

@@ -1,0 +1,95 @@
+
+    <div *ngIf="visible" [bringToTop] [draggable] class="flashsettings">
+        <div id="usersettingshead" class="drag-handler">
+            <div class="us-header-baslik">User Settings</div>
+            <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+        <div class="uspadding">
+            <div class="usettings-head">
+                <div class="usettings-hood">{{ 'widget.memenu.settings.title' | translate }}</div>
+            </div>
+            <div class="usersettings-hr"></div>
+            <div class="usettings-body">
+                <div class="bgus">
+                    <label class="rs-select_container2" for="oldChat">
+                        <input type="checkbox" id="oldChat" [(ngModel)]="oldChat">
+                        <p class="rs-sctxt">{{ ('memenu.settings.chat.prefer.old.chat') |
+                            translate }}</p>
+                        <span class="checkmarkrs2"></span>
+                    </label>
+                    <label class="rs-select_container2" for="roomInvites">
+                        <input type="checkbox" id="roomInvites" [(ngModel)]="roomInvites">
+                        <p class="rs-sctxt">{{ ('memenu.settings.other.ignore.room.invites') |
+                            translate }}</p>
+                        <span class="checkmarkrs2"></span>
+                    </label>
+                    <label class="rs-select_container2" for="cameraFollow">
+                        <input type="checkbox" id="cameraFollow" [(ngModel)]="cameraFollow">
+                        <p class="rs-sctxt">{{
+                            ('memenu.settings.other.disable.room.camera.follow') | translate }}</p>
+                        <span class="checkmarkrs2"></span>
+                    </label>
+                </div>
+                <div class="usettings-baslik">{{ ('widget.memenu.settings.volume') | translate }}</div>
+                <div class="usersettings-hr"></div>
+
+                <div class="us-rangebox" style="margin-top: 5px;">
+                    <label for="volumeSystem" class="fortext-us">{{ ('widget.memenu.settings.volume.ui') | translate
+                        }}</label>
+                    <div class="hayamk d-flex flex-row">
+                        <div [ngClass]="{'text-muted': volumeSystem >= 50}">
+                            <div class="sesayar"
+                                [ngClass]="{'ses-1-0': volumeSystem === 0, 'ses-1-1': volumeSystem > 0}"></div>
+                        </div>
+                        <div class="wiredrange_box">
+                            <div class="rakamlar"></div>
+                            <input type="range" class="wiredrange" min="0" max="100" step="1" id="volumeSystem"
+                                [(ngModel)]="volumeSystem" (mouseup)="saveSound()">
+                        </div>
+                        <div class="us-buttontest">
+                            <div class="ses-2-2" [ngClass]="{'ses-2-2': volumeSystem < 50}"></div>
+                            <div class="ses-2-0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="us-rangebox">
+                    <label for="volumeFurni" class="fortext-us">{{ ('widget.memenu.settings.volume.furni') | translate
+                        }}</label>
+                    <div class="hayamk d-flex flex-row">
+                        <div [ngClass]="{'text-muted': volumeFurni >= 50}">
+                            <div class="sesayar" [ngClass]="{'ses-1-0': volumeFurni === 0, 'ses-1-1': volumeFurni > 0}">
+                            </div>
+                        </div>
+                        <div class="wiredrange_box">
+                            <div class="rakamlar"></div>
+                            <input type="range" class="wiredrange" min="0" max="100" step="1" id="volumeFurni"
+                                [(ngModel)]="volumeFurni" (mouseup)="saveSound()">
+                        </div>
+                        <div class="us-buttontest">
+                            <div class="ses-2-2" [ngClass]="{'ses-2-2': volumeFurni < 50}"></div>
+                            <div class="ses-2-0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="us-rangebox">
+                    <label for="volumeTrax" class="fortext-us">{{ ('widget.memenu.settings.volume.trax') | translate
+                        }}</label>
+                    <div class="hayamk d-flex flex-row">
+                        <div [ngClass]="{'text-muted': volumeTrax >= 50}">
+                            <div class="sesayar" [ngClass]="{'ses-1-0': volumeTrax === 0, 'ses-1-1': volumeTrax > 0}">
+                            </div>
+                        </div>
+                        <div class="wiredrange_box">
+                            <div class="rakamlar"></div>
+                            <input class="wiredrange" type="range" min="0" max="100" step="1" id="volumeTrax"
+                                [(ngModel)]="volumeTrax" (mouseup)="saveSound()">
+                        </div>
+                        <div class="us-buttontest">
+                            <div class="ses-2-2" [ngClass]="{'ses-2-2': volumeTrax < 50}"></div>
+                            <div class="ses-2-0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

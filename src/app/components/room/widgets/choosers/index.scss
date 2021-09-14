@@ -1,0 +1,21 @@
+.nitro-chooser-component {
+    position: absolute;
+    width: 275px;
+    max-width: 275px;
+
+    .chooser-search {
+        background-color: #494949;
+        border: none;
+        border-radius: 5px;
+        box-shadow: none;
+        color: white;
+    }
+
+    .chooser-item {
+        font-size: 12px;
+
+        &.selected {
+            background-color: #A5A5A5 !important;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<div class="owl-items-main">
+    <div class="d-flex flex-row mb-1">
+        <div class="position-relative align-self-center align-items-end mr-2 flex-shrink-0 owl-item-furni-view" [ngClass]="{'unique': offer.isUniqueLimitedItem}">
+            <div class="position-absolute w-100 h-100" style="background-repeat: no-repeat;background-position: center;" [ngStyle]="{ 'background-image': 'url(' + imageUrlOffer + ')' }"></div>
+            <div *ngIf="offer.isUniqueLimitedItem" class="position-absolute unique-counter" style="bottom:0px;" [innerHtml]="offer.stuffData.uniqueNumber | uniqueNumber"></div>
+        </div>
+        <div class="align-self-center">
+            <div class="owl-item-name">{{ marketplaceOfferTitle }}</div>
+            <div class="owl-item-price">{{ averagePrice }}</div>
+        </div>
+    </div>
+    <div class="owl-item-info-main"><p class="item-desc-mp">{{ description }}</p></div>
+    <div class="owl-items-bottom">
+        <div class="item-time">{{ offerCount }}</div>
+        <div (click)="buy()" class="take-back">{{ 'buy' | translate }}</div>                
+    </div>
+</div>

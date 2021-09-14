@@ -1,0 +1,58 @@
+<div class="habbo-sendgift" [bringToTop] [draggable] [center]="true">
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ 'catalog.gift_wrapping.title' | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="user-send-gift">
+        <input class="sendgift-username" type="text" [(ngModel)]="receiverName" placeholder="{{ 'catalog.gift_wrapping.receiver' | translate }}" />
+        <div class="sendgift-infomain">
+            <div class="sender-avatar">
+                <div class="giftavatar-position" nitro-avatar-image *ngIf="showFace" [headOnly]="false" [direction]="2" [figure]="habboFace"></div>
+            </div>
+            <div *ngIf="!showFace" class="ingognito"></div>
+            <div class="gift-message-main">
+                <div class="message-triangle"></div>
+                <textarea [(ngModel)]="message" class="giftbox-message" placeholder="{{ 'catalog.gift_wrapping_new.message_hint' | translate }}"></textarea>
+            </div>
+            <div class="showface-main">
+                <input class="showface_input" type="checkbox" [(ngModel)]="showFace" (change)="changeCheckbox($event)" style="float: left;">
+                <div class="gifttag-showface">{{ ('catalog.gift_wrapping.show_face.title') | translate }}</div>
+            </div>
+            <div class="giftmain-hr"></div>
+            <div class="selected-giftbox">
+                <div class="giftbox-preview">
+                    <div nitro-furniture-image [type]="'s'" [spriteId]="boxSpriteId" [extras]="extras"></div>
+                </div>
+                <div class="giftbox-option1">
+                    <div class="giftoption_button">
+                        <button type="button" class="option_click-left" (click)="handleButton('previous_box')"></button>
+                        <button type="button" class="option_click-right" (click)="handleButton('next_box')"></button>
+                    </div>
+                    <div class="giftoption_description">
+                        <div class="gift-boxname">{{ boxText }}</div>
+                        <div class="gift-prive" *ngIf="priceText && (priceText.length > 0)">{{ priceText }}</div>
+                    </div>
+                </div>
+                <div class="giftbox-option2">
+                    <div class="giftoption_button">
+                        <button type="button" class="option_click-left" [disabled]="isDefaultBox" (click)="handleButton('previous_ribbon')"></button>
+                        <button type="button" class="option_click-right" [disabled]="isDefaultBox" (click)="handleButton('next_ribbon')"></button>
+                    </div>
+                    <div class="giftoption_description">
+                        <div class="gift-ribbon" [ngClass]="{'is-unavailable': isDefaultBox}">{{ ribbonText }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="giftsend-boxcolor">
+                <div class="pick-color-select">{{ ('catalog.gift_wrapping.pick_color') | translate }}</div>
+                <div class="colorselect-giftmain">
+                    <button *ngFor="let item of colors" class="giftcolor-main" [disabled]="!hasColors" (click)="selectTypeId(item)" [ngStyle]="{'backgroundColor': getColor(item)}"></button>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between w-100">
+                <button type="button" class="giftsend-close" (click)="hide()">{{ ('catalog.purchase_confirmation.cancel') | translate }}</button>
+                <button type="button" class="giftsend-buy" (click)="handleButton('give_gift')">{{ 'catalog.gift_wrapping.give_gift' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

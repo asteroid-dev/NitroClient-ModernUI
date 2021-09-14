@@ -1,0 +1,17 @@
+<div *ngIf="visible" class="grup-bilgi-box">
+    <div class="groupinfo-ackapat" (click)="toggleOpen()" [ngClass]="open ? 'toolac' : 'toolkapat'"></div>
+    <div *ngIf="open">
+        <div id="grup-bilgiGCorelo" class="grup-bilgileri-detay" (click)="openInfo()">
+            <div class="grup-rozeti">
+                <nitro-badge class="mr-2" [badge]="groupBadgeCode" [isGroup]="true"></nitro-badge>
+            </div>
+            <div class="grup-adi">{{ groupName }}</div>
+            <div class="grup-odasi">{{ ('group.homeroominfo.title') | translate }}</div>
+            <button *ngIf="groupType === 0 && groupMembershipType === 0" class="grup-katil" (click)="join()">{{ ('group.join') | translate }}</button>
+            <div *ngIf="groupType === 1">
+                <button *ngIf="groupMembershipType === 0" class="grup-katil" (click)="join()">{{ ('group.requestmembership') | translate }}</button>
+                <button *ngIf="groupMembershipType === 2" class="grup-katil" disabled>{{ ('group.membershippending') | translate }}</button>
+            </div>     
+        </div>
+    </div>
+</div>

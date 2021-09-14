@@ -1,0 +1,36 @@
+<div id="erisim-ayar-box">
+    <div class="oda-ayar-baslik-text">{{ ('navigator.roomsettings.roomaccess.caption') | translate }}</div>
+    <div class="oda-ayar-aciklama-text">{{ ('navigator.roomsettings.roomaccess.info') | translate }}</div>
+
+    <div class="bosluk2 oda-ayar-baslik-text">{{ ('navigator.roomsettings.doormode') | translate }}</div>
+    <div class="oda-ayar-checkbox mtop0"> <input type="radio" id="check-css" name="doormode" [(ngModel)]="roomSettings.lockState" (ngModelChange)="save()" value="0">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.doormode.open') | translate }}</div>
+    </div>
+    <div class="oda-ayar-checkbox mtop0"> <input type="radio" id="check-css" name="doormode" [(ngModel)]="roomSettings.lockState" (ngModelChange)="save()" value="1">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.doormode.doorbell') | translate }}</div>
+    </div>
+    <div class="oda-ayar-checkbox mtop0"> <input type="radio" id="check-css" name="doormode" [(ngModel)]="roomSettings.lockState" (ngModelChange)="save()" value="3">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.doormode.invisible') | translate }}</div>
+    </div>
+    <div class="oda-ayar-checkbox mtop0"> <input type="radio" id="check-css" name="doormode" [(ngModel)]="roomSettings.lockState" (ngModelChange)="save()" value="2">
+        <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.doormode.password') | translate }}</div>
+    </div>
+    <div *ngIf="roomSettings.lockState == '2'">
+        <div class="oda-ayar-baslik-text">{{ ('navigator.roomsettings.password') | translate }}</div>
+        <input type="password" class="roompass" placeholder="*****" [(ngModel)]="roomSettings.password" (blur)="save()">
+        <div class="oda-ayar-baslik-text">{{ ('navigator.roomsettings.passwordconfirm') | translate }}</div>
+        <input type="password" class="roompass" placeholder="*****" [(ngModel)]="roomSettings.confirmPassword" (blur)="save()">
+        <small *ngIf="!roomSettings.isValidPassword" class="roompass-warning">
+            {{ ('navigator.roomsettings.invalidconfirm') | translate }}
+        </small>
+    </div>
+    <div class="pets-settings-room">
+        <div class="mtop0 oda-ayar-baslik-text">{{ ('navigator.roomsettings.pets') | translate }}</div>
+        <div class="oda-ayar-checkbox mtop0"> <input type="checkbox" id="check-css" [(ngModel)]="roomSettings.allowPets" (ngModelChange)="save()">
+            <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.allowpets') | translate }}</div>
+        </div>
+        <div class="oda-ayar-checkbox mtop0"> <input type="checkbox" id="check-css" [(ngModel)]="roomSettings.allowPetsEat" (ngModelChange)="save()">
+            <div class="oda-ayar-baslik-text oabt-padding-cb">{{ ('navigator.roomsettings.allowfoodconsume') | translate }}</div>
+        </div>
+    </div>
+</div>

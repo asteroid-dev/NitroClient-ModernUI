@@ -1,0 +1,113 @@
+perfect-scrollbar {
+    overflow: auto !important;
+}
+
+.ps {
+    overflow: auto !important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+
+    &.ps--active-x {
+
+        .ps-content {
+            padding-bottom: 13px;
+        }
+    }
+
+    &.ps--active-y {
+
+        .ps-content {
+            padding-right: 7px;
+        }
+    }
+
+    &.ps--active-x > .ps__rail-x,
+    &.ps--active-y > .ps__rail-y {
+        display: block;
+        background-color: transparent !important;
+    }
+
+    .ps__rail-x {
+        display: none;
+        opacity: 1 !important;
+        transition: background-color .2s linear, opacity .2s linear;
+        -webkit-transition: background-color .2s linear, opacity .2s linear;
+        height: 12px !important;
+        /* there must be 'bottom' or 'top' for ps__rail-x */
+        bottom: 0px;
+        /* please don't change 'position' */
+        position: absolute;
+        margin: 0 3px;
+
+        &:hover,
+        &:focus,
+        &.ps--clicking {
+
+            .ps__thumb-x {
+                height: 6px !important;
+            }
+        }
+
+        .ps__thumb-x {
+            background-color: #aaa;
+            border-radius: 6px;
+            transition: background-color .2s linear, height .2s ease-in-out;
+            -webkit-transition: background-color .2s linear, height .2s ease-in-out;
+            height: 6px;
+            /* there must be 'bottom' for ps__thumb-x */
+            bottom: 2px;
+            /* please don't change 'position' */
+            position: absolute;
+        }
+    }
+
+    .ps__rail-y {
+        display: none;
+        opacity: 1 !important;
+        transition: background-color .2s linear, opacity .2s linear;
+        -webkit-transition: background-color .2s linear, opacity .2s linear;
+        width: 6px !important;
+        /* there must be 'right' or 'left' for ps__rail-y */
+        right: 0;
+        /* please don't change 'position' */
+        position: absolute;
+        margin: 1px 0;
+
+        &:hover,
+        &:focus,
+        &.ps--clicking {
+
+            .ps__thumb-y {
+                width: 3px !important;
+            }
+        }
+
+        .ps__thumb-y {
+            background-color: #aaa;
+            border-radius: 6px;
+            transition: background-color .2s linear, width .2s ease-in-out;
+            -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+            width: 3px;
+            /* there must be 'right' for ps__thumb-y */
+            right: 2px;
+            /* please don't change 'position' */
+            position: absolute;
+        }
+    }
+}
+  
+  /* MS supports */
+@supports (-ms-overflow-style: none) {
+    .ps {
+      overflow: auto !important;
+    }
+}
+  
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .ps {
+      overflow: auto !important;
+    }
+}
+  

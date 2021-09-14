@@ -1,0 +1,11 @@
+<nitro-wired-base-component>
+	{{ ('wiredfurni.params.requireall') | translate }}
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="0" [(ngModel)]="requireAll">
+        <label class="form-check-label">{{ ('wiredfurni.params.requireall.0') | translate }}</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="1" [(ngModel)]="requireAll">
+        <label class="form-check-label">{{ 'wiredfurni.params.requireall.1' | translate }}</label>
+    </div>
+</nitro-wired-base-component>

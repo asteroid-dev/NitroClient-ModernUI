@@ -1,0 +1,42 @@
+<div class="avatarEditor-alt_menu">
+    <ng-container *ngIf="categories.length > 1">
+        <div class="avatarEditor-alt_menu-liste">
+            <button *ngFor="let category of categories.getValues()"
+                [ngClass]="{ 'aemenu-active': (activeCategory === category) }" (click)="selectCategory(category.name)"
+                class="aEditor-liste-menu-box"><i class="icon {{ category.name }}-icon"
+                    [ngClass]="{ 'selected': (activeCategory === category) }"></i></button>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="canSetGender">
+        <button type="button" class="aEditor-liste-menu-box" (click)="selectGender('M')"
+            [ngClass]="{ 'aemenu-active': (gender === 'M') }">
+            <div class="menu-width face_01" [ngClass]="{ 'face_01_on': (gender === 'M') }"></div>
+        </button>
+        <button type="button" class="aEditor-liste-menu-box" (click)="selectGender('F')"
+            [ngClass]="{ 'aemenu-active': (gender === 'F') }">
+            <div class="menu-width face_02" [ngClass]="{ 'face_02_on': (gender === 'F') }"></div>
+        </button>
+    </ng-container>
+    <div class="gorunum-satin-al" (click)="clickIcon('catalog')">
+        <img class="gorunum-satin-al-gorsel" src="./assets/images/avatareditor/kiyafet_satin_al.png">
+    </div>
+</div>
+<ng-container *ngIf="activeCategory">
+    <div class="ae-box">
+        <div nitro-avatar-set-viewer-component [model]="model" [category]="activeCategory"
+            [partSet]="activeCategory.parts"></div>
+        <div class="gorunum-renk-degistir-box">
+            <div *ngIf="(maxPaletteCount >= 1)"
+                [ngClass]="{ '': (maxPaletteCount >= 2), '': (maxPaletteCount <= 1) }">
+                <div nitro-avatar-palette-viewer-component [model]="model" [category]="activeCategory"
+                    [paletteSet]="activeCategory.getPalette(0)" [paletteIndex]="0" [maxPaletteCount]="maxPaletteCount">
+                </div>
+            </div>
+            <div *ngIf="(maxPaletteCount === 2)">
+                <div nitro-avatar-palette-viewer-component [model]="model" [category]="activeCategory"
+                    [paletteSet]="activeCategory.getPalette(1)" [paletteIndex]="1" [maxPaletteCount]="maxPaletteCount">
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

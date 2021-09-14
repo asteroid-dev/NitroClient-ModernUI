@@ -1,0 +1,29 @@
+
+<nitro-purse-main-component></nitro-purse-main-component>
+
+<div class="nitro-main-component">
+    <nitro-alert-center-component></nitro-alert-center-component>
+    <div class="nitro-right-side" [@inOutAnimation]>
+        <div class="d-flex flex-column">
+            <nitro-group-room-info-component></nitro-group-room-info-component>
+            <nitro-notification-center-component></nitro-notification-center-component>
+        </div>
+    </div>
+    <nitro-achievements-main-component [visible]="achievementsVisible"></nitro-achievements-main-component>
+    <nitro-call-for-help-main-component></nitro-call-for-help-main-component>
+    <nitro-pedia-main-component></nitro-pedia-main-component>
+    <nitro-avatar-editor-main-component [visible]="avatarEditorVisible"></nitro-avatar-editor-main-component>
+    <nitro-hotelview-component *ngIf="landingViewVisible"></nitro-hotelview-component>
+    <nitro-toolbar-component [isInRoom]="!landingViewVisible"></nitro-toolbar-component>
+    <nitro-friendlist-main-component [visible]="friendListVisible"></nitro-friendlist-main-component>
+    <nitro-catalog-main-component [visible]="catalogVisible"></nitro-catalog-main-component>
+    <nitro-navigator-main-component [visible]="navigatorVisible"></nitro-navigator-main-component>
+    <nitro-inventory-main-component [visible]="inventoryVisible"></nitro-inventory-main-component>
+    <nitro-user-profile-component></nitro-user-profile-component>
+    <nitro-chat-history-component [visible]="chatHistoryVisible"></nitro-chat-history-component>
+    <nitro-user-settings-component [visible]="userSettingsVisible"></nitro-user-settings-component>
+    <nitro-wired-main-component></nitro-wired-main-component>
+    <nitro-group-main-component></nitro-group-main-component>
+    <nitro-mod-tool-main-component [visible]="modToolVisible"></nitro-mod-tool-main-component>
+    <nitro-room-component></nitro-room-component>
+</div>

@@ -1,0 +1,22 @@
+<div [draggable] [center]="false" dragHandle=".md-header" class="md-modaction" style="width: 300px;">
+    <div class="md-header">Message to: {{user.username}}
+        <div class="md-close" (click)="close()">
+            <div class="md-closetab1"></div>
+            <div class="md-closetab2"></div>
+        </div>
+    </div>
+    <div class="md-modaction-box">
+        <div class="modaction-main">
+            <div class="modaction-select-main">
+                <select [(ngModel)]="optionId" (change)="selectMessage(optionId)" class="md-select">
+                    <option [value]="-1">Message :</option>
+                    <option *ngFor="let item of options; let i = index" [value]="i">{{ item }}</option>
+                </select>
+            </div>
+            <div class="modaction-textarea-main">
+                <textarea [(ngModel)]="message" class="modaction-textarea" style="margin-top: 0px;"></textarea>
+            </div>
+            <button (click)="sendMessage()" type="button" class="md-send_button">Sanction</button>
+        </div>
+    </div>
+</div>

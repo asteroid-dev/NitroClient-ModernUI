@@ -1,0 +1,14 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="nitro-furniture-stickie" [ngStyle]="{ 'background-color': ('#' + colorHex), color: colorHex }">
+    <div class="drag-handler d-flex justify-content-between align-items-center py-1 px-2">
+        <div *ngIf="isController" class=" d-flex align-items-center">
+            <button type="button" class="sticky-trash mr-2" (click)="processAction('delete')">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+            <button type="button" *ngFor="let color of AVAILABLE_COLORS" class="sticky-button rounded p-2 mr-2" [ngStyle]="{ 'background-color': ('#' + color) }" (click)="processAction(color)"></button>
+        </div>
+        <button type="button" class="close" (click)="hide()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="d-flex p-1">
+        <textarea name="sticky-text" class="sticky-text" rows="11" maxlength="500" [disabled]="!isController" [(ngModel)]="text">{{ text }}</textarea>
+    </div>
+</div>

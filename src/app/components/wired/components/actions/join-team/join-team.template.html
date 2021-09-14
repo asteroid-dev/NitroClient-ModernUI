@@ -1,0 +1,11 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	<div class="form-group">
+		<label>{{ ('wiredfurni.params.team') | translate }}</label>
+		<select class="form-control form-control-sm" [(ngModel)]="team">
+			<option value="1" [selected]="team == '1'">{{ ('wiredfurni.params.team.1') | translate }}</option>
+			<option value="2" [selected]="team == '2'">{{ ('wiredfurni.params.team.2') | translate }}</option>
+			<option value="3" [selected]="team == '3'">{{ ('wiredfurni.params.team.3') | translate }}</option>
+			<option value="4" [selected]="team == '4'">{{ ('wiredfurni.params.team.4') | translate }}</option>
+		</select>
+    </div>
+</nitro-wired-action-base-component>

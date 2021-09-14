@@ -1,0 +1,33 @@
+<div *ngIf="isVisible" [@inOutAnimation] class="me-menu-modernui">
+    <div class="memenuicon" (click)="toggleAvatarEditor()">
+        <img src="/assets/images/gdegistir.png">
+    </div>
+    <div class="memenuicon" (click)="toggleAchievements()">
+        <img src="/assets/images/basarilar.png">
+        <div class="mobicountbox count" *ngIf="unseenAchievementsCount" style="top: 5px;">
+            NEW
+        </div>
+    </div>
+    <div class="memenuicon" (click)="toggleNavigator()">
+        <img src="/assets/images/odalarim.png">
+    </div>
+    <div class="memenuicon" (click)="toggleUserSettings()">
+        <img src="/assets/images/usersettings/toolbar_02.gif">
+    </div>
+    <div class="memenubottom"></div>
+</div>
+
+<div *ngIf="isVisible" class="mobile-memenu">
+    <div class="m_memenu-container">
+        <div class="m_memenu-main" (click)="toggleAvatarEditor()">
+            <div class="m_memenu-icon gorunum"></div>
+        </div>
+        <div class="m_memenu-main" (click)="toggleAchievements()">
+            <div class="m_memenu-icon mbasarilar" (click)="hide()"></div>
+            <div class="m_menu_icon_count" *ngIf="unseenAchievementsCount"></div>
+        </div>
+        <div class="m_memenu-main" (click)="toggleNavigator()">
+            <div class="m_memenu-icon odalarim"></div>
+        </div>
+    </div>
+</div>

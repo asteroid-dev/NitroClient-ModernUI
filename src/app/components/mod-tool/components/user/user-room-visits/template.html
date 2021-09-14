@@ -1,0 +1,24 @@
+
+<div [draggable] [center]="false" dragHandle=".md-header" class="md-roomvisits">
+    <div class="md-header">Room visits: {{user.username}}
+        <div class="md-close" (click)="close()">
+            <div class="md-closetab1"></div>
+            <div class="md-closetab2"></div>
+        </div>
+    </div>
+    <div class="md-userchatlogs-box" style="height: 261px;">
+        <div class="userchatlogs-main">
+            <div class="userchatlogs-info-box">
+                <div class="chatlogs-bune">
+                    <div *ngFor="let room of roomVisitedForUser" class="roomvisits-main">
+                        <div class="userchatlogs-chatleft">
+                            <div class="userchatlogstime">{{ showTime(room) }}</div>
+                        </div>
+                        <div class="md-roomvisits-name">{{ room.roomName }}</div>
+                        <button (click)="goToRoom(room)" type="button" class="md-goroom">Enter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

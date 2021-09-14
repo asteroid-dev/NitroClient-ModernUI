@@ -1,0 +1,47 @@
+<!--<div class="d-flex flex-column w-100 h-100">
+    <div *ngIf="!activeOffer" class="d-flex flex-column justify-content-center align-items-center w-100 h-100 mb-2">
+        <img *ngIf="getImage(1)" [src]="getImage(1)" image-placeholder />
+    </div>
+    <div *ngIf="activeOffer" class="position-relative d-flex flex-column justify-content-center align-items-center w-100 mb-2">
+        <div class="position-absolute bg-secondary rounded text-center m-2 p-2 t-0 l-0" style="z-index:1;">{{ offerName(activeOffer) }}</div>
+        <div *ngIf="roomPreviewerVisible" class="room-preview" nitro-room-preview-component [roomPreviewer]="roomPreviewer" [width]="366" [height]="180"></div>
+        <div *ngIf="!roomPreviewerVisible" class="d-flex justify-content-center align-items-center h-100 w-100">
+            <img [src]="offerImage(activeOffer)" image-placeholder />
+        </div>
+    </div>
+    <perfect-scrollbar class="grid-container w-100" style="min-height:209px;max-height:209px;height:209px;">
+        <div class="grid-items grid-6">
+            <div *ngFor="let offer of offers" class="d-flex flex-column item-detail justify-content-center align-items-center" (click)="selectOffer(offer)">
+                <button type="button" class="position-relative btn btn-secondary align-items-end detail-info has-image" [ngClass]="{ 'active': (activeOffer === offer) }" avatar-image [scale]="4" [figure]="offer && offer.products[0] && offer.products[0].extraParam" [direction]="3" [headOnly]="true" [asBackground]="true"></button>
+            </div>
+
+        </div>
+    </perfect-scrollbar>
+    <div *ngIf="activeOffer" class="d-flex align-items-end flex-grow-1 w-100 mt-1" nitro-catalog-purchase-component [activePage]="activePage" [activeOffer]="activeOffer" [quantityEnabled]="activeOffer.bundlePurchaseAllowed"></div>
+</div>-->
+
+
+
+<div class="mobiler-magaza-box">
+    <div class="magaza-mobiler-onizleme">
+        <div *ngFor="let offer of offers" id="magaza-mobilya-onizleme-box" (click)="selectOffer(offer)" [ngClass]="{ 'mgzmobiactive': (activeOffer === offer) }">
+            <div class="mobi-ufak-icon" avatar-image [scale]="4" [figure]="offer && offer.products[0] && offer.products[0].extraParam" [direction]="3" [headOnly]="true" [asBackground]="true"></div>
+        </div>
+    </div>
+    <div *ngIf="!activeOffer" class="kategoriresim">
+        <img *ngIf="getImage(1)" [src]="getImage(1)" image-placeholder />
+    </div>
+    <div class="magaza-mobi-satin-box">
+        <div *ngIf="activeOffer">
+            <div class="mobi-bilgiler-header">
+                <div class="mobi-bilgi-detaylar">?</div>
+                <div class="mobi-bilgi-ad">{{ offerName(activeOffer) }}</div>
+            </div>
+            <div *ngIf="roomPreviewerVisible" class="mgz-mobi-gorunumu" nitro-room-preview-component [roomPreviewer]="roomPreviewer" [width]="233" [height]="160" style="position: relative;z-index: 1;"></div>
+            <div *ngIf="!roomPreviewerVisible" class="d-flex justify-content-center align-items-center h-100 w-100">
+                <img [src]="offerImage(activeOffer)" image-placeholder />
+            </div>
+        </div>
+        <div *ngIf="activeOffer" class="d-flex align-items-end flex-grow-1 w-100 mt-1" nitro-catalog-purchase-component [activePage]="activePage" [activeOffer]="activeOffer" [quantityEnabled]="activeOffer.bundlePurchaseAllowed"></div>
+    </div>
+</div>

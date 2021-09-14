@@ -1,0 +1,39 @@
+<!--<div class="grid-container achievement-category-container w-100 mb-2">
+    <div class="grid-items grid-3">
+        <div class="d-flex flex-column item-detail justify-content-center align-items-center" *ngFor="let category of categories" (click)="selectCategory(category)">
+            <div class="detail-info has-image rounded" [ngClass]="[ ((selectedCategory === category) ? 'bg-primary' : 'bg-secondary' ) ]" [ngStyle]="{ 'background-image': 'url(' + getCategoryImage(category.name, category.achievements) + ')' }">
+                <div *ngIf="getUnseenCount(category)" class="position-absolute btn btn-sm btn-primary px-1 py-0 rounded count">{{ getUnseenCount(category) }}</div>
+                <div class="achievement-progress">{{ getCategoryProgress(category.achievements) }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex flex-column w-100">
+    <div class="achievement-progress-bar bg-secondary rounded p-1 position-relative">
+        <div class="achievement-progress-bar-inner bg-success rounded py-3" [ngStyle]="{ width: getProgressPercentageString() }"></div>
+        <div class="achievement-progress-bar-content text-center d-flex justify-content-center">
+            <span class="align-self-center">{{ getProgressString() }}</span>
+        </div>
+    </div>
+    <div class="text-center bg-secondary rounded px-2 mt-2">{{ ('achievements.categories.score') | translate: 'score': achievementScore }}</div>
+</div>
+-->
+
+<div class="tumBasarilar-box">
+    <div class="toplam-basarilar">
+        <div class="basari-box" *ngFor="let category of categories" (click)="selectCategory(category)">
+            <div *ngIf="getUnseenCount(category)" class="mobicountbox2"><p class="count-txt">{{ getUnseenCount(category) }}</p></div>
+            <div class="basari-rozet-box" [ngClass]="[ ((selectedCategory === category) ? 'basariactive' : 'basari-rozet-box' ) ]">
+                <div class="basari-rozet-img" [ngStyle]="{ 'background-image': 'url(' + getCategoryImage(category.name, category.achievements) + ')' }">
+                    <div class="rozet-basari-bilgi">{{ getCategoryProgress(category.achievements) }}</div>
+                </div>
+            </div>
+            <div class="basari-ad">{{ ('quests.' + category.name + '.name') | translate }}</div>
+        </div>
+    </div>
+    <div class="guncelBasariPuani-box">
+        <div class="basariilerleme" [ngStyle]="{ width: getProgressPercentageString() }"></div>
+        <p class="basari-puan-bilgi">{{ getProgressString() }}</p>
+    </div>
+    <div class="basari-aciklama-info">{{ ('achievements.categories.score') | translate: 'score': achievementScore }}</div>
+</div>

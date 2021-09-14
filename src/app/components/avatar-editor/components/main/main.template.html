@@ -1,0 +1,42 @@
+<div *ngIf="visible" [bringToTop] [draggable] id="avatarEditor">
+    <div id="avatarEditorhareket" class="drag-handler">
+        <div class="avatarEditor-baslik">
+            {{ ('avatareditor.title') | translate }}
+        </div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div id="avatarEditor-menu">
+        <div class="h5-menu-center">
+            <div *ngFor="let category of categories.getValues()" (click)="selectCategory(category.name)">
+                <div class="modern-menu-box ae-othermenu" [ngClass]="{ 'modernmenu-active': (activeCategory === category) }">
+                    <div class="modern-menuhr"></div>{{ ('avatareditor.category.' + category.name) | translate }}
+                </div>
+            </div>
+
+            <div class="modern-menu-box wardrobe-menu">
+                <div class="modern-menuhr"></div>{{ ('avatareditor.category.wardrobe') | translate }}
+            </div>
+        </div>
+    </div>
+    <div id="avatar-editor-clothes-box">
+        <div class="face_01-box">
+            <div *ngIf="activeCategory" nitro-avatar-model-viewer-component [model]="activeCategory" [gender]="gender">
+            </div>
+            <div class="avatar-preview-box" *ngIf="figureData">
+                <div class="avatar-gorunum-preview-box">
+                    <div class="avatar-stand-img" nitro-avatar-image [figure]="figureData.view.figureString" [direction]="figureData.direction" [scale]="2"></div>
+                    <div class="avatar-change-direction-left" (click)="rotateAvatar(figureData.direction + 1)"></div>
+                    <div class="avatar-change-direction-right" (click)="rotateAvatar(figureData.direction - 1)"></div>
+                </div>
+                <div class="button-avatar-gorunum-temizle" (click)="clearFigure()">{{ ('generic.reboot') | translate }}
+                </div>
+                <div class="button-avatar-gorunum-kaydet" (click)="saveFigure()">{{ ('avatareditor.save') | translate }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modern-wardrobe-main">
+        <div *ngIf="figureData" nitro-avatar-wardrobe-component class="col-12 nitro-avatar-wardrobe-component mt-1" [figureData]="figureData"></div>
+    </div>
+
+</div>

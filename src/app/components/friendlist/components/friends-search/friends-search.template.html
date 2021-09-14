@@ -1,0 +1,28 @@
+<div class="text-center">
+  <input placeholder="{{ ('messenger.search_friends') | translate}}" type="text" class="friends-search" (keydown.enter)="searchAvatar()" [(ngModel)]="searchQuery">
+  <button class="friends-search_button" type="button" (click)="searchAvatar()">{{ ('generic.search') | translate }}</button>
+</div>
+<div id="fsopenbutton1" class="friends-search_list" (click)="friendsCollapsed = !friendsCollapsed" [attr.aria-expanded]="!friendsCollapsed" aria-controls="collapseFriends">
+  {{ ('friendlist.search.friendscaption') | translate:'cnt': (friends ? friends.length.toString() : '0')}}
+  <div id="fsc1-o" class="friends_search-opentab"></div>
+</div>
+<div id="collapseFriends" [(ngbCollapse)]="friendsCollapsed">
+  <div class="friendslist-box" *ngFor="let friend of friends" style="float: left;">
+    <div class="friendsl_box-username" style="width: 84.9%;">{{ friend.avatarName }}</div>
+    <div class="friendsl_box-profile" (click)="openProfile(friend)"><i class="fas fa-user-tag"></i></div>
+    <div class="friendsl_box-userdelete" (click)="removeFriend(friend)"><i class="fas fa-user-times" style="color: #f44336;"></i></div>
+  </div>
+  <p *ngIf="(friends?.length === 0)" class="nofriends"> {{ ('friendlist.search.nofriendsfound') | translate}}</p>
+</div>
+<div id="fsopenbutton2" class="friends-search_list" (click)="othersCollapsed = !othersCollapsed" [attr.aria-expanded]="!othersCollapsed" aria-controls="collapseOthers">
+  {{ ('friendlist.search.otherscaption') | translate:'cnt': (others ? others.length.toString() : '0')}}
+  <div id="fsc1-o" class="friends_search-opentab"></div>
+</div>
+<div id="collapseOthers" [(ngbCollapse)]="othersCollapsed">
+  <div class="friendslist-box" *ngFor="let other of others" style="float: left;">
+    <div class="friendsl_box-username" style="width: 84.9%;">{{ other.avatarName }}</div>
+    <div class="friendsl_box-profile" (click)="openProfile(other)"><i class="fas fa-user-tag"></i></div>
+    <div class="friendsl_box-userdelete" (click)="sendFriendRequest(other)" [disabled]="!isFriendRequestAllowed(other.avatarId)"><i class="fas fa-user-plus"></i></div>
+  </div>
+  <p *ngIf="(others?.length === 0)" class="nofriends"> {{ ('friendlist.search.noothersfound') | translate}}</p>
+</div>

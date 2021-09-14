@@ -1,0 +1,53 @@
+.nitro-navigator-slider-component {
+    position: relative;
+    height:90px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    .nitro-navigator-slider-image-component {
+        position: absolute;
+        top:0;bottom:0;left:0;right:0;
+        transition: background .3s ease-in;
+        z-index: 1;
+
+        .johnsshitblackbar {
+            background: rgba($black,.8);
+            position: absolute;
+            top:5px;left:0;right:0;
+        }
+    }
+
+    .carousel-item {
+        position: relative;
+        cursor: pointer;
+        
+        &.active {
+            flex-direction: column;
+        }
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        display: none;
+    }
+
+    .carousel-indicators {
+        margin:0 5px 5px 5px;
+        justify-content: unset;
+        height:30px;
+        align-items: flex-end;
+
+        li {
+            background:$white ;
+            border:0;
+            height:15px !important;
+            width:15px !important;
+            opacity: 1;
+
+            &.active {
+                background:$black;
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+<ul class="list-group list-group-flush">
+    <ng-container *ngFor="let child of catalogPage.children">
+        <nitro-catalog-navigation-item-component *ngIf="child.visible" [catalogPage]="child"></nitro-catalog-navigation-item-component>
+    </ng-container>
+</ul>

@@ -1,0 +1,93 @@
+.custom-slider {
+
+    .ngx-slider {
+        margin: 0 !important;
+
+        .ngx-slider-bar {
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 1;
+            background-color: rgba($primary, 1);
+            border-radius: 0;
+            box-shadow: $btn-box-shadow;
+        }
+
+        .ngx-slider-pointer {
+            width: 10px;
+            height: 20px;
+            top: -9px;
+            bottom: 0;
+            background-color: rgba($primary, 1);
+            border-radius: $btn-border-radius;
+            outline: none;
+            border: $btn-border-width solid rgba($black, 1);
+            box-shadow: $btn-box-shadow;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+// .custom-slider {
+//     width: 41px;
+//     height: 280px;
+
+//     .ngx-slider {
+//         margin: 0;
+
+//         .ngx-slider-full-bar {
+//             background-color: transparent;
+//             //background-image: url('../../../../../../assets/images/stackhelper/slider-background.png');
+//             width: 41px;
+//             height: 280px;
+//         }
+
+//         .ngx-slider-bar {
+//             background: transparent;
+//         }
+
+//         // .ngx-slider-selection {
+//         //     background: orange;
+//         // }
+
+//         .ngx-slider-pointer {
+//             width: 30px;
+//             height: 22px;
+//             top: auto; /* to remove the default positioning */
+//             bottom: 0;
+//             background-color: transparent;
+//             background-image: url('../../../../../../assets/images/stackhelper/slider-pointer.png');
+//             border-radius: 0;
+//             outline: none;
+
+//             &:after {
+//                 display: none;
+//             }
+//         }
+
+//         // .ngx-slider-bubble {
+//         //     bottom: 14px;
+//         // }
+
+//         // .ngx-slider-limit {
+//         //     font-weight: bold;
+//         //     color: orange;
+//         // }
+
+//         // .ngx-slider-tick {
+//         //     width: 1px;
+//         //     height: 10px;
+//         //     margin-left: 4px;
+//         //     border-radius: 0;
+//         //     background: #ffe4d1;
+//         //     top: -1px;
+
+//         //     &.ngx-slider-selected {
+//         //         background: orange;
+//         //     }
+//         // }
+//     }
+// }

@@ -1,0 +1,15 @@
+<nitro-wired-base-component>
+    <div class="form-group">
+        <label>{{ ('wiredfurni.params.whatissaid') | translate }}</label>
+        <input type="text" class="form-control form-control-sm" [(ngModel)]="keyword">
+    </div>
+    {{ ('wiredfurni.params.picktriggerer') | translate }}
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="0" [(ngModel)]="avatar">
+        <label class="form-check-label">{{ ('wiredfurni.params.anyavatar') | translate }}</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="1" [(ngModel)]="avatar">
+        <label class="form-check-label">{{ username }}</label>
+    </div>
+</nitro-wired-base-component>

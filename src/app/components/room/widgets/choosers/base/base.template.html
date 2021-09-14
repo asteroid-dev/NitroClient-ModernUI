@@ -1,0 +1,15 @@
+<div id="room-itemdetail" *ngIf="visible" [bringToTop] [draggable]>
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ (title) | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="ritem-main">
+        <input type="text" class="item-search" [(ngModel)]="searchValue" placeholder="{{ ('generic.search') | translate }}">
+        <div class="roomitem-list">
+            <div class="roomitem-box" [ngClass]="selectedItemIndex == i ? 'roomitem-selected' : ''" *ngFor="let item of (items | roomObjectItemSearch: searchValue); let i = index" (click)="selectItem(item, i)">
+                <div class="roomitem-name">{{ item.name }}</div>
+                <div class="m-itemid">{{ item.id }}</div>
+            </div>
+        </div>
+    </div>
+</div>

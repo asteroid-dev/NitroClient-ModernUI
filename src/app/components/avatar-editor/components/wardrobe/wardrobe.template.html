@@ -1,0 +1,37 @@
+<!--<div class="d-flex flex-row justify-content-between">
+    <div class="d-flex">
+        <button class="btn btn-secondary btn-sm h-100" (click)="previousPage()" [disabled]="currentPage === 1"><i class="fas fa-chevron-left"></i></button>
+    </div>
+    <div *ngFor="let in of counter(); let i = index" class="d-flex flex-row">
+        <div class="d-flex flex-column">
+            <button class="btn btn-secondary btn-sm h-100" (click)="updateLook(i + 1)"><i class="fas fa-chevron-right"></i></button>
+            <button class="btn btn-secondary btn-sm h-100" (click)="loadLook(i + 1)"><i class="fas fa-chevron-left"></i></button>
+        </div>
+        <button class="btn btn-secondary btn-sm">
+            <div class="d-flex justify-content-center nitro-avatar-image" nitro-avatar-image [figure]="getLook(i + 1)" [direction]="4"></div>
+        </button>
+    </div>
+    <div class="d-flex">
+        <button class="btn btn-secondary btn-sm h-100" (click)="nextPage()" [disabled]="currentPage === maxClientPage"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>-->
+
+<div class="wardrobe-description">
+    <p class="my-wardrobe-head">{{ ('avatareditor.wardrobe.title') | translate }}</p>
+    <p class="my-wardrobe-choose"><i class="fas fa-angle-right"></i> {{ ('avatareditor.wardrobe.choose') | translate }}</p>
+    <p class="wardrobe-desc">{{ ('avatareditor.wardrobe.club.required') | translate }}</p>
+</div>
+
+<div class="avatarp-wardrobe-box">
+    <div *ngFor="let in of counter(); let i = index" class="wardrobe-processing-center">
+        <div class="wardrobe-user-clothing-box">
+            <div class="wardrobe-avatar" nitro-avatar-image [figure]="getLook(i + 1)" [direction]="3"></div>
+        </div>
+        <div class="put-it-in-wardrobe" (click)="loadLook(i + 1)">
+            <img src="assets/images/avatareditor/out.png">
+        </div>
+        <div class="use-the-outfit" (click)="updateLook(i + 1)">
+            <img src="assets/images/avatareditor/inside.png">
+        </div>
+    </div>
+</div>

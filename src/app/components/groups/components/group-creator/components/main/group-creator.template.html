@@ -1,0 +1,44 @@
+<div [bringToTop] [draggable] dragHandle="#modernui-drag" class="groupcreate">
+    <div id="modernui-drag">
+        <div class="modernui-hood">{{ ('group.window.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="groupcreate-headbox">
+        <div class="groupcreate-menu">
+            <button class="gcstep1" [disabled]="currentStep !== 1">
+                <p class="step1-text">{{ ('group.create.steplabel.1') | translate }}</p>
+            </button>
+            <button class="gcstep2" [disabled]="currentStep !== 2">
+                <p class="step1-text">{{ ('group.create.steplabel.2') | translate }}</p>
+            </button>
+            <button class="gcstep2" [disabled]="currentStep !== 3">
+                <p class="step1-text">{{ ('group.create.steplabel.3') | translate }}</p>
+            </button>
+            <button class="gcstep4" [disabled]="currentStep !== 4">
+                <p class="step1-text" style="color: #ffc107;">{{ ('group.create.steplabel.4') | translate }}</p>
+            </button>
+        </div>
+    </div>
+
+    <nitro-group-creator-tab-info-component *ngIf="currentStep === 1" [(groupSettings)]="groupSettings"
+        [showNameError]="showNameError" [showDescriptionError]="showDescriptionError" [showRoomError]="showRoomError"
+        [availableRooms]="availableRooms"></nitro-group-creator-tab-info-component>
+
+    <nitro-group-creator-tab-badge-component *ngIf="currentStep === 2" [(groupSettings)]="groupSettings"
+        [setDefaultValues]="true"></nitro-group-creator-tab-badge-component>
+
+    <nitro-group-creator-tab-colors-component *ngIf="currentStep === 3" [(groupSettings)]="groupSettings"
+        [setDefaultValues]="true"></nitro-group-creator-tab-colors-component>
+
+    <nitro-group-creator-tab-confirmation-component *ngIf="currentStep === 4" [groupSettings]="groupSettings"
+        [groupCost]="groupCost"></nitro-group-creator-tab-confirmation-component>
+
+
+
+    <div class="groupcreate-buttonbox">
+        <button *ngIf="currentStep === 1" class="groupcreate-iptal" (click)="hide()">{{ ('generic.cancel') | translate }}</button>
+        <button *ngIf="currentStep > 1" class="groupcreate-iptal" (click)="previousStep()">{{ ('group.create.previousstep') | translate }}</button>
+        <button *ngIf="currentStep < 4" class="groupcreate-gobutton" (click)="nextStep()">{{ ('group.create.nextstep') | translate }}</button>
+        <button *ngIf="currentStep === 4" class="groupcreate-gobutton" (click)="buyGroup()">{{ ('group.create.confirm.buy') | translate }}</button>
+    </div>
+</div>

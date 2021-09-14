@@ -1,0 +1,14 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	<div class="form-group">
+        <label>{{ ('wiredfurni.params.bot.name') | translate }}</label>
+        <input type="text" maxlength="32" class="form-control form-control-sm" [(ngModel)]="botName">
+	</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="1" [(ngModel)]="followMode">
+        <label class="form-check-label">{{ ('wiredfurni.params.start.following') | translate }}</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="radio" value="0" [(ngModel)]="followMode">
+        <label class="form-check-label">{{ ('wiredfurni.params.stop.following') | translate }}</label>
+    </div>
+</nitro-wired-action-base-component>

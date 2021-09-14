@@ -1,0 +1,51 @@
+
+
+
+<div *ngIf="visible" [bringToTop] [draggable] class="roomdimmer">
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ ('widget.dimmer.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <ng-container *ngIf="isOn">
+        <div class="roomdimmer-main">
+            <div class="rdimmer-menuselect">
+                    <button type="button" (click)="selectPreset((i + 1))" *ngFor="let preset of presets; let i = index;" 
+                    [ngClass]="aktifler[i] + ' rdimmer-button' ">
+                    {{ ('widget.dimmer.tab.' + (i + 1)) | translate}}
+                    </button>
+            </div>
+            <div class="rdimmer-colorselect">
+                <button class="rdimmer-color-box" (click)="selectColor(color)"
+                    [ngClass]="{'rdimmer-selected': getSelectedPreset().color == color}"
+                    *ngFor="let color of  availableColors; let i = index"
+                    [ngStyle]="{'background-color': htmlColors[i]}"></button>
+            </div>
+            <div class="rdimmer-custom-slider">
+                <ngx-slider (valueChange)="onSliderChange()" [options]="delaySliderOptions"
+                    [(value)]="getSelectedPreset().intensity"></ngx-slider>
+            </div>
+            <div class="rdimmer-bgonly">
+                <div class="form-check">
+                    <input type="checkbox" (change)="changeCheckbox($event)"
+                        [ngModel]="getSelectedPreset().backgroundOnly" class="form-check-input">
+                    <p class="onlybg-text">{{ 'widget.dimmer.type.checkbox' | translate }}</p>
+                </div>
+            </div>
+            <p class="dimmerinfo">{{ ('widget.dimmer.info') | translate }}</p>
+
+            <div class="rdimmer-button-main">
+                <button type="button" class="rdimmer-turnoff" (click)="handleButton('on_off')">{{ (isOn ? 'widget.dimmer.button.off' : 'widget.dimmer.button.on') | translate}}</button>
+                <button type="button" class="rdimmer-apply" (click)="handleButton('apply')">{{ 'widget.dimmer.button.apply' | translate }}</button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!isOn">
+        <div class="closedimmer">
+            <div class="dimmerpng"></div>
+            <p class="opendimmer-text">{{ 'widget.dimmer.info.off' | translate }}</p>
+        </div>
+        <button type="button" class="rdimmer-apply" (click)="handleButton('on_off')"
+            style="width: 321px;margin-left: 4px;">{{ (isOn ? 'widget.dimmer.button.off' : 'widget.dimmer.button.on') |
+            translate}}</button>
+    </ng-container>
+</div>

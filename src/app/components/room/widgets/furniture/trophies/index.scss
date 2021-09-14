@@ -1,0 +1,175 @@
+.nitro-furniture-trophy {
+    position: absolute;
+    width: 338px;
+    max-width: 338px;
+    color:#000;
+    font-weight: bolder;
+    text-shadow: 1px 1px rgba($white,.5);
+    overflow: hidden;
+    background-image:url('^assets/images/trophies/shine.png');
+
+    hr {
+        margin:0;
+        padding:0;
+        width:100%;
+        height:1px;
+        border:0;
+        box-shadow: 1px 1px rgba($white,.5);
+    }
+
+    .close {
+        i {
+            color:#000;
+            text-shadow: 1px 1px rgba($white,.5);
+        }
+    }
+
+    .trophy-message {
+        min-height: 100px;
+    }
+
+    &.trophy-0 {
+        background-color:#ECC547;
+        box-shadow: inset -1px -1px #B17039, inset 2px 2px #FEF3B7;
+        hr {
+            background:#B17039;
+        }
+        &:after {
+            background: rgba($white, 0.4);
+        }
+    }
+
+    &.trophy-1 {
+        background-color: #C9BDCC;
+        box-shadow: inset -1px -1px #84564F, inset 2px 2px #E6DAED;
+        hr {
+            background:#84564F;
+        }
+        &:after {
+            background: rgba($white, 0.5);
+        }
+    }
+
+    &.trophy-2 {
+        background-color: #B87834;
+        box-shadow: inset -1px -1px #B26435, inset 2px 2px #EBA453;
+        hr {
+            background:#B26435;
+            box-shadow: 1px 1px rgba($white,.3);
+        }
+    }
+
+    &::after {
+        content: "";
+        width: 10px;
+        height: calc(100% + 90px);
+        background: rgba($white, 0.3);
+        transform: rotate(45deg);
+        top: -45px;
+        left: -100%;
+        bottom: 0;
+        position: absolute;
+        animation-name: slideLeft;
+        animation-delay: 3s;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left:190%;
+    }
+    100% {
+        left:190%;
+    }
+}
+
+
+.modern-trophies {
+    width: 500px;
+    height: auto;
+    background-color: #dfdfdf;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px #000000;
+    box-sizing: content-box;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+}
+
+.mtrop-header {
+    height: 40px;
+    cursor: pointer;
+    background: #1e7295;
+    margin: 0;
+    box-shadow: inset 0px 3px 0px 0px #ffffff14;
+}
+
+.modern-padding {
+    padding: 0px 15px 0px 15px;
+}
+
+.mtrop-header-text {
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    padding: 10px;
+    width: 470px;
+    color: #ffffffe6;
+    font-size: 14px;
+}
+
+.mtrop-body {
+    margin: 10px;
+    width: 480px;
+    height: auto;
+    float: left;
+}
+
+.mtrop-0 {
+    background-image: url('^assets/images/trophies/mtrop-0.png');
+    width: 480px;
+    height: 240px;
+    color: #653f07;
+}
+
+.mtrop-1 {
+    background-image: url('^assets/images/trophies/mtrop-1.png');
+    width: 480px;
+    height: 240px;
+    color: #666b70;
+}
+
+.mtrop-2 {
+    background-image: url('^assets/images/trophies/mtrop-2.png');
+    width: 480px;
+    height: 240px;
+    color: #462c08;
+}
+
+.mtrop-text {
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 17px;
+}
+
+.mtrop-ownerinfo {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    color: #000;
+    font-size: 15px;
+    padding-top: 10px;
+    font-weight: bold;
+}

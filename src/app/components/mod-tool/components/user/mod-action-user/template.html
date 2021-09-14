@@ -1,0 +1,27 @@
+<div [draggable] [center]="false" dragHandle=".md-header" class="md-modaction">
+    <div class="md-header">Mod Actions on {{ user.username }}
+        <div class="md-close" (click)="close()">
+            <div class="md-closetab1"></div>
+            <div class="md-closetab2"></div>
+        </div>
+    </div>
+    <div class="md-modaction-box">
+        <div class="modaction-main">
+            <div class="modaction-select-main">
+                <select [(ngModel)]="cfhType" class="md-select" style="margin-bottom: 5px;">
+                    <option [value]="-1">CFH Topic:</option>
+                    <option *ngFor="let item of categories; let i = index" [value]="i">{{ item }}</option>
+                </select>
+                <select [(ngModel)]="sanction" class="md-select">
+                    <option [value]="-1">Sanction type:</option>
+                    <option *ngFor="let item of actions; let i = index" [value]="i">{{ item.name }}</option>
+                </select>
+            </div>
+            <div class="modaction-textarea-main">
+                <p class="modaction-ta_desc">Optional message type, overrides default</p>
+                <textarea [(ngModel)]="message" class="modaction-textarea"></textarea>
+            </div>
+            <button (click)="sendSanction()" type="button" class="md-send_button">Sanction</button>
+        </div>
+    </div>
+</div>

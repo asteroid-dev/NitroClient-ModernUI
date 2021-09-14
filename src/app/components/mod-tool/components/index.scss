@@ -1,0 +1,1029 @@
+.old-kapat {
+    width: 19px;
+    height: 20px;
+    background-image: url('^assets/images/old-kapat.png');
+    position: relative;
+    float: right;
+    margin: 4px;
+}
+
+.old-kapat:hover {
+    background-image: url('^assets/images/old-hkapat.png');
+}
+
+.old-kapat:active {
+    background-image: url('^assets/images/old-akapat.png');
+}
+
+.nitro-mod-tool-component {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    max-width: 200px;
+    span.username {
+        margin-left: 5px;
+    }
+    .badge {
+        overflow-y: hidden;
+    }
+    .btn-group-vertical {
+        .btn {
+            margin-bottom: 3px;
+        }
+    }
+    .mod-tool-card {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 200px;
+    }
+    .room-tool-card {
+        position: fixed;
+        top: 20px;
+        left: 230px;
+        width: 310px;
+        .badge {
+            display: block;
+            text-align: left;
+        }
+    }
+    .chatlog-tool-card {
+        position: fixed;
+        top: 20px;
+        left: 230px;
+        width: 320px;
+        .card-header {
+            .btn {
+                display: inline;
+                font-size: 11px;
+            }
+        }
+        .log-list {
+            max-height: 250px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+    }
+    .user-tool-card {
+        position: fixed;
+        top: 20px;
+        left: 230px;
+        min-width: 400px;
+    }
+    .user-tool-card-chatlogs {
+        position: fixed;
+        top: 20px;
+        left: 230px;
+        min-width: 400px;
+        max-width: 400px;
+    }
+    .reports-tool-card {
+        position: fixed;
+        top: 20px;
+        left: 230px;
+        width: 450px;
+        .table {
+            tr {
+                th {
+                    font-size: 15px;
+                }
+                td {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .card-header {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        span {
+            flex: 1;
+        }
+    }
+    .btn {
+        white-space: nowrap;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+    }
+    /* Base for label styling */
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: absolute;
+        left: 0;
+        opacity: 0.01;
+    }
+    [type="checkbox"]:not(:checked)+label,
+    [type="checkbox"]:checked+label {
+        position: relative;
+        padding-left: 2.3em;
+        font-size: 1.05em;
+        line-height: 1.7;
+        cursor: pointer;
+    }
+    /* checkbox aspect */
+    [type="checkbox"]:not(:checked)+label:before,
+    [type="checkbox"]:checked+label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.4em;
+        height: 1.4em;
+        border: 1px solid #000000;
+        background: #2B2B2B;
+        border-radius: .2em;
+        //box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 rgba(203, 34, 237, .2);
+        box-shadow: 0px 2px 0px rgb(0 0 0 / 45%), inset 0px 0px 0px 2px rgb(255 255 255 / 10%);
+        -webkit-transition: all .275s;
+        transition: all .275s;
+    }
+    /* checked mark aspect */
+    [type="checkbox"]:not(:checked)+label:after,
+    [type="checkbox"]:checked+label:after {
+        content: '✓';
+        font-family: $btn-font-family;
+        position: absolute;
+        top: .525em;
+        left: .18em;
+        font-size: 1.375em;
+        color: white;
+        line-height: 0;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+    }
+    /* checked mark aspect changes */
+    [type="checkbox"]:not(:checked)+label:after {
+        opacity: 0;
+        //-webkit-transform: scale(0) rotate(45deg);
+        //transform: scale(0) rotate(45deg);
+    }
+    [type="checkbox"]:checked+label:after {
+        opacity: 1;
+        //-webkit-transform: scale(1) rotate(0);
+        //transform: scale(1) rotate(0);
+    }
+    /* Disabled checkbox */
+    [type="checkbox"]:disabled:not(:checked)+label:before,
+    [type="checkbox"]:disabled:checked+label:before {
+        box-shadow: none;
+        border-color: #bbb;
+        background-color: #e9e9e9;
+    }
+    [type="checkbox"]:disabled:checked+label:after {
+        color: #777;
+    }
+    [type="checkbox"]:disabled+label {
+        color: #aaa;
+    }
+    /* Accessibility */
+    [type="checkbox"]:checked:focus+label:before,
+    [type="checkbox"]:not(:checked):focus+label:before {
+        box-shadow: 0px 2px 0px rgb(0 0 0 / 45%), inset 0px 0px 0px 2px rgb(255 255 255 / 10%);
+    }
+    .table-text-small {
+        font-size: 10pt;
+    }
+}
+
+
+/**/
+
+#modtools {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    overflow: hidden;
+    background: #e5e5e5d4;
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: Arial;
+    box-sizing: content-box;
+    left: 100px !important;
+    top: 100px !important;
+    z-index: 10000;
+    filter: drop-shadow(2px 4px 6px);
+    color: #00000069;
+    backdrop-filter: blur(4px);
+}
+
+#modtoolsdrag {
+    width: 94%;
+    height: 33px;
+    cursor: pointer;
+    background: #1e7295;
+    margin: 5px 5px 0px 5px;
+    border-radius: 4px;
+    border-top: solid 3px #2b8bb3;
+    border-bottom: solid 3px #1a6280;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: #e9f1f5;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.modtools-title {
+    float: left;
+    padding: 11px 10px;
+    color: #000;
+    font-size: 10.5px;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #0000001a;
+    filter: drop-shadow(1px 2px 0px #fff);
+}
+
+.mt-baslik {
+    margin: 0px;
+    width: 165px;
+    position: absolute;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.modtools-body {
+    margin: 5px;
+    float: left;
+}
+
+.mt-menu {
+    width: 160px;
+    height: 30px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: solid 1px #ffffff00;
+    outline: 0 !important;
+    float: left;
+    padding: 0;
+}
+
+.mt-menu:disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+
+.mtico {
+    width: 28px;
+    height: 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    float: left;
+    background-color: #dcdcdd;
+    border-radius: 5px;
+    margin-right: 5px;
+    filter: drop-shadow(2px 2px 1px #0000000d);
+}
+
+.mt-menutxt {
+    float: left;
+    color: #000000d9;
+    font-weight: bold;
+    padding: 6px 0px;
+    padding-left: 33px;
+    position: absolute;
+    font-size: 12px;
+    font-family: Arial;
+    width: max-content;
+}
+
+.mt-menu:hover {
+    background: #bfc2c5;
+    border-radius: 5px;
+}
+
+.mt-menu:hover>.mtico {
+    background-color: rgba(255, 0, 0, 0);
+}
+
+div#modt-roominfo {
+    width: 240px;
+    height: auto;
+    left: 430px;
+    top: 100px;
+    position: absolute;
+    background: #e9e9e1;
+    border-bottom: solid 2px #000;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    border: solid 1px #000;
+    border-radius: 6px;
+    overflow: hidden;
+    box-sizing: content-box;
+    font-family: 'Ubuntu';
+    padding-bottom: 5px;
+    z-index: 10000;
+}
+
+#modt-roominfodrag {
+    width: 100%;
+    height: 33px;
+    background-color: #367897;
+    border-top: solid 2px #408caf;
+    border-left: solid 2px #408caf;
+    border-right: solid 2px #408caf;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: solid 1px #000;
+}
+
+.mtri-baslik {
+    margin: 0px;
+    width: 98%;
+    position: absolute;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.modt-ribox {
+    margin: 4px;
+    width: 232px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.ri-roomnamebox {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    box-sizing: border-box;
+    border: solid 1px #5d5d5a;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+p.rirntxt {
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 5px 2px 5px;
+}
+
+p.rirdtxt {
+    color: #000;
+    font-size: 11px;
+    line-height: 11px;
+    padding-right: 1px;
+    font-family: 'Ubuntu';
+    padding: 0px 5px 5px 5px;
+}
+
+.ri-roominfobox {
+    width: 100%;
+    height: 74px;
+    background: #fff;
+    box-sizing: border-box;
+    border: solid 1px #5d5d5a;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.ribleft {
+    width: 152px;
+    height: 72px;
+    float: left;
+}
+
+.ribright {
+    width: 74px;
+    height: 69px;
+    float: left;
+    padding-left: 4px;
+    padding-top: 3px;
+}
+
+p.rib-hood {
+    width: 100px;
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    float: left;
+    padding-left: 5px;
+}
+
+.rib-infobox {
+    width: 152px;
+    height: 15px;
+    line-height: 15px;
+}
+
+p.rib-reply {
+    width: 52px;
+    color: #000;
+    font-size: 11px;
+    font-weight: 500;
+    float: left;
+}
+
+.rib-button {
+    width: 70px;
+    height: 21px;
+    float: left;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    border: solid 1px #000;
+    box-sizing: border-box;
+    box-shadow: inset -1px -1px 0px 0px #cccccc;
+    background: #fff;
+    margin-bottom: 1px;
+    position: relative;
+}
+
+.rib-button:active {
+    box-shadow: inset 1px 1px 0px 0px #535353;
+    background: #989898;
+}
+
+p.ribbutton-txt {
+    font-family: 'Ubuntu';
+    color: #000;
+    padding: 1px 3px;
+}
+
+.rib-apply_action_to_room {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    box-sizing: border-box;
+    border: solid 1px #5d5d5a;
+    border-radius: 5px;
+    padding-top: 2px;
+    position: relative;
+    padding-bottom: 4px;
+    box-sizing: border-box;
+}
+
+.mt-select_container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 18px;
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 90%;
+}
+
+.mt-select_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmarkmt {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-image: url('^assets/images/roomsettings/rssc2.png');
+}
+
+.checkmarkmt:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.mt-select_container input:checked~.checkmarkmt:after {
+    display: block;
+}
+
+.mt-select_container .checkmarkmt:after {
+    width: 15px;
+    height: 15px;
+    background-image: url('^assets/images/roomsettings/rssc2-act.png');
+}
+
+p.mt-sctxt {
+    color: #000;
+    font-size: 11px;
+    line-height: 11px;
+    padding-right: 1px;
+    font-family: 'Ubuntu';
+    padding-top: 3px;
+    width: 205px;
+}
+
+#modt-select {
+    width: 232px;
+    height: 20px;
+    background: #fff0;
+    border: solid 0px #0000;
+    border-radius: 4px;
+    font-size: 11px;
+    outline: 0;
+    cursor: pointer;
+    background-image: url('^assets/images/modtools/mtselect.png');
+    font-family: 'Ubuntu';
+    margin-bottom: 5px;
+}
+
+.mt-room_warning_message {
+    width: 100%;
+    height: 46px;
+    border: solid 1px #000;
+    outline: 0;
+    resize: none;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.rib-button2 {
+    width: 97px;
+    height: 21px;
+    float: left;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    border: solid 1px #000;
+    box-sizing: border-box;
+    box-shadow: inset -1px -1px 0px 0px #cccccc;
+    background: #fff;
+    margin-bottom: 1px;
+}
+
+.rib-button2:hover {
+    box-shadow: inset 0px 0px 0px 1px #000;
+}
+
+.rib-button2:active {
+    box-shadow: inset 1px 1px 0px 0px #535353;
+    background: #989898;
+}
+
+.rib-button:hover {
+    box-shadow: inset 0px 0px 0px 1px #000;
+}
+
+#modt-roomchat {
+    width: 480px;
+    height: auto;
+    left: 430px;
+    top: 100px;
+    position: absolute;
+    background: #e9e9e1;
+    border-bottom: solid 2px #000;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    border: solid 1px #000;
+    border-radius: 6px;
+    overflow: hidden;
+    box-sizing: content-box;
+    font-family: 'Ubuntu';
+    padding-bottom: 5px;
+    z-index: 1000000000;
+}
+
+#modt-roomchatdrag {
+    width: 100%;
+    height: 33px;
+    background-color: #367897;
+    border-top: solid 2px #408caf;
+    border-left: solid 2px #408caf;
+    border-right: solid 2px #408caf;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: solid 1px #000;
+}
+
+.roomchatlog-infobox {
+    width: 478px;
+    height: 30px;
+}
+
+.rc-roomname {
+    font-size: 13px;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    float: left;
+    width: 240px;
+    line-height: 13px;
+}
+
+.rc-button {
+    width: 110px;
+    height: 22px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    border: solid 1px #000;
+    box-sizing: border-box;
+    box-shadow: inset -1px -1px 0px 0px #cccccc;
+    background: #fff;
+    margin-bottom: 1px;
+    float: right;
+    margin: 4px;
+}
+
+.rc-button:hover {
+    box-shadow: inset 0px 0px 0px 1px #000;
+}
+
+.rc-button:active {
+    box-shadow: inset 1px 1px 0px 0px #535353;
+    background: #989898;
+}
+
+p.rcbutton-txt {
+    color: #000;
+    padding: 2px 3px;
+}
+
+.room-conversation-recordings-list {
+    width: 475px;
+    height: 505px;
+    margin-left: 2px;
+    list-style: none;
+    overflow-x: hidden;
+    background-image: url('^assets/images/modtools/noscroll.png');
+}
+
+.talk-box {
+    width: 455px;
+    min-height: 18px;
+    height: auto;
+    background: #c3ecfa;
+    padding-right: 4px;
+    float: left;
+}
+
+.talk-box:nth-child(even) {
+    background: #ffffff;
+}
+
+.message-clock {
+    width: 39px;
+    height: 18px;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 3px;
+    margin-right: 3px;
+    float: left;
+    padding: 0px 1px 0px 5px;
+    font-family: system-ui;
+}
+
+.oldhabbo-headhoodmt {
+    margin: 0px;
+    width: 98%;
+    position: absolute;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.user-who-sent-message {
+    width: 100px;
+    height: 18px;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+    text-decoration: underline;
+    line-height: 16px;
+    padding: 1px 1px 0px 0px;
+    font-family: system-ui;
+}
+
+.message-sent {
+    width: auto;
+    height: auto;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 142px;
+    position: relative;
+    padding: 0px 1px 1px 0px;
+    font-family: system-ui;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar {
+    width: 16px;
+    box-sizing: border-box;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-button {
+    background: #fff0 url('^assets/images/scrollbar-button.png');
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-button:hover {
+    background: #fff0 url('^assets/images/scrollbar-button.png') no-repeat center right -16px;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-button:active {
+    background: #fff0 url('^assets/images/scrollbar-button.png') no-repeat center right 0px;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-button:single-button:vertical:increment {
+    background: #fff0 url('^assets/images/scrollbar-button2.png');
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background: #fff0 url('^assets/images/scrollbar-button2.png') no-repeat center right -16px;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-button:single-button:vertical:increment:active {
+    background: #fff0 url('^assets/images/scrollbar-button2.png') no-repeat center right 0px;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-thumb {
+    border: 1px solid #000000;
+    box-shadow: inset 0px 0px 1px 2px rgb(255 255 255);
+    background: #fff url('^assets/images/scrollbar-thumb.png') no-repeat center right -18px;
+    border-radius: 4px;
+    border-bottom: solid 2px #000;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-thumb:hover {
+    border: 1px solid #000000;
+    box-shadow: inset 0px 0px 1px 2px rgb(255 255 255);
+    background: #fff url('^assets/images/scrollbar-thumb.png') no-repeat center right -8px;
+    border-radius: 4px;
+    border-bottom: solid 2px #000;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-thumb:active {
+    border: 1px solid #000000;
+    box-shadow: inset 0px 0px 1px 2px #828282;
+    background: #fff url('^assets/images/scrollbar-thumb.png') no-repeat center right 2px;
+    border-radius: 4px;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-track-piece {
+    background: #fff0 url('^assets/images/scrollbar-track-piece.png') no-repeat center center;
+}
+
+.nav-oda-liste::-webkit-scrollbar-corner {
+    background: #d0cecb;
+}
+
+.room-conversation-recordings-list::-webkit-scrollbar-track-piece {
+    background-color: #d9d9d9;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.old-loglist {
+    color: black;
+    font-family: system-ui;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.userinfomt {
+    width: 350px;
+    height: auto;
+    left: 430px;
+    top: 100px;
+    position: absolute;
+    background: #e9e9e1;
+    border-bottom: solid 2px #000;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    border: solid 1px #000;
+    border-radius: 6px;
+    overflow: hidden;
+    box-sizing: content-box;
+    font-family: Arial;
+    padding-bottom: 5px;
+    z-index: 10000;
+}
+
+.userinfomt-header {
+    width: 100%;
+    height: 33px;
+    background-color: #367897;
+    border-top: solid 2px #408caf;
+    border-left: solid 2px #408caf;
+    border-right: solid 2px #408caf;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: solid 1px #000;
+}
+
+.userinfobox {
+    margin: 4px;
+    width: auto;
+    height: auto;
+}
+
+.userinfo-detail {
+    width: 100%;
+    height: 74px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.uidetailleft {
+    width: 250px;
+    height: auto;
+    float: left;
+}
+
+.uidetailright {
+    width: 92px;
+    height: auto;
+    float: right;
+    padding-left: 4px;
+    padding-top: 3px;
+}
+
+.uidetail-infobox {
+    width: 100%;
+    height: 15px;
+    line-height: 15px;
+    background: #a2d6ea;
+}
+
+.uidtxt1 {
+    width: auto;
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    float: left;
+    padding-left: 5px;
+}
+
+.uidtxt2 {
+    width: auto;
+    color: #000;
+    font-size: 11px;
+    font-weight: 500;
+    float: right;
+    padding-right: 5px;
+}
+
+.uidetail-infobox:nth-child(even) {
+    background: white;
+}
+
+.uidetailbutton {
+    width: 100%;
+    height: 21px;
+    float: left;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    border: solid 1px #000;
+    box-sizing: border-box;
+    box-shadow: inset -1px -1px 0px 0px #cccccc;
+    background: #fff;
+    margin-bottom: 1px;
+    position: relative;
+    float: left;
+    padding: 0;
+    outline: 0 !important;
+}
+
+.uidetailbutton:hover {
+    box-shadow: inset 0px 0px 0px 1px #000;
+}
+
+.uidetailbutton:active {
+    box-shadow: inset 1px 1px 0px 0px #535353;
+    background: #989898;
+}
+
+p.odayagiris-saat {
+    width: auto;
+    height: auto;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 3px;
+    margin-right: 3px;
+    float: left;
+    padding: 1px;
+    font-family: system-ui;
+}
+
+p.roomnameamk {
+    width: auto;
+    height: auto;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+    line-height: 16px;
+    padding: 2px;
+    font-family: system-ui;
+}
+
+.odayagirbutton {
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: solid 0px #000;
+    box-sizing: border-box;
+    float: right;
+    padding: 3px;
+    outline: 0 !important;
+    text-decoration: underline;
+    position: absolute;
+    right: 0;
+}
+
+.odayagirbutton-txt {
+    font-family: 'Ubuntu';
+    color: #000;
+    padding: 0px 3px;
+    margin-top: -2px;
+}
+
+.modtools-reportbox {
+    width: 550px;
+    height: 290px;
+    left: 250px;
+    top: 100px;
+    position: absolute;
+    overflow: hidden;
+    background: #e9e9e1;
+    border-bottom: solid 2px #000;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    border: solid 1px #000;
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: 'Ubuntu';
+    box-sizing: content-box;
+    z-index: 10000;
+}
+
+#modt-reporthead {
+    width: 100%;
+    height: 33px;
+    background-color: #367897;
+    border-top: solid 2px #408caf;
+    border-left: solid 2px #408caf;
+    border-right: solid 2px #408caf;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: solid 1px #000;
+}
+
+.modtools-open {
+    background-image: url('^assets/images/toolbar/ADM.gif');
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin-left: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    bottom: 4px;
+    left: 314px;
+}
+
+.md-ayirici {
+    width: 1px;
+    height: 35px;
+    float: left;
+    margin: 6px 0px 6px 10px;
+    background: #0000004f;
+    box-shadow: 1px 0px 0px 0px #ffffff0d;
+    position: absolute;
+    bottom: 4px;
+    left: 311px;
+}
+
+.mdblur {
+    filter: blur(13px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

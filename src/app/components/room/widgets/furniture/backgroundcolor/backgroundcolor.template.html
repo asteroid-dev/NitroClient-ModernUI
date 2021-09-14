@@ -1,0 +1,17 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="modern-backgroundcolor">
+    <div id="backgroundcolor-drag" class="drag-handler">
+        <div class="modernui-hood">{{ ('widget.backgroundcolor.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()">
+            <div class="closetab1"></div>
+            <div class="closetab2"></div>
+        </div>
+    </div>
+    <div class="backgroundcolor-main">
+        <div class="backgroundcolor-info">{{ ('widget.backgroundcolor.title') | translate }}</div>
+        <color-chrome [color]="hsl" (onChangeComplete)="handleChangeComplete($event)" [disableAlpha]="true" class="corelonun-yaragi"></color-chrome>
+        <div class="backgroundcolor-button-main">
+            <button type="button" class="backgroundcolor-close" (click)="handleButton('on_off')">{{ 'widget.backgroundcolor.button.on' | translate }}</button>
+            <button type="button" class="backgroundcolor-apply" (click)="handleButton('apply')">{{ 'widget.backgroundcolor.button.apply' | translate}}</button>
+        </div>
+    </div>
+</div>

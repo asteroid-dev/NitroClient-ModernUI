@@ -1,0 +1,40 @@
+<div class="corelo-infofurni mblock">
+    <div class="d-flex flex-column align-items-end">
+        <div class="furni-infobox">
+            <div class="f-ib-head">
+                <div class="furniname">{{ furniData.name }}</div>
+                <i class="fas fa-times" (click)="hide()"></i>
+            </div>
+            <div class="motto-hr"></div>
+            <div class="furniview-box">
+                <div *ngIf="furniData.groupId" class="mobinfo-group" (click)="openFurniGroupInfo()">
+                    <nitro-badge [badge]="getStuffDataAsStringDataType.getValue(2)" [isGroup]="true"></nitro-badge>
+                </div>
+                <div *ngIf="furniData.stuffData.isUnique" class="unique-counter-compact" style="top: 5px;">
+                    <div [innerHTML]="furniData.stuffData.uniqueNumber | uniqueNumber"></div>
+                    <div [innerHTML]="furniData.stuffData.uniqueSeries | uniqueNumber"></div>
+                </div>
+                <img *ngIf="furniData.imageUrl" class="fvb" [src]="furniData.imageUrl" image-placeholder />
+            </div>
+            <div class="motto-hr mnone"></div>
+            <div class="mt-3" *ngIf="((furniSettingsKeys.length && furniSettingsValues.length) && (furniSettingsKeys.length === furniSettingsValues.length))">
+                <ng-container *ngFor="let setting of furniSettingsKeys; let i = index">
+                    <p class="habbobginput-txt">{{ furniSettingsKeys[i] }}</p>
+                    <textarea class="habbobginput" [(ngModel)]="furniSettingsValues[i]"></textarea>
+                </ng-container>
+            </div>
+            <div class="furnidesc">{{ furniData.description }}</div>
+            <div class="motto-hr"></div>
+            <div class="fi-uinfo"></div>
+            <div class="fi-uname" (click)="visitProfile()">{{ ('furni.owner') | translate: 'name': furniData.ownerName }}</div>
+            <div class="fi-uname" *ngIf="isCrackable">{{ ('infostand.crackable_furni.hits_remaining') | translate:['hits', 'target']:[ crackableHits, crackableTarget ] }}</div>
+        </div>
+        <div class="button-container btn-group">
+            <div *ngIf="canMove" class="infofurni-button" (click)="processButtonAction('move')"><img class="mnone" src="/assets/images/mover.png" style="float: left;margin: 6px 0px 6px 6px;"><p class="fbutton-txt">{{ 'infostand.button.move' | translate }}</p></div>
+            <div *ngIf="canRotate" class="infofurni-button" (click)="processButtonAction('rotate')"><img class="mnone" src="/assets/images/rotate.png" style="float: left;margin: 7px 0px 6px 6px;"><p class="fbutton-txt">{{ 'infostand.button.rotate' | translate }}</p></div>
+            <div *ngIf="(pickupMode !== 0)" class="infofurni-button" (click)="processButtonAction('pickup')"><img class="mnone" src="/assets/images/pickup.png" style="float: left;margin: 7px 0px 6px 6px;"><p class="fbutton-txt">{{ (pickupMode === 1 ? 'infostand.button.eject' : 'infostand.button.pickup') | translate }}</p></div>
+            <div *ngIf="canUse" class="infofurni-button" (click)="processButtonAction('use')"><img class="mnone" src="/assets/images/use.png" style="float: left;margin: 8px 0px 8px 6px;"><p class="fbutton-txt">{{ 'infostand.button.use' | translate }}</p></div>
+            <div class="infofurni-button" *ngIf="((furniSettingsKeys.length && furniSettingsValues.length) && (furniSettingsKeys.length === furniSettingsValues.length))" (click)="processButtonAction('save_branding_configuration')"><p class="fbutton-txt">{{ 'save' | translate }}</p></div>
+        </div>
+    </div>
+</div>

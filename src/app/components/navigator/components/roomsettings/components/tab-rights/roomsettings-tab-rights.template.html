@@ -1,0 +1,54 @@
+<!--<div class="row">
+    <div class="col-6">
+        <div class="font-weight-bold mb-2">{{ ('navigator.flatctrls.userswithrights') | translate:['displayed','total']:[roomSettings.usersWithRights.size.toString(), roomSettings.usersWithRights.size.toString()] }}</div>
+    </div>
+    <div class="col-6">
+        <div class="font-weight-bold mb-2">{{ ('navigator.flatctrls.friends') | translate:['displayed','total']:[roomSettings.friendsWithoutRights.size.toString(), roomSettings.friendsWithoutRights.size.toString()] }}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <perfect-scrollbar class="grid-container position-relativ mb-1" style="min-height: 400px;max-height: 400px;">
+            <div *ngFor="let item of roomSettings.usersWithRights | keyvalue" class="btn-group mb-1 w-100">
+                <button class="btn btn-primary btn-sm w-100" (click)="openProfile(item.key)">{{ item.value }}</button>
+                <button class="btn btn-primary btn-sm" (click)="takeRights(item.key)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </perfect-scrollbar>
+    </div>
+    <div class="col-6">
+        <perfect-scrollbar class="grid-container position-relative mb-1" style="min-height: 400px;max-height: 400px;">
+            <div *ngFor="let item of roomSettings.friendsWithoutRights | keyvalue" class="btn-group mb-1 w-100">
+                <button class="btn btn-primary btn-sm" (click)="giveRights(item.key)"><i class="fas fa-chevron-left"></i></button>
+                <button class="btn btn-primary btn-sm w-100" (click)="openProfile(item.key)">{{ item.value }}</button>
+            </div>
+        </perfect-scrollbar>
+    </div>
+</div>-->
+
+<div id="haklar-ayar-box">
+    <div class="oda-ayar-main-box" style="opacity: 0.5;">
+        <div class="oda-ayar-baslik-text oyb-padding">Search:</div>
+        <input class="kullanici-arama" placeholder="search not working" maxlength="30" type="search">
+    </div>
+    <div class="odada-haklari-olanlar">
+        <div class="haklari-olanlar-baslik">{{ ('navigator.flatctrls.userswithrights') | translate:['displayed','total']:[roomSettings.usersWithRights.size.toString(), roomSettings.usersWithRights.size.toString()] }}</div>
+        <div class="oho-main-box">
+            <div class="odada-haklari-olanlar-liste">
+                <div class="hakki-olan-kullanici-box" *ngFor="let item of roomSettings.usersWithRights | keyvalue" (click)="openProfile(item.key)">{{ item.value }}
+                    <button class="gerikoy" (click)="takeRights(item.key)"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="odada-haklari-olmayanlar">
+        <div class="haklari-olmayanlar-baslik">{{ ('navigator.flatctrls.friends') | translate:['displayed','total']:[roomSettings.friendsWithoutRights.size.toString(), roomSettings.friendsWithoutRights.size.toString()] }}</div>
+        <div class="oho-main-box">
+            <div class="odada-haklari-olmayanlar-liste">
+                <div class="hakki-olmayan-kullanici-box" *ngFor="let item of roomSettings.friendsWithoutRights | keyvalue" (click)="openProfile(item.key)">
+                    <button class="ilerigit" (click)="giveRights(item.key)"></button>
+                    {{ item.value }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

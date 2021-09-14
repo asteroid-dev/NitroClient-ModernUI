@@ -1,0 +1,27 @@
+<div class="bilgilendirme-magaza-box">
+    <div class="mgz-info-ustBox">
+        <div class="mgz-info-mobi">
+            <img class="align-self-center" [src]="getImage(1)" image-placeholder />
+        </div>
+        <div class="mgz-info-ub-a">
+            <p class="mgz-info-baslik">Welcome to Catalogue</p>
+            <p class="mgz-info-aciklama"><b [innerHtml]="getText(1)"></b></p>
+        </div>
+    </div>
+    <p class="mgz-info-aciklama" [innerHtml]="getText(2)"></p>
+    <p class="mgz-info-aciklama2" [innerHtml]="getText(3)"></p>
+</div>
+
+<div class="mobile-unsupported">
+    <div class="mab-sol">
+        <div class="mctlg-padding">
+            <div class="pets-info-main">
+                <div class="pets-info">
+                    <p class="pets-text1" [innerHtml]="getText(1)"></p>
+                    <p class="pets-text2" [innerHtml]="getText(2)"></p>
+                    <p class="pets-text3" [innerHtml]="getText(3)"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

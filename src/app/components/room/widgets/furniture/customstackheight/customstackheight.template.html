@@ -1,0 +1,22 @@
+<div *ngIf="visible" [bringToTop] [draggable] class="modern-customstackheight">
+    <div id="modernui-drag" class="drag-handler">
+        <div class="modernui-hood">{{ ('widget.custom.stack.height.title') | translate }}</div>
+        <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="customstackheight-main">
+        <div class="customstackheight-left">
+            <input type="range" class="customstackheight" value="{{ height }}" [min]="minHeight" [max]="maxHeight" (input)="slideToHeight($event.target.value)" />
+        </div>
+        <div class="customstackheight-right">
+            <p class="customstackheight-description">{{ ('widget.custom.stack.height.text') | translate }}</p>
+            <div class="stack-main">
+                <div class="stackinfo-main">
+                    <input name="heightInput" type="number" class="stack-height-info" [(ngModel)]="height" [min]="minHeight" [max]="maxHeight">
+                    <p class="st-info">{{ ('floor.plan.editor.tile.height') | translate }}:</p>
+                </div>
+                <button class="place-above_stack" (click)="placeAboveStack()">{{ 'furniture.above.stack' | translate }}</button>
+                <button class="place-at_floor" (click)="placeAtFloor()">{{ 'furniture.floor.level' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

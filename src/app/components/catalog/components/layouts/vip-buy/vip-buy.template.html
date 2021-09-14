@@ -1,0 +1,62 @@
+<!--<div class="w-100 h-100 nitro-catalog-layout-default-component">
+    <div class="row">
+        <div class="col-5">
+            <img *ngIf="!activeOffer && getImage(1)" [src]="getImage(1)" image-placeholder />
+        </div>
+        <div class="col-7">
+            <h6>{{ ('catalog.vip.extend.title') | translate }}</h6>
+            <p class="small" [innerHtml]="getPurseContent()"></p>
+        </div>
+        <div class="col-12 mt-1">
+            <ng-container *ngFor="let vipItem of vipOffers">
+                <div class="bg-secondary rounded mb-2 p-1">
+                    <div *ngIf="vipItem.productCode" class="bg-primary rounded p-1 w-100 mb-1 d-flex flex-row">
+                        <i class="icon icon-catalogue-hc_small mr-2 d-block align-self-center"></i>
+                        <span>{{ getOfferText(vipItem) }}</span>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between px-2 py-1">
+                        <div class="align-self-center">
+                            <b *ngIf="vipItem.priceCredits">{{ vipItem.priceCredits }} <img class="pl-1" [src]="getCurrencyUrl(-1)" image-placeholder /></b>
+                            <b *ngIf="vipItem.priceActivityPoints && vipItem.priceCredits"> + {{ vipItem.priceActivityPoints }} <img class="pl-1" [src]="getCurrencyUrl(vipItem.priceActivityPointsType)" image-placeholder /></b>
+                            <b *ngIf="vipItem.priceActivityPoints && !vipItem.priceCredits">{{ vipItem.priceActivityPoints }} <img class="pl-1" [src]="getCurrencyUrl(vipItem.priceActivityPointsType)" image-placeholder /></b>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <button *ngIf="vipItem.giftable" type="button" class="btn btn-success btn-sm mr-1" (click)="buyVip(vipItem)">{{'catalog.purchase_confirmation.gift' | translate}}</button>
+                            <button type="button" class="btn btn-success btn-sm" (click)="buyVip(vipItem)">{{'buy' | translate}}</button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>-->
+
+
+<div class="mobiler-magaza-box">
+    <div class="hcbuy-magaza-mobiler-onizleme">
+        <ng-container *ngFor="let vipItem of vipOffers">
+            <div class="hc-buy-ctlgbox">
+                <div class="hcbuy-hoodbox" *ngIf="vipItem.productCode">
+                    <i class="icon icon-catalogue-hc_small" style="float: left;"></i>
+                    <p class="hc-bilgihood">{{ getOfferText(vipItem) }}</p>
+                </div>
+                <div class="d-flex flex-row justify-content-between px-2 py-1">
+                    <div class="hcfiyatbox">
+                        <b *ngIf="vipItem.priceCredits" class="hcfiyat">{{ vipItem.priceCredits }} <img style="margin-top: -3px;" [src]="getCurrencyUrl(-1)" image-placeholder /></b>
+                        <b *ngIf="vipItem.priceActivityPoints && vipItem.priceCredits" class="hcfiyat"> + {{ vipItem.priceActivityPoints }} <img style="margin-top: -3px;" [src]="getCurrencyUrl(vipItem.priceActivityPointsType)" image-placeholder /></b>
+                        <b *ngIf="vipItem.priceActivityPoints && !vipItem.priceCredits" class="hcfiyat">{{ vipItem.priceActivityPoints }} <img style="margin-top: -3px;" [src]="getCurrencyUrl(vipItem.priceActivityPointsType)" image-placeholder /></b>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <button *ngIf="vipItem.giftable" type="button" class="hc-buybutton" (click)="buyVip(vipItem)">{{'catalog.purchase_confirmation.gift' | translate}}</button>
+                        <button type="button" class="hc-buybutton" (click)="buyVip(vipItem)">{{'buy' | translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="kategoriresim ng-star-inserted">
+        <img *ngIf="!activeOffer && getImage(1)" [src]="getImage(1)" image-placeholder />
+        <p class="ctlg-hc-baslik">{{ ('catalog.vip.extend.title') | translate }}</p>
+        <p class="ctlg-hc-desc" [innerHtml]="getPurseContent()"></p>
+    </div>
+</div>

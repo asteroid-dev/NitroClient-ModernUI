@@ -1,0 +1,30 @@
+<!--<div class="mb-3">{{ ('group.edit.tabcaption.1') | translate }}</div>
+<div class="form-group">
+    <label>{{ ('group.edit.name') | translate }}</label>
+    <input type="text" class="form-control form-control-sm" [ngClass]="{'is-invalid': showNameError}" [(ngModel)]="groupSettings.name">
+</div>
+<div class="form-group">
+    <label>{{ ('group.edit.desc') | translate }}</label>
+    <textarea class="form-control form-control-sm" [ngClass]="{'is-invalid': showDescriptionError}" [(ngModel)]="groupSettings.description"></textarea>
+</div>
+-->
+
+<div class="groupcreate-headerinfo"><img class="grupcreate-img" src="/assets/images/guilds/group_UI_identity.png">
+    <div class="grup-bilgi-metinler">
+        <p class="grupcreate-baslik">{{ ('group.create.stepcaption.1') | translate }}</p>
+        <p class="grupcreate-aciklama">{{ ('group.create.stepdesc.1') | translate }}</p>
+    </div>
+</div>
+<div class="groupcreate-bodybox">
+    <div class="groupinfo-left">
+        <p class="grouptext-1">{{ ('group.edit.badge.badge') | translate }}</p>
+        <div class="group-badge-box">
+        </div>
+    </div>
+    <div class="groupinfo-right">
+        <p class="groupcreate-bodytext">{{ ('group.edit.name') | translate }}</p>
+        <input class="groupname" [ngClass]="{'is-invalid': showNameError}" [(ngModel)]="groupSettings.name">
+        <p class="groupcreate-bodytext">{{ ('group.edit.desc') | translate }}</p>
+        <textarea class="groupdesc" [ngClass]="{'is-invalid': showDescriptionError}" [(ngModel)]="groupSettings.description"></textarea>
+    </div>
+</div>

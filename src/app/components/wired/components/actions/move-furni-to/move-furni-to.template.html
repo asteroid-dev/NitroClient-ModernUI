@@ -1,0 +1,27 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	<p class="w-100 text-center mb-1">{{ ('wiredfurni.params.emptytiles') | translate:'tiles':spacing }}</p>
+    <div class="d-flex align-items-center justify-content-center my-2 custom-slider">
+        <button type="button" class="btn btn-primary btn-sm" (click)="decreaseSpacing()"><i class="fas fa-arrow-left"></i></button>
+        <ngx-slider name="spacing" [options]="spacingSliderOptions" [(value)]="spacing"></ngx-slider>
+        <button type="button" class="btn btn-primary btn-sm" (click)="increaseSpacing()"><i class="fas fa-arrow-right"></i></button>
+    </div>
+	{{ ('wiredfurni.params.startdir') | translate }}
+	<div class="form-row mb-2">
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="0" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-ne"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="2" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-se"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="4" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-sw"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="6" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-nw"></i></label>
+		</div>
+	</div>
+</nitro-wired-action-base-component>

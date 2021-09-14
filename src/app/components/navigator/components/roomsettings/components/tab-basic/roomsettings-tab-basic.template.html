@@ -1,0 +1,37 @@
+<div id="temel-ayar-box">
+
+    <div class="oda-ayar-baslik-text">{{ ('navigator.roomname') | translate }}</div>
+
+    <input [(ngModel)]="roomSettings.roomName" (blur)="save()" id="oda-ayar-textarea">
+
+    <div class="oda-ayar-baslik-text" style="margin-top: 5px;">{{ ('navigator.roomsettings.desc') | translate }}</div>
+    
+    <textarea id="oda-ayar-textarea" style="height: 60px;" [(ngModel)]="roomSettings.roomDescription" (blur)="save()"></textarea>
+
+    <div class="oda-ayar-baslik-text">{{ ('navigator.category') | translate }}</div>
+
+    <select id="kategori-sec" [(ngModel)]="roomSettings.categoryId" (ngModelChange)="save()">
+        <option *ngFor="let category of categories" [value]="category.id">{{ (category.name) | translate }}</option>
+    </select>
+
+    <div class="oda-ayar-baslik-text">{{ ('navigator.maxvisitors') | translate }}</div>
+
+    <select id="kategori-sec" [(ngModel)]="roomSettings.userCount" (ngModelChange)="save()">
+        <option *ngFor="let amount of maxVisitors" [value]="amount">{{ amount }}</option>
+    </select>
+
+    <div class="oda-ayar-baslik-text">{{ ('navigator.tradesettings') | translate }}</div>
+
+    <select id="kategori-sec" [(ngModel)]="roomSettings.tradeState" (ngModelChange)="save()">
+        <option *ngFor="let type of tradeSettings | keyvalue" [value]="type.key">{{ (type.value) | translate }}</option>
+    </select>
+
+    <div class="oda-ayar-checkbox" style="margin-top: 40px;"> 
+        <input id="check-css" type="checkbox" [(ngModel)]="roomSettings.allowWalkthrough" (ngModelChange)="save()">
+        <div class="oda-ayar-baslik-text basicinput-text">{{ ('navigator.roomsettings.allow_walk_through') | translate }}</div>
+    </div>
+
+    <button id="odayi-sil" (click)="deleteRoom()">
+        <div class="odayi-sil-yazi">{{ ('navigator.roomsettings.delete') | translate }}</div>
+    </button>
+</div>

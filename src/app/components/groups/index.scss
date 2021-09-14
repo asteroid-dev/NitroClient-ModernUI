@@ -1,0 +1,1966 @@
+.nitro-group-room-info-component {
+    width: 200px;
+    font-size: 14px;
+    nitro-badge,
+    .group-name {
+        cursor: pointer;
+    }
+}
+
+.nitro-group-info-component {
+    position: absolute;
+    width: 360px;
+    nitro-badge {
+        img {
+            width: 78px;
+        }
+    }
+    .group-creation-date {
+        font-size: 13px;
+    }
+    .group-members-count {
+        font-size: 13px;
+        cursor: pointer;
+    }
+}
+
+.nnitro-group-members-component {
+    position: absolute;
+    width: 500px;
+    .grid-container .grid-items .item-detail {
+        height: unset;
+        max-height: unset;
+    }
+    .pagination-counter {
+        font-size: 14px;
+    }
+}
+
+.nitro-group-creator-component {
+    .grid-container .grid-items .item-detail {
+        height: 20px;
+        max-height: 20px;
+    }
+}
+
+.nitro-group-manager-component {
+    position: absolute;
+    width: 498px;
+    .grid-container .grid-items .item-detail {
+        height: 20px;
+        max-height: 20px;
+    }
+}
+
+.nitro-group-image-selector-component {
+    .grid-container .grid-items .item-detail {
+        height: 41px;
+        max-height: 41px;
+    }
+}
+
+.groupcreate {
+    width: 394px;
+    height: 515px;
+    left: 250px;
+    top: 100px;
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px;
+    color: #000;
+    box-sizing: border-box;
+    user-select: none;
+    background-color: #dfdfdf;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);}
+
+.groupcreate-headbox {
+    width: 390px;
+    height: 110px;
+    background: #185d79;
+    box-shadow: inset 0px -2px 0px 0px #124b62;
+}
+
+.groupcreate-menu {
+    width: 362px;
+    height: 33px;
+    margin: 8px 14px;
+    float: left;
+}
+
+.gcstep1 {
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #185d79;
+    border: solid 2px #a1c2d070;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px #0000003d);
+    outline: 0 !important;
+    padding: 0;
+}
+
+.gcstep1:disabled {
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #185d79;
+    border: solid 2px #a1c2d070;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: none;
+    .step1-text {
+        color:#ffffff75;
+    }
+}
+
+.step1-text {
+    font-family: Arial;
+    font-weight: bold;
+    color: white;
+    font-size: 13px;
+    margin: -10px 0px !important;
+    text-align: center;
+    width: 81px;
+    position: absolute;
+}
+
+.gcstep2 {
+    margin-left: 7px;
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #185d79;
+    border: solid 2px #a1c2d070;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px #0000003d);
+    outline: 0 !important;
+    padding: 0;
+}
+
+.gcstep2:disabled {
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #185d79;
+    border: solid 2px #a1c2d070;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: none;
+    .step1-text {
+        color:#ffffff75;
+    }
+}
+
+#groupcreate-head {
+    width: 100%;
+    height: 33px;
+    background-color: #367897;
+    border-top: solid 2px #408caf;
+    border-left: solid 2px #408caf;
+    border-right: solid 2px #408caf;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: solid 1px #000;
+    position: relative;
+    z-index: 1;
+}
+
+.gc-hood {
+    margin: 0px;
+    width: 97%;
+    position: absolute;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    font-family: Arial;
+}
+
+.gcstep4 {
+    margin-left: 7px;
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #185d79;
+    border: solid 2px #a1c2d070;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px #0000003d);
+    outline: 0 !important;
+    padding: 0;
+}
+
+.gcstep4:disabled {
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #185d79;
+    border: solid 2px #a1c2d070;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: none;
+    .step1-text {
+        color:#ffffff75;
+    }
+}
+
+.groupcreate-headerinfo {
+    position: absolute;
+    top: 78px;
+}
+
+.grupcreate-baslik {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #ffffffe6;
+    width: 100%;
+}
+
+.grupcreate-aciklama {
+    float: left;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Arial;
+    color: #ffffffcf;
+    width: 100%;
+    line-height: 17px;
+    height: 33px;
+    overflow: hidden;
+}
+
+.grup-bilgi-metinler {
+    width: 245px;
+    position: relative;
+    float: left;
+    margin: 7px 10px;
+}
+
+.grupcreate-img {
+    float: left;
+}
+
+.groupinfo-left {
+    width: 125px;
+    height: 300px;
+    float: left;
+    position: relative;
+}
+
+.groupinfo-right {
+    width: 265px;
+    height: 300px;
+    float: right;
+    position: relative;
+}
+
+.groupname {
+    width: 248px;
+    font-family: Arial;
+    padding-left: 5px;
+    background: #f4f4f4;
+    border: solid 0px #fff0;
+    border-top: solid 3px #eaeaea;
+    height: 30px;
+    border-radius: 5px;
+    outline: 0 !important;
+    font-size: 12px;
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 3px #00000017) !important;
+    color: #000000e6;
+    margin-top: 2px;
+}
+
+.groupdesc {
+    box-sizing: border-box;
+    resize: none;
+    font-family: Arial;
+    padding-left: 5px;
+    width: 248px;
+    background: #f4f4f4;
+    border: solid 0px #fff0;
+    border-top: solid 3px #eaeaea;
+    height: 80px;
+    border-radius: 5px;
+    outline: 0 !important;
+    font-size: 12px;
+    font-weight: bold;
+    filter: drop-shadow(1px 1px 3px #00000017) !important;
+    color: #000000e6;
+    margin-top: 2px;
+}
+
+.modernselect-main {
+    width: 248px;
+    height: 35px;
+    float: left;
+    background: #c2ced4;
+    border-radius: 5px;
+}
+
+.group-roomselect {
+    width: 238px;
+    height: 26px;
+    box-sizing: border-box;
+    outline: 0;
+    font-size: 12px;
+    font-family: Arial;
+    margin: 5px;
+    position: relative;
+    background: #e5e8ea;
+    border-top: solid 1px #788696b0;
+    border-bottom: solid 1px #788696b0;
+    margin-bottom: -1px;
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px #ffffff2e;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.groupcreate-bodytext {
+    float: left;
+    font-family: Arial;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #000;
+}
+
+.groupcreate-bodytext-description {
+    float: left;
+    font-size: 12px;
+    font-family: Arial;
+    color: black;
+    padding-left: 3px;
+    font-style: italic;
+    width: 250px;
+    line-height: 15px;
+    padding-top: 3px;
+}
+
+.groupcreate-bodytext-underline {
+    float: left;
+    font-size: 13px;
+    font-family: Arial;
+    color: black;
+    padding-left: 3px;
+    text-decoration: underline;
+    font-weight: 500;
+    line-height: 14px;
+    padding-top: 3px;
+    cursor: pointer;
+    width: 250px;
+}
+
+.groupcreate-buttonbox {
+    position: absolute;
+    bottom: 0px;
+    float: left;
+    width: 390px;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.groupcreate-iptal {
+    width: auto;
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    background: #d72623;
+    border-top: solid 4px #f21d1a;
+    border-bottom: solid 4px #c01816;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.groupcreate-gobutton {
+    height: 35px;
+    float: right;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    overflow: hidden;
+    margin-right: 10px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    min-width: 100px;
+    width: auto;
+}
+
+.grouptext-1 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: 100%;
+    text-align: center;
+}
+
+.group-badge-box {
+    width: 94px;
+    height: 91px;
+    background: #d2d2d2;
+    border-radius: 6px;
+    float: left;
+    margin: 5px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grouptext-2 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: 55px;
+    text-align: center;
+}
+
+.grouptext-3 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: 57px;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.grouptext-4 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: 120px;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.group-badge-design {
+    width: 247px;
+    height: 49px;
+    background: #d2d2d2;
+    float: left;
+    border-radius: 3px;
+    margin-bottom: 4px;
+    box-shadow: inset 59px 0px 0px 0px #dfdfdf;
+}
+
+.groupbadge_position-head-text {
+    width: auto;
+    height: auto;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.groupbadge_position-head-text:nth-child(3) {
+    display: none;
+}
+
+.group-badge-select {
+    width: 49px;
+    height: 49px;
+    border: solid 2px rgba(0, 0, 0, 0);
+    background-color: #d1d1d1;
+    border-top: solid 4px #e7e7e7;
+    border-bottom: solid 4px #adadad;
+    border-radius: 5px;
+    float: left;
+    margin-left: 3px;
+    outline: 0 !important;
+}
+
+.group-badge-select:hover {
+    background-color: #bfbfbf;
+    border-top: solid 4px #d6d6d6;
+    border-bottom: solid 4px #a09e9e;
+    .ekle {
+        opacity: 0.5;
+    }
+}
+
+.group-position-select {
+    width: 43px;
+    height: 43px;
+    margin: 3px 14px 3px 15px;
+    border: solid 0px #fff0;
+    padding-left: 1px;
+    position: relative;
+    float: left;
+}
+
+.positionselect {
+    width: 15px;
+    height: 15px;
+    border: solid 1px #000000ed;
+    background: #dfdfdf;
+    outline: 0 !important;
+    float: left;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+
+.positionselect-act {
+    background-image: url('^assets/images/gruplar/position_select.png');
+    width: 15px;
+    height: 15px;
+}
+
+.positionselect:nth-child(1) {
+    border-radius: 5px 0px 0px 0px;
+}
+
+.positionselect:nth-child(3) {
+    border-radius: 0px 5px 0px 0px;
+}
+
+.positionselect:nth-child(7) {
+    border-radius: 0px 0px 0px 5px;
+}
+
+.positionselect:nth-child(9) {
+    border-radius: 0px 0px 5px 0px;
+}
+
+.colorselect-box {
+    width: 13px;
+    height: 13px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border: solid 0.1px rgb(0 0 0);
+    float: left;
+    border-radius: 4px !important;
+    outline: 0 !important;
+    box-shadow: inset 0px 2px 0px 0px #ffffff5c, inset 0px -2px 0px 0px #0000005c;
+    cursor: pointer;
+}
+
+.colorselect-box_active {
+    box-shadow: inset 0px 0px 0px 2px #ffffff, inset 0px 2px 0px 0px #ffffff5c, inset 0px -2px 0px 0px #0000005c;
+}
+
+.group-badge-color-select {
+    float: left;
+    width: 121px;
+    height: 45px;
+    margin-top: 3px;
+}
+
+.ekle {
+    width: 49px;
+    height: 49px;
+    background-image: url('^assets/images/gruplar/ekle.png');
+    float: left;
+    margin: -8px;
+    opacity: 0.2;
+}
+
+.dxx:nth-child(3) .groupbadge_position-head-text {
+    display: none;
+}
+
+.dxx:nth-child(4) .groupbadge_position-head-text {
+    display: none;
+}
+
+.dxx:nth-child(5) .groupbadge_position-head-text {
+    display: none;
+}
+
+.dxx:nth-child(1) .group-badge-design {
+    margin-bottom: -4px;
+}
+
+
+.group-image-secimi {
+    width: 247px;
+    height: 274px;
+    background: #d2d2d2;
+    border-radius: 5px;
+    float: left;
+}
+
+.grouptext-5 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: auto;
+    text-align: center;
+}
+
+.group-image-list {
+    width: 236px;
+    height: 266px;
+    border-radius: 4px;
+    list-style: none;
+    overflow-y: scroll;
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+.groupimage {
+    width: 43.5px;
+    height: 43.5px;
+    border: solid 0px #fff0;
+    background: #d2d2d2ab;
+    outline: 0 !important;
+    border-radius: 3px;
+    padding: 0;
+    float: left;
+    margin-left: 2px;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.group-image-list::-webkit-scrollbar {
+    width: 4px;
+  }
+   
+  .group-image-list::-webkit-scrollbar-track {
+      background-color: #96a8bb;
+      box-shadow: inset 1px -1px 0px 0px #00000030;
+      border-radius: 100px;
+  }
+   
+  .group-image-list::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #c4c4c4;
+    border-top: solid 4px #fff;
+    border-bottom: solid 4px #989898;
+    box-shadow: 0px 1px 0px 0px #0000004d;
+  }
+
+.groupwhitebg {
+    width: 239px;
+    height: 266px;
+    margin: 4px;
+    border-radius: 4px;
+    background: white;
+    float: left;
+    position: relative;
+}
+
+.gactive {
+    border: solid 2px #0009;
+    box-shadow: inset 0px -20px 0px 0px #0000000d;
+}
+
+.group-color-view-box {
+    width: 94px;
+    height: 45px;
+    background: #d2d2d2;
+    border-radius: 6px;
+    float: left;
+    margin: 5px 16px;
+    padding: 7px;
+}
+
+.secilenrenk {
+    width: 36px;
+    height: 30px;
+    border: solid 1px #000;
+    float: left;
+    border-radius: 3px;
+    box-shadow: inset 0px 3px 0px 0px #ffffff5c, inset 0px -3px 0px 0px #00000033;
+}
+
+.secilenrenk:nth-child(1) {
+    margin-right: 4px;
+    margin-left: 2px;
+}
+
+.group-color1-design {
+    width: 139px;
+    height: 274px;
+    background: #d2d2d2;
+    float: left;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+
+.groupcolor_position-head-text {
+    height: auto;
+    float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.group-color-select {
+    float: left;
+    width: 135px;
+    height: auto;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.group-color2-design {
+    width: 95px;
+    height: 274px;
+    background: #d2d2d2;
+    float: left;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    margin-left: 13px;
+}
+
+.group-color-select2 {
+    float: left;
+    width: 90px;
+    height: auto;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+p.grouptext-6 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: 142px;
+    text-align: center;
+}
+
+.grouptext-7 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: 115px;
+    text-align: center;
+}
+
+.group-create-name {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #000000;
+    padding-top: 6px;
+    width: 100%;
+}
+
+.group-create-desc {
+    float: left;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Arial;
+    color: #000000;
+    padding-top: 1px;
+    width: 100%;
+}
+
+.group-fiyat {
+    width: 265px;
+    height: 35px;
+    background: #ffc200;
+    bottom: -51px;
+    right: 11px;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.groupedit-button:nth-child(4) {
+    margin-right: 0;
+}
+
+.group-fiyat-text {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Arial;
+    color: #000000;
+    padding-top: 1px;
+    width: 125px;
+    float: left;
+    line-height: 13px;
+    padding: 5px 0px;
+}
+
+.roomgroup-info-bg {
+    width: 343px;
+    height: 214px;
+    margin: 8px;
+    float: left;
+    overflow: hidden;
+    box-sizing: content-box;
+    background: #cbcbcb;
+    border: solid 1px #464646;
+    border-radius: 5px;
+}
+
+.roomgroup-info {
+    width: 363px;
+    height: 268px;
+    background-color: #e9e9e1;
+    filter: drop-shadow(4px 4px 4px #00000069);
+    left: 250px;
+    top: 100px;
+    position: absolute;
+    border-radius: 8px;
+    overflow: hidden;
+    border: solid 1px;
+    border-bottom: solid 2px #000;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    color: #000;
+    box-sizing: border-box;
+    font-family: Arial;
+    z-index: 1;
+}
+
+.roomgroup-infohead {
+    width: auto;
+    height: 31px;
+    background-color: #367897;
+    border-top: solid 2px #408caf;
+    border-left: solid 2px #408caf;
+    border-right: solid 2px #408caf;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+    box-sizing: content-box;
+}
+
+.grouptype_icon_0 {
+    background-image: url('^assets/images/gruplar/grouptype_icon_0.png');
+    width: 16px;
+    height: 16px;
+}
+
+.grouptype_icon_1 {
+    background-image: url('^assets/images/gruplar/grouptype_icon_1.png');
+    width: 16px;
+    height: 16px;
+}
+
+.grouptype_icon_2 {
+    background-image: url('^assets/images/gruplar/grouptype_icon_2.png');
+    width: 16px;
+    height: 16px;
+}
+
+.groupinfoico {
+    float: left;
+    margin: 2px 3px 2px 0px;
+}
+
+.aaaa {
+    width: 105px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.grup-kullanicilari {
+    width: 352px;
+    height: 431px;
+    background-color: #e9e9e1;
+    filter: drop-shadow(4px 4px 4px #00000069);
+    left: 250px;
+    top: 100px;
+    position: absolute;
+    border-radius: 8px;
+    overflow: hidden;
+    border: solid 1px;
+    border-bottom: solid 2px #000;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+    color: #000;
+    box-sizing: border-box;
+    font-family: Arial;
+    z-index: 1;
+}
+
+.roomgroup-members {
+    width: auto;
+    height: 31px;
+    background-color: #367897;
+    border-top: solid 2px #408caf;
+    border-left: solid 2px #408caf;
+    border-right: solid 2px #408caf;
+    border-radius: 6px 6px 0px 0px;
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+    box-sizing: content-box;
+}
+
+.group-members-header {
+    width: 350px;
+    height: 82px;
+    padding-left: 4px;
+}
+
+.group-members-list {
+    width: 350px;
+    height: 314px;
+    padding-left: 4px;
+}
+
+.groupmembers-badge {
+    width: 83px;
+    height: 82px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.groupmembers-searchuser {
+    width: 215px;
+    height: 26px;
+    background: #fff;
+    border: solid 1px #000;
+    margin-top: 14px;
+    outline: 0;
+    font-family: Arial;
+    font-size: 13px;
+}
+
+.groupmembers-userselect {
+    width: 243px;
+    height: 25px;
+    background: #fff0;
+    border: solid 0px #fff0;
+    margin-top: 8px;
+    font-family: Arial;
+    font-size: 13px;
+    outline: 0;
+    background-image: url('^assets/images/gruplar/gm-select.png');
+    cursor: pointer;
+}
+
+.groupmembers-userbox {
+    width: 164px;
+    height: 35px;
+    background: #fff;
+    border: solid 1px #5d5d5a;
+    border-radius: 5px;
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.groupmembers-ico {
+    background-image: url(https://2.bp.blogspot.com/-dwz2r-m2Kdg/XK0oYtb3noI/AAAAAAABOsg/wcXjxrexPIQu1eztw79Lhb_dwPgTAGOrACKgBGAs/s1600/Image%2B2028.png);
+    width: 25px;
+    height: 25px;
+    margin: 4px;
+    float: left;
+}
+
+.groupmembers-username {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: system-ui, 'Ubuntu';
+    float: left;
+    width: 125px;
+    cursor: pointer;
+}
+
+.groupmembers-adminver {
+    font-size: 12px;
+    font-family: system-ui, "Ubuntu";
+    font-style: italic;
+    margin-top: -5px;
+    text-decoration: underline;
+    cursor: pointer;
+    float: left;
+    position: absolute;
+    bottom: 1px;
+    left: 48px;
+    width: max-content;
+}
+
+.kullanicikaldir {
+    width: 17px;
+    height: 18px;
+    background: url('^assets/images/gruplar/icon_close_off.png');
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.kullanicikaldir:hover {
+    background: url('^assets/images/gruplar/icon_close_over.png');
+    image-rendering: pixelated;
+}
+
+.kullanicidurum-ico {
+    width: 15px;
+    height: 13px;
+    float: left;
+    margin: -1px;
+    margin-right: 2px;
+}
+
+.grupown {
+    background-image: url('^assets/images/gruplar/icon_owner.png');
+}
+
+.grupstar {
+    background-image: url('^assets/images/gruplar/icon_admin_over.png');
+    cursor: pointer;
+}
+
+.grupstar:hover {
+    background-image: url('^assets/images/gruplar/icon_admin_off.png');
+}
+
+.groupmembers-buttonbox {
+    width: 350px;
+    height: 40px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.sayfageri {
+    width: 50px;
+    height: 25px;
+    background-image: url('^assets/images/gruplar/gm-geri.png');
+    position: absolute;
+    left: 9px;
+    bottom: 8px;
+    outline: 0 !important;
+    cursor: pointer;
+}
+
+.sayfaileri {
+    width: 50px;
+    height: 25px;
+    background-image: url('^assets/images/gruplar/gm-ileri.png');
+    position: absolute;
+    right: 9px;
+    bottom: 8px;
+    outline: 0 !important;
+    cursor: pointer;
+}
+
+button {
+    outline: 0;
+    border: solid 0px #fff0;
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.kafamdurduaq {
+    float: left;
+    position: absolute;
+    bottom: 0px;
+    left: 48px;
+    width: max-content;
+}
+
+.sayfageri:hover {
+    opacity: 0.8;
+}
+
+.sayfageri:active {
+    opacity: 1;
+    bottom: 7px;
+}
+
+.sayfaileri:hover {
+    opacity: 0.8;
+}
+
+.sayfaileri:active {
+    opacity: 1;
+    bottom: 7px;
+}
+
+.grupmembers-sayfatxt {
+    width: 100%;
+    font-size: 13px;
+    font-family: Arial;
+    text-align: center;
+    padding: 9px;
+}
+
+.groupedit-button {
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #185d79;
+    border: solid 2px #a1c2d070;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: none;
+    padding: 0;
+    color: #ffffff75;
+    margin-right: 7px;
+    margin-top: 8px;
+}
+
+.gebuttontxt {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 13px;
+    margin: -10px 0px !important;
+    text-align: center;
+    width: 81px;
+    position: absolute;
+}
+
+.groupedit-button:hover {
+    filter: drop-shadow(2px 4px 6px #0000003d);
+}
+
+.groupeditbutton-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.groupeditbutton-boxactive {
+    float: left;
+    width: 85px;
+    height: 27px;
+    background: #1b6280;
+    border: solid 2px #aec7d270;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    filter: drop-shadow(2px 4px 6px #0000003d);
+    outline: 0 !important;
+    padding: 0;
+    color: white;
+}
+
+.txt-boxactive {
+    color: white;
+}
+
+.group-tipi-box {
+    width: 170px;
+    height: auto;
+    min-height: 200px;
+    background: #d2d2d2;
+    border-radius: 6px;
+    float: left;
+    margin: 5px 16px;
+    padding: 6px 9px;
+}
+
+.grouptext-8 {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: black;
+    padding-top: 6px;
+    width: 205px;
+    text-align: center;
+}
+
+.group-tipi-box {
+    input[type=radio] {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        -webkit-appearance: none;
+        outline: 0;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        margin-top: 0 !important;
+        margin-right: 4px !important;
+        background-image: url('^assets/images/input/radio-off.png') !important;
+    }
+    input[type="radio"]:after {
+        height: 16px;
+        position: relative;
+        width: 16px;
+        content: '';
+        display: block;
+        margin-right: 5px;
+    }
+    input[type="radio"]:checked:after {
+        height: 16px;
+        width: 16px;
+        background-image: url('^assets/images/input/radio-on.png') !important;
+    }
+    .form-check-label {
+        font-size: 13px;
+        font-family: Arial;
+        font-weight: bold;
+        margin-top: -21px !important;
+    }
+
+}
+
+.checkmarkge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-image: url('^assets/images/input/checkbox-off.png');
+}
+
+.checkmarkge:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.ge-select_container input:checked~.checkmarkge:after {
+    display: block;
+}
+
+.ge-select_container .checkmarkge:after {
+    width: 16px;
+    height: 16px;
+    background-image: url('^assets/images/input/checkbox-on.png');
+}
+
+.gedit-select_container-radio {
+    height: auto;
+    min-height: 12px;
+    font-family: Arial;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 11px;
+    padding-left: 20px;
+    float: left;
+    width: 90%;
+    margin-bottom: 0 !important;
+}
+
+.gruptypeico {
+    margin-top: 3px;
+    float: left;
+}
+
+.gruptypedesc {
+    font-family: Arial;
+    font-size: 12px;
+    float: left;
+    width: 130px;
+    margin-left: 4px !important;
+    line-height: 13px;
+}
+
+.gtype-secenek {
+    margin-bottom: 5px;
+    width: auto;
+    height: auto;
+    float: left;
+}
+
+.groupinfo-right2 {
+    width: 200px;
+    height: 300px;
+    float: right;
+    position: relative;
+}
+
+.group-tipi-box2 {
+    width: 170px;
+    height: auto;
+    min-height: 145px;
+    background: #d2d2d2;
+    border-radius: 6px;
+    float: left;
+    margin: 5px 16px;
+    padding: 6px 9px;
+}
+
+.ge-select_container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 13px;
+    padding-left: 20px;
+    float: left;
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 0;
+    height: 20px;
+}
+
+.ge-select_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.getxt {
+    margin-top: -1px !important;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.gruptypedesc2 {
+    font-family: Arial;
+    font-size: 12px;
+    float: left;
+    width: 150px;
+    line-height: 14px;
+    padding-top: 3px;
+}
+
+
+
+.groupinfo {
+    width: 502px;
+    height: 300px;
+    background-color: #dfdfdf;
+    position: absolute;
+    left: 200px !important;
+    top: 150px !important;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px #000000;
+}
+
+.groupinfo-main {
+    width: 100%;
+    height: 258px;
+    padding: 10px;
+}
+
+.room_groupinfo-left {
+    width: 140px;
+    height: auto;
+    background: #c1cbd5;
+    float: left;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.groupinfo-badge {
+    width: 140px;
+    height: 95px;
+    background: #8ea2b3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.groupinfo-button-main {
+    width: 100%;
+    height: 40px;
+}
+
+.groupleave-button {
+    width: 100%;
+    height: 40px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    background: #d72623;
+    border-top: solid 4px #f21d1a;
+    border-bottom: solid 4px #c01816;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-shadow: 0px -6px 0px 0px #8ea2b3;
+}
+
+.groupleave-button:disabled {
+    opacity: 1;
+    background: #d15354;
+    border-top: solid 4px #d66465;
+    border-bottom: solid 4px #bc4a4b;
+    color: #ffffff85;
+}
+
+.group-manage {
+    position: absolute;
+    width: 140px;
+    height: 40px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    background: #1e7295;
+    border-top: solid 4px #3c90b3;
+    border-bottom: solid 4px #185d79;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    bottom: 10px;
+}
+
+.groupmembers-count {
+    font-size: 14px;
+    color: #000000ad;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    float: left;
+}
+
+.groupjoin-button {
+    width: 100%;
+    height: 40px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    white-space: pre;
+    box-shadow: 0px -6px 0px 0px #8ea2b3;
+}
+
+.groupwait-button {
+    width: 100%;
+    height: 40px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2e2e2e;
+    margin-top: 0px;
+    background: #dadada;
+    border-top: solid 4px #f8f8f8;
+    border-bottom: solid 4px #cbcbcb;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    white-space: pre;
+    opacity: 1 !important;
+    box-shadow: 0px -6px 0px 0px #8ea2b3;
+}
+
+.room_groupinfo-right {
+    width: 328px;
+    height: 238px;
+    background: #dde4e8;
+    float: left;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.groupname-main {
+    background: #c1cbd5;
+    padding: 5px 0px 0px 0px;
+}
+
+.group_name {
+    background: #4c6b7d;
+    width: 100%;
+    height: 30px;
+    padding: 5px 6px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+.group_created_date {
+    font-size: 14px;
+    color: #0000007a;
+    font-weight: bold;
+    width: 100%;
+    padding: 2px 5px;
+}
+
+.group_description {
+    width: 319px;
+    height: 107px;
+    line-height: 16px;
+    font-size: 13px;
+    color: #656a6f;
+    font-weight: bold;
+    overflow: scroll;
+    margin: 5px;
+    overflow-x: hidden;
+}
+
+.group_description::-webkit-scrollbar {
+    width: 4px;
+}
+
+.group_description::-webkit-scrollbar-track {
+    background-color: #96a8bb;
+    box-shadow: inset 1px -1px 0px 0px #00000030;
+    border-radius: 100px;
+}
+
+.group_description::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #c4c4c4;
+    border-top: solid 4px #fff;
+    border-bottom: solid 4px #989898;
+    box-shadow: 0px 1px 0px 0px #0000004d;
+}
+
+.groupinfo_bottom {
+    width: 100%;
+    height: 60px;
+    background: #c1cbd5;
+    position: absolute;
+    bottom: 0px;
+}
+
+.grouphomeroom {
+    font-size: 14px;
+    color: #0000007a;
+    font-weight: bold;
+    width: 100%;
+    padding: 2px 5px;
+}
+
+.groupinfo-ex {
+    background: #4c6b7d;
+    width: auto;
+    height: 30px;
+}
+
+.ex_group_name {
+    width: 250px;
+    height: 30px;
+    padding: 5px 6px;
+    font-size: 14px;
+    color: white;
+    float: left;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: pre;
+    overflow: hidden;
+}
+
+.groupinfo-ex {
+    background: #4c6b7d;
+    width: auto;
+    height: 30px;
+}
+
+.go-to-ghome {
+    float: right;
+    color: #dde4e800;
+    cursor: pointer;
+    background-image: url('^assets/images/gruplar/goroom.png');
+    width: 14px;
+    height: 22px;
+    margin: 4px 4px 4px 1px;
+}
+
+.group_icon {
+    width: 30px;
+    height: 30px;
+    float: right;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.room-ban {
+    background-image: url(/assets/images/guilds/grouptype_icon_2-info.png);
+}
+
+.room-key {
+    background-image: url(/assets/images/guilds/grouptype_icon_1-info.png);
+}
+
+.room-plus {
+    background-image: url(/assets/images/guilds/grouptype_icon_0-info.png);
+}
+
+.gbadge {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.groupmembers {
+    width: 564px;
+    height: 406px;
+    left: 250px;
+    top: 100px;
+    position: absolute;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px #000;
+    color: #000;
+    box-sizing: border-box;
+    user-select: none;
+    background-color: #dfdfdf;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    .groupmembers-main {
+        width: 100%;
+        height: 380px;
+    }
+    .groupmembers-left {
+        width: 140px;
+        height: auto;
+        float: left;
+        padding: 10px;
+    }
+    .groupmembers-right {
+        width: 420px;
+        height: 355px;
+        float: right;
+        padding: 10px;
+        padding-left: 0px;
+    }
+    .groupmembers-badge-main {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #c1cbd5;
+        border-radius: 5px;
+        img {
+            transform: scale(2);
+        }
+    }
+    .gmtop-main {
+        width: 100%;
+        height: auto;
+        background: #c1cbd5;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .groupmembers-search {
+        width: 100%;
+        height: 30px;
+        font-size: 14px;
+        color: #757575;
+        background: #fbfbfb;
+        border: solid 0px #00000075;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: inset 0px 5px 0px 0px #f5f5f5;
+        outline: 0;
+        font-family: "Arial";
+        float: right;
+        filter: drop-shadow(3px 3px 2px #00000000);
+    }  
+    .groupmembers-select {
+        width: 100%;
+        height: 30px;
+        box-sizing: border-box;
+        outline: 0;
+        border: solid 0px #fff0;
+        font-size: 14px;
+        font-family: Arial;
+        position: relative;
+        background: #e5e8ea;
+        cursor: pointer;
+        box-shadow: 0px 0px 1px 1px #ffffff2e;
+        margin-top: 5px;
+        border-radius: 5px;
+        padding: 0px 5px;
+        color: #052031c9;
+    }
+    .gmlist-box {
+        background: #e5e8ea;
+        width: 100% !important;
+        height: 35px !important;
+        overflow: hidden;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 5px;
+        max-width: 380px;
+        float: left;
+        position: relative;
+        &:hover {
+            .gm-user-delete {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 29px;
+                height: 29px;
+                background-color: #dc3545;
+                float: left;
+                border-radius: 5px;
+                margin: 3px;
+                background-image: url(/assets/images/avatareditor/clear-icon.png);
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .gm-user-delete:hover {
+                background-color: #c82534;
+            }
+        }
+    }
+    .sahip {
+        background-color: #dcc892;
+        .gmlist-member_rank {
+            background-color: #c1ac75;
+        }
+        .groupmembers-owner_manage {
+            background: #c1ac75;
+        }
+    }
+    .groupmembers-list {
+        overflow: hidden;
+        overflow-y: scroll;
+        max-height: 185px;
+        height: auto;
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #96a8bb;
+            box-shadow: inset 1px -1px 0px 0px #00000030;
+            border-radius: 100px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background-color: #c4c4c4;
+            border-top: solid 4px #fff;
+            border-bottom: solid 4px #989898;
+            box-shadow: 0px 1px 0px 0px #0000004d;
+        }
+    }
+    .groupmembers-list-main {
+        width: 100%;
+        padding: 10px;
+        background-color: #c1cbd54d;
+        margin-top: 10px;
+        border-radius: 5px;
+        max-height: 205px;
+        height: auto;
+    }
+    .gm-user {
+        width: 100%;
+        height: 100%;
+    }
+    .gmlist-member_rank {
+        width: 29px;
+        height: 29px;
+        background-color: #97bdd8;
+        float: left;
+        border-radius: 5px;
+        margin: 3px;
+    }
+    .gmlist-username {
+        float: left;
+        font-size: 14px;
+        font-family: system-ui;
+        font-weight: 500;
+        padding: 6.5px 4px;
+    }
+    .gm-activuser {
+        position: absolute;
+        right: 0;
+        float: right;
+        top: 0;
+        font-size: 14px;
+        font-family: system-ui;
+        font-weight: 500;
+        padding: 7px 7px;
+        color: #0000006e;
+    }
+    .gown-ico {
+        background-image: url('^assets/images/groups/king.png');
+        width: 29px;
+        height: 29px;
+        float: left;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gstar-ico {
+        background-image: url('^assets/images/groups/star.png');
+        width: 29px;
+        height: 29px;
+        float: left;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .gstar_o-ico {
+        background-image: url('^assets/images/groups/star-o.png');
+        width: 29px;
+        height: 29px;
+        float: left;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .groupmembers-giveowner {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 13px;
+        font-family: system-ui;
+        font-weight: 500;
+        margin: 5px 4px;
+        background: #c1ac75;
+        color: black;
+        border-radius: 5px;
+        padding: 2px 6px 4px 6px;
+    }
+    .groupmembers-owner_manage {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 13px;
+        font-family: system-ui;
+        font-weight: 500;
+        margin: 5px 4px;
+        background: #97bdd8;
+        color: black;
+        border-radius: 5px;
+        padding: 2px 6px 4px 6px;
+    }
+    .groupmembers-page {
+        width: 410px;
+        height: 35px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 9px;
+    }
+    
+    .gm-page-info {
+        background: #c2ced4;
+        height: 100%;
+        width: auto;
+        font-size: 14px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 8px 0px 8px;
+        border-radius: 5px;
+        color: #000000c2;
+    }
+    
+    .gm-page-right {
+        background-image: url('^assets/images/menu-ac.png');
+        width: 17px;
+        height: 24px;
+        margin: 0px 8px;
+    }
+    
+    .gm-page-right:disabled {
+        filter: opacity(0.5);
+    }
+    
+    .gm-page-left {
+        background-image: url('^assets/images/menu-ac.png');
+        width: 17px;
+        height: 24px;
+        margin: 0px 8px;
+        transform: rotate(180deg);
+    }
+    
+    .gm-page-left:disabled {
+        filter: opacity(0.5);
+    }
+}

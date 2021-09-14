@@ -1,0 +1,49 @@
+<div [bringToTop] [draggable] id="oda-bilgileri">
+    <div id="oda-bilgilerihareket" class="drag-handler">
+        <div class="oda-bilgileri-padding">
+            <div class="oda-bilgileri-header-baslik">{{ ('navigator.room.info.popup.title') | translate }}</div>
+            <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+    <div class="oda-bilgileri-box">
+        <div class="ob-oda-resmi" [ngStyle]="thumbnail && { 'background-image': 'url(' + thumbnail + ')' }"></div>
+        <div class="ob-fixed">
+            <div class="ob-oda-ismi">
+                <div class="ob-box">
+                    <img class="ob-ufak-logo" src="/assets/images/odalar.png">{{ roomName }}
+                </div>
+            </div>
+        </div>
+        <div class="ob-fixed">
+            <div class="ob-oda-sahibi-box" *ngIf="showOwner">
+                <div class="ob-box">
+                    <img class="ob-ufak-logo" src="/assets/images/sahip.png">{{ ('navigator.roomownercaption') | translate }} {{ ownerName }}
+                </div>
+            </div>
+        </div>
+        <div class="ob-fixed">
+            <div class="ob-oda-puani-box">
+                <div class="ob-box">
+                    <img class="ob-ufak-logo" src="/assets/images/ob-puan.png">{{ ('navigator.roomrating') | translate }} {{ roomData.ranking }}
+                </div>
+            </div>
+        </div>
+        <div class="ob-fixed">
+            <div class="ob-oda-sikayet-box">
+                <button class="ob-box disabledamk" disabled (click)="handleButton('report')">
+                    <img class="ob-ufak-logo" src="/assets/images/ob-sikayet.png">
+                    <div class="oda-sikayet-text">{{ ('help.emergency.main.report.room') | translate }}</div>
+                </button>
+            </div>
+        </div>
+        <div class="ob-button-box">
+            <button *ngIf="roomSettingsVisible" type="button" id="ob-button" (click)="handleButton('settings')"><div class="ob-button-text">{{ ('navigator.room.popup.info.room.settings') | translate }}</div></button>
+            <button *ngIf="roomFilterVisible" type="button" id="ob-button" class="disabledamk" disabled (click)="handleButton('filter')"><div class="ob-button-text">{{ ('navigator.roomsettings.roomfilter') | translate }}</div></button>
+            <button *ngIf="floorPlanVisible" type="button" id="ob-button" (click)="handleButton('floor-plan')"><div class="ob-button-text">{{ ('open.floor.plan.editor') | translate }}</div></button>
+            <button type="button" *ngIf="addStaffPickedVisible" id="ob-button" (click)="handleButton('staff-pick')"><div class="ob-button-text">{{ (staffPickVisible ? 'navigator.staffpicks.unpick' : 'navigator.staffpicks.pick') | translate }}</div></button>
+            <button type="button" id="ob-button" class="disabledamk" disabled (click)="handleButton('report')"><div class="ob-button-text">{{ ('help.emergency.main.report.room') | translate }}</div></button>
+
+            <button type="button" id="ob-button" *ngIf="canMuteVisible" (click)="handleButton('room-mute')"><div class="ob-button-text">{{ (mutedVisible ? 'navigator.muteall_on' : 'navigator.muteall_off') | translate }}</div></button>
+        </div>
+    </div>
+</div>

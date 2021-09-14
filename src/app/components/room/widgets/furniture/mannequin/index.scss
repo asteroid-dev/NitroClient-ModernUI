@@ -1,0 +1,27 @@
+.nitro-furniture-mannequin {
+  position: absolute;
+  width: 450px;
+  max-width: 450px;
+
+}
+
+.mannequin-background {
+  background-image: url('^assets/images/mannequin/background.png');
+  background-repeat: no-repeat;
+  margin-left: 0.9em;
+  margin-top: 0.5em;
+}
+
+.mannequin-figure {
+  position: relative;
+  bottom: 0.91em;
+  right: 0.3em;
+}
+
+.hc-icon {
+  background-image: url('^assets/images/mannequin/hc.png');
+  background-repeat: no-repeat;
+  margin-left: 3em;
+  bottom: 1.5em;
+  position: relative;
+}

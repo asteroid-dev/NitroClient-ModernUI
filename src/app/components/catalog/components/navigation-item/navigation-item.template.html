@@ -1,0 +1,24 @@
+
+<div class="nav-item" id="compmenu">
+    <li class="liste-menu-box" [ngClass]="{ 'menuactive': isActive }" (click)="selectPage()">
+        <div class="menu-icon-box">
+            <img class="icon" [src]="iconUrl" />
+        </div>  
+        <div class="liste-menu-yazi">{{ catalogPage.localization }}</div>
+        <div *ngIf="!isInSearchView && catalogPage.children && catalogPage.children.length" class="menu-ac" [ngClass]="{ 'menu-ac': !isToggled, 'menu-kapat': isToggled }"></div>
+    </li>
+    <nitro-catalog-navigation-set-component *ngIf="!isInSearchView && isToggled && catalogPage.children && (catalogPage.children.length > 0)" [catalogPage]="catalogPage" class="catalogue-sub"></nitro-catalog-navigation-set-component>
+
+</div>
+
+<div class="nav-item" id="mobmenu">
+    <li class="mctlg-menu-box" [ngClass]="{ 'mctlg-menu-box-active subactive': isActive }" (click)="selectPage()">
+        <div class="menu-icon-box">
+            <img class="icon" [src]="iconUrl" />
+        </div>  
+        <div class="liste-menu-yazi">{{ catalogPage.localization }}</div>
+        <div *ngIf="!isInSearchView && catalogPage.children && catalogPage.children.length" class="menu-ac" [ngClass]="{ 'menu-ac': !isToggled, 'menu-kapat': isToggled }"></div>
+    </li>
+    <nitro-catalog-navigation-set-component *ngIf="!isInSearchView && isToggled && catalogPage.children && (catalogPage.children.length > 0)" [catalogPage]="catalogPage" class="catalogue-msub"></nitro-catalog-navigation-set-component>
+
+</div>

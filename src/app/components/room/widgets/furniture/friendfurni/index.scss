@@ -1,0 +1,106 @@
+.nitro-furniture-friends-engraving {
+    position: absolute;
+    width: 375px;
+    max-width: 375px;
+    height:210px;
+
+    .friend-close {
+        right: 26px;
+        height: 15px;
+        width: 15px;
+        top: 34px;
+    }
+    
+
+}
+
+.friendsfurniture-text {
+    color: #5a234b;
+    text-shadow: 0px 1px rgb(255 255 255);
+    font-size: 13px;
+    font-weight: bold;
+    font-family: system-ui;
+    width: 100%;
+    text-align: center;
+}
+
+.friendsfurniture-text:nth-child(even) {
+    margin-top: 24px;
+}
+
+.furniture-lock-description {
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000c7;
+    text-align: center;
+    padding: 20px 20px 0px 20px;
+}
+
+.furniture-lock {
+    width: 350px;
+    height: auto;
+    background-color: #dfdfdf;
+    position: absolute;
+    left: 400px !important;
+    top: 250px !important;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px #000000;
+}
+
+.lock-close {
+    width: auto;
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    background: #d72623;
+    border-top: solid 4px #f21d1a;
+    border-bottom: solid 4px #c01816;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.lock-save {
+    height: 35px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    background: #009c2e;
+    border-top: solid 4px #0abd1e;
+    border-bottom: solid 4px #06872c;
+    overflow: hidden;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    min-width: 100px;
+    width: auto;
+}

@@ -1,0 +1,72 @@
+
+<div id="envanter-mobilya-box bots-template" (mouseup)="onMouseUp()">
+    <div id="envanter-mobi-icerik-box" *ngIf="!hasBotItems">
+        <div class="entbos-image"></div>
+        <p class="entbos-baslik">{{ ('inventory.empty.bots.title') | translate }}</p>
+        <p class="entbos-desc">{{ ('inventory.empty.bots.desc') | translate }}</p>
+    </div>
+    <ng-container *ngIf="hasBotItems">
+        <div id="envanter-mobi-icerik-box">
+            <div class="envanter-icerisindeki-mobiler">
+
+                <div class="erobotlar-sol">
+                    <div class="er-sol-m">
+                        <div id="mobilya-onizleme-box" style="min-height: 50px !important;" 
+                        *ngFor="let botItem of botItems;trackBy:trackByType" (mousedown)="onMouseDown(botItem)" (mouseout)="onMouseOut(botItem)"
+                        [ngClass]="{ 'entactivemobi': (selectedItem === botItem), 'yenimobi': botItem.isUnseen }">
+                            <div class="mobi-ufak-icon" avatar-image [scale]="4" [figure]="botItem.botData.figure" [direction]="3" [headOnly]="true" [asBackground]="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="emb-sag">
+                    <div *ngIf="selectedGroup && selectedGroup.stuffData.uniqueNumber">
+                        <div [innerHTML]="selectedGroup.stuffData.uniqueNumber | uniqueNumber"></div>
+                        <div [innerHTML]="selectedGroup.stuffData.uniqueSeries | uniqueNumber"></div>
+                    </div>
+                    <div class="emb-s-m" *ngIf="selectedItem">
+                        <div class="mobi-onizleme-buyuk">
+                            <div id="mobi-onizleme-goruntu" nitro-room-preview-component [roomPreviewer]="roomPreviewer" [height]="140"></div>
+                        </div>
+                        <div class="envanter-mobi-adi">
+                            <div class="e-m-a-yazi" title="{{ selectedItem.botData.name }}">{{ selectedItem.botData.name }}</div>
+                        </div>
+                        <button *ngIf="!tradeRunning && canPlace" type="button" class="envanter-mobi-odaya-yerlestir" (click)="attemptBotPlacement()">
+                            <div class="odaya-yerlestir-yazi">{{ ('inventory.furni.placetoroom') | translate }}</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+
+<div class="minv-main_box" (mouseup)="onMouseUp()">
+    <div id="minv-boxnull" *ngIf="!hasBotItems">
+        <p class="minv-null-title">{{ ('inventory.empty.bots.title') | translate }}</p>
+        <p class="minv-null-desc">{{ ('inventory.empty.bots.desc') | translate }}</p>
+    </div>
+    <ng-container *ngIf="hasBotItems">
+        <div class="minv-bots-main">
+            <div id="minv-items-box" 
+            *ngFor="let botItem of botItems;trackBy:trackByType" (mousedown)="onMouseDown(botItem)" (mouseout)="onMouseOut(botItem)"
+            [ngClass]="{ 'minv-items-box-active': (selectedItem === botItem), 'minv_new': botItem.isUnseen }">
+                <div class="minv-items-icon" avatar-image [scale]="4" [figure]="botItem.botData.figure" [direction]="3" [headOnly]="true" [asBackground]="true"></div>
+            </div>
+        </div>
+        <div class="minv-right mright-p" *ngIf="selectedItem">
+            <div class="m-roomview" >
+                <div nitro-room-preview-component [roomPreviewer]="roomPreviewer" [width]="210" [height]="140"></div>
+            </div>
+            <div class="minv-items-name">
+                {{ selectedItem.botData.name }}
+            </div>
+            <button *ngIf="!tradeRunning && canPlace" type="button" class="minv-roomplace" (click)="attemptBotPlacement()">
+                {{ ('inventory.furni.placetoroom') | translate }}
+            </button>
+        </div>
+    </ng-container>
+</div>

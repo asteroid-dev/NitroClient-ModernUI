@@ -1,0 +1,10 @@
+<div class="w-100 card nitro-navigator-slider-component mt-2 d-flex flex-column">
+    <mdb-carousel [isControls]="false" [animation]="'slide'" [isControls]="true">
+        <mdb-carousel-item *ngFor="let con of sliderContent">
+            <div class="nitro-navigator-slider-image-component py-2 px-0 h-100" [style]="'background:url('+con.image+')'" (click)="visit(con.roomId)">
+                <div class="johnsshitblackbar p-1 small">{{con.title}}</div>
+            </div>
+            <img class="d-block w-100" [src]="con.image" (click)="con.roomId" image-placeholder />
+        </mdb-carousel-item>
+    </mdb-carousel>
+</div>

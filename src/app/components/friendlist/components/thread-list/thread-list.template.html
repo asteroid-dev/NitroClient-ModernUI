@@ -1,0 +1,10 @@
+<!--<button *ngFor="let thread of threads" type="button" class="btn btn-secondary w-100 mb-1" [ngClass]="{ 'active': (currentThread === thread) }" (click)="selectThread(thread)">{{ thread.participant.name }}</button>-->
+
+<div *ngFor="let thread of threads" class="active-chat-box" [ngClass]="{ 'chatactive': (currentThread === thread) }" (click)="selectThread(thread)">
+    <div class="messenger-avatarbox">
+        <p class="basharf">{{ thread.participant.name }}</p>
+    </div>
+    <p class="active-chat-username">{{ thread.participant.name }}</p>
+    <p class="active-chat-username-description chattinguser">You're chatting with user</p>
+    <p class="active-chat-username-description chatpending">Chat is pending..</p>
+</div> 

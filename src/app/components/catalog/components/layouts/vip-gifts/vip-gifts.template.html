@@ -1,0 +1,45 @@
+<div *ngIf="visible" class="w-100 h-100 nitro-catalog-layout-vip-gifts-component px-1">
+    <p class="text-center w-100">{{ giftsAvailable}}</p>
+    <perfect-scrollbar style="min-height:450px;max-height:450px;height:450px;">
+        <div class="gift-item rounded bg-secondary mb-2 d-flex flex-row p-1" *ngFor="let gift of gifts">
+            <div class="gift-image align-self-center mr-2 flex-shrink-0"
+                 [ngStyle]="{ 'background-image': 'url(' + offerImage(gift) + ')' }"></div>
+            <div class="w-100">
+                <p class="mb-0 pb-0 d-block">{{ getProductFurniData(gift.products[0]).name }}</p>
+                <div *ngIf="getAvailability(gift.offerId)" class="w-100 d-flex flex-row justify-content-between">
+                    <span class="w-100">{{ 'catalog.club_gift.selectable' | translate }}</span>
+                    <button type="button" (click)="selectOffer(gift)"
+                            class="btn btn-sm btn-primary align-self-center">{{ 'catalog.club_gift.select' | translate }}</button>
+                </div>
+                <div *ngIf="!getAvailability(gift.offerId)" class="w-100">
+                    {{ nonAvailableText(gift.offerId) }}
+                </div>
+            </div>
+        </div>
+    </perfect-scrollbar>
+    <p class="w-100 text-center p-0 m-0">{{ pastClubDays }}</p>
+</div>
+
+<div *ngIf="showPopup" [bringToTop] [draggable] class="nitro-catalog-confirm-purchase-component card">
+    <div class="drag-handler d-flex justify-content-between align-items-center px-3 pt-3">
+        <h6 class="m-0">{{ ('catalog.club_gift.confirm') | translate }}</h6>
+        <button type="button" class="close" (click)="hidePopup()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="row p-3">
+        <div class="col-6 d-flex flex-column">
+            <div class="product-preview bg-secondary rounded"
+                 [ngStyle]="{ 'background-image': 'url(' + getGiftImage() + ')'}"></div>
+        </div>
+        <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+            <div class="offer-name">{{ giftName() }}</div>
+
+        </div>
+    </div>
+    <div class="row align-items-end pt-0 px-3 pb-3">
+        <div class="col btn-group">
+            <button type="button" class="btn btn-success"
+                    (click)="confirmGift()">{{ ('catalog.club_gift.select') | translate }}</button>
+            <button type="button" class="btn btn-primary" (click)="hidePopup()">{{ ('cancel') | translate }}</button>
+        </div>
+    </div>
+</div>

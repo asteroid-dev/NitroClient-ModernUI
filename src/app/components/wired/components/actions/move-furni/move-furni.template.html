@@ -1,0 +1,57 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	{{ ('wiredfurni.params.movefurni') | translate }}
+	<div class="form-row">
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="0" [(ngModel)]="movement">
+			<label class="form-check-label">{{ ('wiredfurni.params.movefurni.0') | translate }}</label>
+		</div>
+	</div>
+	<div class="form-row mb-2">
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="4" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-ne"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="5" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-se"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="6" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-sw"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="7" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-mv-7"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="2" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-mv-2"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="3" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-mv-3"></i></label>
+		</div>
+		<div class="form-check">
+			<input class="form-check-input" type="radio" name="movement" value="1" [(ngModel)]="movement">
+			<label class="form-check-label"><i class="icon icon-mv-1"></i></label>
+		</div>
+	</div>
+
+	{{ ('wiredfurni.params.rotatefurni') | translate }}
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rotation" value="0" [(ngModel)]="rotation">
+		<label class="form-check-label">{{ ('wiredfurni.params.rotatefurni.0') | translate }}</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rotation" value="1" [(ngModel)]="rotation">
+		<label class="form-check-label"><i class="icon icon-rot-1"></i> {{ ('wiredfurni.params.rotatefurni.1') | translate }}</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rotation" value="2" [(ngModel)]="rotation">
+		<label class="form-check-label"><i class="icon icon-rot-2"></i> {{ ('wiredfurni.params.rotatefurni.2') | translate }}</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="rotation" value="3" [(ngModel)]="rotation">
+		<label class="form-check-label">{{ ('wiredfurni.params.rotatefurni.3') | translate }}</label>
+	</div>
+</nitro-wired-action-base-component>

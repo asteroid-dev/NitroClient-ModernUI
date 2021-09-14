@@ -1,0 +1,109 @@
+.nitro-furniture-credit {
+    left: calc(50vw - 240px) !important;
+    top: 250px !important;
+}
+
+.habbo-exchange {
+    width: 400px;
+    height: auto;
+    background-color: #dfdfdf;
+    position: absolute;
+    box-shadow: 0px 0px 0px 2px #ffffffd4, 0px 4px 0px 0px #00000030;
+    filter: drop-shadow(0px 0px 10px #00000057);
+    -webkit-user-select: none;
+    user-select: none;
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 2px #000000;
+}
+
+.exchange-body {
+    padding: 10px;
+}
+
+.exchange-icon {
+    width: 104px;
+    height: 112px;
+    background-image: url('^assets/images/exchange.png');
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.exchange-title {
+    float: left;
+    width: 250px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.exchange-description {
+    float: left;
+    width: 250px;
+    color: #000000d6;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+.exchange-close {
+    width: 100%;
+    height: 40px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    background: #d72623;
+    border-top: solid 4px #f21d1a;
+    border-bottom: solid 4px #c01816;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+}
+
+.exchange-okay {
+    width: 100%;
+    height: 40px;
+    float: left;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffffed;
+    margin-top: 0px;
+    border: solid 0px #fff0;
+    background: #009c2e;
+    border-top: solid 4px #09ae1b;
+    border-bottom: solid 4px #06852b;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+.exchange-okay:hover {
+    opacity: 0.9;
+}
+
+.exchange-close:hover {
+    opacity: 0.9;
+}

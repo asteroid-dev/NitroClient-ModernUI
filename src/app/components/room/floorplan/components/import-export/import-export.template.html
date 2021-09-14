@@ -1,0 +1,15 @@
+<div [bringToTop] [draggable] class="habbo_hotel_modern_alert" dragHandle="#alert-header">
+    <div id="alert-header">
+        <div class="modern_alert-header-text">{{ ('floor.plan.editor.import.export') | translate }}</div>
+        <div class="modern-close" (click)="close()"><div class="closetab1"></div><div class="closetab2"></div></div>
+    </div>
+    <div class="modern_alert_body">
+        <div class="modern_alert-aciklama">
+            <textarea class="modern-import" [ngStyle]="{'fontSize': fontSize + 'px', 'letterSpacing': letterSpacing + 'px'}" [(ngModel)]="map" spellcheck="false"></textarea>
+        </div>
+        <div class="btn-group w-100">
+            <button class="import-save" [disabled]="!mapChanged" (click)="revert()"><div class="h-k-yazi">{{ ('floor.plan.editor.revert.to.last.received.map') | translate }}</div></button>
+            <button class="import-close" [disabled]="!mapChanged" (click)="save()"><div class="h-k-yazi">{{ ('floor.plan.editor.save') | translate }}</div></button>
+        </div>
+    </div>
+</div>

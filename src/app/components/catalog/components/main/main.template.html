@@ -1,0 +1,60 @@
+
+
+<div *ngIf="visible" [bringToTop] [draggable] id="magazahtml">
+    <div id="magazahtmlhareket" class="drag-handler">
+        <div class="magaza-padding">
+            <div class="magaza-header-baslik">{{ ('catalog.title') | translate }}</div>
+            <div class="modern-close" (click)="hide()"><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+
+    <div *ngIf="catalogRoot && (catalogRoot.children.length > 0)" id="magaza-menu">
+        <div class="h5-menu-center">
+            <ng-container *ngFor="let child of catalogRoot.children">
+                <div class="modern-menu-box" [ngClass]="{ 'modernmenu-active': (activeTab === child) }" (click)="selectTab(child)">
+                    <div class="modern-menuhr"></div> {{ child.localization }}
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="magazabodybox">
+        <div *ngIf="activeTab && (activeTab.children.length > 0)" nitro-catalog-navigation-component class="solamk"></div>
+        <div class="sagamk">
+            <ng-template #layoutsContainer></ng-template>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="visible" [bringToTop] class="mctlg">
+    <div class="mctlg-container">
+        <div class="mctlg-left">
+            <div class="mctlg-header"><p class="shopname">Catalogue</p>{{ activePageData?.localization }}</div>
+            <div class="mctlg-subsection">
+                <ng-template #layoutsContainer2></ng-template>
+            </div>
+        </div>
+        <div class="mctlg-right">
+            <div class="mctlg-close" (click)="hide()"><div class="closeshadow"></div><div class="closetab1"></div><div class="closetab2"></div></div>
+            <div class="mctlg-right-menu" *ngIf="catalogRoot && (catalogRoot.children.length > 0)">
+                <div class="topmenu-main">
+                    <div class="submenutitle" style="padding: 0px 0px 5px 6px;margin-top: -3px;">
+                        <p class="cataloguemenu">{{ ('catalogmenu') | translate }}</p>
+                    </div>
+                    <ng-container *ngFor="let child of catalogRoot.children" class="topmenu">
+                        <button class="mctlg-menu-box" type="button" [ngClass]="{ 'mctlg-menu-box-active menuact': (activeTab === child) }" (click)="selectTab(child)">
+                            {{ child.localization }}
+                            <div class="mctlg-opentab"></div>
+                        </button> 
+                    </ng-container>
+                </div>
+                <div class="submenu" *ngIf="activeTab && (activeTab.children.length > 0)" nitro-catalog-navigation-component></div>
+            </div>
+        </div>
+    </div> 
+</div> 
+
+<nitro-catalog-confirm-purchase-component *ngIf="(purchaseOffer !== null || giftOffer !== null) && !showGiftConfigurator" [giftOffer]="giftOffer" [page]="purchaseOfferPage" [offer]="purchaseOffer" [quantity]="purchaseOfferQuantity" [extra]="purchaseOfferExtra" [completed]="purchaseCompleted"></nitro-catalog-confirm-purchase-component>
+<nitro-catalog-confirm-vip-subscription-component *ngIf="purchaseVipSubscription !== null" [subscription]="purchaseVipSubscription"></nitro-catalog-confirm-vip-subscription-component>
+<nitro-catalog-confirm-purchase-insufficient-funds *ngIf="showInsufficientFunds"></nitro-catalog-confirm-purchase-insufficient-funds>
+<nitro-catalog-customize-gift-component *ngIf="giftOffer !== null && showGiftConfigurator"></nitro-catalog-customize-gift-component>

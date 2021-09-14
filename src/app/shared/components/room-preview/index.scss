@@ -1,0 +1,13 @@
+.room-preview-image {
+    background-color: $primary;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media only screen and (max-width: 850px), (max-height: 450px) {
+    .room-preview-image {
+        background-color: $amk;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

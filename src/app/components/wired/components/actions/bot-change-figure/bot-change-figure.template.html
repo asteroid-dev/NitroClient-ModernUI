@@ -1,0 +1,14 @@
+<nitro-wired-action-base-component [(delay)]="delay">
+	<div class="form-group">
+        <label>{{ ('wiredfurni.params.bot.name') | translate }}</label>
+        <input type="text" maxlength="32" class="form-control form-control-sm" [(ngModel)]="botName">
+	</div>
+	<div class="row mb-1">
+		<div class="col-md-6">
+			<div nitro-avatar-image [figure]="figure" [direction]="2"></div>
+		</div>
+		<div class="col-md-6">
+			<button type="button" class="btn btn-primary btn-sm" (click)="copyLook()">{{ ('wiredfurni.params.capture.figure') | translate }}</button>
+		</div>
+	</div>
+</nitro-wired-action-base-component>
